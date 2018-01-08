@@ -10,13 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "Duck.hpp"
-#include "FlyBehavior.hpp"
-#include "QuackBehavior.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <iostream>
 #include <memory>
 #include <cassert>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "FlyBehavior.hpp"
+#include "QuackBehavior.hpp"
+#include "Utilities.hpp"
 
 using namespace HFDP::Strategy;
 

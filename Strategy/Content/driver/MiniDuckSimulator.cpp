@@ -10,12 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "MallardDuck.hpp"
 #include "RubberDuck.hpp"
 #include "DecoyDuck.hpp"
 #include "ModelDuck.hpp"
 #include "FlyRocketPowered.hpp"
-#include <memory>
+
 
 using namespace HFDP::Strategy;
 
