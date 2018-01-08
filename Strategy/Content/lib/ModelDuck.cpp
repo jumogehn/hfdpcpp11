@@ -18,10 +18,10 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 #include "Duck.hpp"
-#include "FlyNoWay.hpp"
 #include "FakeQuack.hpp"
+#include "FlyNoWay.hpp"
+#include "Utilities.hpp"
 
 
 ModelDuck::ModelDuck() : Duck( new FlyNoWay(), new FakeQuack() )

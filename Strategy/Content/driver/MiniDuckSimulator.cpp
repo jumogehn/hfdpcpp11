@@ -17,12 +17,11 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "MallardDuck.hpp"
-#include "RubberDuck.hpp"
 #include "DecoyDuck.hpp"
-#include "ModelDuck.hpp"
 #include "FlyRocketPowered.hpp"
-
+#include "MallardDuck.hpp"
+#include "ModelDuck.hpp"
+#include "RubberDuck.hpp"
 
 
 int main(int argc, char* argv[]) {

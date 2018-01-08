@@ -14,8 +14,8 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <iostream>
 #include <cassert>
+#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
 
