@@ -23,7 +23,6 @@
 #include "FlyNoWay.hpp"
 #include "FakeQuack.hpp"
 
-using namespace HFDP::Strategy;
 
 ModelDuck::ModelDuck() : Duck( new FlyNoWay(), new FakeQuack() )
 {

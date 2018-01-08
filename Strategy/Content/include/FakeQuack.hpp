@@ -22,16 +22,11 @@
 //Your project's .h files.
 #include "QuackBehavior.hpp"
 
-namespace HFDP {
-  namespace Strategy {
+class FakeQuack : public QuackBehavior {
 
-    class FakeQuack : public QuackBehavior {
+public:
+	void quack() const;
+};
 
-    public:
-      void quack () const;
-    };
-
-  } // namespace Strategy
-} // namespace HFDP
 
 #endif

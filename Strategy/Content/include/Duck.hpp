@@ -24,31 +24,27 @@
 #include "FlyBehavior.hpp"
 #include "QuackBehavior.hpp"
 
-namespace HFDP {
-  namespace Strategy {
 
-    class Duck {
+class Duck {
 
-      std::unique_ptr< FlyBehavior > _flyBehavior;
-      std::unique_ptr< QuackBehavior > _quackBehavior;
+	std::unique_ptr< FlyBehavior > _flyBehavior;
+	std::unique_ptr< QuackBehavior > _quackBehavior;
 
-      Duck( const Duck& ); // Disable copy constructor
-      void operator=( const Duck& ); // Disable assignment operator
+	Duck(const Duck&); // Disable copy constructor
+	void operator=(const Duck&); // Disable assignment operator
 
-    protected:
-      Duck( FlyBehavior* flyBehavior, QuackBehavior* quackBehavior );
+protected:
+	Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior);
 
-    public:
-      virtual ~Duck();
-      void setFlyBehavior( FlyBehavior* fb );
-      void setQuackBehavior( QuackBehavior* qb );
-      void performFly() const;
-      void performQuack() const;
-      void swim() const;
-      virtual void display() const = 0;
-    };
+public:
+	virtual ~Duck();
+	void setFlyBehavior(FlyBehavior* fb);
+	void setQuackBehavior(QuackBehavior* qb);
+	void performFly() const;
+	void performQuack() const;
+	void swim() const;
+	virtual void display() const = 0;
+};
 
-  } // namespace Strategy
-} // namespace HFDP
 
 #endif

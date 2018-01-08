@@ -24,7 +24,6 @@
 #include "QuackBehavior.hpp"
 #include "Utilities.hpp"
 
-using namespace HFDP::Strategy;
 
 Duck::Duck( FlyBehavior* flyBehavior, QuackBehavior* quackBehavior ) :
   _flyBehavior( flyBehavior ), _quackBehavior( quackBehavior )

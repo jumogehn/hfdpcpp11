@@ -19,7 +19,6 @@
 //Your project's .h files.
 #include "Utilities.hpp"
 
-using namespace HFDP::Strategy;
 
 FlyBehavior::~FlyBehavior()
 {

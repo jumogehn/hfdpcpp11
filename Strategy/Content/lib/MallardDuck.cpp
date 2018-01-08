@@ -23,7 +23,6 @@
 #include "Quack.hpp"
 #include "Utilities.hpp"
 
-using namespace HFDP::Strategy;
 
 MallardDuck::MallardDuck() : Duck( new FlyWithWings(), new Quack() )
 {

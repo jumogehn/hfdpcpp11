@@ -22,16 +22,12 @@
 //Your project's .h files.
 #include "FlyBehavior.hpp"
 
-namespace HFDP {
-  namespace Strategy {
 
-    class FlyNoWay : public FlyBehavior {
+class FlyNoWay : public FlyBehavior {
 
-    public:
-      void fly () const;
-    };
+public:
+	void fly() const;
+};
 
-  } // namespace Strategy
-} // namespace HFDP
 
 #endif

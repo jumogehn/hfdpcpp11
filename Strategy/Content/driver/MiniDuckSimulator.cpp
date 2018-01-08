@@ -24,7 +24,6 @@
 #include "FlyRocketPowered.hpp"
 
 
-using namespace HFDP::Strategy;
 
 int main(int argc, char* argv[]) {
 

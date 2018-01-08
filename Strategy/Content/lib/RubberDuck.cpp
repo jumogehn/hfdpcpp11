@@ -23,7 +23,6 @@
 #include "Squeak.hpp"
 #include "Utilities.hpp"
 
-using namespace HFDP::Strategy;
 
 RubberDuck::RubberDuck() : Duck( new FlyNoWay(), new Squeak() )
 {

@@ -23,7 +23,6 @@
 #include "MuteQuack.hpp"
 #include "Utilities.hpp"
 
-using namespace HFDP::Strategy;
 
 DecoyDuck::DecoyDuck()
 : Duck( new FlyNoWay(), new MuteQuack() )

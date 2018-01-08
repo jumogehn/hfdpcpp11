@@ -22,17 +22,12 @@
 //Your project's .h files.
 #include "Duck.hpp"
 
-namespace HFDP {
-  namespace Strategy {
+class DecoyDuck : public Duck {
 
-    class DecoyDuck : public Duck {
+public:
+	DecoyDuck();
+	void display() const;
+};
 
-    public:
-      DecoyDuck();
-      void display() const;
-    };
-
-  } // namespace Strategy
-} // namespace HFDP
 
 #endif

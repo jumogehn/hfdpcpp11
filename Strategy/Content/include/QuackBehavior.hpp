@@ -22,17 +22,13 @@
 //Your project's .h files.
 
 
-namespace HFDP {
-  namespace Strategy {
 
-    class QuackBehavior {
+class QuackBehavior {
 
-    public:
-      virtual ~QuackBehavior();
-      virtual void quack() const = 0;
-    };
+public:
+	virtual ~QuackBehavior();
+	virtual void quack() const = 0;
+};
 
-  } // namespace Strategy
-} // namespace HFDP
 
 #endif
