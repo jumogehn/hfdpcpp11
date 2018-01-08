@@ -27,19 +27,19 @@
 
 class Duck {
 
-	std::unique_ptr< FlyBehavior > _flyBehavior;
-	std::unique_ptr< QuackBehavior > _quackBehavior;
+	std::shared_ptr< FlyBehavior > _flyBehavior;
+	std::shared_ptr< QuackBehavior > _quackBehavior;
 
 	Duck(const Duck&); // Disable copy constructor
 	void operator=(const Duck&); // Disable assignment operator
 
 protected:
-	Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior);
+	Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior);
 
 public:
 	virtual ~Duck();
-	void setFlyBehavior(FlyBehavior* fb);
-	void setQuackBehavior(QuackBehavior* qb);
+	void setFlyBehavior(std::shared_ptr<FlyBehavior> fb);
+	void setQuackBehavior(std::shared_ptr<QuackBehavior> qb);
 	void performFly() const;
 	void performQuack() const;
 	void swim() const;

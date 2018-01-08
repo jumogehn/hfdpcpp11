@@ -25,7 +25,7 @@
 #include "Utilities.hpp"
 
 
-Duck::Duck( FlyBehavior* flyBehavior, QuackBehavior* quackBehavior ) :
+Duck::Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior ) :
   _flyBehavior( flyBehavior ), _quackBehavior( quackBehavior )
 {
   assert( flyBehavior ); assert( quackBehavior );
@@ -36,17 +36,17 @@ Duck::~Duck()
 {
   PrintMessage("Duck::~Duck");
 }
-void Duck::setFlyBehavior( FlyBehavior* fb )
+void Duck::setFlyBehavior( std::shared_ptr<FlyBehavior> fb )
 {
   assert( fb );
   PrintMessage("Duck::setFlyBehavior");
-  _flyBehavior = std::unique_ptr< FlyBehavior >( fb );
+  _flyBehavior = std::shared_ptr< FlyBehavior >( fb );
 }
-void Duck::setQuackBehavior( QuackBehavior* qb )
+void Duck::setQuackBehavior(std::shared_ptr<QuackBehavior> qb )
 {
   assert( qb );
   PrintMessage("Duck::setQuackBehavior");
-  _quackBehavior = std::unique_ptr< QuackBehavior >( qb );
+  _quackBehavior = std::shared_ptr< QuackBehavior >( qb );
 }
 void Duck::performFly() const
 {
