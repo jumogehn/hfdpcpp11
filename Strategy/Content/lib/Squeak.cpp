@@ -18,11 +18,10 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
-void Squeak::quack () const
+void Squeak::quack() const
 {
-  PrintMessage("Squeak::quack");
+  std::cout << "Squeak::quack" << std::endl;
   std::cout << "Squeak" << std::endl;
 }
 

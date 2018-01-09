@@ -18,12 +18,11 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
-void FakeQuack::quack () const
+void FakeQuack::quack() const
 {
-  PrintMessage("FakeQuack::quack");
+  std::cout << "FakeQuack::quack" << std::endl;
   std::cout << "Qwak" << std::endl;
 }
 

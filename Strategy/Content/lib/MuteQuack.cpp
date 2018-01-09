@@ -18,12 +18,11 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
-void MuteQuack::quack () const
+void MuteQuack::quack() const
 {
-  PrintMessage("MuteQuack::quack");
+  std::cout << "MuteQuack::quack" << std::endl;
   std::cout << "<< Silence >>" << std::endl;
 }
 

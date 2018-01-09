@@ -15,13 +15,13 @@
 #include "QuackBehavior.hpp"
 //C system files.
 //C++ system files.
+#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
 QuackBehavior::~QuackBehavior()
 {
-  PrintMessage("QuackBehavior::~QuackBehavior");
+  std::cout << "QuackBehavior::~QuackBehavior" << std::endl;
 }
 

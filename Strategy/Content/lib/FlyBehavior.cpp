@@ -15,13 +15,13 @@
 #include "FlyBehavior.hpp"
 //C system files.
 //C++ system files.
+#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
 FlyBehavior::~FlyBehavior()
 {
-  PrintMessage("FlyBehavior::~FlyBehavior");
+  std::cout << "FlyBehavior::~FlyBehavior" << std::endl;
 }
 

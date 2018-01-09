@@ -22,16 +22,15 @@
 #include "Duck.hpp"
 #include "FakeQuack.hpp"
 #include "FlyNoWay.hpp"
-#include "Utilities.hpp"
 
 
 ModelDuck::ModelDuck() : Duck(std::make_shared<FlyNoWay>(), std::make_shared<FakeQuack>())
 {
-  PrintMessage("ModelDuck::ModelDuck");
+  std::cout << "ModelDuck::ModelDuck" << std::endl;
 }
 void ModelDuck::display() const
 {
-  PrintMessage("ModelDuck::display");
+  std::cout << "ModelDuck::display" << std::endl;
   std::cout << "I'm a model duck" << std::endl;
 }
 

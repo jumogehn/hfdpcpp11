@@ -22,16 +22,15 @@
 #include "Duck.hpp"
 #include "FlyNoWay.hpp"
 #include "MuteQuack.hpp"
-#include "Utilities.hpp"
 
 
 DecoyDuck::DecoyDuck()
-: Duck(std::make_shared<FlyNoWay>(), std::make_shared<MuteQuack>() )
+  : Duck(std::make_shared<FlyNoWay>(), std::make_shared<MuteQuack>())
 {
-  PrintMessage("DecoyDuck::DecoyDuck");
+  std::cout << "DecoyDuck::DecoyDuck" << std::endl;
 }
 void DecoyDuck::display() const
 {
-  PrintMessage("DecoyDuck::display");
+  std::cout << "DecoyDuck::display" << std::endl;
   std::cout << "I'm a duck Decoy" << std::endl;
 }

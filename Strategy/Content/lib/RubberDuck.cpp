@@ -22,16 +22,15 @@
 #include "Duck.hpp"
 #include "FlyNoWay.hpp"
 #include "Squeak.hpp"
-#include "Utilities.hpp"
 
 
 RubberDuck::RubberDuck() : Duck(std::make_shared<FlyNoWay>(), std::make_shared<Squeak>())
 {
-  PrintMessage("RubberDuck::RubberDuck");
+  std::cout << "RubberDuck::RubberDuck" << std::endl;
 }
 void RubberDuck::display() const
 {
-  PrintMessage("RubberDuck::display");
+  std::cout << "RubberDuck::display" << std::endl;
   std::cout << "I'm a rubber duck" << std::endl;
 }
 

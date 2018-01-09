@@ -22,45 +22,44 @@
 //Your project's .h files.
 #include "FlyBehavior.hpp"
 #include "QuackBehavior.hpp"
-#include "Utilities.hpp"
 
 
-Duck::Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior ) :
-  _flyBehavior( flyBehavior ), _quackBehavior( quackBehavior )
+Duck::Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior) :
+  _flyBehavior(flyBehavior), _quackBehavior(quackBehavior)
 {
-  assert( flyBehavior ); assert( quackBehavior );
-  PrintMessage("Duck::Duck");
+  assert(flyBehavior); assert(quackBehavior);
+  std::cout << "Duck::Duck" << std::endl;
 }
 
 Duck::~Duck()
 {
-  PrintMessage("Duck::~Duck");
+  std::cout << "Duck::~Duck" << std::endl;
 }
-void Duck::setFlyBehavior( std::shared_ptr<FlyBehavior> fb )
+void Duck::setFlyBehavior(std::shared_ptr<FlyBehavior> fb)
 {
-  assert( fb );
-  PrintMessage("Duck::setFlyBehavior");
-  _flyBehavior = std::shared_ptr< FlyBehavior >( fb );
+  assert(fb);
+  std::cout << "Duck::setFlyBehavior" << std::endl;
+  _flyBehavior = std::shared_ptr< FlyBehavior >(fb);
 }
-void Duck::setQuackBehavior(std::shared_ptr<QuackBehavior> qb )
+void Duck::setQuackBehavior(std::shared_ptr<QuackBehavior> qb)
 {
-  assert( qb );
-  PrintMessage("Duck::setQuackBehavior");
-  _quackBehavior = std::shared_ptr< QuackBehavior >( qb );
+  assert(qb);
+  std::cout << "Duck::setQuackBehavior" << std::endl;
+  _quackBehavior = std::shared_ptr< QuackBehavior >(qb);
 }
 void Duck::performFly() const
 {
-  PrintMessage("Duck::performFly");
+  std::cout << "Duck::performFly" << std::endl;
   _flyBehavior->fly();
 }
 void Duck::performQuack() const
 {
-  PrintMessage("Duck::performQuack");
+  std::cout << "Duck::performQuack" << std::endl;
   _quackBehavior->quack();
 }
 void Duck::swim() const
 {
-  PrintMessage("Duck::swim");
+  std::cout << "Duck::swim" << std::endl;
   std::cout << "All ducks float, even decoys!" << std::endl;
 }
 

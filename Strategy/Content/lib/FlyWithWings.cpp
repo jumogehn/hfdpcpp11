@@ -18,12 +18,11 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
-void FlyWithWings::fly () const
+void FlyWithWings::fly() const
 {
-  PrintMessage("FlyWithWings::fly");
+  std::cout << "FlyWithWings::fly" << std::endl;
   std::cout << "I'm flying!!" << std::endl;
 }
 

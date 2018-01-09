@@ -22,16 +22,15 @@
 #include "Duck.hpp"
 #include "FlyWithWings.hpp"
 #include "Quack.hpp"
-#include "Utilities.hpp"
 
 
 RedHead::RedHead() : Duck(std::make_shared<FlyWithWings>(), std::make_shared<Quack>())
 {
-  PrintMessage("RedHead::RedHead");
+  std::cout << "RedHead::RedHead" << std::endl;
 }
 void RedHead::display() const
 {
-  PrintMessage("RedHead::display");
+  std::cout << "RedHead::display" << std::endl;
   std::cout << "I'm a real Red Headed duck" << std::endl;
 }
 

@@ -22,16 +22,15 @@
 #include "Duck.hpp"
 #include "FlyWithWings.hpp"
 #include "Quack.hpp"
-#include "Utilities.hpp"
 
 
 MallardDuck::MallardDuck() : Duck(std::make_shared<FlyWithWings>(), std::make_shared<Quack>())
 {
-  PrintMessage("MallardDuck::MallardDuck");
+  std::cout << "MallardDuck::MallardDuck" << std::endl;
 }
 void MallardDuck::display() const
 {
-  PrintMessage("MallardDuck::display");
+  std::cout << "MallardDuck::display" << std::endl;
   std::cout << "I'm a real Mallard duck" << std::endl;
 }
 

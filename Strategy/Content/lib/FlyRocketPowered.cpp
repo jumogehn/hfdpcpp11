@@ -18,12 +18,11 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Utilities.hpp"
 
 
-void FlyRocketPowered::fly () const
+void FlyRocketPowered::fly() const
 {
-  PrintMessage("FlyRocketPowered::fly");
+  std::cout << "FlyRocketPowered::fly" << std::endl;
   std::cout << "I'm flying with a rocket" << std::endl;
 }
 
