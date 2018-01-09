@@ -1,4 +1,7 @@
-# hfdpcpp11
+==========
+hfdpcpp11
+==========
+
 C++ examples for Headfirst Design Patterns
 
 I will rewrite all examples with new C++ specification and library which is C++11 and later.
