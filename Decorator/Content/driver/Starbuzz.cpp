@@ -15,6 +15,7 @@
 //C system files.
 //C++ system files.
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Beverage.hpp"
@@ -28,7 +29,7 @@
 
 int main(int argc, char* argv[]) {
 
-  Beverage* beverage = new Espresso();
+  std::shared_ptr<Beverage> beverage = std::make_shared<Espresso>();
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);
   std::cout << beverage->getDescription()
@@ -36,27 +37,23 @@ int main(int argc, char* argv[]) {
     << beverage->cost()
     << std::endl;
 
-  Beverage* beverage2 = new DarkRoast();
-  beverage2 = new Mocha(beverage2);
-  beverage2 = new Mocha(beverage2);
-  beverage2 = new Whip(beverage2);
+  std::shared_ptr<Beverage> beverage2 = std::make_shared<DarkRoast>();
+  beverage2 = std::make_shared<Mocha>(beverage2);
+  beverage2 = std::make_shared<Mocha>(beverage2);
+  beverage2 = std::make_shared<Whip>(beverage2);
   std::cout << beverage2->getDescription()
     << " $"
     << beverage2->cost()
     << std::endl;
 
-  Beverage* beverage3 = new HouseBlend();
-  beverage3 = new Soy(beverage3);
-  beverage3 = new Mocha(beverage3);
-  beverage3 = new Whip(beverage3);
+  std::shared_ptr<Beverage> beverage3 = std::make_shared<HouseBlend>();
+  beverage3 = std::make_shared<Soy>(beverage3);
+  beverage3 = std::make_shared<Mocha>(beverage3);
+  beverage3 = std::make_shared<Whip>(beverage3);
   std::cout << beverage3->getDescription()
     << " $"
     << beverage3->cost()
     << std::endl;
-
-  delete beverage3;
-  delete beverage2;
-  delete beverage;
 
   return 0;
 }

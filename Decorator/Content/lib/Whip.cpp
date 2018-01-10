@@ -16,13 +16,14 @@
 //C system files.
 //C++ system files.
 #include <cassert>
-#include <string>
 #include <iostream>
+#include <memory>
+#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-Whip::Whip(const Beverage* beverage) :
+Whip::Whip(std::shared_ptr<const Beverage> beverage) :
   _beverage(beverage)
 {
   assert(beverage);
@@ -30,7 +31,6 @@ Whip::Whip(const Beverage* beverage) :
 }
 Whip::~Whip() {
   std::cout << "Whip::~Whip" << std::endl;
-  delete _beverage;
 }
 std::string Whip::getDescription() const
 {

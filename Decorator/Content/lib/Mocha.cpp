@@ -17,11 +17,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-Mocha::Mocha(Beverage* beverage) :
+Mocha::Mocha(std::shared_ptr<const Beverage> beverage) :
   _beverage(beverage)
 {
   assert(beverage);
@@ -30,7 +31,6 @@ Mocha::Mocha(Beverage* beverage) :
 Mocha::~Mocha()
 {
   std::cout << "Mocha::~Mocha" << std::endl;
-  delete _beverage;
 }
 std::string Mocha::getDescription() const
 {

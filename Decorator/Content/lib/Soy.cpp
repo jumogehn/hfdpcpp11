@@ -16,13 +16,14 @@
 //C system files.
 //C++ system files.
 #include <cassert>
-#include <string>
 #include <iostream>
+#include <memory>
+#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-Soy::Soy(const Beverage* beverage) :
+Soy::Soy(std::shared_ptr<const Beverage> beverage) :
   _beverage(beverage)
 {
   assert(beverage);
@@ -31,7 +32,6 @@ Soy::Soy(const Beverage* beverage) :
 Soy::~Soy()
 {
   std::cout << "Soy::~Soy" << std::endl;
-  delete _beverage;
 }
 std::string Soy::getDescription() const
 {

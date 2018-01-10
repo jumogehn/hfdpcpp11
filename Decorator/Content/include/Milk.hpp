@@ -19,6 +19,7 @@
 //C system files.
 //C++ system files.
 #include <string>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Beverage.hpp"
@@ -27,10 +28,10 @@
 
 class Milk : public CondimentDecorator {
 
-  const Beverage* _beverage;
+  std::shared_ptr<const Beverage> _beverage;
 
 public:
-  explicit Milk(const Beverage* beverage);
+  explicit Milk(std::shared_ptr<const Beverage> beverage);
   ~Milk();
   std::string getDescription() const;
   double cost() const;
