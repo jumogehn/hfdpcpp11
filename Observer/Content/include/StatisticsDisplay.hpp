@@ -21,8 +21,8 @@
 //C++ system files.
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Observer.hpp"
 #include "DisplayElement.hpp"
+#include "Observer.hpp"
 #include "WeatherData.hpp"
 
 class StatisticsDisplay : private Observer, private DisplayElement {

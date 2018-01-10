@@ -22,8 +22,8 @@
 #include <list>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Subject.hpp"
 #include "Observer.hpp"
+#include "Subject.hpp"
 
 
 class WeatherData : public Subject {
