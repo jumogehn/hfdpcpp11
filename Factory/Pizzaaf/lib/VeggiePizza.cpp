@@ -1,0 +1,43 @@
+//===--- VegiePizza.cpp - ---------------------------------------*- C++ -*-===//
+//
+//                     Head First Design Patterns
+//
+//
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// \brief
+///
+//===----------------------------------------------------------------------===//
+
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+#include "VeggiePizza.hpp"
+//C system files.
+//C++ system files.
+#include <memory>
+#include <iostream>
+#include <cassert>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "Cheese.hpp"
+#include "Dough.hpp"
+#include "Sauce.hpp"
+
+
+VeggiePizza::VeggiePizza(PizzaIngredientFactory* ingredientFactory) :
+  _ingredientFactory(ingredientFactory)
+{
+  assert(ingredientFactory);
+  std::cout << "VeggiePizza::VeggiePizza" << std::endl;
+}
+void VeggiePizza::prepare() const
+{
+  std::cout << "VeggiePizza::prepare" << std::endl;
+  std::cout << "Preparing " << getName().c_str() << std::endl;
+  _dough = std::unique_ptr< Dough>(_ingredientFactory->createDough());
+  _sauce = std::unique_ptr< Sauce>(_ingredientFactory->createSauce());
+  _cheese = std::unique_ptr< Cheese>(_ingredientFactory->createCheese());
+  if (_veggies.empty())
+    _veggies = _ingredientFactory->createVeggies();
+}
