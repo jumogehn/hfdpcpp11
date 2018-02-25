@@ -10,22 +10,28 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "ChicagoPizzaStore.hpp"
+#include "NYPizzaStore.hpp"
 #include "Pizza.hpp"
 #include "PizzaStore.hpp"
-#include "NYPizzaStore.hpp"
-#include "ChicagoPizzaStore.hpp"
-#include <memory>
-#include <iostream>
 
-using namespace HFDP::Factory::Method;
 
 int main( int argc, char* argv[] )
 {
 
-  std::unique_ptr< PizzaStore > nyStore( new NYPizzaStore() );
-  std::unique_ptr< PizzaStore > chicagoStore( new ChicagoPizzaStore() );
+  std::shared_ptr<PizzaStore> nyStore( std::make_shared<NYPizzaStore>() );
+  std::shared_ptr<PizzaStore> chicagoStore( std::make_shared<ChicagoPizzaStore>() );
 
-  std::unique_ptr< Pizza > pizza(nyStore->orderPizza( "cheese" ) );
+  std::shared_ptr<Pizza> pizza(nyStore->orderPizza( "cheese" ) );
   std::cout << "Ethan ordered a " << pizza->getName() << std::endl;
 
   pizza = chicagoStore->orderPizza( "cheese" );

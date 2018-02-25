@@ -10,15 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "ChicagoStyleClamPizza.hpp"
-#include "Utilities.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "ChicagoStyleClamPizza.hpp"
 
-using namespace HFDP::Factory::Method;
 
 ChicagoStyleClamPizza::ChicagoStyleClamPizza()
 {
-  PrintMessage("ChicagoStyleClamPizza::ChicagoStyleClamPizza");
+  std::cout << "ChicagoStyleClamPizza::ChicagoStyleClamPizza" << std::endl;
   _name = "Chicago Style Clam Pizza";
   _dough = "Extra Thick Crust Dough";
   _sauce = "Plum Tomato Sauce";
@@ -27,6 +31,7 @@ ChicagoStyleClamPizza::ChicagoStyleClamPizza()
 }
 void ChicagoStyleClamPizza::cut() const
 {
-  PrintMessage("ChicagoStyleClamPizza::cut");
+  std::cout << "ChicagoStyleClamPizza::cut" << std::endl;
   std::cout << "Cutting the pizza into square slices" << std::endl;
 }
+

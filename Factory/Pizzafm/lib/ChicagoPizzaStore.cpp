@@ -10,30 +10,35 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "Pizza.hpp"
-#include "ChicagoStyleCheesePizza.hpp"
-#include "ChicagoStyleVeggiePizza.hpp"
-#include "ChicagoStyleClamPizza.hpp"
-#include "ChicagoStylePepperoniPizza.hpp"
-#include "ChicagoPizzaStore.hpp"
-#include "Utilities.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <memory>
 #include <string>
+#include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "ChicagoPizzaStore.hpp"
+#include "ChicagoStyleCheesePizza.hpp"
+#include "ChicagoStyleClamPizza.hpp"
+#include "ChicagoStylePepperoniPizza.hpp"
+#include "ChicagoStyleVeggiePizza.hpp"
+#include "Pizza.hpp"
 
-using namespace HFDP::Factory::Method;
 
-std::unique_ptr< Pizza > ChicagoPizzaStore::createPizza( std::string type ) const
+std::shared_ptr< Pizza > ChicagoPizzaStore::createPizza( std::string type ) const
 {
-  PrintMessage("ChicagoPizzaStore::createPizza");
+  std::cout << "ChicagoPizzaStore::createPizza" << std::endl;
 
   if( type.compare( "cheese" ) == 0 ) {
-    return std::unique_ptr< Pizza>( new ChicagoStyleCheesePizza() );
+    return std::shared_ptr<Pizza>( std::make_shared<ChicagoStyleCheesePizza>() );
   } else if( type.compare( "veggie" ) == 0 ) {
-    return std::unique_ptr< Pizza>( new ChicagoStyleVeggiePizza() );
+    return std::shared_ptr<Pizza>( std::make_shared<ChicagoStyleVeggiePizza>() );
   } else if( type.compare( "clam" ) == 0 ) {
-    return std::unique_ptr< Pizza>( new ChicagoStyleClamPizza() );
+    return std::shared_ptr<Pizza>( std::make_shared<ChicagoStyleClamPizza>() );
   } else if( type.compare( "pepperoni" ) == 0 ) {
-    return std::unique_ptr< Pizza>( new ChicagoStylePepperoniPizza() );
-  //} else return std::unique_ptr< Pizza>( 0 );
+    return std::shared_ptr<Pizza>( std::make_shared<ChicagoStylePepperoniPizza>() );
+  //} else return std::shared_ptr<Pizza>( 0 );
   } else return 0;
 }

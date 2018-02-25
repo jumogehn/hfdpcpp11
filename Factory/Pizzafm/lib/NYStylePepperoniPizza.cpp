@@ -10,14 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "NYStylePepperoniPizza.hpp"
-#include "Utilities.hpp"
 
-using namespace HFDP::Factory::Method;
 
 NYStylePepperoniPizza::NYStylePepperoniPizza()
 {
-  PrintMessage("NYStylePepperoniPizza::NYStylePepperoniPizza");
+  std::cout << "NYStylePepperoniPizza::NYStylePepperoniPizza" << std::endl;
   _name = "NY Style Pepperoni Pizza";
   _dough = "Thin Crust Dough";
   _sauce = "Marinara Sauce";

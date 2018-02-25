@@ -10,27 +10,31 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "Pizza.hpp"
-#include "PizzaStore.hpp"
-#include "Utilities.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <memory>
 #include <iostream>
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "Pizza.hpp"
+#include "PizzaStore.hpp"
 
-using namespace HFDP::Factory::Method;
 
 PizzaStore::PizzaStore()
 {
-  PrintMessage("PizzaStore::PizzaStore");
+  std::cout << "PizzaStore::PizzaStore" << std::endl;
 }
 PizzaStore::~PizzaStore()
 {
-  PrintMessage("PizzaStore::~PizzaStore");
+  std::cout << "PizzaStore::~PizzaStore" << std::endl;
 }
-std::unique_ptr< Pizza > PizzaStore::orderPizza( std::string type) const
+std::shared_ptr< Pizza > PizzaStore::orderPizza( std::string type) const
 {
-  PrintMessage("PizzaStore::orderPizza");
-  std::unique_ptr< Pizza > pizza(createPizza(type) );
+  std::cout << "PizzaStore::orderPizza" << std::endl;
+  std::shared_ptr< Pizza > pizza(createPizza(type) );
   std::cout << "--- Making a " << pizza->getName() << " ---"
     << std::endl;
   pizza->prepare();

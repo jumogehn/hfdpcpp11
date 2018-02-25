@@ -14,23 +14,24 @@
 #ifndef	_HFDP_CPP_FACTORY_CHICAGO_PIZZA_STORE_HPP_
 #define _HFDP_CPP_FACTORY_CHICAGO_PIZZA_STORE_HPP_
 
-#include "PizzaStore.hpp"
-#include "Pizza.hpp"
+
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <memory>
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "Pizza.hpp"
+#include "PizzaStore.hpp"
 
-namespace HFDP {
-  namespace Factory {
-    namespace Method {
 
-      class ChicagoPizzaStore : public PizzaStore {
+class ChicagoPizzaStore : public PizzaStore {
 
-      public:
-        std::unique_ptr< Pizza > createPizza( std::string type ) const;
-      };
+public:
+  std::shared_ptr<Pizza> createPizza( std::string type ) const;
+};
 
-    } // namespace Method
-  } // namespace Factory
-} // namespace HFDP
 
 #endif
