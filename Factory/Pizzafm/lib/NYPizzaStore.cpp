@@ -12,6 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
+#include "NYPizzaStore.hpp"
 //C system files.
 //C++ system files.
 #include <memory>
@@ -19,7 +20,6 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "NYPizzaStore.hpp"
 #include "NYStyleCheesePizza.hpp"
 #include "NYStyleClamPizza.hpp"
 #include "NYStylePepperoniPizza.hpp"
