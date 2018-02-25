@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -27,10 +28,10 @@
 
 class VeggiePizza : public Pizza {
 
-  mutable std::unique_ptr< PizzaIngredientFactory > _ingredientFactory;
+  mutable std::shared_ptr<PizzaIngredientFactory> _ingredientFactory;
 
 public:
-  explicit VeggiePizza(PizzaIngredientFactory* ingredientFactory);
+  explicit VeggiePizza(std::shared_ptr<PizzaIngredientFactory> ingredientFactory);
 public:
   void prepare() const;
 };

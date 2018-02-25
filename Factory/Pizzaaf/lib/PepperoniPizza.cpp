@@ -17,11 +17,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-PepperoniPizza::PepperoniPizza(PizzaIngredientFactory* ingredientFactory) :
+PepperoniPizza::PepperoniPizza(std::shared_ptr<PizzaIngredientFactory> ingredientFactory) :
   _ingredientFactory(ingredientFactory)
 {
   assert(ingredientFactory);
@@ -31,11 +32,11 @@ void PepperoniPizza::prepare() const
 {
   std::cout << "PepperoniPizza::prepare" << std::endl;
   std::cout << "Preparing " << getName().c_str() << std::endl;
-  _dough = std::unique_ptr< Dough>(_ingredientFactory->createDough());
-  _sauce = std::unique_ptr< Sauce>(_ingredientFactory->createSauce());
-  _cheese = std::unique_ptr< Cheese>(
+  _dough = std::shared_ptr< Dough>(_ingredientFactory->createDough());
+  _sauce = std::shared_ptr< Sauce>(_ingredientFactory->createSauce());
+  _cheese = std::shared_ptr< Cheese>(
     _ingredientFactory->createCheese());
-  _pepperoni = std::unique_ptr< Pepperoni>(
+  _pepperoni = std::shared_ptr< Pepperoni>(
     _ingredientFactory->createPepperoni());
   if (_veggies.empty())
     _veggies = _ingredientFactory->createVeggies();

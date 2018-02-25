@@ -30,37 +30,37 @@
 
 
 
-Dough* ChicagoPizzaIngredientFactory::createDough() const
+std::shared_ptr<Dough> ChicagoPizzaIngredientFactory::createDough() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createDough" << std::endl;
-  return new ThickCrustDough();
+  return std::make_shared<ThickCrustDough>();
 }
-Sauce* ChicagoPizzaIngredientFactory::createSauce() const
+std::shared_ptr<Sauce> ChicagoPizzaIngredientFactory::createSauce() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createSauce" << std::endl;
-  return new PlumTomatoSauce();
+  return std::make_shared<PlumTomatoSauce>();
 }
-Cheese* ChicagoPizzaIngredientFactory::createCheese() const
+std::shared_ptr<Cheese> ChicagoPizzaIngredientFactory::createCheese() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createCheese" << std::endl;
-  return new MozzarellaCheese();
+  return std::make_shared<MozzarellaCheese>();
 }
-std::vector< Veggies* > ChicagoPizzaIngredientFactory::createVeggies() const
+std::vector< std::shared_ptr<Veggies> > ChicagoPizzaIngredientFactory::createVeggies() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createVeggies" << std::endl;
-  std::vector< Veggies* > value;
-  value.push_back( new BlackOlives() );
-  value.push_back( new Spinach() );
-  value.push_back( new Eggplant() );
+  std::vector< std::shared_ptr<Veggies> > value;
+  value.push_back( std::make_shared<BlackOlives>() );
+  value.push_back( std::make_shared<Spinach>() );
+  value.push_back( std::make_shared<Eggplant>() );
   return value;
 }
-Pepperoni* ChicagoPizzaIngredientFactory::createPepperoni() const
+std::shared_ptr<Pepperoni> ChicagoPizzaIngredientFactory::createPepperoni() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createPepperoni" << std::endl;
-  return new SlicedPepperoni();
+  return std::make_shared<SlicedPepperoni>();
 }
-Clams* ChicagoPizzaIngredientFactory::createClam() const
+std::shared_ptr<Clams> ChicagoPizzaIngredientFactory::createClam() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::createClam" << std::endl;
-  return new FrozenClams();
+  return std::make_shared<FrozenClams>();
 }

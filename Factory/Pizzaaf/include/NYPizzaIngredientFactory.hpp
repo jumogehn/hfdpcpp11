@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 #include <string>
 #include <vector>
 //Other libraries' .h files.
@@ -34,12 +35,12 @@
 class NYPizzaIngredientFactory : public PizzaIngredientFactory {
 
 public:
-  Dough * createDough() const;
-  Sauce* createSauce() const;
-  Cheese* createCheese() const;
-  std::vector< Veggies* > createVeggies() const;
-  Pepperoni* createPepperoni() const;
-  Clams* createClam() const;
+  std::shared_ptr<Dough> createDough() const;
+  std::shared_ptr<Sauce> createSauce() const;
+  std::shared_ptr<Cheese> createCheese() const;
+  std::vector< std::shared_ptr<Veggies> > createVeggies() const;
+  std::shared_ptr<Pepperoni> createPepperoni() const;
+  std::shared_ptr<Clams> createClam() const;
 };
 
 

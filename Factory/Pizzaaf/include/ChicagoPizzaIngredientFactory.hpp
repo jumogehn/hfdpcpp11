@@ -19,6 +19,7 @@
 //C system files.
 //C++ system files.
 #include <vector>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Cheese.hpp"
@@ -33,12 +34,12 @@
 class ChicagoPizzaIngredientFactory : public PizzaIngredientFactory {
 
 public:
-  Dough * createDough() const;
-  Sauce* createSauce() const;
-  Cheese* createCheese() const;
-  std::vector< Veggies* > createVeggies() const;
-  Pepperoni* createPepperoni() const;
-  Clams* createClam() const;
+  std::shared_ptr<Dough> createDough() const;
+  std::shared_ptr<Sauce> createSauce() const;
+  std::shared_ptr<Cheese> createCheese() const;
+  std::vector< std::shared_ptr<Veggies> > createVeggies() const;
+  std::shared_ptr<Pepperoni> createPepperoni() const;
+  std::shared_ptr<Clams> createClam() const;
 };
 
 

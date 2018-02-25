@@ -24,5 +24,5 @@
 std::string Garlic::toString() const
 {
   std::cout << "Garlic::toString" << std::endl;
-  return ( "Garlic" );
+  return "Garlic";
 }

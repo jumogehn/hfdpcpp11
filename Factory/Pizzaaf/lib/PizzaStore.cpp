@@ -30,10 +30,10 @@ PizzaStore::~PizzaStore()
 {
   std::cout << "PizzaStore::~PizzaStore" << std::endl;
 }
-std::unique_ptr< Pizza > PizzaStore::orderPizza( std::string type ) const
+std::shared_ptr< Pizza > PizzaStore::orderPizza( std::string type ) const
 {
   std::cout << "PizzaStore::orderPizza" << std::endl;
-  std::unique_ptr< Pizza > pizza( createPizza( type ) );
+  std::shared_ptr< Pizza > pizza( createPizza( type ) );
   std::cout << "--- Making a " << pizza->getName() << " ---"
     << std::endl;
   pizza->prepare();

@@ -24,5 +24,5 @@
 std::string Mushroom::toString() const
 {
   std::cout << "Mushroom::toString" << std::endl;
-  return ( "Mushrooms" );
+  return "Mushrooms";
 }

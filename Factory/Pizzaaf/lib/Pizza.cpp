@@ -16,6 +16,7 @@
 //C system files.
 //C++ system files.
 #include <iostream>
+#include <memory>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -31,10 +32,10 @@ Pizza::Pizza()
 Pizza::~Pizza()
 {
   std::cout << "Pizza::~Pizza" << std::endl;
-  for (std::vector< Veggies* >::iterator iterator = _veggies.begin();
-    _veggies.end() != iterator; ++iterator) {
-    delete *iterator;
-  }
+  //for (std::vector< std::shared_ptr<Veggies> >::iterator iterator = _veggies.begin();
+  //  _veggies.end() != iterator; ++iterator) {
+  //  delete *iterator;
+  //}
   _veggies.clear();
 }
 void Pizza::bake() const
@@ -89,7 +90,7 @@ std::string Pizza::toString() const
     value << std::endl;
   }
   if (_veggies.size() != 0) {
-    for (std::vector< Veggies* >::iterator iterator = _veggies.begin();
+    for (std::vector< std::shared_ptr<Veggies> >::iterator iterator = _veggies.begin();
       _veggies.end() != iterator; ++iterator) {
       value << (*iterator)->toString() << ", ";
     }

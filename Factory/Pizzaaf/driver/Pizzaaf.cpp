@@ -26,10 +26,10 @@
 
 int main(int argc, char* argv[]) {
 
-  std::unique_ptr< PizzaStore > nyStore(new NYPizzaStore());
-  std::unique_ptr< PizzaStore > chicagoStore(new ChicagoPizzaStore());
+  std::shared_ptr< PizzaStore > nyStore(std::make_shared<NYPizzaStore>());
+  std::shared_ptr< PizzaStore > chicagoStore(std::make_shared<ChicagoPizzaStore>());
 
-  std::unique_ptr< Pizza > pizza = nyStore->orderPizza("cheese");
+  std::shared_ptr< Pizza > pizza = nyStore->orderPizza("cheese");
   std::cout << "Ethan ordered a " << pizza->toString() << std::endl;
 
   pizza = chicagoStore->orderPizza("cheese");

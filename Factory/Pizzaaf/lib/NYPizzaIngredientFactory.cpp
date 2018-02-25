@@ -16,6 +16,7 @@
 //C system files.
 //C++ system files.
 #include <iostream>
+#include <memory>
 #include <vector>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -36,38 +37,38 @@
 #include "Veggies.hpp"
 
 
-Dough* NYPizzaIngredientFactory::createDough() const
+std::shared_ptr<Dough> NYPizzaIngredientFactory::createDough() const
 {
   std::cout << "NYPizzaIngredientFactory::createDough" << std::endl;
-  return new ThinCrustDough();
+  return std::make_shared<ThinCrustDough>();
 }
-Sauce* NYPizzaIngredientFactory::createSauce() const
+std::shared_ptr<Sauce> NYPizzaIngredientFactory::createSauce() const
 {
   std::cout << "NYPizzaIngredientFactory::createSauce" << std::endl;
-  return new MarinaraSauce();
+  return std::make_shared<MarinaraSauce>();
 }
-Cheese* NYPizzaIngredientFactory::createCheese() const
+std::shared_ptr<Cheese> NYPizzaIngredientFactory::createCheese() const
 {
   std::cout << "NYPizzaIngredientFactory::createCheese" << std::endl;
-  return new ReggianoCheese();
+  return std::make_shared<ReggianoCheese>();
 }
-std::vector< Veggies* > NYPizzaIngredientFactory::createVeggies() const
+std::vector< std::shared_ptr<Veggies> > NYPizzaIngredientFactory::createVeggies() const
 {
   std::cout << "NYPizzaIngredientFactory::createVeggies" << std::endl;
-  std::vector< Veggies* > veggies;
-  veggies.push_back( new Garlic() );
-  veggies.push_back( new Onion() );
-  veggies.push_back( new Mushroom() );
-  veggies.push_back( new RedPepper() );
+  std::vector< std::shared_ptr<Veggies> > veggies;
+  veggies.push_back( std::make_shared<Garlic>() );
+  veggies.push_back( std::make_shared<Onion>() );
+  veggies.push_back( std::make_shared<Mushroom>() );
+  veggies.push_back( std::make_shared<RedPepper>() );
   return veggies;
 }
-Pepperoni* NYPizzaIngredientFactory::createPepperoni() const
+std::shared_ptr<Pepperoni> NYPizzaIngredientFactory::createPepperoni() const
 {
   std::cout << "NYPizzaIngredientFactory::createPepperoni" << std::endl;
-  return new SlicedPepperoni();
+  return std::make_shared<SlicedPepperoni>();
 }
-Clams* NYPizzaIngredientFactory::createClam() const
+std::shared_ptr<Clams> NYPizzaIngredientFactory::createClam() const
 {
   std::cout << "NYPizzaIngredientFactory::createClam" << std::endl;
-  return new FreshClams();
+  return std::make_shared<FreshClams>();
 }
