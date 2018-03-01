@@ -10,10 +10,17 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "ChocolateBoiler.hpp"
+//C system files.
+//C++ system files.
+#include <cstddef>
 #include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Factory::Singleton;
 
 ChocolateBoiler::ChocolateBoiler()
 {
@@ -22,15 +29,15 @@ ChocolateBoiler::ChocolateBoiler()
 }
 ChocolateBoiler::~ChocolateBoiler()
 {
-  _uniqueInstance = 0;
+  _uniqueInstance = nullptr;
 }
 
-ChocolateBoiler* ChocolateBoiler::getInstance()
+std::shared_ptr<ChocolateBoiler> ChocolateBoiler::getInstance()
 {
-  if( _uniqueInstance == 0 ) {
+  if( _uniqueInstance == nullptr ) {
     std::cout
       << "Creating unique instance of Chocolate Boiler" << std::endl;
-    _uniqueInstance = new ChocolateBoiler();
+    _uniqueInstance = std::make_shared<ChocolateBoiler>();
   }
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
   return _uniqueInstance;
