@@ -10,39 +10,43 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "GarageDoor.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::SimpleRemote;
 
 GarageDoor::GarageDoor()
 {
-  PrintMessage("GarageDoor::GarageDoor");
+  std::cout << "GarageDoor::GarageDoor" << std::endl;
 }
 void GarageDoor::up() const
 {
-  PrintMessage("GarageDoor::up");
+  std::cout << "GarageDoor::up" << std::endl;
   std::cout << "Garage Door is Open" << std::endl;
 }
 void GarageDoor::down() const
 {
-  PrintMessage("GarageDoor::down");
+  std::cout << "GarageDoor::down" << std::endl;
   std::cout << "Garage Door is Closed" << std::endl;
 }
 void GarageDoor::stop() const
 {
-  PrintMessage("GarageDoor::stop");
+  std::cout << "GarageDoor::stop" << std::endl;
   std::cout << "Garage Door is Stopped" << std::endl;
 }
 void GarageDoor::lightOn() const
 {
-  PrintMessage("GarageDoor::lightOn");
+  std::cout << "GarageDoor::lightOn" << std::endl;
   std::cout << "Garage light is on" << std::endl;
 }
 void GarageDoor::lightOff() const
 {
-  PrintMessage("GarageDoor::lightOff");
+  std::cout << "GarageDoor::lightOff" << std::endl;
   std::cout << "Garage light is off" << std::endl;
 }
 

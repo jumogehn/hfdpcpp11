@@ -11,27 +11,33 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "SimpleRemoteControl.hpp"
-#include "Light.hpp"
-#include "GarageDoor.hpp"
-#include "LightOnCommand.hpp"
-#include "GarageDoorOpenCommand.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <memory>
+#include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "GarageDoor.hpp"
+#include "GarageDoorOpenCommand.hpp"
+#include "Light.hpp"
+#include "LightOnCommand.hpp"
+#include "SimpleRemoteControl.hpp"
 
-using namespace HFDP::Command::SimpleRemote;
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr< SimpleRemoteControl > remote( new SimpleRemoteControl() );
-  std::unique_ptr< Light > light( new Light() );
-  std::unique_ptr< GarageDoor > garageDoor( new GarageDoor() );
-  std::unique_ptr< LightOnCommand > lightOn( new LightOnCommand( light.get() ) );
-  std::unique_ptr< GarageDoorOpenCommand >
-    garageOpen( new GarageDoorOpenCommand(garageDoor.get() ) );
+  std::shared_ptr< SimpleRemoteControl > remote( std::make_shared<SimpleRemoteControl>() );
+  std::shared_ptr< Light > light( std::make_shared<Light>() );
+  std::shared_ptr< GarageDoor > garageDoor( std::make_shared<GarageDoor>() );
+  std::shared_ptr< LightOnCommand > lightOn( std::make_shared<LightOnCommand>( light ) );
+  std::shared_ptr< GarageDoorOpenCommand >
+    garageOpen( std::make_shared<GarageDoorOpenCommand>(garageDoor ) );
 
-  remote->setCommand( lightOn.get() );
+  remote->setCommand( lightOn );
   remote->buttonWasPressed();
-  remote->setCommand( garageOpen.get() );
+  remote->setCommand( garageOpen );
   remote->buttonWasPressed();
 
   return 0;

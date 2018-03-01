@@ -10,28 +10,35 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "SimpleRemoteControl.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <cstddef>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::SimpleRemote;
 
 
 SimpleRemoteControl::SimpleRemoteControl() :
-  _slot( 0 )
+  _slot( nullptr )
 {
-  PrintMessage("SimpleRemoteControl::SimpleRemoteControl");
+  std::cout << "SimpleRemoteControl::SimpleRemoteControl" << std::endl;
 }
-void SimpleRemoteControl::setCommand( const Command* command )
+void SimpleRemoteControl::setCommand( const std::shared_ptr<Command> command )
 {
   assert( command );
-  PrintMessage("SimpleRemoteControl::setCommand");
+  std::cout << "SimpleRemoteControl::setCommand" << std::endl;
   _slot = command;
 }
 void SimpleRemoteControl::buttonWasPressed() const
 {
   assert( _slot );
-  PrintMessage("SimpleRemoteControl::buttonWasPressed");
+  std::cout << "SimpleRemoteControl::buttonWasPressed" << std::endl;
   _slot->execute();
 }
 

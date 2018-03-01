@@ -10,22 +10,27 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "LightOffCommand.hpp"
-#include "Utilities.hpp"
-#include <iostream>
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::SimpleRemote;
 
-LightOffCommand::LightOffCommand( const Light* light ) :
+LightOffCommand::LightOffCommand( const std::shared_ptr<Light> light ) :
   _light( light )
 {
   assert( light );
-  PrintMessage("LightOffCommand::LightOffCommand");
+  std::cout << "LightOffCommand::LightOffCommand" << std::endl;
 }
 void LightOffCommand::execute() const
 {
-  PrintMessage("LightOffCommand::execute");
+  std::cout << "LightOffCommand::execute" << std::endl;
   _light->off();
 }
 
