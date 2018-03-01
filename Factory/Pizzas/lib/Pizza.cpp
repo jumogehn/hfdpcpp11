@@ -11,51 +11,55 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "Pizza.hpp"
-#include "Utilities.hpp"
-#include <string>
-#include <sstream>
+//C system files.
+//C++ system files.
 #include <iostream>
+#include <sstream>
+#include <string>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HeadFirstDesignPatterns::Factory::Simple;
 
 Pizza::Pizza()
 {
-  PrintMessage("Pizza::Pizza");
+  std::cout << "Pizza::Pizza" << std::endl;
 }
 
 Pizza::~Pizza()
 {
-  PrintMessage("Pizza::~Pizza");
+  std::cout << "Pizza::~Pizza" << std::endl;
 }
 std::string Pizza::getName() const
 {
-  PrintMessage("Pizza::getName");
+  std::cout << "Pizza::getName" << std::endl;
   return _name;
 }
 void Pizza::prepare() const
 {
-  PrintMessage("Pizza::prepare");
+  std::cout << "Pizza::prepare" << std::endl;
   std::cout << "Preparing " << _name.c_str() << std::endl;
 }
 void Pizza::bake() const
 {
-  PrintMessage("Pizza::bake");
+  std::cout << "Pizza::bake" << std::endl;
   std::cout << "Baking " << _name.c_str() << std::endl;
 }
 void Pizza::cut() const
 {
-  PrintMessage("Pizza::cut");
+  std::cout << "Pizza::cut" << std::endl;
   std::cout << "Cutting " << _name.c_str() << std::endl;
 }
 void Pizza::box() const
 {
-  PrintMessage("Pizza::box");
+  std::cout << "Pizza::box" << std::endl;
   std::cout << "Boxing " << _name.c_str() << std::endl;
 }
 std::string Pizza::toString() const
 {
-  PrintMessage("Pizza::toString");
+  std::cout << "Pizza::toString" << std::endl;
   // code to display pizza name and ingredients
   std::stringstream value;
   value << "---- " << _name.c_str() << " ----" << std::endl;

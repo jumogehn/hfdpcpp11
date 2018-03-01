@@ -14,26 +14,27 @@
 #ifndef	_HFDP_CPP_SIMPLE_FACTORY_PIZZA_STORE_HPP_
 #define _HFDP_CPP_SIMPLE_FACTORY_PIZZA_STORE_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+#include <string>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "Pizza.hpp"
 #include "SimplePizzaFactory.hpp"
-#include <string>
 
-namespace HeadFirstDesignPatterns {
-  namespace Factory {
-    namespace Simple {
 
-      class PizzaStore {
+class PizzaStore {
 
-        SimplePizzaFactory* _factory;
+  std::shared_ptr<SimplePizzaFactory> _factory;
 
-      public:
-        explicit PizzaStore( SimplePizzaFactory* factory );
+public:
+  explicit PizzaStore( std::shared_ptr<SimplePizzaFactory> factory );
 
-        Pizza* orderPizza( std::string type );
-      };
+  std::shared_ptr<Pizza> orderPizza( std::string type );
+};
 
-    } // namespace Simple
-  } // namespace Factory
-} // namespace HeadFirstDesignPatterns
 
 #endif

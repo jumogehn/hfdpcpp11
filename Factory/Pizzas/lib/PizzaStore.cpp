@@ -10,26 +10,32 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "Pizza.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "PizzaStore.hpp"
-#include "SimplePizzaFactory.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <iostream>
+#include <memory>
 #include <string>
 #include <cassert>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "Pizza.hpp"
+#include "SimplePizzaFactory.hpp"
 
-using namespace HeadFirstDesignPatterns::Factory::Simple;
 
-PizzaStore::PizzaStore( SimplePizzaFactory* factory ) :
+PizzaStore::PizzaStore( std::shared_ptr<SimplePizzaFactory> factory ) :
   _factory( factory )
 {
   assert( factory );
-  PrintMessage("PizzaStore::PizzaStore");
+  std::cout << "PizzaStore::PizzaStore" << std::endl;
 }
 
-Pizza* PizzaStore::orderPizza( std::string type )
+std::shared_ptr<Pizza> PizzaStore::orderPizza( std::string type )
 {
-  PrintMessage("PizzaStore::orderPizza");
-  Pizza* pizza;
+  std::cout << "PizzaStore::orderPizza" << std::endl;
+  std::shared_ptr<Pizza> pizza;
   pizza = _factory->createPizza( type );
   pizza->prepare();
   pizza->bake();

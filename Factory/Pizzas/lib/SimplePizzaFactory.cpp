@@ -10,29 +10,35 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "Pizza.hpp"
-#include "CheesePizza.hpp"
-#include "PepperoniPizza.hpp"
-#include "ClamPizza.hpp"
-#include "VeggiePizza.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "SimplePizzaFactory.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <iostream>
+#include <memory>
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "CheesePizza.hpp"
+#include "ClamPizza.hpp"
+#include "PepperoniPizza.hpp"
+#include "Pizza.hpp"
+#include "VeggiePizza.hpp"
 
-using namespace HeadFirstDesignPatterns::Factory::Simple;
 
-Pizza* SimplePizzaFactory::createPizza( std::string type ) const
+std::shared_ptr<Pizza> SimplePizzaFactory::createPizza( std::string type ) const
 {
-  PrintMessage("SimplePizzaFactory::createPizza");
-  Pizza* pizza = 0;
+  std::cout << "SimplePizzaFactory::createPizza" << std::endl;
+  std::shared_ptr<Pizza> pizza;
   if( type.compare( "cheese" ) == 0 ) {
-    pizza = new CheesePizza();
+    pizza = std::make_shared<CheesePizza>();
   } else if( type.compare( "pepperoni" ) == 0 ) {
-    pizza = new PepperoniPizza();
+    pizza = std::make_shared<PepperoniPizza>();
   } else if( type.compare( "clam" ) == 0 ) {
-    pizza = new ClamPizza();
+    pizza = std::make_shared<ClamPizza>();
   } else if( type.compare( "veggie" ) == 0 ) {
-    pizza = new VeggiePizza();
+    pizza = std::make_shared<VeggiePizza>();
   }
   return pizza;
 }

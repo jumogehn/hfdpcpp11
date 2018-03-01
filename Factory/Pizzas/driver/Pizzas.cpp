@@ -10,23 +10,28 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "Pizza.hpp"
-#include "SimplePizzaFactory.hpp"
-#include "PizzaStore.hpp"
-#include <memory>
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "Pizza.hpp"
+#include "PizzaStore.hpp"
+#include "SimplePizzaFactory.hpp"
 
-using namespace HeadFirstDesignPatterns::Factory::Simple;
 
 int main( int argc, char* argv[] )
 {
-  SimplePizzaFactory factory;
-  PizzaStore store( &factory );
+  std::shared_ptr<SimplePizzaFactory> factory = std::make_shared<SimplePizzaFactory>();
+  PizzaStore store(factory);
 
-  std::unique_ptr< Pizza>pizza(store.orderPizza( "cheese" ) );
+  std::shared_ptr<Pizza>pizza(store.orderPizza( "cheese" ) );
   std::cout << "We ordered a " << pizza->getName() << std::endl;
 
-  pizza = std::unique_ptr< Pizza>(store.orderPizza( "veggie" ) );
+  pizza = std::shared_ptr<Pizza>(store.orderPizza( "veggie" ) );
   std::cout << "We ordered a " << pizza->getName() << std::endl;
 
   return 0;
