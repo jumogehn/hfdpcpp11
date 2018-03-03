@@ -11,32 +11,38 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "Light.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <cassert>
 #include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Undo;
 
 Light::Light( const std::string location ) :
   _location( location ), _level( 0 )
 {
-  PrintMessage("Light::Light");
+  std::cout << "Light::Light" << std::endl;
 }
 void Light::on() const
 {
-  PrintMessage("Light::on");
+  std::cout << "Light::on" << std::endl;
   _level = 100;
   std::cout << _location.c_str() << " light is on" << std::endl;
 }
 void Light::off() const
 {
-  PrintMessage("Light::off");
+  std::cout << "Light::off" << std::endl;
   _level = 0;
   std::cout << _location.c_str() << " light is off" << std::endl;
 }
 void Light::dim( int level ) const
 {
-  PrintMessage("Light::dim");
+  std::cout << "Light::dim" << std::endl;
   _level = level;
   if( _level == 0 ) {
     off();
@@ -46,7 +52,7 @@ void Light::dim( int level ) const
 }
 int Light::getLevel() const
 {
-  PrintMessage("Light::getLevel");
+  std::cout << "Light::getLevel" << std::endl;
   return _level;
 }
 

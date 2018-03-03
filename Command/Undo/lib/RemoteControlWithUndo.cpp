@@ -11,19 +11,25 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "RemoteControlWithUndo.hpp"
-#include "NoCommand.hpp"
-#include "Utilities.hpp"
-#include <sstream>
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+#include <sstream>
 #include <typeinfo>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "NoCommand.hpp"
 
-using namespace HFDP::Command::Undo;
 
 RemoteControlWithUndo::RemoteControlWithUndo()
 {
-  PrintMessage("RemoteControlWithUndo::RemoteControlWithUndo");
-  _noCommand = new NoCommand();
+  std::cout << "RemoteControlWithUndo::RemoteControlWithUndo" << std::endl;
+  _noCommand = std::make_shared<NoCommand>();
   for( int i = 0; i < SLOTS; i++ ) {
     _onCommands[i] = _noCommand;
     _offCommands[i] = _noCommand;
@@ -32,38 +38,38 @@ RemoteControlWithUndo::RemoteControlWithUndo()
 }
 RemoteControlWithUndo::~RemoteControlWithUndo()
 {
-  PrintMessage("RemoteControlWithUndo::~RemoteControlWithUndo");
-  delete _noCommand;
+  std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
+  //delete _noCommand;
 }
-void RemoteControlWithUndo::setCommand( int slot, Command* onCommand, Command* offCommand )
+void RemoteControlWithUndo::setCommand( int slot, std::shared_ptr<Command> onCommand, std::shared_ptr<Command> offCommand )
 {
   assert( slot <= SLOTS ); assert( onCommand ); assert( offCommand );
-  PrintMessage("RemoteControlWithUndo::setCommand");
+  std::cout << "RemoteControlWithUndo::setCommand" << std::endl;
   _onCommands[slot]  = onCommand;
   _offCommands[slot] = offCommand;
 }
 void RemoteControlWithUndo::onButtonWasPushed( int slot ) const
 {
   assert( slot <= SLOTS );
-  PrintMessage("RemoteControlWithUndo::onButtonWasPushed");
+  std::cout << "RemoteControlWithUndo::onButtonWasPushed" << std::endl;
   _onCommands[slot]->execute();
   _undoCommand = _onCommands[slot];
 }
 void RemoteControlWithUndo::offButtonWasPushed( int slot ) const
 {
   assert( slot <= SLOTS );
-  PrintMessage("RemoteControlWithUndo::offButtonWasPushed");
+  std::cout << "RemoteControlWithUndo::offButtonWasPushed" << std::endl;
   _offCommands[slot]->execute();
   _undoCommand = _offCommands[slot];
 }
 void RemoteControlWithUndo::undoButtonWasPushed() const
 {
-  PrintMessage("RemoteControlWithUndo::undoButtonWasPushed");
+  std::cout << "RemoteControlWithUndo::undoButtonWasPushed" << std::endl;
   _undoCommand->undo();
 }
 std::string RemoteControlWithUndo::toString() const
 {
-  PrintMessage("RemoteControlWithUndo::toString");
+  std::cout << "RemoteControlWithUndo::toString" << std::endl;
   std::stringstream value;
   value << std::endl << "------ Remote Control -------" << std::endl;
   for( int i = 0; i < SLOTS; i++ ) {

@@ -11,28 +11,34 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "CeilingFanLowCommand.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Undo;
 
-CeilingFanLowCommand::CeilingFanLowCommand( const CeilingFan* ceilingFan ) :
+CeilingFanLowCommand::CeilingFanLowCommand( const std::shared_ptr<CeilingFan> ceilingFan ) :
   _ceilingFan( ceilingFan )
 {
-  PrintMessage("CeilingFanLowCommand::CeilingFanLowCommand");
+  std::cout << "CeilingFanLowCommand::CeilingFanLowCommand" << std::endl;
   assert( ceilingFan );
   _prevSpeed = _ceilingFan->getSpeed();
 }
 void CeilingFanLowCommand::execute() const
 {
-  PrintMessage("CeilingFanLowCommand::execute");
+  std::cout << "CeilingFanLowCommand::execute" << std::endl;
   _prevSpeed = _ceilingFan->getSpeed();
   _ceilingFan->low();
 }
 void CeilingFanLowCommand::undo() const
 {
-  PrintMessage("CeilingFanLowCommand::undo");
+  std::cout << "CeilingFanLowCommand::undo" << std::endl;
   if( _prevSpeed == CeilingFan::HIGH ) {
     _ceilingFan->high();
   } else if( _prevSpeed == CeilingFan::MEDIUM ) {

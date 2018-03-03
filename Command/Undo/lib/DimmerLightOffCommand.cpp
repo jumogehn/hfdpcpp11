@@ -11,28 +11,34 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "DimmerLightOffCommand.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Undo;
 
-DimmerLightOffCommand::DimmerLightOffCommand( const Light* light ) :
+DimmerLightOffCommand::DimmerLightOffCommand( const std::shared_ptr<Light> light ) :
   _light( light )
 {
   assert( light );
-  PrintMessage("DimmerLightOffCommand::DimmerLightOffCommand");
+  std::cout << "DimmerLightOffCommand::DimmerLightOffCommand" << std::endl;
   _prevLevel = _light->getLevel();
 }
 void DimmerLightOffCommand::execute() const
 {
-  PrintMessage("DimmerLightOffCommand::execute");
+  std::cout << "DimmerLightOffCommand::execute" << std::endl;
   _prevLevel = _light->getLevel();
   _light->off();
 }
 void DimmerLightOffCommand::undo() const
 {
-  PrintMessage("DimmerLightOffCommand::undo");
+  std::cout << "DimmerLightOffCommand::undo" << std::endl;
   _light->dim( _prevLevel );
 }
 

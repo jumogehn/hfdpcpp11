@@ -11,34 +11,39 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "RemoteControlWithUndo.hpp"
-#include "Light.hpp"
-#include "LightOnCommand.hpp"
-#include "LightOffCommand.hpp"
-#include "CeilingFan.hpp"
-#include "CeilingFanMediumCommand.hpp"
-#include "CeilingFanHighCommand.hpp"
-#include "CeilingFanOffCommand.hpp"
-#include <memory>
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "CeilingFan.hpp"
+#include "CeilingFanHighCommand.hpp"
+#include "CeilingFanMediumCommand.hpp"
+#include "CeilingFanOffCommand.hpp"
+#include "Light.hpp"
+#include "LightOffCommand.hpp"
+#include "LightOnCommand.hpp"
+#include "RemoteControlWithUndo.hpp"
 
-using namespace HFDP::Command::Undo;
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr< RemoteControlWithUndo > remoteControl(
-    new RemoteControlWithUndo() );
+  std::shared_ptr< RemoteControlWithUndo > remoteControl(
+    std::make_shared<RemoteControlWithUndo>() );
 
-  std::unique_ptr< Light > livingRoomLight(
-    new Light( "Living Room" ) );
+  std::shared_ptr< Light > livingRoomLight(
+    std::make_shared<Light>( "Living Room" ) );
 
-  std::unique_ptr< LightOnCommand > livingRoomLightOn(
-    new LightOnCommand( livingRoomLight.get() ) );
-  std::unique_ptr< LightOffCommand > livingRoomLightOff(
-    new LightOffCommand( livingRoomLight.get() ) );
+  std::shared_ptr< LightOnCommand > livingRoomLightOn(
+    std::make_shared<LightOnCommand>( livingRoomLight ) );
+  std::shared_ptr< LightOffCommand > livingRoomLightOff(
+    std::make_shared<LightOffCommand>( livingRoomLight ) );
 
-  remoteControl->setCommand( 0, livingRoomLightOn.get(),
-                             livingRoomLightOff.get() );
+  remoteControl->setCommand( 0, livingRoomLightOn,
+                             livingRoomLightOff );
 
   remoteControl->onButtonWasPushed( 0 );
   remoteControl->offButtonWasPushed( 0 );
@@ -49,18 +54,18 @@ int main( int argc, char* argv[] ) {
   std::cout << remoteControl->toString() << std::endl;
   remoteControl->undoButtonWasPushed();
 
-  std::unique_ptr< CeilingFan > ceilingFan(
-    new CeilingFan( "Living Room" ) );
+  std::shared_ptr< CeilingFan > ceilingFan(
+    std::make_shared<CeilingFan>( "Living Room" ) );
 
-  std::unique_ptr< CeilingFanMediumCommand > ceilingFanMedium(
-    new CeilingFanMediumCommand( ceilingFan.get() ) );
-  std::unique_ptr< CeilingFanHighCommand > ceilingFanHigh(
-    new CeilingFanHighCommand( ceilingFan.get() ) );
-  std::unique_ptr< CeilingFanOffCommand > ceilingFanOff(
-    new CeilingFanOffCommand( ceilingFan.get() ) );
+  std::shared_ptr< CeilingFanMediumCommand > ceilingFanMedium(
+    std::make_shared<CeilingFanMediumCommand>( ceilingFan ) );
+  std::shared_ptr< CeilingFanHighCommand > ceilingFanHigh(
+    std::make_shared<CeilingFanHighCommand>( ceilingFan ) );
+  std::shared_ptr< CeilingFanOffCommand > ceilingFanOff(
+    std::make_shared<CeilingFanOffCommand>( ceilingFan ) );
 
-  remoteControl->setCommand( 0, ceilingFanMedium.get(), ceilingFanOff.get() );
-  remoteControl->setCommand( 1, ceilingFanHigh.get(), ceilingFanOff.get() );
+  remoteControl->setCommand( 0, ceilingFanMedium, ceilingFanOff );
+  remoteControl->setCommand( 1, ceilingFanHigh, ceilingFanOff );
 
   remoteControl->onButtonWasPushed( 0 );
   remoteControl->offButtonWasPushed( 0 );

@@ -8,7 +8,7 @@ INCLUDE_DIRECTORIES(${Undo_SOURCE_DIR}/include)
 ADD_LIBRARY( undo 
   CeilingFanMediumCommand DimmerLightOnCommand NoCommand
   CeilingFan CeilingFanOffCommand Light RemoteControlWithUndo
-  CeilingFanHighCommand Command LightOffCommand Utilities
+  CeilingFanHighCommand Command LightOffCommand
   CeilingFanLowCommand DimmerLightOffCommand LightOnCommand )
   
 foreach(flag ${CXX11_FEATURE_LIST})
