@@ -5,7 +5,7 @@
 INCLUDE_DIRECTORIES(${Remote_SOURCE_DIR}/include)
 
 # Adds a library called remote (libremote.a under Linux) from the source files under lib/
-ADD_LIBRARY( remote CeilingFan CeilingFanOffCommand CeilingFanOnCommand Command GarageDoor GarageDoorDownCommand GarageDoorUpCommand Hottub HottubOffCommand HottubOnCommand Light LightOffCommand LightOnCommand LivingroomLightOffCommand LivingroomLightOnCommand NoCommand RemoteControl Stereo StereoOffCommand StereoOnWithCDCommand TV Utilities)
+ADD_LIBRARY( remote CeilingFan CeilingFanOffCommand CeilingFanOnCommand Command GarageDoor GarageDoorDownCommand GarageDoorUpCommand Hottub HottubOffCommand HottubOnCommand Light LightOffCommand LightOnCommand LivingroomLightOffCommand LivingroomLightOnCommand NoCommand RemoteControl Stereo StereoOffCommand StereoOnWithCDCommand TV)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET remote

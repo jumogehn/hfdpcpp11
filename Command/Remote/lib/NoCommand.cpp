@@ -10,14 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "NoCommand.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Remote;
 
 void NoCommand::execute() const
 {
-  PrintMessage("NoCommand::execute");
+  std::cout << "NoCommand::execute" << std::endl;
 }
 
 

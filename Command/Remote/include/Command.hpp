@@ -15,24 +15,16 @@
 #define _HFDP_CPP_COMMAND_REMOTE_COMMAND_HPP_
 
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
+class Command {
 
-      class Command {
+  Command( const Command& ); // Disable copy constructor
+  void operator=( const Command& ); // Disable assignment operator
 
-        Command( const Command& ); // Disable copy constructor
-        void operator=( const Command& ); // Disable assignment operator
-
-      protected:
-        Command();
-      public:
-        virtual ~Command();
-        virtual void execute() const = 0;
-      };
-
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
+protected:
+  Command();
+public:
+  virtual ~Command();
+  virtual void execute() const = 0;
+};
 
 #endif

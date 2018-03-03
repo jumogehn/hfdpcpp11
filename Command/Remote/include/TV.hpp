@@ -14,26 +14,24 @@
 #ifndef	_HFDP_CPP_COMMAND_REMOTE_TV_HPP_
 #define _HFDP_CPP_COMMAND_REMOTE_TV_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
+class TV {
 
-      class TV {
+  mutable int _channel;
+  std::string _location;
 
-        mutable int _channel;
-        std::string _location;
-
-      public:
-        explicit TV( const std::string location );
-        void on() const;
-        void off() const;
-        void setInputChannel();
-      };
-
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
+public:
+  explicit TV( const std::string location );
+  void on() const;
+  void off() const;
+  void setInputChannel();
+};
 
 #endif

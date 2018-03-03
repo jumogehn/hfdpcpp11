@@ -14,24 +14,25 @@
 #ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_CEILING_FAN_OFF_COMMAND_HPP_
 #define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_CEILING_FAN_OFF_COMMAND_HPP_
 
-#include "Command.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "CeilingFan.hpp"
+#include "Command.hpp"
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
 
-      class CeilingFanOffCommand : public Command {
+class CeilingFanOffCommand : public Command {
 
-        const CeilingFan* _ceilingFan;
+  const std::shared_ptr<CeilingFan> _ceilingFan;
 
-      public:
-        explicit CeilingFanOffCommand( const CeilingFan* ceilingFan );
-        void execute() const;
-      };
+public:
+  explicit CeilingFanOffCommand( const std::shared_ptr<CeilingFan> ceilingFan );
+  void execute() const;
+};
 
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
 
 #endif

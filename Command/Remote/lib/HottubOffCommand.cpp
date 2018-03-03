@@ -10,22 +10,28 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "HottubOffCommand.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Remote;
 
-HottubOffCommand::HottubOffCommand( const Hottub* hottub ) :
+HottubOffCommand::HottubOffCommand( const std::shared_ptr<Hottub> hottub ) :
   _hottub( hottub )
 {
-  PrintMessage("HottubOffCommand::HottubOffCommand");
+  std::cout << "HottubOffCommand::HottubOffCommand" << std::endl;
   assert( hottub );
 }
 
 void HottubOffCommand::execute() const
 {
-  PrintMessage("HottubOffCommand::execute");
+  std::cout << "HottubOffCommand::execute" << std::endl;
   _hottub->cool();
   _hottub->off();
 }

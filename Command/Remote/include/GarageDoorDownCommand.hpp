@@ -14,24 +14,25 @@
 #ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_GARAGE_DOOR_DOWN_COMMAND_HPP_
 #define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_GARAGE_DOOR_DOWN_COMMAND_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "Command.hpp"
 #include "GarageDoor.hpp"
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
 
-      class GarageDoorDownCommand : public Command {
+class GarageDoorDownCommand : public Command {
 
-        const GarageDoor* _garageDoor;
+  const std::shared_ptr<GarageDoor> _garageDoor;
 
-      public:
-        explicit GarageDoorDownCommand( const GarageDoor* garageDoor );
-        void execute() const;
-      };
+public:
+  explicit GarageDoorDownCommand( const std::shared_ptr<GarageDoor> garageDoor );
+  void execute() const;
+};
 
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
 
 #endif

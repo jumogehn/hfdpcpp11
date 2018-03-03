@@ -12,72 +12,76 @@
 
 
 
-#include "RemoteControl.hpp"
-#include "Light.hpp"
-#include "CeilingFan.hpp"
-#include "GarageDoor.hpp"
-#include "Stereo.hpp"
-#include "LightOnCommand.hpp"
-#include "LightOffCommand.hpp"
-#include "CeilingFanOnCommand.hpp"
-#include "CeilingFanOffCommand.hpp"
-#include "GarageDoorUpCommand.hpp"
-#include "GarageDoorDownCommand.hpp"
-#include "StereoOnWithCDCommand.hpp"
-#include "StereoOffCommand.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <memory>
 #include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "CeilingFan.hpp"
+#include "CeilingFanOffCommand.hpp"
+#include "CeilingFanOnCommand.hpp"
+#include "GarageDoor.hpp"
+#include "GarageDoorDownCommand.hpp"
+#include "GarageDoorUpCommand.hpp"
+#include "Light.hpp"
+#include "LightOffCommand.hpp"
+#include "LightOnCommand.hpp"
+#include "RemoteControl.hpp"
+#include "Stereo.hpp"
+#include "StereoOffCommand.hpp"
+#include "StereoOnWithCDCommand.hpp"
 
 
-
-using namespace HFDP::Command::Remote;
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr< RemoteControl > remoteControl(
-    new RemoteControl() );
+  std::shared_ptr< RemoteControl > remoteControl(
+    std::make_shared<RemoteControl>() );
 
-  std::unique_ptr< Light > livingRoomLight(
-    new Light( "Living Room" ) );
-  std::unique_ptr< Light > kitchenLight(
-    new Light( "Kitchen" ) );
-  std::unique_ptr< CeilingFan > ceilingFan(
-    new CeilingFan( "Living Room" ) );
-  std::unique_ptr< GarageDoor > garageDoor(
-    new GarageDoor( "Garage" ) );
-  std::unique_ptr< Stereo > stereo(
-    new Stereo( "Living Room" ) );
+  std::shared_ptr< Light > livingRoomLight(
+    std::make_shared<Light>( "Living Room" ) );
+  std::shared_ptr< Light > kitchenLight(
+    std::make_shared<Light>( "Kitchen" ) );
+  std::shared_ptr< CeilingFan > ceilingFan(
+    std::make_shared<CeilingFan>( "Living Room" ) );
+  std::shared_ptr< GarageDoor > garageDoor(
+    std::make_shared<GarageDoor>( "Garage" ) );
+  std::shared_ptr< Stereo > stereo(
+    std::make_shared<Stereo>( "Living Room" ) );
 
-  std::unique_ptr< LightOnCommand > livingRoomLightOn(
-    new LightOnCommand( livingRoomLight.get() ) );
-  std::unique_ptr< LightOffCommand > livingRoomLightOff(
-    new LightOffCommand( livingRoomLight.get() ) );
-  std::unique_ptr< LightOnCommand > kitchenLightOn(
-    new LightOnCommand( kitchenLight.get() ) );
-  std::unique_ptr< LightOffCommand > kitchenLightOff(
-    new LightOffCommand( kitchenLight.get() ) );
+  std::shared_ptr< LightOnCommand > livingRoomLightOn(
+    std::make_shared<LightOnCommand>( livingRoomLight ) );
+  std::shared_ptr< LightOffCommand > livingRoomLightOff(
+    std::make_shared<LightOffCommand>( livingRoomLight ) );
+  std::shared_ptr< LightOnCommand > kitchenLightOn(
+    std::make_shared<LightOnCommand>( kitchenLight ) );
+  std::shared_ptr< LightOffCommand > kitchenLightOff(
+    std::make_shared<LightOffCommand>( kitchenLight ) );
 
-  std::unique_ptr< CeilingFanOnCommand > ceilingFanOn(
-    new CeilingFanOnCommand( ceilingFan.get() ) );
-  std::unique_ptr< CeilingFanOffCommand > ceilingFanOff(
-    new CeilingFanOffCommand( ceilingFan.get() ) );
+  std::shared_ptr< CeilingFanOnCommand > ceilingFanOn(
+    std::make_shared<CeilingFanOnCommand>( ceilingFan ) );
+  std::shared_ptr< CeilingFanOffCommand > ceilingFanOff(
+    std::make_shared<CeilingFanOffCommand>( ceilingFan ) );
 
-  std::unique_ptr< GarageDoorUpCommand > garageDoorUp(
-    new GarageDoorUpCommand( garageDoor.get() ) );
-  std::unique_ptr< GarageDoorDownCommand > garageDoorDown(
-    new GarageDoorDownCommand( garageDoor.get() ) );
+  std::shared_ptr< GarageDoorUpCommand > garageDoorUp(
+    std::make_shared<GarageDoorUpCommand>( garageDoor ) );
+  std::shared_ptr< GarageDoorDownCommand > garageDoorDown(
+    std::make_shared<GarageDoorDownCommand>( garageDoor ) );
 
-  std::unique_ptr< StereoOnWithCDCommand > stereoOnWithCD(
-    new StereoOnWithCDCommand( stereo.get() ) );
-  std::unique_ptr< StereoOffCommand > stereoOff(
-    new StereoOffCommand( stereo.get() ) );
+  std::shared_ptr< StereoOnWithCDCommand > stereoOnWithCD(
+    std::make_shared<StereoOnWithCDCommand>( stereo ) );
+  std::shared_ptr< StereoOffCommand > stereoOff(
+    std::make_shared<StereoOffCommand>( stereo ) );
 
-  remoteControl->setCommand( 0, livingRoomLightOn.get(),
-                             livingRoomLightOff.get() );
-  remoteControl->setCommand( 1, kitchenLightOn.get(), kitchenLightOff.get() );
-  remoteControl->setCommand( 2, ceilingFanOn.get(), ceilingFanOff.get() );
-  remoteControl->setCommand( 3, stereoOnWithCD.get(), stereoOff.get() );
-  remoteControl->setCommand( 4, garageDoorUp.get(), garageDoorDown.get() );
+  remoteControl->setCommand( 0, livingRoomLightOn,
+                             livingRoomLightOff );
+  remoteControl->setCommand( 1, kitchenLightOn, kitchenLightOff );
+  remoteControl->setCommand( 2, ceilingFanOn, ceilingFanOff );
+  remoteControl->setCommand( 3, stereoOnWithCD, stereoOff );
+  remoteControl->setCommand( 4, garageDoorUp, garageDoorDown );
 
   std::cout << remoteControl->toString() << std::endl;
 

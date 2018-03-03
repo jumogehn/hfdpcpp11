@@ -10,22 +10,28 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "StereoOnWithCDCommand.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Remote;
 
-StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
+StereoOnWithCDCommand::StereoOnWithCDCommand( const std::shared_ptr<Stereo> stereo ) :
   _stereo( stereo )
 {
   assert( stereo );
-  PrintMessage("StereoOnWithCDCommand::StereoOnWithCDCommand");
+  std::cout << "StereoOnWithCDCommand::StereoOnWithCDCommand" << std::endl;
 }
 
 void StereoOnWithCDCommand::execute() const
 {
-  PrintMessage("StereoOnWithCDCommand::execute");
+  std::cout << "StereoOnWithCDCommand::execute" << std::endl;
 
   _stereo->on();
   _stereo->setCD();

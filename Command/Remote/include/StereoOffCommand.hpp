@@ -14,24 +14,25 @@
 #ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_STEREO_OFF_COMMAND_HPP_
 #define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_STEREO_OFF_COMMAND_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "Command.hpp"
 #include "Stereo.hpp"
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
 
-      class StereoOffCommand : public Command {
+class StereoOffCommand : public Command {
 
-        const Stereo* _stereo;
+  const std::shared_ptr<Stereo> _stereo;
 
-      public:
-        explicit StereoOffCommand( const Stereo* stereo );
-        void execute() const;
-      };
+public:
+  explicit StereoOffCommand( const std::shared_ptr<Stereo> stereo );
+  void execute() const;
+};
 
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
 
 #endif

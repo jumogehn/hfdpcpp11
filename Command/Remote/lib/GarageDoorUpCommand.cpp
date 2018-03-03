@@ -10,23 +10,29 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "GarageDoorUpCommand.hpp"
-#include "GarageDoor.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "GarageDoor.hpp"
 
-using namespace HFDP::Command::Remote;
 
-GarageDoorUpCommand::GarageDoorUpCommand( const GarageDoor* garageDoor ) :
+GarageDoorUpCommand::GarageDoorUpCommand( const std::shared_ptr<GarageDoor> garageDoor ) :
   _garageDoor( garageDoor )
 {
   assert( garageDoor );
-  PrintMessage("GarageDoorUpCommand::GarageDoorUpCommand");
+  std::cout << "GarageDoorUpCommand::GarageDoorUpCommand" << std::endl;
 }
 
 void GarageDoorUpCommand::execute() const
 {
-  PrintMessage("GarageDoorUpCommand::execute");
+  std::cout << "GarageDoorUpCommand::execute" << std::endl;
   _garageDoor->up();
 }
 

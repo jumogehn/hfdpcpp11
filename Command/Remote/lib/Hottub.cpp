@@ -10,72 +10,76 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "Hottub.hpp"
-#include "Utilities.hpp"
-#include <iostream>
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Command::Remote;
 
 Hottub::Hottub() :
   _on( false ), _temperature( 0 )
 {
-  PrintMessage("Hottub::Hottub");
+  std::cout << "Hottub::Hottub" << std::endl;
 }
 void Hottub::on() const
 {
-  PrintMessage("Hottub::on");
+  std::cout << "Hottub::on" << std::endl;
   _on = true;
 }
 void Hottub::off() const
 {
-  PrintMessage("Hottub::off");
+  std::cout << "Hottub::off" << std::endl;
   _on = false;
 }
 void Hottub::bubblesOn() const
 {
-  PrintMessage("Hottub::bubblesOn");
+  std::cout << "Hottub::bubblesOn" << std::endl;
   if( _on ) {
     std::cout << "Hottub is bubbling!" << std::endl;
   }
 }
 void Hottub::bubblesOff() const
 {
-  PrintMessage("Hottub::bubblesOff");
+  std::cout << "Hottub::bubblesOff" << std::endl;
   if( _on ) {
     std::cout << "Hottub is not bubbling" << std::endl;
   }
 }
 void Hottub::jetsOn() const
 {
-  PrintMessage("Hottub::jetsOn");
+  std::cout << "Hottub::jetsOn" << std::endl;
   if( _on ) {
     std::cout << "Hottub jets are on" << std::endl;
   }
 }
 void Hottub::jetsOff() const
 {
-  PrintMessage("Hottub::jetsOff");
+  std::cout << "Hottub::jetsOff" << std::endl;
   if( _on ) {
     std::cout << "Hottub jets are off" << std::endl;
   }
 }
 void Hottub::setTemperature( int temperature )
 {
-  PrintMessage("Hottub::setTemperature");
+  std::cout << "Hottub::setTemperature" << std::endl;
   assert( temperature >= 0 );
   _temperature = temperature;
 }
 void Hottub::heat() const
 {
-  PrintMessage("Hottub::heat");
+  std::cout << "Hottub::heat" << std::endl;
   _temperature = 105;
   std::cout << "Hottub is heating to a steaming 105 degrees"
     << std::endl;
 }
 void Hottub::cool() const
 {
-  PrintMessage("Hottub::cool");
+  std::cout << "Hottub::cool" << std::endl;
   _temperature = 98;
   std::cout << "Hottub is cooling to 98 degrees" << std::endl;
 }

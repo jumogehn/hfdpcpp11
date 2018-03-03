@@ -14,24 +14,23 @@
 #ifndef	_HFDP_CPP_COMMAND_REMOTE_LIGHT_HPP_
 #define _HFDP_CPP_COMMAND_REMOTE_LIGHT_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
 
-namespace HFDP {
-  namespace Command {
-    namespace Remote {
+class Light {
 
-      class Light {
+  std::string _location;
 
-        std::string _location;
+public:
+  explicit Light( const std::string location);
+  void on() const;
+  void off() const;
+};
 
-      public:
-        explicit Light( const std::string location);
-        void on() const;
-        void off() const;
-      };
-
-    } // namespace Remote
-  } // namespace Command
-} // namespace HFDP
 
 #endif
