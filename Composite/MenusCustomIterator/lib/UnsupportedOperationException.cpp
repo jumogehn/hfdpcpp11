@@ -11,32 +11,39 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "UnsupportedOperationException.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <exception>
+#include <iostream>
+#include <string>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Composite::Menus;
 
 UnsupportedOperationException::UnsupportedOperationException() throw():
   std::exception()
 {
-  PrintMessage("UnsupportedOperationException::"
-                     "UnsupportedOperationException");
+  std::cout << "UnsupportedOperationException::"
+                     "UnsupportedOperationException" << std::endl;
 }
 UnsupportedOperationException::UnsupportedOperationException( const std::string message ) :
   std::exception( /*message.c_str()*/ ), _message( message )
 {
-  PrintMessage("UnsupportedOperationException::"
-                     "UnsupportedOperationException");
+  std::cout << "UnsupportedOperationException::"
+                     "UnsupportedOperationException" << std::endl;
 }
 
 UnsupportedOperationException::~UnsupportedOperationException() throw()
 {
-  PrintMessage("UnsupportedOperationException::"
-                     "~UnsupportedOperationException");
+  std::cout << "UnsupportedOperationException::"
+                     "~UnsupportedOperationException" << std::endl;
 }
 
 std::string UnsupportedOperationException::getMessage() const
 {
-  PrintMessage("UnsupportedOperationException::getMessage");
+  std::cout << "UnsupportedOperationException::getMessage" << std::endl;
   return _message;
 }

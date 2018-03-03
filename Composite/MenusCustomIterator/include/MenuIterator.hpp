@@ -14,30 +14,31 @@
 #ifndef	_HFDP_CPP_COMPOSITE_MENUS_CUSTOM_ITERATOR_MENU_ITERATOR_HPP_
 #define _HFDP_CPP_COMPOSITE_MENUS_CUSTOM_ITERATOR_MENU_ITERATOR_HPP_
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
+#include <memory>
+#include <vector>
+//Other libraries' .h files.
+//Your project's .h files.
 #include "Iterator.hpp"
 #include "MenuComponent.hpp"
-#include <vector>
 
-namespace HFDP {
-  namespace Composite {
-    namespace Menus {
 
-      class MenuIterator : public Iterator<MenuComponent > {
+class MenuIterator : public Iterator<MenuComponent > {
 
-        mutable std::vector< MenuComponent* > _items;
-        mutable std::vector< MenuComponent* >::iterator _iterator;
+  mutable std::vector< std::shared_ptr<MenuComponent> > _items;
+  mutable std::vector< std::shared_ptr<MenuComponent> >::iterator _iterator;
 
-        MenuIterator( const MenuIterator& );
-        void operator=( const MenuIterator& );
+  MenuIterator( const MenuIterator& );
+  void operator=( const MenuIterator& );
 
-      public:
-        explicit MenuIterator( std::vector< MenuComponent* > items );
-        MenuComponent* next() const;
-        bool hasNext() const;
-      };
+public:
+  explicit MenuIterator( std::vector< std::shared_ptr<MenuComponent> > items );
+  std::shared_ptr<MenuComponent> next() const;
+  bool hasNext() const;
+};
 
-    } // namespace Menus
-  } // namespace Composite
-} // namespace HFDP
 
 #endif

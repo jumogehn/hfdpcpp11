@@ -11,42 +11,46 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "MenuItem.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
 #include <iostream>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Composite::Menus;
 
 MenuItem::MenuItem( const std::string name, const std::string description,
                     bool vegetarian, double price ) :
   _name( name ), _description( description ),
   _vegetarian( vegetarian ), _price( price )
 {
-  PrintMessage("MenuItem::MenuItem");
+  std::cout << "MenuItem::MenuItem" << std::endl;
 }
 std::string MenuItem::getName() const
 {
-  PrintMessage("MenuItem::getName");
+  std::cout << "MenuItem::getName" << std::endl;
   return _name;
 }
 std::string MenuItem::getDescription() const
 {
-  PrintMessage("MenuItem::getDescription");
+  std::cout << "MenuItem::getDescription" << std::endl;
   return _description;
 }
 double MenuItem::getPrice() const
 {
-  PrintMessage("MenuItem::getPrice");
+  std::cout << "MenuItem::getPrice" << std::endl;
   return _price;
 }
 bool MenuItem::isVegetarian() const
 {
-  PrintMessage("MenuItem::isVegetarian");
+  std::cout << "MenuItem::isVegetarian" << std::endl;
   return _vegetarian;
 }
 void MenuItem::print() const
 {
-  PrintMessage("MenuItem::print");
+  std::cout << "MenuItem::print" << std::endl;
   std::cout << "  " << getName().c_str();
   if( isVegetarian() ) {
     std::cout << "(v)";

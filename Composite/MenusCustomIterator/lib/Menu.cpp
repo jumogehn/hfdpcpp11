@@ -10,70 +10,77 @@
 ///
 //===----------------------------------------------------------------------===//
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "Menu.hpp"
-#include "MenuIterator.hpp"
-#include "Utilities.hpp"
-#include <iostream>
+//C system files.
+//C++ system files.
 #include <cassert>
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "MenuIterator.hpp"
 
-using namespace HFDP::Composite::Menus;
 
 Menu::Menu( const std::string name, const std::string description ) :
   _name( name ), _description( description )
 {
-  PrintMessage("Menu::Menu");
+  std::cout << "Menu::Menu" << std::endl;
 }
-void Menu::add( MenuComponent* menuComponent )
+void Menu::add( std::shared_ptr<MenuComponent> menuComponent )
 {
   assert( menuComponent );
-  PrintMessage("Menu::add");
+  std::cout << "Menu::add" << std::endl;
   _menuComponents.push_back( menuComponent );
 }
-void Menu::remove( MenuComponent* menuComponent )
+void Menu::remove( std::shared_ptr<MenuComponent> menuComponent )
 {
   assert( menuComponent );
-  PrintMessage("Menu::remove");
+  std::cout << "Menu::remove" << std::endl;
   //////////////////////////////////////////////////////////////
   //std::remove( _menuComponents.begin(), _menuComponents.end(),
   //             menuComponent );
 }
-MenuComponent* Menu::getChild( int i ) const
+ std::shared_ptr<MenuComponent> Menu::getChild( int i ) const
 {
-  PrintMessage("Menu::getChild");
+  std::cout << "Menu::getChild" << std::endl;
   return _menuComponents[i];
 }
 std::string Menu::getName() const
 {
-  PrintMessage("Menu::getName");
+  std::cout << "Menu::getName" << std::endl;
   return _name;
 }
 std::string Menu::getDescription() const
 {
-  PrintMessage("Menu::getDescription");
+  std::cout << "Menu::getDescription" << std::endl;
   return _description;
 }
 void Menu::print() const
 {
-  PrintMessage("Menu::print");
+  std::cout << "Menu::print" << std::endl;
   std::cout << std::endl << getName().c_str();
   std::cout << ", " << getDescription().c_str() << std::endl;
   std::cout << "---------------------" << std::endl;
 
   //There might be a memory leak!! ^^;
-  Iterator<MenuComponent>* menuIterator
+  std::shared_ptr< Iterator<MenuComponent> > menuIterator
     = createIterator();
 
   while( menuIterator->hasNext() ) {
-    MenuComponent* menuComponent = dynamic_cast<MenuComponent * >
-      ( menuIterator->next() );
+    //std::shared_ptr<MenuComponent> menuComponent = dynamic_cast<std::shared_ptr<MenuComponent>>
+    //  ( menuIterator->next() );
+    std::shared_ptr<MenuComponent> menuComponent = menuIterator->next();
     menuComponent->print();
   }
 }
 
-Iterator<MenuComponent>* Menu::createIterator() const
+std::shared_ptr< Iterator<MenuComponent> > Menu::createIterator() const
 {
-  PrintMessage("PancakeHouseMenu::createIterator");
-  return dynamic_cast<Iterator<MenuComponent>* > (
-    new MenuIterator(_menuComponents) );
+  std::cout << "PancakeHouseMenu::createIterator" << std::endl;
+  //return dynamic_cast<std::shared_ptr< Iterator<MenuComponent> > > (
+  //  std::make_shared<MenuIterator>(_menuComponents) );
+  return std::make_shared<MenuIterator>(_menuComponents);
 }
 

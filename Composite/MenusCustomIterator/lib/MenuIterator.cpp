@@ -11,27 +11,33 @@
 //===----------------------------------------------------------------------===//
 
 
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "MenuIterator.hpp"
-#include "Utilities.hpp"
+//C system files.
+//C++ system files.
+#include <iostream>
+#include <memory>
+//Other libraries' .h files.
+//Your project's .h files.
 
-using namespace HFDP::Composite::Menus;
 
-MenuIterator::MenuIterator( std::vector< MenuComponent* > items ) :
+MenuIterator::MenuIterator( std::vector< std::shared_ptr<MenuComponent> > items ) :
   _items( items )
 {
-  PrintMessage("MenuIterator::"
-                     "MenuIterator");
+  std::cout << "MenuIterator::"
+                     "MenuIterator" << std::endl;
   _iterator = _items.begin();
 }
-MenuComponent* MenuIterator::next() const
+ std::shared_ptr<MenuComponent> MenuIterator::next() const
 {
-  PrintMessage("MenuIterator::next");
-  MenuComponent* result = *_iterator++;
+  std::cout << "MenuIterator::next" << std::endl;
+  std::shared_ptr<MenuComponent> result = *_iterator++;
   return result;
 }
 bool MenuIterator::hasNext() const
 {
-  PrintMessage("MenuIterator::hasNext");
+  std::cout << "MenuIterator::hasNext" << std::endl;
 
   if( _iterator != _items.end() ) {
     return true;
