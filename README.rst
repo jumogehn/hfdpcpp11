@@ -33,6 +33,6 @@ Ch. 9 `Composite <Composite>`_
 
 Ch. 10 `State <State>`_
 
-Ch. 11 `Proxy <Proxy>`_
+Ch. 11 Proxy
 
-Ch. 12 `Compound <Compound>`_
+Ch. 12 Compound
