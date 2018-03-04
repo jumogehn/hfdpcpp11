@@ -25,7 +25,7 @@
 
 
 
-SoldState::SoldState( std::shared_ptr<GumballMachine> gumballMachine ) :
+SoldState::SoldState( GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert( gumballMachine );

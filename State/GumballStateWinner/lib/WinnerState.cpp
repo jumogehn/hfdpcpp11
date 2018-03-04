@@ -24,7 +24,7 @@
 
 
 
-WinnerState::WinnerState( std::shared_ptr<GumballMachine> gumballMachine ) :
+WinnerState::WinnerState( GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert( gumballMachine );
