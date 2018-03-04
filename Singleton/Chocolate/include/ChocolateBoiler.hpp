@@ -33,9 +33,9 @@ class ChocolateBoiler {
   void operator=( const ChocolateBoiler& ); // Disable assignment operator
 
   ChocolateBoiler();
-  ~ChocolateBoiler();
 
 public:
+  ~ChocolateBoiler();
   static std::shared_ptr<ChocolateBoiler> getInstance();
   void fill();
   void drain();

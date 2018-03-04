@@ -37,7 +37,8 @@ std::shared_ptr<ChocolateBoiler> ChocolateBoiler::getInstance()
   if( _uniqueInstance == nullptr ) {
     std::cout
       << "Creating unique instance of Chocolate Boiler" << std::endl;
-    _uniqueInstance = std::make_shared<ChocolateBoiler>();
+    //_uniqueInstance = std::make_shared<ChocolateBoiler>();
+    _uniqueInstance.reset(new ChocolateBoiler());
   }
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
   return _uniqueInstance;
