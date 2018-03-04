@@ -8,6 +8,8 @@ I will rewrite all examples with new C++ specification and library which is C++1
 
 License will still remain same `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
+Original Contributor : Glenn Puchtel, https://hfdpcpp.codeplex.com/
+
 Patterns
 --------
 
