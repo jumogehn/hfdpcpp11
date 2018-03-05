@@ -1,0 +1,93 @@
+
+//===--- Amplifier.hpp - ----------------------------------------*- C++ -*-===//
+//
+//                     Head First Design Patterns
+//
+//
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// \brief
+///
+//===----------------------------------------------------------------------===//
+
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+#include "Amplifier.hpp"
+//C system files.
+//C++ system files.
+#include <cassert>
+#include <iostream>
+#include <memory>
+#include <string>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "CdPlayer.hpp"
+#include "DvdPlayer.hpp"
+#include "Tuner.hpp"
+
+
+Amplifier::Amplifier( std::string description ) :
+  _description( description ), _tuner( 0 ), _dvd( 0 ), _cd( 0 )
+{
+  std::cout << "Amplifier::Amplifier" << std::endl;
+}
+void Amplifier::on() const
+{
+  std::cout << "Amplifier::on" << std::endl;
+  std::cout << _description << " on" << std::endl;
+}
+void Amplifier::off() const
+{
+  std::cout << "Amplifier::off" << std::endl;
+  std::cout << _description << " off" << std::endl;
+}
+void Amplifier::setStereoSound()
+{
+  std::cout << "Amplifier::setStereoSound" << std::endl;
+  std::cout << _description << " stereo mode on" << std::endl;
+}
+void Amplifier::setSurroundSound()
+{
+  std::cout << "Amplifier::setSurroundSound" << std::endl;
+  std::cout << _description
+    << " surround sound on (5 speakers, 1 subwoofer)" << std::endl;
+}
+void Amplifier::setVolume( int level )
+{
+  assert( 0 < level );
+  std::cout << "Amplifier::setVolume" << std::endl;
+  std::cout << _description
+    << " setting volume to " << level << std::endl;
+}
+void Amplifier::setTuner( std::shared_ptr<Tuner> tuner)
+{
+  assert( tuner );
+  std::cout << "Amplifier::setTuner" << std::endl;
+  std::cout << _description
+    << " setting tuner to " << tuner->toString() << std::endl;
+  _tuner = tuner;
+}
+void Amplifier::setDvd( std::shared_ptr<DvdPlayer> dvd )
+{
+  assert( dvd );
+  std::cout << "Amplifier::setDvd" << std::endl;
+  std::cout << _description
+    << " setting DVD player to " << dvd->toString()<< std::endl;
+  _dvd = dvd;
+}
+void Amplifier::setCd( std::shared_ptr<CdPlayer> cd )
+{
+  assert( cd );
+  std::cout << "Amplifier::setCd" << std::endl;
+  std::cout << _description
+    << " setting CD player to " << cd->toString() << std::endl;
+  _cd = cd;
+}
+std::string Amplifier::toString() const
+{
+  std::cout << "Amplifier::toString" << std::endl;
+  return _description.c_str();
+}
+
+
