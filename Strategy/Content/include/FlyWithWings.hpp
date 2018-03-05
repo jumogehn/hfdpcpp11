@@ -26,7 +26,7 @@
 class FlyWithWings : public FlyBehavior {
 
 public:
-	void fly() const;
+  void fly() const;
 };
 
 

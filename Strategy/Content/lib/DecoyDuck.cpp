@@ -24,8 +24,8 @@
 #include "MuteQuack.hpp"
 
 
-DecoyDuck::DecoyDuck()
-  : Duck(std::make_shared<FlyNoWay>(), std::make_shared<MuteQuack>())
+  DecoyDuck::DecoyDuck()
+: Duck(std::make_shared<FlyNoWay>(), std::make_shared<MuteQuack>())
 {
   std::cout << "DecoyDuck::DecoyDuck" << std::endl;
 }

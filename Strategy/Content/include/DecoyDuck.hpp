@@ -25,8 +25,8 @@
 class DecoyDuck : public Duck {
 
 public:
-	DecoyDuck();
-	void display() const;
+  DecoyDuck();
+  void display() const;
 };
 
 

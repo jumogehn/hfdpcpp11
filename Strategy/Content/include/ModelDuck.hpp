@@ -26,8 +26,8 @@
 class ModelDuck : public Duck {
 
 public:
-	ModelDuck();
-	void display() const;
+  ModelDuck();
+  void display() const;
 };
 
 
