@@ -23,11 +23,11 @@
 //Your project's .h files.
 #include "DisplayElement.hpp"
 #include "Observer.hpp"
-#include "WeatherData.hpp"
+#include "Subject.hpp"
 
 class ForecastDisplay : private Observer, private DisplayElement {
 
-  std::shared_ptr<WeatherData> _weatherData;
+  std::shared_ptr<Subject> _weatherData;
   float _currentPressure;
   float _lastPressure;
 
@@ -35,7 +35,7 @@ class ForecastDisplay : private Observer, private DisplayElement {
   void operator=(const ForecastDisplay&); // Disable assignment operator
 
 public:
-  explicit ForecastDisplay(std::shared_ptr<WeatherData> weatherData);
+  explicit ForecastDisplay(std::shared_ptr<Subject> weatherData);
   ~ForecastDisplay();
   void update(float temp, float humidity, float pressure);
   void display() const;

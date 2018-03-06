@@ -21,14 +21,15 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "Subject.hpp"
 
-ForecastDisplay::ForecastDisplay(std::shared_ptr<WeatherData> weatherData) :
+ForecastDisplay::ForecastDisplay(std::shared_ptr<Subject> weatherData) :
   _weatherData(weatherData), _currentPressure(29.92F),
   _lastPressure(0)
 {
   assert(weatherData);
   std::cout << "ForecastDisplay::ForecastDisplay" << std::endl;
-  weatherData->registerObserver(this);
+  _weatherData->registerObserver(this);
 }
 ForecastDisplay::~ForecastDisplay()
 {
