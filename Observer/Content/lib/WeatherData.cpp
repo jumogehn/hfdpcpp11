@@ -44,9 +44,7 @@ void WeatherData::removeObserver(std::shared_ptr<Observer> o)
 void WeatherData::notifyObservers() const
 {
   std::cout << "WeatherData::notifyObservers" << std::endl;
-  for (std::list< std::shared_ptr<Observer> >::iterator iterator = _observers.begin();
-    _observers.end() != iterator; ++iterator) {
-    std::shared_ptr<Observer> observer = *iterator;
+  for (std::shared_ptr<Observer> observer : _observers) {
     observer->update(_temperature, _humidity, _pressure);
   }
 }
