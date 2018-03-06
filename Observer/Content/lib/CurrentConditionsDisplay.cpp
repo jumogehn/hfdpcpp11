@@ -18,12 +18,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Subject.hpp"
 
 
-CurrentConditionsDisplay::CurrentConditionsDisplay(Subject* weatherData) :
+CurrentConditionsDisplay::CurrentConditionsDisplay(std::shared_ptr<Subject> weatherData) :
   _weatherData(weatherData), _temperature(0.0), _humidity(0.0)
 {
   assert(weatherData);

@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
@@ -26,7 +27,7 @@
 
 class ForecastDisplay : private Observer, private DisplayElement {
 
-  WeatherData* _weatherData;
+  std::shared_ptr<WeatherData> _weatherData;
   float _currentPressure;
   float _lastPressure;
 
@@ -34,7 +35,7 @@ class ForecastDisplay : private Observer, private DisplayElement {
   void operator=(const ForecastDisplay&); // Disable assignment operator
 
 public:
-  explicit ForecastDisplay(WeatherData* weatherData);
+  explicit ForecastDisplay(std::shared_ptr<WeatherData> weatherData);
   ~ForecastDisplay();
   void update(float temp, float humidity, float pressure);
   void display() const;

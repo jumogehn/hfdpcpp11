@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
@@ -26,7 +27,7 @@
 
 class CurrentConditionsDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
+  std::shared_ptr<Subject> _weatherData;
   float _temperature;
   float _humidity;
 
@@ -34,7 +35,7 @@ class CurrentConditionsDisplay : private Observer, private DisplayElement {
   void operator=(const CurrentConditionsDisplay&);
 
 public:
-  explicit CurrentConditionsDisplay(Subject* weatherData);
+  explicit CurrentConditionsDisplay(std::shared_ptr<Subject> weatherData);
   ~CurrentConditionsDisplay();
   void update(float temperature, float humidity, float pressure);
   void display() const;

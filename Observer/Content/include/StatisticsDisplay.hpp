@@ -19,6 +19,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
@@ -27,7 +28,7 @@
 
 class StatisticsDisplay : private Observer, private DisplayElement {
 
-  WeatherData* _weatherData;
+  std::shared_ptr<WeatherData> _weatherData;
   float _maxTemp;
   float _minTemp;
   float _tempSum;
@@ -37,7 +38,7 @@ class StatisticsDisplay : private Observer, private DisplayElement {
   void operator=(const StatisticsDisplay&); // Disable assignment operator
 
 public:
-  explicit StatisticsDisplay(WeatherData* weatherData);
+  explicit StatisticsDisplay(std::shared_ptr<WeatherData> weatherData);
   ~StatisticsDisplay();
   void update(float temp, float humidity, float pressure);
   void display() const;

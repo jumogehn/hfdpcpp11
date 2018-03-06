@@ -18,12 +18,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "WeatherData.hpp"
 
 
-StatisticsDisplay::StatisticsDisplay(WeatherData* weatherData) :
+StatisticsDisplay::StatisticsDisplay(std::shared_ptr<WeatherData> weatherData) :
   _weatherData(weatherData), _maxTemp(0.0), _minTemp(200.0F),
   _tempSum(0.0), _numReadings(0)
 {

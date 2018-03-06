@@ -18,10 +18,11 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
-ForecastDisplay::ForecastDisplay(WeatherData* weatherData) :
+ForecastDisplay::ForecastDisplay(std::shared_ptr<WeatherData> weatherData) :
   _weatherData(weatherData), _currentPressure(29.92F),
   _lastPressure(0)
 {

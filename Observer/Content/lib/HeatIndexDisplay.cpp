@@ -18,6 +18,7 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Subject.hpp"
@@ -42,7 +43,7 @@ float HeatIndexDisplay::computeHeatIndex(float t, float rh) const
   return index;
 }
 
-HeatIndexDisplay::HeatIndexDisplay(Subject* weatherData) :
+HeatIndexDisplay::HeatIndexDisplay(std::shared_ptr<Subject> weatherData) :
   _weatherData(weatherData), _heatIndex(0.0)
 {
   assert(weatherData);

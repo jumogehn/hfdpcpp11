@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
@@ -26,7 +27,7 @@
 
 class HeatIndexDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
+  std::shared_ptr<Subject> _weatherData;
   float _heatIndex;
 
   HeatIndexDisplay(const HeatIndexDisplay&); // Disable copy constructor
@@ -35,7 +36,7 @@ class HeatIndexDisplay : private Observer, private DisplayElement {
   float computeHeatIndex(float t, float rh) const;
 
 public:
-  explicit HeatIndexDisplay(Subject* weatherData);
+  explicit HeatIndexDisplay(std::shared_ptr<Subject> weatherData);
   ~HeatIndexDisplay();
   void update(float t, float rh, float pressure);
   void display() const;
