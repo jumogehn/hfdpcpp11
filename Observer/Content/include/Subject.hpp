@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Observer.hpp"
@@ -27,8 +28,8 @@ class Subject {
 protected:
   virtual ~Subject();
 public:
-  virtual void registerObserver(Observer* o) = 0;
-  virtual void removeObserver(Observer* o) = 0;
+  virtual void registerObserver(std::shared_ptr<Observer> o) = 0;
+  virtual void removeObserver(std::shared_ptr<Observer> o) = 0;
   virtual void notifyObservers() const = 0;
 };
 

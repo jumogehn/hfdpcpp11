@@ -26,7 +26,8 @@
 #include "Observer.hpp"
 #include "Subject.hpp"
 
-class StatisticsDisplay : private Observer, private DisplayElement {
+class StatisticsDisplay : public Observer, private DisplayElement
+                          , public std::enable_shared_from_this<StatisticsDisplay> {
 
   std::shared_ptr<Subject> _weatherData;
   float _maxTemp;

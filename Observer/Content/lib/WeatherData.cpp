@@ -19,6 +19,7 @@
 #include <cassert>
 #include <iostream>
 #include <list>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Observer.hpp"
@@ -28,13 +29,13 @@ WeatherData::WeatherData() :
 {
   std::cout << "WeatherData::WeatherData" << std::endl;
 }
-void WeatherData::registerObserver(Observer* o)
+void WeatherData::registerObserver(std::shared_ptr<Observer> o)
 {
   assert(o);
   std::cout << "WeatherData::registerObserver" << std::endl;
   _observers.push_back(o);
 }
-void WeatherData::removeObserver(Observer* o)
+void WeatherData::removeObserver(std::shared_ptr<Observer> o)
 {
   assert(o);
   std::cout << "WeatherData::removeObserver" << std::endl;
@@ -43,9 +44,9 @@ void WeatherData::removeObserver(Observer* o)
 void WeatherData::notifyObservers() const
 {
   std::cout << "WeatherData::notifyObservers" << std::endl;
-  for (std::list< Observer* >::iterator iterator = _observers.begin();
+  for (std::list< std::shared_ptr<Observer> >::iterator iterator = _observers.begin();
     _observers.end() != iterator; ++iterator) {
-    Observer* observer = *iterator;
+    std::shared_ptr<Observer> observer = *iterator;
     observer->update(_temperature, _humidity, _pressure);
   }
 }

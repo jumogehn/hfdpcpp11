@@ -57,14 +57,14 @@ int HeatIndexDisplay::setSubject(std::shared_ptr<Subject> weatherData)
   assert(weatherData);
   assert(!_weatherData);
   _weatherData = weatherData;
-  _weatherData->registerObserver(this);
+  _weatherData->registerObserver(shared_from_this());
 
   return 0;
 }
 int HeatIndexDisplay::resetSubject()
 {
   assert(_weatherData);
-  _weatherData->removeObserver(this);
+  _weatherData->removeObserver(shared_from_this());
   return 0;
 }
 void HeatIndexDisplay::update(float t, float rh, float pressure)

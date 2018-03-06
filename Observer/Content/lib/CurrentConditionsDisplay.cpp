@@ -40,14 +40,14 @@ int CurrentConditionsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
   assert(weatherData);
   assert(!_weatherData);
   _weatherData = weatherData;
-  _weatherData->registerObserver(this);
+  _weatherData->registerObserver(shared_from_this());
 
   return 0;
 }
 int CurrentConditionsDisplay::resetSubject()
 {
   assert(_weatherData);
-  _weatherData->removeObserver(this);
+  _weatherData->removeObserver(shared_from_this());
   return 0;
 }
 void CurrentConditionsDisplay::update(float temperature, float humidity, float pressure)

@@ -25,7 +25,8 @@
 #include "Observer.hpp"
 #include "Subject.hpp"
 
-class CurrentConditionsDisplay : private Observer, private DisplayElement {
+class CurrentConditionsDisplay : public Observer, private DisplayElement
+                                 , public std::enable_shared_from_this<CurrentConditionsDisplay> {
 
   std::shared_ptr<Subject> _weatherData;
   float _temperature;

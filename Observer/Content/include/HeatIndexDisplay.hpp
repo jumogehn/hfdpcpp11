@@ -25,7 +25,8 @@
 #include "Observer.hpp"
 #include "Subject.hpp"
 
-class HeatIndexDisplay : private Observer, private DisplayElement {
+class HeatIndexDisplay : public Observer, private DisplayElement
+                         , public std::enable_shared_from_this<HeatIndexDisplay> {
 
   std::shared_ptr<Subject> _weatherData;
   float _heatIndex;
