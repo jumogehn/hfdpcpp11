@@ -35,8 +35,10 @@ class ForecastDisplay : private Observer, private DisplayElement {
   void operator=(const ForecastDisplay&); // Disable assignment operator
 
 public:
-  explicit ForecastDisplay(std::shared_ptr<Subject> weatherData);
+  explicit ForecastDisplay();
   ~ForecastDisplay();
+  int setSubject(std::shared_ptr<Subject> weatherData);
+  int resetSubject();
   void update(float temp, float humidity, float pressure);
   void display() const;
 };

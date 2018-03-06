@@ -23,18 +23,30 @@
 //Your project's .h files.
 #include "Subject.hpp"
 
-ForecastDisplay::ForecastDisplay(std::shared_ptr<Subject> weatherData) :
-  _weatherData(weatherData), _currentPressure(29.92F),
+ForecastDisplay::ForecastDisplay() :
+  _currentPressure(29.92F),
   _lastPressure(0)
 {
-  assert(weatherData);
   std::cout << "ForecastDisplay::ForecastDisplay" << std::endl;
-  _weatherData->registerObserver(this);
 }
 ForecastDisplay::~ForecastDisplay()
 {
   std::cout << "ForecastDisplay::~ForecastDisplay" << std::endl;
+}
+int ForecastDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+{
+  assert(weatherData);
+  assert(!_weatherData);
+  _weatherData = weatherData;
+  _weatherData->registerObserver(this);
+
+  return 0;
+}
+int ForecastDisplay::resetSubject()
+{
+  assert(_weatherData);
   _weatherData->removeObserver(this);
+  return 0;
 }
 void ForecastDisplay::update(float temp, float humidity, float pressure)
 {

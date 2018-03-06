@@ -24,19 +24,31 @@
 #include "Subject.hpp"
 
 
-CurrentConditionsDisplay::CurrentConditionsDisplay(std::shared_ptr<Subject> weatherData) :
-  _weatherData(weatherData), _temperature(0.0), _humidity(0.0)
+CurrentConditionsDisplay::CurrentConditionsDisplay() :
+  _temperature(0.0), _humidity(0.0)
 {
-  assert(weatherData);
   std::cout << "CurrentConditionsDisplay"
     "::CurrentConditionsDisplay" << std::endl;
-  _weatherData->registerObserver(this);
 }
 CurrentConditionsDisplay::~CurrentConditionsDisplay()
 {
   std::cout << "CurrentConditionsDisplay"
     "::~CurrentConditionsDisplay" << std::endl;
+}
+int CurrentConditionsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+{
+  assert(weatherData);
+  assert(!_weatherData);
+  _weatherData = weatherData;
+  _weatherData->registerObserver(this);
+
+  return 0;
+}
+int CurrentConditionsDisplay::resetSubject()
+{
+  assert(_weatherData);
   _weatherData->removeObserver(this);
+  return 0;
 }
 void CurrentConditionsDisplay::update(float temperature, float humidity, float pressure)
 {

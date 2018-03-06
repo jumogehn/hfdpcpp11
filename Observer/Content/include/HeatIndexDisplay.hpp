@@ -36,8 +36,10 @@ class HeatIndexDisplay : private Observer, private DisplayElement {
   float computeHeatIndex(float t, float rh) const;
 
 public:
-  explicit HeatIndexDisplay(std::shared_ptr<Subject> weatherData);
+  explicit HeatIndexDisplay();
   ~HeatIndexDisplay();
+  int setSubject(std::shared_ptr<Subject> weatherData);
+  int resetSubject();
   void update(float t, float rh, float pressure);
   void display() const;
 };

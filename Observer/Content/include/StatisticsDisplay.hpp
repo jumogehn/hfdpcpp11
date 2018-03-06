@@ -38,8 +38,10 @@ class StatisticsDisplay : private Observer, private DisplayElement {
   void operator=(const StatisticsDisplay&); // Disable assignment operator
 
 public:
-  explicit StatisticsDisplay(std::shared_ptr<Subject> weatherData);
+  explicit StatisticsDisplay();
   ~StatisticsDisplay();
+  int setSubject(std::shared_ptr<Subject> weatherData);
+  int resetSubject();
   void update(float temp, float humidity, float pressure);
   void display() const;
 };

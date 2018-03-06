@@ -43,17 +43,29 @@ float HeatIndexDisplay::computeHeatIndex(float t, float rh) const
   return index;
 }
 
-HeatIndexDisplay::HeatIndexDisplay(std::shared_ptr<Subject> weatherData) :
-  _weatherData(weatherData), _heatIndex(0.0)
+HeatIndexDisplay::HeatIndexDisplay() :
+  _heatIndex(0.0)
 {
-  assert(weatherData);
   std::cout << "HeatIndexDisplay::HeatIndexDisplay" << std::endl;
-  _weatherData->registerObserver(this);
 }
 HeatIndexDisplay::~HeatIndexDisplay()
 {
   std::cout << "HeatIndexDisplay::~HeatIndexDisplay" << std::endl;
+}
+int HeatIndexDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+{
+  assert(weatherData);
+  assert(!_weatherData);
+  _weatherData = weatherData;
+  _weatherData->registerObserver(this);
+
+  return 0;
+}
+int HeatIndexDisplay::resetSubject()
+{
+  assert(_weatherData);
   _weatherData->removeObserver(this);
+  return 0;
 }
 void HeatIndexDisplay::update(float t, float rh, float pressure)
 {

@@ -35,8 +35,10 @@ class CurrentConditionsDisplay : private Observer, private DisplayElement {
   void operator=(const CurrentConditionsDisplay&);
 
 public:
-  explicit CurrentConditionsDisplay(std::shared_ptr<Subject> weatherData);
+  explicit CurrentConditionsDisplay();
   ~CurrentConditionsDisplay();
+  int setSubject(std::shared_ptr<Subject> weatherData);
+  int resetSubject();
   void update(float temperature, float humidity, float pressure);
   void display() const;
 };

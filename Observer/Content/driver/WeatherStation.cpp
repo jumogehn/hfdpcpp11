@@ -27,14 +27,17 @@
 
 int main(int argc, char* argv[]) {
 
-  std::shared_ptr<WeatherData> weatherData = std::make_shared<WeatherData>();
+  auto weatherData = std::make_shared<WeatherData>();
 
-  CurrentConditionsDisplay currentDisplay(weatherData);
-  StatisticsDisplay statisticsDisplay(weatherData);
-  ForecastDisplay forecastDisplay(weatherData);
-
+  auto currentDisplay = std::make_shared<CurrentConditionsDisplay>();
+  currentDisplay->setSubject(weatherData);
+  auto statisticsDisplay = std::make_shared<StatisticsDisplay>();
+  statisticsDisplay->setSubject(weatherData);
+  auto forecastDisplay = std::make_shared<ForecastDisplay>();
+  forecastDisplay->setSubject(weatherData);
 #ifdef _HEAT_INDEX_DISPLAY_
-  HeatIndexDisplay heatIndexDisplay(weatherData);
+  auto heatIndexDisplay = std::make_shared<HeatIndexDisplay>();
+  heatIndexDisplay->setSubject(weatherData);
 #endif
 
   weatherData->setMeasurements(80, 65, 30.4f);

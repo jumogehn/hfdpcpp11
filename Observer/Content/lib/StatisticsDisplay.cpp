@@ -24,18 +24,30 @@
 #include "Subject.hpp"
 
 
-StatisticsDisplay::StatisticsDisplay(std::shared_ptr<Subject> weatherData) :
-  _weatherData(weatherData), _maxTemp(0.0), _minTemp(200.0F),
+StatisticsDisplay::StatisticsDisplay() :
+  _maxTemp(0.0), _minTemp(200.0F),
   _tempSum(0.0), _numReadings(0)
 {
-  assert(weatherData);
   std::cout << "StatisticsDisplay::StatisticsDisplay" << std::endl;
-  _weatherData->registerObserver(this);
 }
 StatisticsDisplay::~StatisticsDisplay()
 {
   std::cout << "StatisticsDisplay::~StatisticsDisplay" << std::endl;
+}
+int StatisticsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+{
+  assert(weatherData);
+  assert(!_weatherData);
+  _weatherData = weatherData;
+  _weatherData->registerObserver(this);
+
+  return 0;
+}
+int StatisticsDisplay::resetSubject()
+{
+  assert(_weatherData);
   _weatherData->removeObserver(this);
+  return 0;
 }
 void StatisticsDisplay::update(float temp, float humidity, float pressure)
 {
