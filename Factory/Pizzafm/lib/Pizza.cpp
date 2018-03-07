@@ -39,6 +39,7 @@ void Pizza::prepare() const
   std::cout << "Tossing dough..." << std::endl;
   std::cout << "Adding sauce..." << std::endl;
   std::cout << "Adding toppings: " << std::endl;
+  //http://en.cppreference.com/w/cpp/language/range-for
   for( const std::string &topping : _toppings ) {
     std::cout << "   " << topping.c_str() << std::endl;
   }
@@ -71,6 +72,7 @@ std::string Pizza::toString() const
   value << "---- " << _name.c_str() << " ----" << std::endl;
   value << _dough.c_str() << std::endl;
   value << _sauce.c_str() << std::endl;
+  //http://en.cppreference.com/w/cpp/language/range-for
   for( const std::string &topping : _toppings ) {
     value << topping.c_str() << std::endl;
   }

@@ -65,9 +65,9 @@ std::string Pizza::toString() const
   value << "---- " << _name.c_str() << " ----" << std::endl;
   value << _dough.c_str() << std::endl;
   value << _sauce.c_str() << std::endl;
-  for( std::list< std::string >::iterator iterator = _toppings.begin();
-       _toppings.end() != iterator; ++iterator ) {
-    value << iterator->c_str() << std::endl;
+  //http://en.cppreference.com/w/cpp/language/range-for
+  for( const std::string &topping : _toppings ) {
+    value << topping.c_str() << std::endl;
   }
   return value.str();
 }
