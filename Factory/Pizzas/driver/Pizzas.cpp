@@ -25,7 +25,7 @@
 
 int main( int argc, char* argv[] )
 {
-  std::shared_ptr<SimplePizzaFactory> factory = std::make_shared<SimplePizzaFactory>();
+  auto factory = std::make_shared<SimplePizzaFactory>();
   PizzaStore store(factory);
 
   std::shared_ptr<Pizza>pizza(store.orderPizza( "cheese" ) );
