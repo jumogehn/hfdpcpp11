@@ -25,7 +25,6 @@
 
 class SimpleRemoteControl {
 
-  //const std::shared_ptr<Command> _slot;
   std::shared_ptr<Command> _slot;
 
 public:

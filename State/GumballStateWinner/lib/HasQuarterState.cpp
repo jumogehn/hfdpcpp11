@@ -30,7 +30,7 @@
 
 
 
-HasQuarterState::HasQuarterState( GumballMachine* gumballMachine ) :
+HasQuarterState::HasQuarterState( std::shared_ptr<GumballMachine> gumballMachine ) :
   _gumballMachine( gumballMachine ), _random( 0 )
 {
   assert( gumballMachine );

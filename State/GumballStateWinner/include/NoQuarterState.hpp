@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -27,15 +28,13 @@
 
 class NoQuarterState : public State {
 
-  //std::shared_ptr<GumballMachine> _gumballMachine;
-  GumballMachine* _gumballMachine;
+  std::shared_ptr<GumballMachine> _gumballMachine;
 
   NoQuarterState( const NoQuarterState& ); // Disable copy constructor
   void operator=( const NoQuarterState& ); // Disable assignment operator
 
 public:
-  //explicit NoQuarterState( std::shared_ptr<GumballMachine> gumballMachine );
-  explicit NoQuarterState( GumballMachine* gumballMachine );
+  explicit NoQuarterState( std::shared_ptr<GumballMachine> gumballMachine );
   void insertQuarter() const;
   void ejectQuarter() const;
   void turnCrank() const;

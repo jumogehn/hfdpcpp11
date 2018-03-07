@@ -26,8 +26,8 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::shared_ptr< Tea > tea( std::make_shared<Tea>() );
-  std::shared_ptr< Coffee > coffee( std::make_shared<Coffee>() );
+  auto tea = std::make_shared<Tea>();
+  auto coffee = std::make_shared<Coffee>();
 
   std::cout << std::endl << "Making tea..." << std::endl;
   tea->prepareRecipe();
@@ -35,8 +35,8 @@ int main( int argc, char* argv[] ) {
   std::cout << std::endl << "Making coffee..." << std::endl;
   coffee->prepareRecipe();
 
-  std::shared_ptr< TeaWithHook > teaHook( std::make_shared<TeaWithHook>() );
-  std::shared_ptr< CoffeeWithHook > coffeeHook( std::make_shared<CoffeeWithHook>() );
+  auto teaHook = std::make_shared<TeaWithHook>();
+  auto coffeeHook = std::make_shared<CoffeeWithHook>();
 
   std::cout << std::endl << "Making tea..."<< std::endl;
   teaHook->prepareRecipe();

@@ -23,7 +23,7 @@
 #include "GumballMachine.hpp"
 
 
-NoQuarterState::NoQuarterState( GumballMachine* gumballMachine ) :
+NoQuarterState::NoQuarterState( std::shared_ptr<GumballMachine> gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert( gumballMachine );

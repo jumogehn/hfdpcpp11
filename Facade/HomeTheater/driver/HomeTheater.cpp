@@ -34,26 +34,17 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "main" << std::endl;
 
-  std::shared_ptr< Amplifier > amp(
-    std::make_shared<Amplifier>( "Top-O-Line Amplifier" ) );
-  std::shared_ptr< Tuner > tuner(
-    std::make_shared<Tuner>( "Top-O-Line AM/FM Tuner", amp ) );
-  std::shared_ptr< DvdPlayer > dvd(
-    std::make_shared<DvdPlayer>( "Top-O-Line DVD Player", amp ) );
-  std::shared_ptr< CdPlayer > cd(
-    std::make_shared<CdPlayer>( "Top-O-Line CD Player", amp ) );
-  std::shared_ptr< Projector > projector(
-    std::make_shared<Projector>( "Top-O-Line Projector", dvd ) );
-  std::shared_ptr< TheaterLights > lights(
-    std::make_shared<TheaterLights>( "Theater Ceiling Lights" ) );
-  std::shared_ptr< Screen > screen(
-    std::make_shared<Screen>( "Theater Screen" ) );
-  std::shared_ptr< PopcornPopper > popper(
-    std::make_shared<PopcornPopper>( "Popcorn Popper" ) );
-  std::shared_ptr< HomeTheaterFacade > homeTheater(
-    std::make_shared<HomeTheaterFacade>( amp, tuner, dvd, cd,
-                           projector, screen, lights,
-                           popper ) );
+  auto amp = std::make_shared<Amplifier>( "Top-O-Line Amplifier" );
+  auto tuner = std::make_shared<Tuner>( "Top-O-Line AM/FM Tuner", amp );
+  auto dvd = std::make_shared<DvdPlayer>( "Top-O-Line DVD Player", amp );
+  auto cd = std::make_shared<CdPlayer>( "Top-O-Line CD Player", amp );
+  auto projector = std::make_shared<Projector>( "Top-O-Line Projector", dvd );
+  auto lights = std::make_shared<TheaterLights>( "Theater Ceiling Lights" );
+  auto screen = std::make_shared<Screen>( "Theater Screen" );
+  auto popper = std::make_shared<PopcornPopper>( "Popcorn Popper" );
+  auto homeTheater = std::make_shared<HomeTheaterFacade>( amp, tuner, dvd, cd,
+                                                          projector, screen,
+                                                          lights, popper );
 
   homeTheater->watchMovie( "Raiders of the Lost Ark" );
   homeTheater->endMovie();

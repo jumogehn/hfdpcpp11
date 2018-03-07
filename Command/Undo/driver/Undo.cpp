@@ -31,19 +31,12 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::shared_ptr< RemoteControlWithUndo > remoteControl(
-    std::make_shared<RemoteControlWithUndo>() );
+  auto remoteControl = std::make_shared<RemoteControlWithUndo>();
+  auto livingRoomLight = std::make_shared<Light>( "Living Room" );
+  auto livingRoomLightOn = std::make_shared<LightOnCommand>( livingRoomLight );
+  auto livingRoomLightOff = std::make_shared<LightOffCommand>( livingRoomLight );
 
-  std::shared_ptr< Light > livingRoomLight(
-    std::make_shared<Light>( "Living Room" ) );
-
-  std::shared_ptr< LightOnCommand > livingRoomLightOn(
-    std::make_shared<LightOnCommand>( livingRoomLight ) );
-  std::shared_ptr< LightOffCommand > livingRoomLightOff(
-    std::make_shared<LightOffCommand>( livingRoomLight ) );
-
-  remoteControl->setCommand( 0, livingRoomLightOn,
-                             livingRoomLightOff );
+  remoteControl->setCommand( 0, livingRoomLightOn,livingRoomLightOff );
 
   remoteControl->onButtonWasPushed( 0 );
   remoteControl->offButtonWasPushed( 0 );
@@ -54,15 +47,10 @@ int main( int argc, char* argv[] ) {
   std::cout << remoteControl->toString() << std::endl;
   remoteControl->undoButtonWasPushed();
 
-  std::shared_ptr< CeilingFan > ceilingFan(
-    std::make_shared<CeilingFan>( "Living Room" ) );
-
-  std::shared_ptr< CeilingFanMediumCommand > ceilingFanMedium(
-    std::make_shared<CeilingFanMediumCommand>( ceilingFan ) );
-  std::shared_ptr< CeilingFanHighCommand > ceilingFanHigh(
-    std::make_shared<CeilingFanHighCommand>( ceilingFan ) );
-  std::shared_ptr< CeilingFanOffCommand > ceilingFanOff(
-    std::make_shared<CeilingFanOffCommand>( ceilingFan ) );
+  auto ceilingFan = std::make_shared<CeilingFan>( "Living Room" );
+  auto ceilingFanMedium = std::make_shared<CeilingFanMediumCommand>( ceilingFan );
+  auto ceilingFanHigh = std::make_shared<CeilingFanHighCommand>( ceilingFan );
+  auto ceilingFanOff = std::make_shared<CeilingFanOffCommand>( ceilingFan );
 
   remoteControl->setCommand( 0, ceilingFanMedium, ceilingFanOff );
   remoteControl->setCommand( 1, ceilingFanHigh, ceilingFanOff );

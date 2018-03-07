@@ -25,7 +25,7 @@
 #include "State.hpp"
 
 
-class GumballMachine {
+class GumballMachine : public std::enable_shared_from_this<GumballMachine> {
 
   std::shared_ptr<State> _soldOutState;
   std::shared_ptr<State> _noQuarterState;
@@ -39,8 +39,9 @@ class GumballMachine {
   void operator=( const GumballMachine& ); // Disable assignment operator
 
 public:
-  explicit GumballMachine(int numberGumballs );
+  explicit GumballMachine();
   ~GumballMachine();
+  int init(int numberGumballs );
   void insertQuarter() const;
   void ejectQuarter() const;
   void turnCrank() const;

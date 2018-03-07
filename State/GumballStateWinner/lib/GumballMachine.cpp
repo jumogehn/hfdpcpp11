@@ -22,9 +22,40 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "HasQuarterState.hpp"
+#include "NoQuarterState.hpp"
+#include "SoldOutState.hpp"
+#include "SoldState.hpp"
 #include "State.hpp"
+#include "WinnerState.hpp"
 
 
+GumballMachine::GumballMachine()
+{
+  std::cout << "GumballMachine::GumballMachine" << std::endl;
+}
+
+int GumballMachine::init(int numberGumballs )
+{
+  assert( numberGumballs >= 0 );
+
+  std::cout << "GumballMachine::init" << std::endl;
+
+  _count = numberGumballs;
+
+  _soldOutState = std::make_shared<SoldOutState>( shared_from_this() );
+  _noQuarterState = std::make_shared<NoQuarterState>( shared_from_this() );
+  _hasQuarterState = std::make_shared<HasQuarterState>( shared_from_this() );
+  _soldState = std::make_shared<SoldState>( shared_from_this() );
+  _winnerState = std::make_shared<WinnerState>( shared_from_this() );
+  _state = _soldOutState;
+
+  if( _count  > 0 ) {
+    _state = _noQuarterState;
+  }
+
+  return 0;
+}
 GumballMachine::~GumballMachine()
 {
   std::cout << "GumballMachine::~GumballMachine" << std::endl;

@@ -69,10 +69,11 @@ void Menu::print() const
   std::cout << ", " << getDescription().c_str() << std::endl;
   std::cout << "---------------------" << std::endl;
 
-  std::vector< std::shared_ptr<MenuComponent> >::iterator
-    iterator = _menuComponents.begin();
-  while( iterator != _menuComponents.end() ) {
-    std::shared_ptr<MenuComponent> menuComponent = *iterator++;
+  //std::vector< std::shared_ptr<MenuComponent> >::iterator
+  //  iterator = _menuComponents.begin();
+  //while( iterator != _menuComponents.end() ) {
+  //  std::shared_ptr<MenuComponent> menuComponent = *iterator++;
+  for ( std::shared_ptr<MenuComponent> menuComponent : _menuComponents ) {
     menuComponent->print();
   }
 }

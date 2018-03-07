@@ -44,6 +44,7 @@ void WeatherData::removeObserver(std::shared_ptr<Observer> o)
 void WeatherData::notifyObservers() const
 {
   std::cout << "WeatherData::notifyObservers" << std::endl;
+  //http://en.cppreference.com/w/cpp/language/range-for
   for (std::shared_ptr<Observer> observer : _observers) {
     observer->update(_temperature, _humidity, _pressure);
   }

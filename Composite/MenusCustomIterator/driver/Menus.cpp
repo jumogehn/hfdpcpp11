@@ -145,7 +145,7 @@ int main( int argc, char* argv[] ) {
       true,
       0.89) );
 
-  std::shared_ptr< Waitress > waitress( std::make_shared<Waitress>(allMenus ) );
+  auto waitress = std::make_shared<Waitress>(allMenus );
   waitress->printMenu();
 
   return 0;
