@@ -39,7 +39,7 @@ int main( int argc, char* argv[] )
   std::cout << argv[0] << " Version " << Ducks_VERSION_MAJOR << "."
     << Ducks_VERSION_MINOR << std::endl << std::endl;
 
-  std::shared_ptr< MallardDuck > duck( std::make_shared<MallardDuck>() );
+  auto duck( std::make_shared<MallardDuck>() );
   std::shared_ptr< Turkey > duckAdapter( std::make_shared<DuckAdapter>( duck ) );
 
   for( int i = 0; i < 10; i++ ) {
@@ -48,7 +48,7 @@ int main( int argc, char* argv[] )
     duckAdapter->fly();
   }
 
-  std::shared_ptr< WildTurkey > turkey( std::make_shared<WildTurkey>() );
+  auto turkey( std::make_shared<WildTurkey>() );
   std::shared_ptr< Duck > turkeyAdapter( std::make_shared<TurkeyAdapter>( turkey ) );
 
   std::cout << "The Turkey says..." << std::endl;

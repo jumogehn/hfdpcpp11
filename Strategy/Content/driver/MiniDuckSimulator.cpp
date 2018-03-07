@@ -26,10 +26,10 @@
 
 int main(int argc, char* argv[]) {
 
-  std::shared_ptr< MallardDuck > mallard = std::make_shared<MallardDuck>();
-  std::shared_ptr< RubberDuck > rubberDuckie = std::make_shared<RubberDuck>();
-  std::shared_ptr< DecoyDuck > decoy = std::make_shared<DecoyDuck>();
-  std::shared_ptr< ModelDuck > model = std::make_shared<ModelDuck>();
+  auto mallard = std::make_shared<MallardDuck>();
+  auto rubberDuckie = std::make_shared<RubberDuck>();
+  auto decoy = std::make_shared<DecoyDuck>();
+  auto model = std::make_shared<ModelDuck>();
 
   mallard->performQuack();
   mallard->performFly();
