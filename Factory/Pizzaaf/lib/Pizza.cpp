@@ -90,9 +90,10 @@ std::string Pizza::toString() const
     value << std::endl;
   }
   if (_veggies.size() != 0) {
-    for (std::vector< std::shared_ptr<Veggies> >::iterator iterator = _veggies.begin();
-      _veggies.end() != iterator; ++iterator) {
-      value << (*iterator)->toString() << ", ";
+    //for (std::vector< std::shared_ptr<Veggies> >::iterator iterator = _veggies.begin();
+    //  _veggies.end() != iterator; ++iterator) {
+    for (std::shared_ptr<Veggies> veggie : _veggies) {
+      value << veggie->toString() << ", ";
     }
     value << std::endl;
   }
