@@ -43,6 +43,7 @@ int GumballMachine::init(int numberGumballs )
 
   _count = numberGumballs;
 
+  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
   _soldOutState = std::make_shared<SoldOutState>( shared_from_this() );
   _noQuarterState = std::make_shared<NoQuarterState>( shared_from_this() );
   _hasQuarterState = std::make_shared<HasQuarterState>( shared_from_this() );
@@ -59,12 +60,6 @@ int GumballMachine::init(int numberGumballs )
 GumballMachine::~GumballMachine()
 {
   std::cout << "GumballMachine::~GumballMachine" << std::endl;
-
-  //delete _soldOutState;
-  //delete _noQuarterState;
-  //delete _hasQuarterState;
-  //delete _soldState;
-  //delete _winnerState;
 }
 void GumballMachine::insertQuarter() const
 {

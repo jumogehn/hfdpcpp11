@@ -24,7 +24,7 @@
 //Your project's .h files.
 #include "State.hpp"
 
-
+//C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
 class GumballMachine : public std::enable_shared_from_this<GumballMachine> {
 
   std::shared_ptr<State> _soldOutState;
