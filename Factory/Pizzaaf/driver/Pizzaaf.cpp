@@ -26,10 +26,10 @@
 
 int main(int argc, char* argv[]) {
 
-  std::shared_ptr< PizzaStore > nyStore(std::make_shared<NYPizzaStore>());
-  std::shared_ptr< PizzaStore > chicagoStore(std::make_shared<ChicagoPizzaStore>());
+  auto nyStore = std::make_shared<NYPizzaStore>();
+  auto chicagoStore = std::make_shared<ChicagoPizzaStore>();
 
-  std::shared_ptr< Pizza > pizza = nyStore->orderPizza("cheese");
+  auto pizza = nyStore->orderPizza("cheese");
   std::cout << "Ethan ordered a " << pizza->toString() << std::endl;
 
   pizza = chicagoStore->orderPizza("cheese");
