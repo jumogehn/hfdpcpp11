@@ -39,6 +39,7 @@ int StatisticsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
   assert(weatherData);
   assert(!_weatherData);
   _weatherData = weatherData;
+  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
   _weatherData->registerObserver(shared_from_this());
 
   return 0;
@@ -46,6 +47,7 @@ int StatisticsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
 int StatisticsDisplay::resetSubject()
 {
   assert(_weatherData);
+  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
   _weatherData->removeObserver(shared_from_this());
   return 0;
 }

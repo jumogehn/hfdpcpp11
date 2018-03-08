@@ -26,6 +26,7 @@
 #include "Observer.hpp"
 #include "Subject.hpp"
 
+//C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
 class StatisticsDisplay : public Observer, private DisplayElement
                           , public std::enable_shared_from_this<StatisticsDisplay> {
 
