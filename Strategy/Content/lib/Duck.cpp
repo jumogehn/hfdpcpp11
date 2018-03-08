@@ -39,13 +39,13 @@ void Duck::setFlyBehavior(std::shared_ptr<FlyBehavior> fb)
 {
   assert(fb);
   std::cout << "Duck::setFlyBehavior" << std::endl;
-  _flyBehavior = std::shared_ptr< FlyBehavior >(fb);
+  _flyBehavior = fb;
 }
 void Duck::setQuackBehavior(std::shared_ptr<QuackBehavior> qb)
 {
   assert(qb);
   std::cout << "Duck::setQuackBehavior" << std::endl;
-  _quackBehavior = std::shared_ptr< QuackBehavior >(qb);
+  _quackBehavior = qb;
 }
 void Duck::performFly() const
 {
