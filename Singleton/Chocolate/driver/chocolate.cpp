@@ -26,13 +26,13 @@ std::shared_ptr<ChocolateBoiler> ChocolateBoiler::_uniqueInstance = nullptr;
 
 int main( int argc, char* argv[] ) {
 
-  std::shared_ptr<ChocolateBoiler> boiler = ChocolateBoiler::getInstance();
+  auto boiler = ChocolateBoiler::getInstance();
   boiler->fill();
   boiler->boil();
   boiler->drain();
 
   // will return the existing instance
-  std::shared_ptr<ChocolateBoiler> boiler2 = ChocolateBoiler::getInstance();
+  auto boiler2 = ChocolateBoiler::getInstance();
 
   if( boiler == boiler2 )
     std::cout << "Got same boiler" << std::endl;
