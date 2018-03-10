@@ -29,6 +29,7 @@
 
 int main(int argc, char* argv[]) {
 
+  //Maybe type 'auto' can be used here
   std::shared_ptr<Beverage> beverage = std::make_shared<Espresso>();
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);

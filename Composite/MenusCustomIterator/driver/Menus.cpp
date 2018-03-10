@@ -25,19 +25,19 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::shared_ptr< MenuComponent > pancakeHouseMenu(
-    std::make_shared<Menu>( "PANCAKE HOUSE MENU", "Breakfast" ) );
-  std::shared_ptr< MenuComponent > dinerMenu(
-    std::make_shared<Menu>( "DINER MENU", "Lunch" ) );
-  std::shared_ptr< MenuComponent > cafeMenu(
-    std::make_shared<Menu>( "CAFE MENU", "Dinner" ) );
-  std::shared_ptr< MenuComponent > dessertMenu(
-    std::make_shared<Menu>( "DESSERT MENU", "Dessert of course!" ) );
-  std::shared_ptr< MenuComponent > coffeeMenu(
-    std::make_shared<Menu>( "COFFEE MENU", "Stuff to go with your afternoon coffee" ) );
+  std::shared_ptr< MenuComponent > pancakeHouseMenu =
+    std::make_shared<Menu>( "PANCAKE HOUSE MENU", "Breakfast" );
+  std::shared_ptr< MenuComponent > dinerMenu =
+    std::make_shared<Menu>( "DINER MENU", "Lunch" );
+  std::shared_ptr< MenuComponent > cafeMenu =
+    std::make_shared<Menu>( "CAFE MENU", "Dinner" );
+  std::shared_ptr< MenuComponent > dessertMenu =
+    std::make_shared<Menu>( "DESSERT MENU", "Dessert of course!" );
+  std::shared_ptr< MenuComponent > coffeeMenu =
+    std::make_shared<Menu>( "COFFEE MENU", "Stuff to go with your afternoon coffee" );
 
-  std::shared_ptr< MenuComponent > allMenus(
-    std::make_shared<Menu>( "ALL MENUS", "All menus combined" ) );
+  std::shared_ptr< MenuComponent > allMenus =
+    std::make_shared<Menu>( "ALL MENUS", "All menus combined" );
 
   allMenus->add( pancakeHouseMenu );
   allMenus->add( dinerMenu );

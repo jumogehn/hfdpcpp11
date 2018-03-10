@@ -40,7 +40,7 @@ int main( int argc, char* argv[] )
     << Ducks_VERSION_MINOR << std::endl << std::endl;
 
   auto duck( std::make_shared<MallardDuck>() );
-  std::shared_ptr< Turkey > duckAdapter( std::make_shared<DuckAdapter>( duck ) );
+  std::shared_ptr< Turkey > duckAdapter = std::make_shared<DuckAdapter>( duck );
 
   for( int i = 0; i < 10; i++ ) {
     std::cout << "The DuckAdapter says..." << std::endl;
@@ -49,7 +49,7 @@ int main( int argc, char* argv[] )
   }
 
   auto turkey( std::make_shared<WildTurkey>() );
-  std::shared_ptr< Duck > turkeyAdapter( std::make_shared<TurkeyAdapter>( turkey ) );
+  std::shared_ptr< Duck > turkeyAdapter = std::make_shared<TurkeyAdapter>( turkey );
 
   std::cout << "The Turkey says..." << std::endl;
   turkey->gobble();
