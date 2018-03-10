@@ -33,9 +33,8 @@ PizzaStore::~PizzaStore()
 std::shared_ptr< Pizza > PizzaStore::orderPizza( std::string type ) const
 {
   std::cout << "PizzaStore::orderPizza" << std::endl;
-  std::shared_ptr< Pizza > pizza( createPizza( type ) );
-  std::cout << "--- Making a " << pizza->getName() << " ---"
-    << std::endl;
+  std::shared_ptr< Pizza > pizza = createPizza( type );
+  std::cout << "--- Making a " << pizza->getName() << " ---" << std::endl;
   pizza->prepare();
   pizza->bake();
   pizza->cut();

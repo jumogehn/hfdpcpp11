@@ -32,10 +32,6 @@ Pizza::Pizza()
 Pizza::~Pizza()
 {
   std::cout << "Pizza::~Pizza" << std::endl;
-  //for (std::vector< std::shared_ptr<Veggies> >::iterator iterator = _veggies.begin();
-  //  _veggies.end() != iterator; ++iterator) {
-  //  delete *iterator;
-  //}
   _veggies.clear();
 }
 void Pizza::bake() const

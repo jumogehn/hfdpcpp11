@@ -32,7 +32,7 @@ void CheesePizza::prepare() const
 {
   std::cout << "CheesePizza::prepare" << std::endl;
   std::cout << "Preparing " << getName().c_str() << std::endl;
-  _dough = std::shared_ptr<Dough>( _ingredientFactory->createDough() );
-  _sauce = std::shared_ptr<Sauce>( _ingredientFactory->createSauce() );
-  _cheese = std::shared_ptr<Cheese>( _ingredientFactory->createCheese() );
+  _dough = _ingredientFactory->createDough();
+  _sauce = _ingredientFactory->createSauce();
+  _cheese = _ingredientFactory->createCheese();
 }

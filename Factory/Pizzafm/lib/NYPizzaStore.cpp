@@ -30,13 +30,12 @@ std::shared_ptr< Pizza > NYPizzaStore::createPizza( std::string type ) const
 {
   std::cout << "NYPizzaStore::createPizza" << std::endl;
   if( type.compare( "cheese" ) == 0 ) {
-    return std::shared_ptr< Pizza>( std::make_shared<NYStyleCheesePizza>() );
+    return std::make_shared<NYStyleCheesePizza>();
   } else if( type.compare( "veggie" ) == 0 ) {
-    return std::shared_ptr< Pizza>( std::make_shared<NYStyleVeggiePizza>() );
+    return std::make_shared<NYStyleVeggiePizza>();
   } else if( type.compare( "clam" ) == 0 ) {
-    return std::shared_ptr< Pizza>( std::make_shared<NYStyleClamPizza>() );
+    return std::make_shared<NYStyleClamPizza>();
   } else if( type.compare( "pepperoni" ) == 0 ) {
-    return std::shared_ptr< Pizza>( std::make_shared<NYStylePepperoniPizza>() );
-  //} else return std::shared_ptr< Pizza>( 0 );
+    return std::make_shared<NYStylePepperoniPizza>();
   } else return 0;
 }

@@ -33,26 +33,21 @@ std::shared_ptr< Pizza > NYPizzaStore::createPizza( std::string item ) const
 {
   std::cout << "NYPizzaStore::createPizza" << std::endl;
 
-  //std::shared_ptr< Pizza > pizza( 0 );   ???
   std::shared_ptr< Pizza > pizza;
   std::shared_ptr<PizzaIngredientFactory> ingredientFactory
     = std::make_shared<NYPizzaIngredientFactory>();
 
   if( item.compare( "cheese" ) == 0 ) {
-    pizza = std::shared_ptr< Pizza >(
-      std::make_shared<CheesePizza>( ingredientFactory ) );
+    pizza = std::make_shared<CheesePizza>( ingredientFactory );
     pizza->setName( "New York Style Cheese Pizza" );
   } else if( item.compare( "veggie" ) == 0 ) {
-    pizza = std::shared_ptr< Pizza >(
-      std::make_shared<VeggiePizza>( ingredientFactory ) );
+    pizza = std::make_shared<VeggiePizza>( ingredientFactory );
     pizza->setName( "New York Style Veggie Pizza" );
   } else if( item.compare( "clam" ) == 0 ) {
-    pizza = std::shared_ptr< Pizza >(
-      std::make_shared<ClamPizza>( ingredientFactory ) );
+    pizza = std::make_shared<ClamPizza>( ingredientFactory );
     pizza->setName( "New York Style Clam Pizza" );
   } else if( item.compare( "pepperoni" ) == 0 ) {
-    pizza = std::shared_ptr< Pizza >(
-      std::make_shared<PepperoniPizza>( ingredientFactory ) );
+    pizza = std::make_shared<PepperoniPizza>( ingredientFactory );
     pizza->setName( "New York Style Pepperoni Pizza" );
   }
   return pizza;

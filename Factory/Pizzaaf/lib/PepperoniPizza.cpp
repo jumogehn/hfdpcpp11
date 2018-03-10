@@ -32,12 +32,10 @@ void PepperoniPizza::prepare() const
 {
   std::cout << "PepperoniPizza::prepare" << std::endl;
   std::cout << "Preparing " << getName().c_str() << std::endl;
-  _dough = std::shared_ptr< Dough>(_ingredientFactory->createDough());
-  _sauce = std::shared_ptr< Sauce>(_ingredientFactory->createSauce());
-  _cheese = std::shared_ptr< Cheese>(
-    _ingredientFactory->createCheese());
-  _pepperoni = std::shared_ptr< Pepperoni>(
-    _ingredientFactory->createPepperoni());
+  _dough = _ingredientFactory->createDough();
+  _sauce = _ingredientFactory->createSauce();
+  _cheese = _ingredientFactory->createCheese();
+  _pepperoni = _ingredientFactory->createPepperoni();
   if (_veggies.empty())
     _veggies = _ingredientFactory->createVeggies();
 }
