@@ -17,7 +17,6 @@
 //C++ system files.
 #include <cstddef>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
@@ -32,13 +31,12 @@ ChocolateBoiler::~ChocolateBoiler()
   _uniqueInstance = nullptr;
 }
 
-std::shared_ptr<ChocolateBoiler> ChocolateBoiler::getInstance()
+ChocolateBoiler* ChocolateBoiler::getInstance()
 {
   if( _uniqueInstance == nullptr ) {
     std::cout
       << "Creating unique instance of Chocolate Boiler" << std::endl;
-    //_uniqueInstance = std::make_shared<ChocolateBoiler>();
-    _uniqueInstance.reset(new ChocolateBoiler());
+    _uniqueInstance = new ChocolateBoiler();
   }
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
   return _uniqueInstance;

@@ -17,7 +17,6 @@
 //C++ system files.
 #include <cstddef>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
@@ -36,9 +35,9 @@ ChocolateBoiler::~ChocolateBoiler()
 //https://stackoverflow.com/questions/12302057/c11-safe-double-checked-locking-for-lazy-initialization-possible/12302355#12302355
 //Game Programming Patterns, Robert Nystrom
 //Compiler must support and enable the §6.7.4 of the C++11 standard
-std::shared_ptr<ChocolateBoiler> ChocolateBoiler::getInstance()
+ChocolateBoiler* ChocolateBoiler::getInstance()
 {
-  static std::shared_ptr<ChocolateBoiler> _uniqueInstance(new ChocolateBoiler());
+  static ChocolateBoiler* _uniqueInstance = new ChocolateBoiler();
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
   return _uniqueInstance;
 }

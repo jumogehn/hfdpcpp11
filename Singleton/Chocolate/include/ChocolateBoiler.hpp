@@ -18,14 +18,13 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
 class ChocolateBoiler {
 
-  static std::shared_ptr<ChocolateBoiler> _uniqueInstance;
+  static ChocolateBoiler* _uniqueInstance;
   bool _empty;
   bool _boiled;
 
@@ -36,7 +35,7 @@ class ChocolateBoiler {
 
 public:
   ~ChocolateBoiler();
-  static std::shared_ptr<ChocolateBoiler> getInstance();
+  static ChocolateBoiler* getInstance();
   void fill();
   void drain();
   void boil();

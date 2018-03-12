@@ -16,7 +16,6 @@
 //C++ system files.
 #include <cstddef>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "ChocolateBoiler.hpp"
@@ -24,13 +23,13 @@
 
 int main( int argc, char* argv[] ) {
 
-  auto boiler = ChocolateBoiler::getInstance();
+  ChocolateBoiler* boiler = ChocolateBoiler::getInstance();
   boiler->fill();
   boiler->boil();
   boiler->drain();
 
   // will return the existing instance
-  auto boiler2 = ChocolateBoiler::getInstance();
+  ChocolateBoiler* boiler2 = ChocolateBoiler::getInstance();
 
   if( boiler == boiler2 )
     std::cout << "Got same boiler" << std::endl;
