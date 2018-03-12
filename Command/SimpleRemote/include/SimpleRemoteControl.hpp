@@ -25,11 +25,11 @@
 
 class SimpleRemoteControl {
 
-  std::shared_ptr<Command> _slot;
+  const Command* _slot;
 
 public:
   SimpleRemoteControl();
-  void setCommand( const std::shared_ptr<Command> command );
+  void setCommand( const Command* command );
   void buttonWasPressed() const;
 };
 

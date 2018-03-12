@@ -23,7 +23,7 @@
 
 
 
-LightOnCommand::LightOnCommand( const std::shared_ptr<Light> light ) :
+LightOnCommand::LightOnCommand( const Light* light ) :
   _light( light )
 {
   assert( light );

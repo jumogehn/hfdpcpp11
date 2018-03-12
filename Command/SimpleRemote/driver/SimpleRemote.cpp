@@ -28,15 +28,15 @@
 
 int main( int argc, char* argv[] ) {
 
-  auto remote = std::make_shared<SimpleRemoteControl>();
-  auto light = std::make_shared<Light>();
-  auto garageDoor = std::make_shared<GarageDoor>();
-  auto lightOn = std::make_shared<LightOnCommand>( light );
-  auto garageOpen = std::make_shared<GarageDoorOpenCommand>( garageDoor );
+  std::unique_ptr<SimpleRemoteControl> remote(new SimpleRemoteControl());
+  std::unique_ptr<Light> light(new Light());
+  std::unique_ptr<GarageDoor> garageDoor(new GarageDoor());
+  std::unique_ptr<LightOnCommand> lightOn(new LightOnCommand( light.get() ));
+  std::unique_ptr<GarageDoorOpenCommand> garageOpen(new GarageDoorOpenCommand( garageDoor.get() ));
 
-  remote->setCommand( lightOn );
+  remote->setCommand( lightOn.get() );
   remote->buttonWasPressed();
-  remote->setCommand( garageOpen );
+  remote->setCommand( garageOpen.get() );
   remote->buttonWasPressed();
 
   return 0;

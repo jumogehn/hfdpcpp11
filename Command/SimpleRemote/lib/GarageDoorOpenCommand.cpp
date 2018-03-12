@@ -23,7 +23,7 @@
 //Your project's .h files.
 
 
-GarageDoorOpenCommand::GarageDoorOpenCommand( const std::shared_ptr<GarageDoor> garageDoor) :
+GarageDoorOpenCommand::GarageDoorOpenCommand( const GarageDoor* garageDoor) :
   _garageDoor( garageDoor )
 {
   assert( garageDoor );

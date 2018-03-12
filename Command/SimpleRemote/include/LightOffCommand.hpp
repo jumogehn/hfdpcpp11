@@ -26,10 +26,10 @@
 
 class LightOffCommand : public Command {
 
-  const std::shared_ptr<Light> _light;
+  const Light* _light;
 
 public:
-  explicit LightOffCommand( const std::shared_ptr<Light> light );
+  explicit LightOffCommand( const Light* light );
   void execute() const;
 };
 

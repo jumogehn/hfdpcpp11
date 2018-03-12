@@ -29,7 +29,7 @@ SimpleRemoteControl::SimpleRemoteControl() :
 {
   std::cout << "SimpleRemoteControl::SimpleRemoteControl" << std::endl;
 }
-void SimpleRemoteControl::setCommand( const std::shared_ptr<Command> command )
+void SimpleRemoteControl::setCommand( const Command* command )
 {
   assert( command );
   std::cout << "SimpleRemoteControl::setCommand" << std::endl;
