@@ -20,7 +20,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
@@ -28,7 +27,7 @@ template <class T>
 class Iterator {
 public:
   virtual bool hasNext() const = 0;
-  virtual std::shared_ptr<T> next() const = 0;
+  virtual T* next() const = 0;
   virtual ~Iterator()
   {
     std::cout << "Iterator::~Iterator" << std::endl;

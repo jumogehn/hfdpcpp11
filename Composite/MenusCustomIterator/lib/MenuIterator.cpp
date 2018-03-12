@@ -17,22 +17,21 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-MenuIterator::MenuIterator( std::vector< std::shared_ptr<MenuComponent> > items ) :
+MenuIterator::MenuIterator( std::vector< MenuComponent* > items ) :
   _items( items )
 {
   std::cout << "MenuIterator::"
                      "MenuIterator" << std::endl;
   _iterator = _items.begin();
 }
- std::shared_ptr<MenuComponent> MenuIterator::next() const
+ MenuComponent* MenuIterator::next() const
 {
   std::cout << "MenuIterator::next" << std::endl;
-  std::shared_ptr<MenuComponent> result = *_iterator++;
+  MenuComponent* result = *_iterator++;
   return result;
 }
 bool MenuIterator::hasNext() const
