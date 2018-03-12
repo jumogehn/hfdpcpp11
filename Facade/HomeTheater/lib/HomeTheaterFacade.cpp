@@ -18,7 +18,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -33,10 +32,10 @@
 
 
 
-HomeTheaterFacade::HomeTheaterFacade( std::shared_ptr<Amplifier> amp, std::shared_ptr<Tuner> tuner,
-                                      std::shared_ptr<DvdPlayer> dvd, std::shared_ptr<CdPlayer> cd,
-                                      std::shared_ptr<Projector> projector, std::shared_ptr<Screen> screen,
-                                      std::shared_ptr<TheaterLights> lights, std::shared_ptr<PopcornPopper> popper ) :
+HomeTheaterFacade::HomeTheaterFacade( Amplifier* amp, Tuner* tuner,
+                                      DvdPlayer* dvd, CdPlayer* cd,
+                                      Projector* projector, Screen* screen,
+                                      TheaterLights* lights, PopcornPopper* popper ) :
   _amp( amp ), _tuner( tuner ), _dvd( dvd ), _cd( cd ),
   _projector( projector ), _lights( lights ), _screen( screen ),
   _popper( popper )

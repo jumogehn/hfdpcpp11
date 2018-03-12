@@ -17,7 +17,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -27,13 +26,13 @@
 class Projector {
 
   std::string _description;
-  std::shared_ptr<DvdPlayer>  _dvdPlayer;
+  DvdPlayer*  _dvdPlayer;
 
   Projector( const Projector& ); // Disable copy constructor
   void operator=( const Projector& ); // Disable assignment operator
 
 public:
-  Projector( std::string description, std::shared_ptr<DvdPlayer> dvdPlayer );
+  Projector( std::string description, DvdPlayer* dvdPlayer );
   void on();
   void off();
   void wideScreenMode();

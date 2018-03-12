@@ -17,7 +17,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -34,22 +33,22 @@
 
 class HomeTheaterFacade {
 
-  std::shared_ptr<Amplifier> _amp;
-  std::shared_ptr<Tuner> _tuner;
-  std::shared_ptr<DvdPlayer> _dvd;
-  std::shared_ptr<CdPlayer> _cd;
-  std::shared_ptr<Projector> _projector;
-  std::shared_ptr<TheaterLights> _lights;
-  std::shared_ptr<Screen> _screen;
-  std::shared_ptr<PopcornPopper> _popper;
+  Amplifier* _amp;
+  Tuner* _tuner;
+  DvdPlayer* _dvd;
+  CdPlayer* _cd;
+  Projector* _projector;
+  TheaterLights* _lights;
+  Screen* _screen;
+  PopcornPopper* _popper;
 
   HomeTheaterFacade( const HomeTheaterFacade& );
   void operator=( const HomeTheaterFacade& );
 
 public:
-  HomeTheaterFacade( std::shared_ptr<Amplifier> amp, std::shared_ptr<Tuner> tuner, std::shared_ptr<DvdPlayer> dvd,
-                     std::shared_ptr<CdPlayer> cd, std::shared_ptr<Projector> projector, std::shared_ptr<Screen> screen,
-                     std::shared_ptr<TheaterLights> lights, std::shared_ptr<PopcornPopper> popper );
+  HomeTheaterFacade( Amplifier* amp, Tuner* tuner, DvdPlayer* dvd,
+                     CdPlayer* cd, Projector* projector, Screen* screen,
+                     TheaterLights* lights, PopcornPopper* popper );
   void watchMovie( std::string movie );
   void endMovie();
   void listenToCd( std::string cdTitle );

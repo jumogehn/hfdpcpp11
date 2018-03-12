@@ -34,17 +34,17 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "main" << std::endl;
 
-  auto amp = std::make_shared<Amplifier>( "Top-O-Line Amplifier" );
-  auto tuner = std::make_shared<Tuner>( "Top-O-Line AM/FM Tuner", amp );
-  auto dvd = std::make_shared<DvdPlayer>( "Top-O-Line DVD Player", amp );
-  auto cd = std::make_shared<CdPlayer>( "Top-O-Line CD Player", amp );
-  auto projector = std::make_shared<Projector>( "Top-O-Line Projector", dvd );
-  auto lights = std::make_shared<TheaterLights>( "Theater Ceiling Lights" );
-  auto screen = std::make_shared<Screen>( "Theater Screen" );
-  auto popper = std::make_shared<PopcornPopper>( "Popcorn Popper" );
-  auto homeTheater = std::make_shared<HomeTheaterFacade>( amp, tuner, dvd, cd,
-                                                          projector, screen,
-                                                          lights, popper );
+  std::unique_ptr<Amplifier> amp(new Amplifier( "Top-O-Line Amplifier" ));
+  std::unique_ptr<Tuner> tuner(new Tuner( "Top-O-Line AM/FM Tuner", amp.get() ));
+  std::unique_ptr<DvdPlayer> dvd(new DvdPlayer( "Top-O-Line DVD Player", amp.get() ));
+  std::unique_ptr<CdPlayer> cd(new CdPlayer( "Top-O-Line CD Player", amp.get() ));
+  std::unique_ptr<Projector> projector(new Projector( "Top-O-Line Projector", dvd.get() ));
+  std::unique_ptr<TheaterLights> lights(new TheaterLights( "Theater Ceiling Lights" ));
+  std::unique_ptr<Screen> screen(new Screen( "Theater Screen" ));
+  std::unique_ptr<PopcornPopper> popper(new PopcornPopper( "Popcorn Popper" ));
+  std::unique_ptr<HomeTheaterFacade> homeTheater(new HomeTheaterFacade( amp.get(), tuner.get(), dvd.get(), cd.get(),
+                                                          projector.get(), screen.get(),
+                                                          lights.get(), popper.get() ));
 
   homeTheater->watchMovie( "Raiders of the Lost Ark" );
   homeTheater->endMovie();

@@ -17,7 +17,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -28,7 +27,7 @@ class Amplifier;
 
 class DvdPlayer {
   std::string _description;
-  std::shared_ptr<Amplifier> _amplifier;
+  Amplifier* _amplifier;
   int _currentTrack;
   std::string _movie;
 
@@ -36,7 +35,7 @@ class DvdPlayer {
   void operator=( const DvdPlayer& ); // Disable assignment operator
 
 public:
-  DvdPlayer( std::string description, std::shared_ptr<Amplifier> amplifier );
+  DvdPlayer( std::string description, Amplifier* amplifier );
   void on() const;
   void off() const;
   void eject();

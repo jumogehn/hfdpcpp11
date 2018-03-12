@@ -18,14 +18,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
 
-Tuner::Tuner( std::string description, std::shared_ptr<Amplifier> amplifier ) :
+Tuner::Tuner( std::string description, Amplifier* amplifier ) :
   _description( description ), _amplifier( amplifier ), _frequency(0.0)
 {
   assert( amplifier );

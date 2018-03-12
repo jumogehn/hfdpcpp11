@@ -18,14 +18,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DvdPlayer.hpp"
 
 
-Projector::Projector( std::string description, std::shared_ptr<DvdPlayer> dvdPlayer ) :
+Projector::Projector( std::string description, DvdPlayer* dvdPlayer ) :
   _description( description ), _dvdPlayer( dvdPlayer )
 {
   assert( dvdPlayer );

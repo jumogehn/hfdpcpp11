@@ -18,14 +18,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
 
-CdPlayer::CdPlayer( std::string description, std::shared_ptr<Amplifier> amplifier ) :
+CdPlayer::CdPlayer( std::string description, Amplifier* amplifier ) :
   _description( description ), _amplifier( amplifier ),
   _currentTrack( 0 )
 {

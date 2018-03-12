@@ -17,7 +17,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -29,14 +28,14 @@ class Amplifier;
 class Tuner {
 
   std::string _description;
-  std::shared_ptr<Amplifier> _amplifier;
+  Amplifier* _amplifier;
   double _frequency;
 
   Tuner( const Tuner& ); // Disable copy constructor
   void operator=( const Tuner& ); // Disable assignment operator
 
 public:
-  Tuner( std::string description, std::shared_ptr<Amplifier> amplifier );
+  Tuner( std::string description, Amplifier* amplifier );
   void on();
   void off();
   void setFrequency( double frequency );

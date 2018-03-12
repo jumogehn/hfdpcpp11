@@ -18,13 +18,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-DvdPlayer::DvdPlayer( std::string description, std::shared_ptr<Amplifier> amplifier ) :
+DvdPlayer::DvdPlayer( std::string description, Amplifier* amplifier ) :
   _description( description ), _amplifier( amplifier ),
   _currentTrack( 0 )
 {

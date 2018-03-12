@@ -18,7 +18,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -60,7 +59,7 @@ void Amplifier::setVolume( int level )
   std::cout << _description
     << " setting volume to " << level << std::endl;
 }
-void Amplifier::setTuner( std::shared_ptr<Tuner> tuner)
+void Amplifier::setTuner( Tuner* tuner)
 {
   assert( tuner );
   std::cout << "Amplifier::setTuner" << std::endl;
@@ -68,7 +67,7 @@ void Amplifier::setTuner( std::shared_ptr<Tuner> tuner)
     << " setting tuner to " << tuner->toString() << std::endl;
   _tuner = tuner;
 }
-void Amplifier::setDvd( std::shared_ptr<DvdPlayer> dvd )
+void Amplifier::setDvd( DvdPlayer* dvd )
 {
   assert( dvd );
   std::cout << "Amplifier::setDvd" << std::endl;
@@ -76,7 +75,7 @@ void Amplifier::setDvd( std::shared_ptr<DvdPlayer> dvd )
     << " setting DVD player to " << dvd->toString()<< std::endl;
   _dvd = dvd;
 }
-void Amplifier::setCd( std::shared_ptr<CdPlayer> cd )
+void Amplifier::setCd( CdPlayer* cd )
 {
   assert( cd );
   std::cout << "Amplifier::setCd" << std::endl;

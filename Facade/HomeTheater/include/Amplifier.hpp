@@ -17,7 +17,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -30,9 +29,9 @@ class CdPlayer;
 class Amplifier {
 
   std::string _description;
-  std::shared_ptr<Tuner> _tuner;
-  std::shared_ptr<DvdPlayer> _dvd;
-  std::shared_ptr<CdPlayer> _cd;
+  Tuner* _tuner;
+  DvdPlayer* _dvd;
+  CdPlayer* _cd;
 
   Amplifier( const Amplifier& ); // Disable copy constructor
   void operator=( const Amplifier& ); // Disable assignment operator
@@ -44,9 +43,9 @@ public:
   void setStereoSound();
   void setSurroundSound();
   void setVolume( int level );
-  void setTuner( std::shared_ptr<Tuner> tuner);
-  void setDvd( std::shared_ptr<DvdPlayer> dvd );
-  void setCd( std::shared_ptr<CdPlayer> cd );
+  void setTuner( Tuner* tuner);
+  void setDvd( DvdPlayer* dvd );
+  void setCd( CdPlayer* cd );
   std::string toString() const;
 };
 
