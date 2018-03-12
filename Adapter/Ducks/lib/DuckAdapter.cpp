@@ -30,7 +30,7 @@
 //Your project's .h files.
 
 
-DuckAdapter::DuckAdapter( const std::shared_ptr<Duck> duck ) :
+DuckAdapter::DuckAdapter( const Duck* duck ) :
   MyDuck ( duck )
 {
   std::cout << "DuckAdapter::DuckAdapter" << std::endl;

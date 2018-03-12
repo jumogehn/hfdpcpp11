@@ -21,7 +21,7 @@
 //Your project's .h files.
 
 
-TurkeyAdapter::TurkeyAdapter( const std::shared_ptr<Turkey> turkey ) :
+TurkeyAdapter::TurkeyAdapter( const Turkey* turkey ) :
   MyTurkey( turkey )
 {
   std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;
@@ -30,7 +30,7 @@ TurkeyAdapter::TurkeyAdapter( const std::shared_ptr<Turkey> turkey ) :
 void TurkeyAdapter::fly() const
 {
   std::cout << "TurkeyAdapter::fly" << std::endl;
-  for( int i = 0; i < 5; i++ ) {
+  for( auto i = 0; i < 5; i++ ) {
     MyTurkey->fly();
   }
 }

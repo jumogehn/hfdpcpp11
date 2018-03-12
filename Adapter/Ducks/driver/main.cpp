@@ -20,14 +20,13 @@
 //Your project's .h files.
 #include "Duck.hpp"
 #include "DuckAdapter.hpp"
-//#include "DucksConfig.h"
 #include "MallardDuck.hpp"
 #include "Turkey.hpp"
 #include "TurkeyAdapter.hpp"
 #include "WildTurkey.hpp"
 
 
-void testDuck( const std::shared_ptr<Duck> duck )
+void testDuck( const Duck* duck )
 {
   std::cout << "testDuck" << std::endl;
   duck->quack();
@@ -36,30 +35,28 @@ void testDuck( const std::shared_ptr<Duck> duck )
 
 int main( int argc, char* argv[] )
 {
-//  std::cout << argv[0] << " Version " << Ducks_VERSION_MAJOR << "."
-//    << Ducks_VERSION_MINOR << std::endl << std::endl;
 
-  auto duck( std::make_shared<MallardDuck>() );
-  std::shared_ptr< Turkey > duckAdapter = std::make_shared<DuckAdapter>( duck );
+  std::unique_ptr<MallardDuck> duck( new MallardDuck() );
+  std::unique_ptr<Turkey> duckAdapter( new DuckAdapter( duck.get() ));
 
-  for( int i = 0; i < 10; i++ ) {
+  for( auto i = 0; i < 10; i++ ) {
     std::cout << "The DuckAdapter says..." << std::endl;
     duckAdapter->gobble();
     duckAdapter->fly();
   }
 
-  auto turkey( std::make_shared<WildTurkey>() );
-  std::shared_ptr< Duck > turkeyAdapter = std::make_shared<TurkeyAdapter>( turkey );
+  std::unique_ptr<WildTurkey> turkey( new WildTurkey() );
+  std::unique_ptr<Duck> turkeyAdapter( new TurkeyAdapter(turkey.get()) );
 
   std::cout << "The Turkey says..." << std::endl;
   turkey->gobble();
   turkey->fly();
 
   std::cout << "The Duck says..." << std::endl;
-  testDuck( duck );
+  testDuck( duck.get() );
 
   std::cout << "The TurkeyAdapter says..." << std::endl;
-  testDuck( turkeyAdapter );
+  testDuck( turkeyAdapter.get() );
 
   return 0;
 }

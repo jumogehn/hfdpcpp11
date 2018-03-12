@@ -27,13 +27,13 @@
 
 class TurkeyAdapter : public Duck {
 
-  const std::shared_ptr<Turkey> MyTurkey;
+  const Turkey* MyTurkey;
 
   TurkeyAdapter( const TurkeyAdapter& ); // Disable copy constructor
   void operator=( const TurkeyAdapter& ); // Disable assignment operator
 
 public:
-  explicit TurkeyAdapter( const std::shared_ptr<Turkey> turkey );
+  explicit TurkeyAdapter( const Turkey* turkey );
   void fly() const;
   void quack() const;
 };
