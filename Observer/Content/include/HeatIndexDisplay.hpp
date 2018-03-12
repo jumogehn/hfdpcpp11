@@ -18,18 +18,15 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
 #include "Observer.hpp"
 #include "Subject.hpp"
 
-//C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-class HeatIndexDisplay : public Observer, private DisplayElement
-                         , public std::enable_shared_from_this<HeatIndexDisplay> {
+class HeatIndexDisplay : private Observer, private DisplayElement {
 
-  std::shared_ptr<Subject> _weatherData;
+  Subject* _weatherData;
   float _heatIndex;
 
   HeatIndexDisplay(const HeatIndexDisplay&); // Disable copy constructor
@@ -40,7 +37,7 @@ class HeatIndexDisplay : public Observer, private DisplayElement
 public:
   explicit HeatIndexDisplay();
   ~HeatIndexDisplay();
-  int setSubject(std::shared_ptr<Subject> weatherData);
+  int setSubject(Subject* weatherData);
   int resetSubject();
   void update(float t, float rh, float pressure);
   void display() const;

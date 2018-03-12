@@ -18,7 +18,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Subject.hpp"
@@ -35,13 +34,13 @@ CurrentConditionsDisplay::~CurrentConditionsDisplay()
   std::cout << "CurrentConditionsDisplay"
     "::~CurrentConditionsDisplay" << std::endl;
 }
-int CurrentConditionsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+int CurrentConditionsDisplay::setSubject(Subject* weatherData)
 {
   assert(weatherData);
   assert(!_weatherData);
   _weatherData = weatherData;
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->registerObserver(shared_from_this());
+  _weatherData->registerObserver(this);
 
   return 0;
 }
@@ -49,7 +48,7 @@ int CurrentConditionsDisplay::resetSubject()
 {
   assert(_weatherData);
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->removeObserver(shared_from_this());
+  _weatherData->removeObserver(this);
   return 0;
 }
 void CurrentConditionsDisplay::update(float temperature, float humidity, float pressure)

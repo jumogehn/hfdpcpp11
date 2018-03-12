@@ -19,7 +19,6 @@
 #include <cassert>
 #include <iostream>
 #include <list>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Observer.hpp"
@@ -29,13 +28,13 @@ WeatherData::WeatherData() :
 {
   std::cout << "WeatherData::WeatherData" << std::endl;
 }
-void WeatherData::registerObserver(std::shared_ptr<Observer> o)
+void WeatherData::registerObserver(Observer* o)
 {
   assert(o);
   std::cout << "WeatherData::registerObserver" << std::endl;
   _observers.push_back(o);
 }
-void WeatherData::removeObserver(std::shared_ptr<Observer> o)
+void WeatherData::removeObserver(Observer* o)
 {
   assert(o);
   std::cout << "WeatherData::removeObserver" << std::endl;
@@ -45,7 +44,7 @@ void WeatherData::notifyObservers() const
 {
   std::cout << "WeatherData::notifyObservers" << std::endl;
   //http://en.cppreference.com/w/cpp/language/range-for
-  for (std::shared_ptr<Observer> observer : _observers) {
+  for (Observer* observer : _observers) {
     observer->update(_temperature, _humidity, _pressure);
   }
 }

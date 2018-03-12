@@ -20,7 +20,6 @@
 //C system files.
 //C++ system files.
 #include <list>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Observer.hpp"
@@ -29,7 +28,7 @@
 
 class WeatherData : public Subject {
 
-  mutable std::list< std::shared_ptr<Observer> > _observers;
+  mutable std::list< Observer* > _observers;
   float _temperature;
   float _humidity;
   float _pressure;
@@ -39,8 +38,8 @@ class WeatherData : public Subject {
 
 public:
   WeatherData();
-  void registerObserver(std::shared_ptr<Observer> o);
-  void removeObserver(std::shared_ptr<Observer> o);
+  void registerObserver(Observer* o);
+  void removeObserver(Observer* o);
   void notifyObservers() const;
   void measurementsChanged();
   void setMeasurements(float temperature, float humidity, float pressure);

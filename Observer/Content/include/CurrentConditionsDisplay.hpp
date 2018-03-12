@@ -18,18 +18,15 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "DisplayElement.hpp"
 #include "Observer.hpp"
 #include "Subject.hpp"
 
-//C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-class CurrentConditionsDisplay : public Observer, private DisplayElement
-                                 , public std::enable_shared_from_this<CurrentConditionsDisplay> {
+class CurrentConditionsDisplay : private Observer, private DisplayElement {
 
-  std::shared_ptr<Subject> _weatherData;
+  Subject* _weatherData;
   float _temperature;
   float _humidity;
 
@@ -39,7 +36,7 @@ class CurrentConditionsDisplay : public Observer, private DisplayElement
 public:
   explicit CurrentConditionsDisplay();
   ~CurrentConditionsDisplay();
-  int setSubject(std::shared_ptr<Subject> weatherData);
+  int setSubject(Subject* weatherData);
   int resetSubject();
   void update(float temperature, float humidity, float pressure);
   void display() const;

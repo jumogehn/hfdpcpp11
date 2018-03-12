@@ -18,7 +18,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Subject.hpp"
@@ -34,13 +33,13 @@ StatisticsDisplay::~StatisticsDisplay()
 {
   std::cout << "StatisticsDisplay::~StatisticsDisplay" << std::endl;
 }
-int StatisticsDisplay::setSubject(std::shared_ptr<Subject> weatherData)
+int StatisticsDisplay::setSubject(Subject* weatherData)
 {
   assert(weatherData);
   assert(!_weatherData);
   _weatherData = weatherData;
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->registerObserver(shared_from_this());
+  _weatherData->registerObserver(this);
 
   return 0;
 }
@@ -48,7 +47,7 @@ int StatisticsDisplay::resetSubject()
 {
   assert(_weatherData);
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->removeObserver(shared_from_this());
+  _weatherData->removeObserver(this);
   return 0;
 }
 void StatisticsDisplay::update(float temp, float humidity, float pressure)
