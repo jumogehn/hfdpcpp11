@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-Mocha::Mocha(std::shared_ptr<const Beverage> beverage) :
+Mocha::Mocha(const Beverage* beverage) :
   _beverage(beverage)
 {
   assert(beverage);

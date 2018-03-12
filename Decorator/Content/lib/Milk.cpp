@@ -17,13 +17,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-Milk::Milk(std::shared_ptr<const Beverage> beverage) :
+Milk::Milk(const Beverage* beverage) :
   _beverage(beverage)
 {
   assert(beverage);

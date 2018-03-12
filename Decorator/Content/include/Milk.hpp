@@ -28,10 +28,10 @@
 
 class Milk : public CondimentDecorator {
 
-  std::shared_ptr<const Beverage> _beverage;
+  const Beverage* _beverage;
 
 public:
-  explicit Milk(std::shared_ptr<const Beverage> beverage);
+  explicit Milk(const Beverage* beverage);
   ~Milk();
   std::string getDescription() const;
   double cost() const;

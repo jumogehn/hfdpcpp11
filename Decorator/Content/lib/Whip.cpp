@@ -17,13 +17,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 
 
-Whip::Whip(std::shared_ptr<const Beverage> beverage) :
+Whip::Whip(const Beverage* beverage) :
   _beverage(beverage)
 {
   assert(beverage);

@@ -19,7 +19,6 @@
 //C system files.
 //C++ system files.
 #include <string>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Beverage.hpp"
@@ -28,10 +27,10 @@
 
 class Whip : public CondimentDecorator {
 
-  std::shared_ptr<const Beverage> _beverage;
+  const Beverage* _beverage;
 
 public:
-  explicit Whip(std::shared_ptr<const Beverage> beverage);
+  explicit Whip(const Beverage* beverage);
   ~Whip();
   std::string getDescription() const;
   double cost() const;

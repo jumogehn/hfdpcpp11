@@ -23,7 +23,7 @@
 //Your project's .h files.
 
 
-Soy::Soy(std::shared_ptr<const Beverage> beverage) :
+Soy::Soy(const Beverage* beverage) :
   _beverage(beverage)
 {
   assert(beverage);
