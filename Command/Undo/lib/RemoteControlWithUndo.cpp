@@ -29,7 +29,7 @@
 RemoteControlWithUndo::RemoteControlWithUndo()
 {
   std::cout << "RemoteControlWithUndo::RemoteControlWithUndo" << std::endl;
-  _noCommand = std::make_shared<NoCommand>();
+  _noCommand = new NoCommand();
   for( int i = 0; i < SLOTS; i++ ) {
     _onCommands[i] = _noCommand;
     _offCommands[i] = _noCommand;
@@ -39,9 +39,9 @@ RemoteControlWithUndo::RemoteControlWithUndo()
 RemoteControlWithUndo::~RemoteControlWithUndo()
 {
   std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
-  //delete _noCommand;
+  delete _noCommand;
 }
-void RemoteControlWithUndo::setCommand( int slot, std::shared_ptr<Command> onCommand, std::shared_ptr<Command> offCommand )
+void RemoteControlWithUndo::setCommand( int slot, Command* onCommand, Command* offCommand )
 {
   assert( slot <= SLOTS ); assert( onCommand ); assert( offCommand );
   std::cout << "RemoteControlWithUndo::setCommand" << std::endl;

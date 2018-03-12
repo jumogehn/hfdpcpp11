@@ -23,7 +23,7 @@
 //Your project's .h files.
 
 
-CeilingFanLowCommand::CeilingFanLowCommand( const std::shared_ptr<CeilingFan> ceilingFan ) :
+CeilingFanLowCommand::CeilingFanLowCommand( const CeilingFan* ceilingFan ) :
   _ceilingFan( ceilingFan )
 {
   std::cout << "CeilingFanLowCommand::CeilingFanLowCommand" << std::endl;

@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-CeilingFanMediumCommand::CeilingFanMediumCommand( const std::shared_ptr<CeilingFan> ceilingFan ) :
+CeilingFanMediumCommand::CeilingFanMediumCommand( const CeilingFan* ceilingFan ) :
   _ceilingFan( ceilingFan )
 {
   assert( ceilingFan );

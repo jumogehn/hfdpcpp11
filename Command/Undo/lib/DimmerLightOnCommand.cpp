@@ -23,7 +23,7 @@
 //Your project's .h files.
 
 
-DimmerLightOnCommand::DimmerLightOnCommand( const std::shared_ptr<Light> light ) :
+DimmerLightOnCommand::DimmerLightOnCommand( const Light* light ) :
   _light( light )
 {
   assert( light );

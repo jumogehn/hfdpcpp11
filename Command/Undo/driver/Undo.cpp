@@ -31,12 +31,12 @@
 
 int main( int argc, char* argv[] ) {
 
-  auto remoteControl = std::make_shared<RemoteControlWithUndo>();
-  auto livingRoomLight = std::make_shared<Light>( "Living Room" );
-  auto livingRoomLightOn = std::make_shared<LightOnCommand>( livingRoomLight );
-  auto livingRoomLightOff = std::make_shared<LightOffCommand>( livingRoomLight );
+  std::unique_ptr<RemoteControlWithUndo> remoteControl(new RemoteControlWithUndo());
+  std::unique_ptr<Light> livingRoomLight(new Light( "Living Room" ));
+  std::unique_ptr<LightOnCommand> livingRoomLightOn(new LightOnCommand( livingRoomLight.get() ));
+  std::unique_ptr<LightOffCommand> livingRoomLightOff(new LightOffCommand( livingRoomLight.get() ));
 
-  remoteControl->setCommand( 0, livingRoomLightOn,livingRoomLightOff );
+  remoteControl->setCommand( 0, livingRoomLightOn.get(),livingRoomLightOff.get() );
 
   remoteControl->onButtonWasPushed( 0 );
   remoteControl->offButtonWasPushed( 0 );
@@ -47,13 +47,13 @@ int main( int argc, char* argv[] ) {
   std::cout << remoteControl->toString() << std::endl;
   remoteControl->undoButtonWasPushed();
 
-  auto ceilingFan = std::make_shared<CeilingFan>( "Living Room" );
-  auto ceilingFanMedium = std::make_shared<CeilingFanMediumCommand>( ceilingFan );
-  auto ceilingFanHigh = std::make_shared<CeilingFanHighCommand>( ceilingFan );
-  auto ceilingFanOff = std::make_shared<CeilingFanOffCommand>( ceilingFan );
+  std::unique_ptr<CeilingFan> ceilingFan(new CeilingFan( "Living Room" ));
+  std::unique_ptr<CeilingFanMediumCommand> ceilingFanMedium(new CeilingFanMediumCommand( ceilingFan.get() ));
+  std::unique_ptr<CeilingFanHighCommand> ceilingFanHigh(new CeilingFanHighCommand( ceilingFan.get() ));
+  std::unique_ptr<CeilingFanOffCommand> ceilingFanOff(new CeilingFanOffCommand( ceilingFan.get() ));
 
-  remoteControl->setCommand( 0, ceilingFanMedium, ceilingFanOff );
-  remoteControl->setCommand( 1, ceilingFanHigh, ceilingFanOff );
+  remoteControl->setCommand( 0, ceilingFanMedium.get(), ceilingFanOff.get() );
+  remoteControl->setCommand( 1, ceilingFanHigh.get(), ceilingFanOff.get() );
 
   remoteControl->onButtonWasPushed( 0 );
   remoteControl->offButtonWasPushed( 0 );

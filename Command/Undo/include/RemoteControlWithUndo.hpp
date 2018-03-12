@@ -32,15 +32,15 @@ class RemoteControlWithUndo {
 
   static const int SLOTS = 7;
 
-  std::shared_ptr<Command> _onCommands[SLOTS];
-  std::shared_ptr<Command> _offCommands[SLOTS];
-  std::shared_ptr<Command> _noCommand;
-  mutable std::shared_ptr<Command> _undoCommand;
+  Command* _onCommands[SLOTS];
+  Command* _offCommands[SLOTS];
+  Command* _noCommand;
+  mutable Command* _undoCommand;
 
 public:
   RemoteControlWithUndo();
   ~RemoteControlWithUndo();
-  void setCommand( int slot, std::shared_ptr<Command> onCommand, std::shared_ptr<Command> offCommand );
+  void setCommand( int slot, Command* onCommand, Command* offCommand );
   void onButtonWasPushed( int slot ) const;
   void offButtonWasPushed( int slot ) const;
   void undoButtonWasPushed() const;

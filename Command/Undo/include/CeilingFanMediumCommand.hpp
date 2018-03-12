@@ -27,11 +27,11 @@
 
 class CeilingFanMediumCommand : public Command {
 
-  const std::shared_ptr<CeilingFan> _ceilingFan;
+  const CeilingFan* _ceilingFan;
   mutable int _prevSpeed;
 
 public:
-  explicit CeilingFanMediumCommand( const std::shared_ptr<CeilingFan> ceilingFan );
+  explicit CeilingFanMediumCommand( const CeilingFan* ceilingFan );
   void execute() const;
   void undo() const;
 };
