@@ -20,7 +20,7 @@
 //Your project's .h files.
 #include "Duck.hpp"
 #include "DuckAdapter.hpp"
-#include "DucksConfig.h"
+//#include "DucksConfig.h"
 #include "MallardDuck.hpp"
 #include "Turkey.hpp"
 #include "TurkeyAdapter.hpp"
@@ -36,8 +36,8 @@ void testDuck( const std::shared_ptr<Duck> duck )
 
 int main( int argc, char* argv[] )
 {
-  std::cout << argv[0] << " Version " << Ducks_VERSION_MAJOR << "."
-    << Ducks_VERSION_MINOR << std::endl << std::endl;
+//  std::cout << argv[0] << " Version " << Ducks_VERSION_MAJOR << "."
+//    << Ducks_VERSION_MINOR << std::endl << std::endl;
 
   auto duck( std::make_shared<MallardDuck>() );
   std::shared_ptr< Turkey > duckAdapter = std::make_shared<DuckAdapter>( duck );

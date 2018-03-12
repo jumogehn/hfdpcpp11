@@ -1,3 +1,0 @@
-// the configured options and settings for Ducks
-#define Ducks_VERSION_MAJOR @Ducks_VERSION_MAJOR@ 
-#define Ducks_VERSION_MINOR @Ducks_VERSION_MINOR@ 
