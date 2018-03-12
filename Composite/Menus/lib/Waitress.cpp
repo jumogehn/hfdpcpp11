@@ -23,7 +23,7 @@
 //Your project's .h files.
 
 
-Waitress::Waitress( const std::shared_ptr<MenuComponent> allMenus ) :
+Waitress::Waitress( const MenuComponent* allMenus ) :
   _allMenus( allMenus )
 {
   assert( allMenus );

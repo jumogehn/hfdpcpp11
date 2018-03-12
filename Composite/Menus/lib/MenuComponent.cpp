@@ -33,45 +33,45 @@ MenuComponent::~MenuComponent()
 {
   std::cout << "MenuComponent::~MenuComponent" << std::endl;
 }
-void MenuComponent::add( std::shared_ptr<MenuComponent> menuComponent )
+void MenuComponent::add( MenuComponent* menuComponent )
 {
   std::cout << "MenuComponent::add" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
-void MenuComponent::remove( std::shared_ptr<MenuComponent> menuComponent )
+void MenuComponent::remove( MenuComponent* menuComponent )
 {
   std::cout << "MenuComponent::remove" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
-std::shared_ptr<MenuComponent> MenuComponent::getChild( int i ) const
+MenuComponent* MenuComponent::getChild( int i ) const
 {
   std::cout << "MenuComponent::getChild" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 std::string MenuComponent::getName() const
 {
   std::cout << "MenuComponent::getName" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 std::string MenuComponent::getDescription() const
 {
   std::cout << "MenuComponent::getDescription" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 double MenuComponent::getPrice() const
 {
   std::cout << "MenuComponent::getPrice" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 bool MenuComponent::isVegetarian() const
 {
   std::cout << "MenuComponent::isVegetarian" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 void MenuComponent::print() const
 {
   std::cout << "MenuComponent::print" << std::endl;
-  throw std::make_shared<UnsupportedOperationException>();
+  throw new UnsupportedOperationException();
 }
 
 

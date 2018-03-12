@@ -32,13 +32,13 @@ Menu::Menu( const std::string name, const std::string description ) :
 {
   std::cout << "Menu::Menu" << std::endl;
 }
-void Menu::add( std::shared_ptr<MenuComponent> menuComponent )
+void Menu::add( MenuComponent* menuComponent )
 {
   assert( menuComponent );
   std::cout << "Menu::add" << std::endl;
   _menuComponents.push_back( menuComponent );
 }
-void Menu::remove( std::shared_ptr<MenuComponent> menuComponent )
+void Menu::remove( MenuComponent* menuComponent )
 {
   assert( menuComponent );
   std::cout << "Menu::remove" << std::endl;
@@ -47,7 +47,7 @@ void Menu::remove( std::shared_ptr<MenuComponent> menuComponent )
   //std::remove( _menuComponents.begin(), _menuComponents.end(),
   //             menuComponent->getName().c_str());
 }
-std::shared_ptr<MenuComponent> Menu::getChild( int i ) const
+MenuComponent* Menu::getChild( int i ) const
 {
   std::cout << "Menu::getChild" << std::endl;
   return _menuComponents[i];
@@ -69,11 +69,11 @@ void Menu::print() const
   std::cout << ", " << getDescription().c_str() << std::endl;
   std::cout << "---------------------" << std::endl;
 
-  //std::vector< std::shared_ptr<MenuComponent> >::iterator
+  //std::vector< MenuComponent* >::iterator
   //  iterator = _menuComponents.begin();
   //while( iterator != _menuComponents.end() ) {
-  //  std::shared_ptr<MenuComponent> menuComponent = *iterator++;
-  for ( std::shared_ptr<MenuComponent> menuComponent : _menuComponents ) {
+  //  MenuComponent> menuComponent = *iterator++;
+  for ( MenuComponent* menuComponent : _menuComponents ) {
     menuComponent->print();
   }
 }

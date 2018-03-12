@@ -26,13 +26,13 @@
 
 class Waitress {
 
-  const std::shared_ptr<MenuComponent> _allMenus;
+  const MenuComponent* _allMenus;
 
   Waitress( const Waitress& ); // Disable copy constructor
   void operator=( const Waitress& ); // Disable assignment operator
 
 public:
-  explicit Waitress( const std::shared_ptr<MenuComponent> allMenus );
+  explicit Waitress( const MenuComponent* allMenus );
   void printMenu() const;
 };
 

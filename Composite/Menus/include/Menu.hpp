@@ -30,13 +30,13 @@ class Menu : public MenuComponent {
 
   std::string _name;
   std::string _description;
-  mutable std::vector< std::shared_ptr<MenuComponent> > _menuComponents;
+  mutable std::vector< MenuComponent* > _menuComponents;
 
 public:
   Menu( const std::string name, const std::string description );
-  void add( std::shared_ptr<MenuComponent> menuComponent );
-  void remove( std::shared_ptr<MenuComponent> menuComponent );
-  std::shared_ptr<MenuComponent> getChild( int i ) const;
+  void add( MenuComponent* menuComponent );
+  void remove( MenuComponent* menuComponent );
+  MenuComponent* getChild( int i ) const;
   std::string getName() const;
   std::string getDescription() const;
   void print() const;
