@@ -27,10 +27,10 @@
 
 class StereoOnWithCDCommand : public Command {
 
-  const std::shared_ptr<Stereo> _stereo;
+  const Stereo* _stereo;
 
 public:
-  explicit StereoOnWithCDCommand( const std::shared_ptr<Stereo> stereo );
+  explicit StereoOnWithCDCommand( const Stereo* stereo );
   void execute() const;
 };
 

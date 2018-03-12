@@ -27,10 +27,10 @@
 
 class HottubOffCommand : public Command {
 
-  const std::shared_ptr<Hottub> _hottub;
+  const Hottub* _hottub;
 
 public:
-  explicit HottubOffCommand( const std::shared_ptr<Hottub> hottub );
+  explicit HottubOffCommand( const Hottub* hottub );
   void execute() const;
 };
 

@@ -27,10 +27,10 @@
 
 class CeilingFanOnCommand : public Command {
 
-  const std::shared_ptr<CeilingFan> _ceilingFan;
+  const CeilingFan* _ceilingFan;
 
 public:
-  explicit CeilingFanOnCommand( const std::shared_ptr<CeilingFan> ceilingFan );
+  explicit CeilingFanOnCommand( const CeilingFan* ceilingFan );
   void execute() const;
 };
 

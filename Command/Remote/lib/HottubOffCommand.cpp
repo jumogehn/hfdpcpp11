@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-HottubOffCommand::HottubOffCommand( const std::shared_ptr<Hottub> hottub ) :
+HottubOffCommand::HottubOffCommand( const Hottub* hottub ) :
   _hottub( hottub )
 {
   std::cout << "HottubOffCommand::HottubOffCommand" << std::endl;

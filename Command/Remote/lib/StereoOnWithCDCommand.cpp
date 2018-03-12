@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-StereoOnWithCDCommand::StereoOnWithCDCommand( const std::shared_ptr<Stereo> stereo ) :
+StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
   _stereo( stereo )
 {
   assert( stereo );

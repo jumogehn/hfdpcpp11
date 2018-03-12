@@ -23,7 +23,7 @@
 #include "Hottub.hpp"
 
 
-HottubOnCommand::HottubOnCommand( const std::shared_ptr<Hottub> hottub ) :
+HottubOnCommand::HottubOnCommand( const Hottub* hottub ) :
   _hottub( hottub )
 {
   std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;

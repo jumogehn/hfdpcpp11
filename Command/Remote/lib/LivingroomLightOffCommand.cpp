@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-LivingroomLightOffCommand::LivingroomLightOffCommand( const std::shared_ptr<Light> light ) :
+LivingroomLightOffCommand::LivingroomLightOffCommand( const Light* light ) :
   _light( light )
 {
   assert( light );

@@ -23,7 +23,7 @@
 #include "CeilingFan.hpp"
 
 
-CeilingFanOnCommand::CeilingFanOnCommand( const std::shared_ptr<CeilingFan> ceilingFan ) :
+CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceilingFan ) :
   _ceilingFan( ceilingFan )
 {
   assert( ceilingFan );

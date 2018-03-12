@@ -28,10 +28,10 @@
 
 class LivingroomLightOnCommand : public Command {
 
-  const std::shared_ptr<Light> _light;
+  const Light* _light;
 
 public:
-  explicit LivingroomLightOnCommand( const std::shared_ptr<Light> light );
+  explicit LivingroomLightOnCommand( const Light* light );
   void execute() const;
 };
 

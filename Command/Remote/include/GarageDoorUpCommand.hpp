@@ -27,10 +27,10 @@
 
 class GarageDoorUpCommand : public Command {
 
-  const std::shared_ptr<GarageDoor> _garageDoor;
+  const GarageDoor* _garageDoor;
 
 public:
-  explicit GarageDoorUpCommand( const std::shared_ptr<GarageDoor> garageDoor );
+  explicit GarageDoorUpCommand( const GarageDoor* garageDoor );
   void execute() const;
 };
 

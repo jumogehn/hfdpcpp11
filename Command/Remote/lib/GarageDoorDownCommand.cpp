@@ -23,7 +23,7 @@
 #include "GarageDoor.hpp"
 
 
-GarageDoorDownCommand::GarageDoorDownCommand( const std::shared_ptr<GarageDoor> garageDoor ) :
+GarageDoorDownCommand::GarageDoorDownCommand( const GarageDoor* garageDoor ) :
   _garageDoor( garageDoor )
 {
   assert( garageDoor );

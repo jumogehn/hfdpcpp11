@@ -29,7 +29,7 @@
 RemoteControl::RemoteControl()
 {
   std::cout << "RemoteControl::RemoteControl" << std::endl;
-  _noCommand = std::make_shared<NoCommand>();
+  _noCommand = new NoCommand();
   for( int i = 0; i < SLOTS; i++ ) {
     _onCommands[i]  = _noCommand;
     _offCommands[i] = _noCommand;
@@ -39,10 +39,10 @@ RemoteControl::RemoteControl()
 RemoteControl::~RemoteControl()
 {
   std::cout << "RemoteControl::~RemoteControl" << std::endl;
-  //delete _noCommand;
+  delete _noCommand;
 }
 
-void RemoteControl::setCommand( int slot, std::shared_ptr<Command> onCommand, std::shared_ptr<Command> offCommand )
+void RemoteControl::setCommand( int slot, Command* onCommand, Command* offCommand )
 {
   std::cout << "RemoteControl::setCommand" << std::endl;
   assert( slot <= SLOTS ); assert( onCommand ); assert ( offCommand );

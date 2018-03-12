@@ -22,7 +22,7 @@
 //Your project's .h files.
 
 
-StereoOffCommand::StereoOffCommand( const std::shared_ptr<Stereo> stereo ) :
+StereoOffCommand::StereoOffCommand( const Stereo* stereo ) :
   _stereo( stereo )
 {
   std::cout << "StereoOffCommand::StereoOffCommand" << std::endl;
