@@ -26,10 +26,10 @@
 
 int main(int argc, char* argv[]) {
 
-  auto mallard = std::make_shared<MallardDuck>();
-  auto rubberDuckie = std::make_shared<RubberDuck>();
-  auto decoy = std::make_shared<DecoyDuck>();
-  auto model = std::make_shared<ModelDuck>();
+  std::unique_ptr<MallardDuck> mallard ( new MallardDuck() );
+  std::unique_ptr<RubberDuck> rubberDuckie ( new RubberDuck() );
+  std::unique_ptr<DecoyDuck> decoy ( new DecoyDuck() );
+  std::unique_ptr<ModelDuck> model ( new ModelDuck() );
 
   mallard->performQuack();
   mallard->performFly();
@@ -42,7 +42,7 @@ int main(int argc, char* argv[]) {
 
   model->performQuack();
   model->performFly();
-  model->setFlyBehavior(std::make_shared<FlyRocketPowered>());
+  model->setFlyBehavior(new FlyRocketPowered());
   model->performFly();
 
   return 0;

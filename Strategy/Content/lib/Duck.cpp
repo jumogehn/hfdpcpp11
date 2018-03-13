@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 #include <cassert>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -24,7 +23,7 @@
 #include "QuackBehavior.hpp"
 
 
-Duck::Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior) :
+Duck::Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior) :
   _flyBehavior(flyBehavior), _quackBehavior(quackBehavior)
 {
   assert(flyBehavior); assert(quackBehavior);
@@ -35,13 +34,13 @@ Duck::~Duck()
 {
   std::cout << "Duck::~Duck" << std::endl;
 }
-void Duck::setFlyBehavior(std::shared_ptr<FlyBehavior> fb)
+void Duck::setFlyBehavior(FlyBehavior* fb)
 {
   assert(fb);
   std::cout << "Duck::setFlyBehavior" << std::endl;
   _flyBehavior = fb;
 }
-void Duck::setQuackBehavior(std::shared_ptr<QuackBehavior> qb)
+void Duck::setQuackBehavior(QuackBehavior* qb)
 {
   assert(qb);
   std::cout << "Duck::setQuackBehavior" << std::endl;

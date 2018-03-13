@@ -18,7 +18,6 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "FlyBehavior.hpp"
@@ -27,19 +26,19 @@
 
 class Duck {
 
-  std::shared_ptr< FlyBehavior > _flyBehavior;
-  std::shared_ptr< QuackBehavior > _quackBehavior;
+   FlyBehavior* _flyBehavior;
+   QuackBehavior* _quackBehavior;
 
   Duck(const Duck&); // Disable copy constructor
   void operator=(const Duck&); // Disable assignment operator
 
 protected:
-  Duck(std::shared_ptr<FlyBehavior> flyBehavior, std::shared_ptr<QuackBehavior> quackBehavior);
+  Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior);
 
 public:
   virtual ~Duck();
-  void setFlyBehavior(std::shared_ptr<FlyBehavior> fb);
-  void setQuackBehavior(std::shared_ptr<QuackBehavior> qb);
+  void setFlyBehavior(FlyBehavior* fb);
+  void setQuackBehavior(QuackBehavior* qb);
   void performFly() const;
   void performQuack() const;
   void swim() const;

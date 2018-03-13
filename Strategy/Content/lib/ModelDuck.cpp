@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Duck.hpp"
@@ -24,7 +23,7 @@
 #include "FlyNoWay.hpp"
 
 
-ModelDuck::ModelDuck() : Duck(std::make_shared<FlyNoWay>(), std::make_shared<FakeQuack>())
+ModelDuck::ModelDuck() : Duck(new FlyNoWay(), new FakeQuack())
 {
   std::cout << "ModelDuck::ModelDuck" << std::endl;
 }

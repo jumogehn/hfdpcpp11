@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Duck.hpp"
@@ -24,7 +23,7 @@
 #include "Squeak.hpp"
 
 
-RubberDuck::RubberDuck() : Duck(std::make_shared<FlyNoWay>(), std::make_shared<Squeak>())
+RubberDuck::RubberDuck() : Duck(new FlyNoWay(), new Squeak())
 {
   std::cout << "RubberDuck::RubberDuck" << std::endl;
 }

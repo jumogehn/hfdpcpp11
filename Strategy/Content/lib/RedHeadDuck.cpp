@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Duck.hpp"
@@ -24,7 +23,7 @@
 #include "Quack.hpp"
 
 
-RedHead::RedHead() : Duck(std::make_shared<FlyWithWings>(), std::make_shared<Quack>())
+RedHead::RedHead() : Duck(new FlyWithWings(), new Quack())
 {
   std::cout << "RedHead::RedHead" << std::endl;
 }

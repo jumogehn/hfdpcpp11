@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "Duck.hpp"
@@ -25,7 +24,7 @@
 
 
   DecoyDuck::DecoyDuck()
-: Duck(std::make_shared<FlyNoWay>(), std::make_shared<MuteQuack>())
+: Duck(new FlyNoWay(), new MuteQuack())
 {
   std::cout << "DecoyDuck::DecoyDuck" << std::endl;
 }
