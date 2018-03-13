@@ -6,7 +6,7 @@ INCLUDE_DIRECTORIES(${Remote_SOURCE_DIR}/include)
 
 # Add binary called "testremote" that is built from the source file "Remote.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testremote Remote)
+ADD_EXECUTABLE(testremote remote)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testremote
