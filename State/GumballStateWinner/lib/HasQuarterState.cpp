@@ -23,14 +23,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "GumballMachine.hpp"
 
 
 
-HasQuarterState::HasQuarterState( std::shared_ptr<GumballMachine> gumballMachine ) :
+HasQuarterState::HasQuarterState( GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine ), _random( 0 )
 {
   assert( gumballMachine );

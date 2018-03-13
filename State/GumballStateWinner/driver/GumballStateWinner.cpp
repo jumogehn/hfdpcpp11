@@ -25,8 +25,7 @@
 
 int main( int argc, char* argv[] ) {
 
-  auto gumballMachine = std::make_shared<GumballMachine>();
-  gumballMachine ->init(10);
+  std::unique_ptr<GumballMachine> gumballMachine( new GumballMachine(10) );
   std::cout << gumballMachine->toString() << std::endl;
 
   gumballMachine->insertQuarter();

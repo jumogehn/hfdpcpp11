@@ -18,43 +18,40 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "State.hpp"
 
-//C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-class GumballMachine : public std::enable_shared_from_this<GumballMachine> {
+class GumballMachine {
 
-  std::shared_ptr<State> _soldOutState;
-  std::shared_ptr<State> _noQuarterState;
-  std::shared_ptr<State> _hasQuarterState;
-  std::shared_ptr<State> _soldState;
-  std::shared_ptr<State> _winnerState;
-  std::shared_ptr<State> _state;
+  State* _soldOutState;
+  State* _noQuarterState;
+  State* _hasQuarterState;
+  State* _soldState;
+  State* _winnerState;
+  State* _state;
   int _count;
 
   GumballMachine( const GumballMachine& ); // Disable copy constructor
   void operator=( const GumballMachine& ); // Disable assignment operator
 
 public:
-  explicit GumballMachine();
+  explicit GumballMachine(int numberGumballs);
   ~GumballMachine();
-  int init(int numberGumballs );
   void insertQuarter() const;
   void ejectQuarter() const;
   void turnCrank() const;
-  void setState( std::shared_ptr<State> state );
+  void setState( State* state );
   void releaseBall();
   int getCount() const;
   void refill( int count );
-  std::shared_ptr<State> getState() const;
-  std::shared_ptr<State> getSoldOutState() const;
-  std::shared_ptr<State> getNoQuarterState() const;
-  std::shared_ptr<State> getHasQuarterState() const;
-  std::shared_ptr<State> getSoldState() const;
-  std::shared_ptr<State> getWinnerState() const;
+  State* getState() const;
+  State* getSoldOutState() const;
+  State* getNoQuarterState() const;
+  State* getHasQuarterState() const;
+  State* getSoldState() const;
+  State* getWinnerState() const;
   std::string toString() const;
 };
 

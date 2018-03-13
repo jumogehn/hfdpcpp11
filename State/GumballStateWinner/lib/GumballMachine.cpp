@@ -17,7 +17,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <sstream>
 #include <string>
 //Other libraries' .h files.
@@ -30,33 +29,26 @@
 #include "WinnerState.hpp"
 
 
-GumballMachine::GumballMachine()
+GumballMachine::GumballMachine(int numberGumballs)
 {
   std::cout << "GumballMachine::GumballMachine" << std::endl;
-}
 
-int GumballMachine::init(int numberGumballs )
-{
   assert( numberGumballs >= 0 );
-
-  std::cout << "GumballMachine::init" << std::endl;
 
   _count = numberGumballs;
 
-  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _soldOutState = std::make_shared<SoldOutState>( shared_from_this() );
-  _noQuarterState = std::make_shared<NoQuarterState>( shared_from_this() );
-  _hasQuarterState = std::make_shared<HasQuarterState>( shared_from_this() );
-  _soldState = std::make_shared<SoldState>( shared_from_this() );
-  _winnerState = std::make_shared<WinnerState>( shared_from_this() );
+  _soldOutState = new SoldOutState( this );
+  _noQuarterState = new NoQuarterState( this );
+  _hasQuarterState = new HasQuarterState( this );
+  _soldState = new SoldState( this );
+  _winnerState = new WinnerState( this );
   _state = _soldOutState;
 
   if( _count  > 0 ) {
     _state = _noQuarterState;
   }
-
-  return 0;
 }
+
 GumballMachine::~GumballMachine()
 {
   std::cout << "GumballMachine::~GumballMachine" << std::endl;
@@ -77,7 +69,7 @@ void GumballMachine::turnCrank() const
   _state->turnCrank();
   _state->dispense();
 }
-void GumballMachine::setState( std::shared_ptr<State> state )
+void GumballMachine::setState( State* state )
 {
   assert( state );
   std::cout << "GumballMachine::setState" << std::endl;
@@ -103,32 +95,32 @@ void GumballMachine::refill( int count )
   _count = count;
   _state = _noQuarterState;
 }
-std::shared_ptr<State> GumballMachine::getState() const
+State* GumballMachine::getState() const
 {
   std::cout << "GumballMachine::getState" << std::endl;
   return _state;
 }
-std::shared_ptr<State> GumballMachine::getSoldOutState() const
+State* GumballMachine::getSoldOutState() const
 {
   std::cout << "GumballMachine::getSoldOutState" << std::endl;
   return _soldOutState;
 }
-std::shared_ptr<State> GumballMachine::getNoQuarterState() const
+State* GumballMachine::getNoQuarterState() const
 {
   std::cout << "GumballMachine::getNoQuarterState" << std::endl;
   return _noQuarterState;
 }
-std::shared_ptr<State> GumballMachine::getHasQuarterState() const
+State* GumballMachine::getHasQuarterState() const
 {
   std::cout << "GumballMachine::getHasQuarterState" << std::endl;
   return _hasQuarterState;
 }
-std::shared_ptr<State> GumballMachine::getSoldState() const
+State* GumballMachine::getSoldState() const
 {
   std::cout << "GumballMachine::getSoldState" << std::endl;
   return _soldState;
 }
-std::shared_ptr<State> GumballMachine::getWinnerState() const
+State* GumballMachine::getWinnerState() const
 {
   std::cout << "GumballMachine::getWinnerState" << std::endl;
   return _winnerState;

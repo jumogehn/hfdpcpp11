@@ -17,13 +17,12 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "GumballMachine.hpp"
 
 
-NoQuarterState::NoQuarterState( std::shared_ptr<GumballMachine> gumballMachine ) :
+NoQuarterState::NoQuarterState( GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert( gumballMachine );

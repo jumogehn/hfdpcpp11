@@ -17,7 +17,6 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -25,7 +24,7 @@
 
 
 
-SoldState::SoldState( std::shared_ptr<GumballMachine> gumballMachine ) :
+SoldState::SoldState( GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert( gumballMachine );

@@ -17,14 +17,13 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "GumballMachine.hpp"
 
 
 
-SoldOutState::SoldOutState(std::shared_ptr<GumballMachine> gumballMachine ) :
+SoldOutState::SoldOutState(GumballMachine* gumballMachine ) :
   _gumballMachine( gumballMachine )
 {
   assert(gumballMachine );
