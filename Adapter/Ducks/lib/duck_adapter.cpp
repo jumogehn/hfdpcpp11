@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "DuckAdapter.hpp"
+#include "duck_adapter.hpp"
 //C system files.
 #ifdef WIN32
 #include <process.h>

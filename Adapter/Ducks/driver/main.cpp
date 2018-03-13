@@ -18,12 +18,12 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Duck.hpp"
-#include "DuckAdapter.hpp"
-#include "MallardDuck.hpp"
-#include "Turkey.hpp"
-#include "TurkeyAdapter.hpp"
-#include "WildTurkey.hpp"
+#include "duck.hpp"
+#include "duck_adapter.hpp"
+#include "mallard_duck.hpp"
+#include "turkey.hpp"
+#include "turkey_adapter.hpp"
+#include "wild_turkey.hpp"
 
 
 void testDuck( const Duck* duck )

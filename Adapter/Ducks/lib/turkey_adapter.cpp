@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "TurkeyAdapter.hpp"
+#include "turkey_adapter.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>

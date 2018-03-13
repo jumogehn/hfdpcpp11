@@ -1,4 +1,4 @@
-//===--- WildTurkey.cpp - ---------------------------------------*- C++ -*-===//
+//===--- WildTurkey.hpp - ---------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,25 +10,25 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
+#ifndef	_HFDP_CPP_ADAPTER_WILD_TURKEY_HPP_
+#define _HFDP_CPP_ADAPTER_WILD_TURKEY_HPP_
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "WildTurkey.hpp"
 //C system files.
 //C++ system files.
-#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "turkey.hpp"
 
 
-void WildTurkey::fly() const
-{
-  std::cout << "WildTurkey::fly" << std::endl;
-  std::cout << "I'm flying a short distance" << std::endl;
-}
+class WildTurkey : public Turkey {
 
-void WildTurkey::gobble() const
-{
-  std::cout << "WildTurkey::gobble" << std::endl;
-  std::cout << "Gobble gobble" << std::endl;
-}
+public:
+  void fly() const;
+  void gobble() const;
+};
 
+
+#endif
