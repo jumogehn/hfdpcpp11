@@ -36,7 +36,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../Content/
+ cmake ../content/
  make
  ./driver/testcontent
 
@@ -44,7 +44,7 @@ compile as shown below::
 Class Diagram
 -------------
 
-.. image:: Content/imgs/Overview_of_MiniDuckSimulator.jpg
+.. image:: content/imgs/Overview_of_MiniDuckSimulator.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -52,7 +52,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: Content/imgs/SequenceDiagram1.jpg
+.. image:: content/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
