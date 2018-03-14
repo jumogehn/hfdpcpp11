@@ -20,7 +20,7 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "DvdPlayer.hpp"
+#include "dvd_player.hpp"
 
 
 class Projector {

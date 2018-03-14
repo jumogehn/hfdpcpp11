@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "HomeTheaterFacade.hpp"
+#include "home_theater_facade.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -21,14 +21,14 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Amplifier.hpp"
-#include "CdPlayer.hpp"
-#include "DvdPlayer.hpp"
-#include "PopcornPopper.hpp"
-#include "Projector.hpp"
-#include "Screen.hpp"
-#include "TheaterLights.hpp"
-#include "Tuner.hpp"
+#include "amplifier.hpp"
+#include "cd_player.hpp"
+#include "dvd_player.hpp"
+#include "popcorn_popper.hpp"
+#include "projector.hpp"
+#include "screen.hpp"
+#include "theater_lights.hpp"
+#include "tuner.hpp"
 
 
 

@@ -4,9 +4,9 @@
 # Make sure the compiler can find include files from our library hometheater.
 INCLUDE_DIRECTORIES(${HomeTheater_SOURCE_DIR}/include)
 
-# Add binary called "testhometheater" that is built from the source file "HomeTheater.cpp". 
+# Add binary called "testhometheater" that is built from the source file "home_theater.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testhometheater HomeTheater)
+ADD_EXECUTABLE(testhometheater home_theater)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testhometheater

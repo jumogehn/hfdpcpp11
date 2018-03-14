@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Amplifier.hpp"
+#include "amplifier.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -21,9 +21,9 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "CdPlayer.hpp"
-#include "DvdPlayer.hpp"
-#include "Tuner.hpp"
+#include "cd_player.hpp"
+#include "dvd_player.hpp"
+#include "tuner.hpp"
 
 
 Amplifier::Amplifier( std::string description ) :

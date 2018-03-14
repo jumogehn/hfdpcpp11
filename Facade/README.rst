@@ -9,7 +9,7 @@ HomeTheater
 Class Diagram
 -------------
 
-.. image:: HomeTheater/imgs/Overview_of_HomeTheater.jpg
+.. image:: home_theater/imgs/Overview_of_HomeTheater.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -17,7 +17,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: HomeTheater/imgs/SequenceDiagram1.jpg
+.. image:: home_theater/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 

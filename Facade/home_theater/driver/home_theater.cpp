@@ -19,15 +19,15 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Amplifier.hpp"
-#include "CdPlayer.hpp"
-#include "DvdPlayer.hpp"
-#include "HomeTheaterFacade.hpp"
-#include "PopcornPopper.hpp"
-#include "Projector.hpp"
-#include "Screen.hpp"
-#include "TheaterLights.hpp"
-#include "Tuner.hpp"
+#include "amplifier.hpp"
+#include "cd_player.hpp"
+#include "dvd_player.hpp"
+#include "home_theater_facade.hpp"
+#include "popcorn_popper.hpp"
+#include "projector.hpp"
+#include "screen.hpp"
+#include "theater_lights.hpp"
+#include "tuner.hpp"
 
 
 int main( int argc, char* argv[] ) {

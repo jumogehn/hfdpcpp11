@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Projector.hpp"
+#include "projector.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -21,7 +21,7 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "DvdPlayer.hpp"
+#include "dvd_player.hpp"
 
 
 Projector::Projector( std::string description, DvdPlayer* dvdPlayer ) :
