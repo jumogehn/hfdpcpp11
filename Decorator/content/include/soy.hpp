@@ -1,4 +1,4 @@
-//===--- CondimentDecorator.hpp - -------------------------------*- C++ -*-===//
+//===--- Soy.hpp - ----------------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,21 +10,31 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
+#ifndef	_HFDP_CPP_DECORATOR_SOY_HPP_
+#define _HFDP_CPP_DECORATOR_SOY_HPP_
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "CondimentDecorator.hpp"
 //C system files.
 //C++ system files.
-#include <iostream>
+#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "beverage.hpp"
+#include "condiment_decorator.hpp"
 
 
-CondimentDecorator::CondimentDecorator()
-{
-  std::cout << "CondimentDecorator::CondimentDecorator" << std::endl;
-}
-CondimentDecorator::~CondimentDecorator()
-{
-  std::cout << "CondimentDecorator::~CondimentDecorator" << std::endl;
-}
+class Soy : public CondimentDecorator {
+
+  const Beverage* _beverage;
+
+public:
+  explicit Soy(const Beverage* beverage);
+  ~Soy();
+  std::string getDescription() const;
+  double cost() const;
+};
+
+
+#endif

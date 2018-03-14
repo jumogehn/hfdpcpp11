@@ -17,13 +17,13 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Beverage.hpp"
-#include "DarkRoast.hpp"
-#include "Espresso.hpp"
-#include "HouseBlend.hpp"
-#include "Mocha.hpp"
-#include "Soy.hpp"
-#include "Whip.hpp"
+#include "beverage.hpp"
+#include "dark_roast.hpp"
+#include "espresso.hpp"
+#include "house_blend.hpp"
+#include "mocha.hpp"
+#include "soy.hpp"
+#include "whip.hpp"
 
 
 int main(int argc, char* argv[]) {

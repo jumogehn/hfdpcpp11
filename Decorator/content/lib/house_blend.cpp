@@ -1,4 +1,4 @@
-//===--- Beverage.hpp - -----------------------------------------*- C++ -*-===//
+//===--- HouseBlend.hpp - ---------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,9 +10,10 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Beverage.hpp"
+#include "house_blend.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -20,17 +21,15 @@
 //Your project's .h files.
 
 
-Beverage::Beverage() :
-  _description("Unknown Beverage")
+
+HouseBlend::HouseBlend()
 {
-  std::cout << "Beverage::Beverage" << std::endl;
+  std::cout << "HouseBlend::HouseBlend" << std::endl;
+  _description = "House Blend Coffee";
 }
-Beverage::~Beverage()
+
+double HouseBlend::cost() const
 {
-  std::cout << "Beverage::~Beverage" << std::endl;
-}
-std::string Beverage::getDescription() const
-{
-  std::cout << "Beverage::getDescription" << std::endl;
-  return _description;
+  std::cout << "HouseBlend::cost" << std::endl;
+  return 0.89;
 }

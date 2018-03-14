@@ -10,35 +10,31 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
+#ifndef	_HFDP_CPP_DECORATOR_WHIP_HPP_
+#define _HFDP_CPP_DECORATOR_WHIP_HPP_
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Whip.hpp"
 //C system files.
 //C++ system files.
-#include <cassert>
-#include <iostream>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "beverage.hpp"
+#include "condiment_decorator.hpp"
 
 
-Whip::Whip(const Beverage* beverage) :
-  _beverage(beverage)
-{
-  assert(beverage);
-  std::cout << "Whip::Whip" << std::endl;
-}
-Whip::~Whip() {
-  std::cout << "Whip::~Whip" << std::endl;
-}
-std::string Whip::getDescription() const
-{
-  std::cout << "Whip::getDescription" << std::endl;
-  return _beverage->getDescription() + ", Whip";
-}
-double Whip::cost() const
-{
-  std::cout << "Whip::cost" << std::endl;
-  return 0.10 + _beverage->cost();
-}
+class Whip : public CondimentDecorator {
 
+  const Beverage* _beverage;
+
+public:
+  explicit Whip(const Beverage* beverage);
+  ~Whip();
+  std::string getDescription() const;
+  double cost() const;
+};
+
+
+#endif

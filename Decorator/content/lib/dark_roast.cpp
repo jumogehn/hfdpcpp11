@@ -1,4 +1,4 @@
-//===--- Espresso.hpp - -----------------------------------------*- C++ -*-===//
+//===--- DarkRoast.hpp - ----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Espresso.hpp"
+#include "dark_roast.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -20,14 +20,14 @@
 //Your project's .h files.
 
 
-Espresso::Espresso()
+DarkRoast::DarkRoast()
 {
-  std::cout << "Espresso::Espresso" << std::endl;
-  _description = "Espresso";
+  std::cout << "DarkRoast::DarkRoast" << std::endl;
+  _description = "Dark Roast Coffee";
 }
 
-double Espresso::cost() const
+double DarkRoast::cost() const
 {
-  std::cout << "Espresso::cost" << std::endl;
-  return 1.99;
+  std::cout << "DarkRoast::cost" << std::endl;
+  return 0.99;
 }

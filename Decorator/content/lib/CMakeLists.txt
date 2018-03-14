@@ -6,7 +6,7 @@ INCLUDE_DIRECTORIES(${Decorator_SOURCE_DIR}/include)
 
 # Adds a library called decorator (libdecorator.a under Linux) from the source files under lib/
 ADD_LIBRARY( decorator 
-  Beverage CondimentDecorator Decaf HouseBlend Mocha DarkRoast Espresso Milk Soy Whip)
+  beverage condiment_decorator decaf house_blend mocha dark_roast espresso milk soy whip)
   
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET decorator

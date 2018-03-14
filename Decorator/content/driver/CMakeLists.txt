@@ -4,9 +4,9 @@
 # Make sure the compiler can find include files from our library decorator.
 INCLUDE_DIRECTORIES(${Decorator_SOURCE_DIR}/include)
 
-# Add binary called "testdecorator" that is built from the source file "Starbuzz.cpp". 
+# Add binary called "testdecorator" that is built from the source file "starbuzz.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testdecorator Starbuzz)
+ADD_EXECUTABLE(testdecorator starbuzz)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testdecorator

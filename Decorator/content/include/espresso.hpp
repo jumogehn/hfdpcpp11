@@ -1,4 +1,4 @@
-//===--- Mocha.hpp - --------------------------------------------*- C++ -*-===//
+//===--- Espresso.hpp - -----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,28 +11,22 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef	_HFDP_CPP_DECORATOR_MOCHA_HPP_
-#define _HFDP_CPP_DECORATOR_MOCHA_HPP_
+#ifndef	_HFDP_CPP_DECORATOR_ESPRESSO_HPP_
+#define _HFDP_CPP_DECORATOR_ESPRESSO_HPP_
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Beverage.hpp"
-#include "CondimentDecorator.hpp"
+#include "beverage.hpp"
 
 
-class Mocha : public CondimentDecorator {
-
-  const Beverage* _beverage;
+class Espresso : public Beverage {
 
 public:
-  explicit Mocha(const Beverage* beverage);
-  ~Mocha();
-  std::string getDescription() const;
+  Espresso();
   double cost() const;
 };
 

@@ -10,32 +10,35 @@
 ///
 //===----------------------------------------------------------------------===//
 
-
-#ifndef	_HFDP_CPP_DECORATOR_MILK_HPP_
-#define _HFDP_CPP_DECORATOR_MILK_HPP_
-
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
+#include "milk.hpp"
 //C system files.
 //C++ system files.
+#include <cassert>
+#include <iostream>
 #include <string>
-#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Beverage.hpp"
-#include "CondimentDecorator.hpp"
 
 
-class Milk : public CondimentDecorator {
-
-  const Beverage* _beverage;
-
-public:
-  explicit Milk(const Beverage* beverage);
-  ~Milk();
-  std::string getDescription() const;
-  double cost() const;
-};
-
-
-#endif
+Milk::Milk(const Beverage* beverage) :
+  _beverage(beverage)
+{
+  assert(beverage);
+  std::cout << "Milk::Milk" << std::endl;
+}
+Milk::~Milk()
+{
+  std::cout << "Milk::~Milk" << std::endl;
+}
+std::string Milk::getDescription() const
+{
+  std::cout << "Milk::getDescription" << std::endl;
+  return _beverage->getDescription() + ", Milk";
+}
+double Milk::cost() const
+{
+  std::cout << "Milk::cost" << std::endl;
+  return 0.10 + _beverage->cost();
+}

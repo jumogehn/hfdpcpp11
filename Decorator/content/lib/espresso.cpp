@@ -1,4 +1,4 @@
-//===--- HouseBlend.hpp - ---------------------------------------*- C++ -*-===//
+//===--- Espresso.hpp - -----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,25 +10,24 @@
 ///
 //===----------------------------------------------------------------------===//
 
-
-#ifndef	_HFDP_CPP_DECORATOR_HOUSE_BLEND_HPP_
-#define _HFDP_CPP_DECORATOR_HOUSE_BLEND_HPP_
-
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
+#include "espresso.hpp"
 //C system files.
 //C++ system files.
+#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Beverage.hpp"
 
 
-class HouseBlend : public Beverage {
+Espresso::Espresso()
+{
+  std::cout << "Espresso::Espresso" << std::endl;
+  _description = "Espresso";
+}
 
-public:
-  HouseBlend();
-  double cost() const;
-};
-
-
-#endif
+double Espresso::cost() const
+{
+  std::cout << "Espresso::cost" << std::endl;
+  return 1.99;
+}
