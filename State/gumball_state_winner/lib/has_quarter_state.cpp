@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "HasQuarterState.hpp"
+#include "has_quarter_state.hpp"
 //C system files.
 #ifdef WIN32
 #include <process.h>
@@ -25,7 +25,7 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "GumballMachine.hpp"
+#include "gumball_machine.hpp"
 
 
 

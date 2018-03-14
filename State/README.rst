@@ -11,7 +11,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../GumballStateWinner/
+ cmake ../gumball_state_winner/
  make
  ./driver/testgumballstatewinner
 
@@ -22,7 +22,7 @@ gumballStateWinner
 Class Diagram
 -------------
 
-.. image:: GumballStateWinner/imgs/Overview_of_GumballStateWinner.jpg
+.. image:: gumball_state_winner/imgs/Overview_of_GumballStateWinner.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -30,7 +30,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: GumballStateWinner/imgs/SequenceDiagram1.jpg
+.. image:: gumball_state_winner/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -38,7 +38,7 @@ Sequence Diagram
 Statechart Diagram
 -------------------
 
-.. image:: GumballStateWinner/imgs/StatechartDiagram1.jpg
+.. image:: gumball_state_winner/imgs/StatechartDiagram1.jpg
    :scale: 50 %
    :alt: Statechart Diagram
 

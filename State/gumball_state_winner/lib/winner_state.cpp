@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "WinnerState.hpp"
+#include "winner_state.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -20,7 +20,7 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "GumballMachine.hpp"
+#include "gumball_machine.hpp"
 
 
 

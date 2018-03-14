@@ -19,7 +19,7 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "GumballMachine.hpp"
+#include "gumball_machine.hpp"
 
 
 

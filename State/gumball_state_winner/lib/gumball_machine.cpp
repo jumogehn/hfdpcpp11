@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "GumballMachine.hpp"
+#include "gumball_machine.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -21,12 +21,12 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "HasQuarterState.hpp"
-#include "NoQuarterState.hpp"
-#include "SoldOutState.hpp"
-#include "SoldState.hpp"
-#include "State.hpp"
-#include "WinnerState.hpp"
+#include "has_quarter_state.hpp"
+#include "no_quarter_state.hpp"
+#include "sold_out_state.hpp"
+#include "sold_state.hpp"
+#include "state.hpp"
+#include "winner_state.hpp"
 
 
 GumballMachine::GumballMachine(int numberGumballs)

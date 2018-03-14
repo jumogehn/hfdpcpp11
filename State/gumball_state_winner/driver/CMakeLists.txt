@@ -4,9 +4,9 @@
 # Make sure the compiler can find include files from our library gumballstatewinner.
 INCLUDE_DIRECTORIES(${GumballStateWinner_SOURCE_DIR}/include)
 
-# Add binary called "testgumballstatewinner" that is built from the source file "GumballStateWinner.cpp". 
+# Add binary called "testgumballstatewinner" that is built from the source file "gumball_state_winner.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testgumballstatewinner GumballStateWinner)
+ADD_EXECUTABLE(testgumballstatewinner gumball_state_winner)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testgumballstatewinner

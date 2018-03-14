@@ -21,7 +21,7 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "State.hpp"
+#include "state.hpp"
 
 class GumballMachine {
 

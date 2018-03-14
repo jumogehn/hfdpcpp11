@@ -21,8 +21,8 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "State.hpp"
-#include "GumballMachine.hpp"
+#include "state.hpp"
+#include "gumball_machine.hpp"
 
 
 class SoldState : public State {
