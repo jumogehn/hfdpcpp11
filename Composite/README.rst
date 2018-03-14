@@ -12,15 +12,15 @@ Test
 This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
 compile as shown below::
 
- mkdir build_MenusCustomIterator
- cd build_MenusCustomIterator/
- cmake ../MenusCustomIterator/
+ mkdir build_menuscustomiterator
+ cd build_menuscustomiterator/
+ cmake ../menuscustomiterator/
  make
  ./driver/testmenuscustomiterator
 
- mkdir build_Menus
- cd build_Menus/
- cmake ../Menus/
+ mkdir build_menus
+ cd build_menus/
+ cmake ../menus/
  make
  ./driver/testmenus
 
@@ -42,7 +42,7 @@ compile as shown below::
 Class Diagram
 -------------
 
-.. image:: MenusCustomIterator/imgs/Overview_of_Menus_Custom_Iterator.jpg
+.. image:: menus_custom_iterator/imgs/Overview_of_Menus_Custom_Iterator.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -50,7 +50,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: MenusCustomIterator/imgs/SequenceDiagram1.jpg
+.. image:: menus_custom_iterator/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
