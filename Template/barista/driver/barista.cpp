@@ -18,10 +18,10 @@
 #include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Coffee.hpp"
-#include "CoffeeWithHook.hpp"
-#include "Tea.hpp"
-#include "TeaWithHook.hpp"
+#include "coffee.hpp"
+#include "coffee_with_hook.hpp"
+#include "tea.hpp"
+#include "tea_with_hook.hpp"
 
 
 int main( int argc, char* argv[] ) {

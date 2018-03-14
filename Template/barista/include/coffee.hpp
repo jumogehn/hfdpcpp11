@@ -1,4 +1,4 @@
-//===--- Tea.cpp - ----------------------------------------------*- C++ -*-===//
+//===--- Coffee.hpp - -------------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,23 +10,25 @@
 ///
 //===----------------------------------------------------------------------===//
 
+
+#ifndef	_HFDP_CPP_TEMPLATE_BARISTA_COFFEE_HPP_
+#define _HFDP_CPP_TEMPLATE_BARISTA_COFFEE_HPP_
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Tea.hpp"
 //C system files.
 //C++ system files.
-#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "caffeine_beverage.hpp"
 
 
-void Tea::brew() const
-{
-  std::cout << "Tea::brew" << std::endl;
-  std::cout << "Steeping the tea" << std::endl;
-}
-void Tea::addCondiments() const
-{
-  std::cout << "Tea::addCondiments" << std::endl;
-  std::cout << "Adding Lemon" << std::endl;
-}
+class Coffee : public CaffeineBeverage {
+
+public:
+  void brew() const;
+  void addCondiments() const;
+};
+
+
+#endif

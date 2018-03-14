@@ -14,7 +14,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../Barista/
+ cmake ../barista/
  make
  ./driver/testbarista
 
@@ -22,7 +22,7 @@ compile as shown below::
 Class Diagram
 -------------
 
-.. image:: Barista/imgs/Overview_of_Barista.jpg
+.. image:: barista/imgs/Overview_of_Barista.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -30,7 +30,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: Barista/imgs/SequenceDiagram1.jpg
+.. image:: barista/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 

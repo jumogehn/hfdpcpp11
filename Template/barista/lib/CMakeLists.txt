@@ -6,19 +6,12 @@ INCLUDE_DIRECTORIES(${Barista_SOURCE_DIR}/include)
 
 # Adds a library called barista (libbarista.a under Linux) from the source files under lib/
 ADD_LIBRARY( barista 
-  CaffeineBeverageWithHook CoffeeWithHook TeaWithHook
-  CaffeineBeverage Coffee Tea)
+  caffeine_beverage_with_hook coffee_with_hook tea_with_hook
+  caffeine_beverage coffee tea)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET barista
 	APPEND PROPERTY COMPILE_DEFINITIONS ${flag}
 	)
 endforeach()
-
-#ADD_LIBRARY( duck Duck )
-#ADD_LIBRARY( duckadapter DuckAdapter )
-#ADD_LIBRARY( mallardduck MallardDuck )
-#ADD_LIBRARY( turkey Turkey )
-#ADD_LIBRARY( turkeyadapter TurkeyAdapter )
-#ADD_LIBRARY( wildturkey WildTurkey )
 
