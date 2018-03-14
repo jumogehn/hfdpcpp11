@@ -5,7 +5,7 @@
 INCLUDE_DIRECTORIES(${Chocolate_SOURCE_DIR}/include)
 
 # Adds a library called chocolate (libchocolate.a under Linux) from the source files under lib/
-ADD_LIBRARY( chocolate ChocolateBoiler )
+ADD_LIBRARY( chocolate chocolate_boiler )
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET chocolate

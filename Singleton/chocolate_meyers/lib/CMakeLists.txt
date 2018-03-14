@@ -5,7 +5,7 @@
 INCLUDE_DIRECTORIES(${Chocolatemrs_SOURCE_DIR}/include)
 
 # Adds a library called chocolatemrs (libchocolatemrs.a under Linux) from the source files under lib/
-ADD_LIBRARY( chocolatemrs ChocolateBoiler )
+ADD_LIBRARY( chocolatemrs chocolate_boiler )
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET chocolatemrs
