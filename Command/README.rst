@@ -9,19 +9,19 @@ Test
 This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
 compile as shown below::
 
- mkdir build_SimpleRemote
+ mkdir build_simpleremote
  cd build_simpleremote/
  cmake ../simpleremote/
  make
  ./driver/testsimpleremote
 
- mkdir build_Remote
+ mkdir build_remote
  cd build_remote/
  cmake ../remote/
  make
  ./driver/testremote
 
- mkdir build_Undo
+ mkdir build_undo
  cd build_undo/
  cmake ../undo/
  make
@@ -34,7 +34,7 @@ Simple Remote Control
 Class Diagram
 -------------
 
-.. image:: simpleremote/imgs/Overview_of_SimpleRemote.jpg
+.. image:: simple_remote/imgs/Overview_of_SimpleRemote.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -42,7 +42,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: simpleremote/imgs/SequenceDiagram1.jpg
+.. image:: simple_remote/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
