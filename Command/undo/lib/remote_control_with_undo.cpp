@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "RemoteControlWithUndo.hpp"
+#include "remote_control_with_undo.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -23,7 +23,7 @@
 #include <typeinfo>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "NoCommand.hpp"
+#include "no_command.hpp"
 
 
 RemoteControlWithUndo::RemoteControlWithUndo()

@@ -1,4 +1,4 @@
-//===--- Command.cpp - ------------------------------------------*- C++ -*-===//
+//===--- NoCommand.hpp - ----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,18 +11,24 @@
 //===----------------------------------------------------------------------===//
 
 
+#ifndef	_HFDP_CPP_COMMAND_UNDO_NO_COMMAND_HPP_
+#define _HFDP_CPP_COMMAND_UNDO_NO_COMMAND_HPP_
+
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Command.hpp"
 //C system files.
 //C++ system files.
-#include <iostream>
 //Other libraries' .h files.
 //Your project's .h files.
+#include "command.hpp"
 
 
-Command::~Command()
-{
-  std::cout << "Command::~Command" << std::endl;
-}
+class NoCommand : public Command {
 
+public:
+  void execute() const;
+  void undo() const;
+};
+
+
+#endif

@@ -1,4 +1,4 @@
-//===--- NoCommand.cpp - ----------------------------------------*- C++ -*-===//
+//===--- Command.cpp - ------------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "NoCommand.hpp"
+#include "command.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -21,12 +21,8 @@
 //Your project's .h files.
 
 
-void NoCommand::execute() const
+Command::~Command()
 {
-  std::cout << "NoCommand::execute" << std::endl;
-}
-void NoCommand::undo() const
-{
-  std::cout << "NoCommand::undo" << std::endl;
+  std::cout << "Command::~Command" << std::endl;
 }
 

@@ -6,7 +6,7 @@ INCLUDE_DIRECTORIES(${Undo_SOURCE_DIR}/include)
 
 # Add binary called "testundo" that is built from the source file "Undo.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testundo Undo)
+ADD_EXECUTABLE(testundo undo)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testundo

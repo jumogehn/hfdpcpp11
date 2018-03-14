@@ -22,7 +22,7 @@
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Command.hpp"
+#include "command.hpp"
 
 
 //

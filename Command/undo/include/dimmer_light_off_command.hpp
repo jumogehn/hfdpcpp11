@@ -1,4 +1,4 @@
-//===--- NoCommand.hpp - ----------------------------------------*- C++ -*-===//
+//===--- DimmerLightOffCommand.hpp - ----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,21 +11,27 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef	_HFDP_CPP_COMMAND_UNDO_NO_COMMAND_HPP_
-#define _HFDP_CPP_COMMAND_UNDO_NO_COMMAND_HPP_
+#ifndef	_HFDP_CPP_COMMAND_UNDO_DIMMER_LIGHT_OFF_COMMAND_HPP_
+#define _HFDP_CPP_COMMAND_UNDO_DIMMER_LIGHT_OFF_COMMAND_HPP_
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Command.hpp"
+#include "command.hpp"
+#include "light.hpp"
 
 
-class NoCommand : public Command {
+class DimmerLightOffCommand : public Command {
+
+  const Light* _light;
+  mutable int _prevLevel;
 
 public:
+  explicit DimmerLightOffCommand( const Light* light );
   void execute() const;
   void undo() const;
 };

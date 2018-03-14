@@ -6,10 +6,10 @@ INCLUDE_DIRECTORIES(${Undo_SOURCE_DIR}/include)
 
 # Adds a library called undo (libundo.a under Linux) from the source files under lib/
 ADD_LIBRARY( undo 
-  CeilingFanMediumCommand DimmerLightOnCommand NoCommand
-  CeilingFan CeilingFanOffCommand Light RemoteControlWithUndo
-  CeilingFanHighCommand Command LightOffCommand
-  CeilingFanLowCommand DimmerLightOffCommand LightOnCommand )
+  ceiling_fan_medium_command dimmer_light_on_command no_command
+  ceiling_fan ceiling_fan_off_command light remote_control_with_undo
+  ceiling_fan_high_command command light_off_command
+  ceiling_fan_low_command dimmer_light_off_command light_on_command )
   
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET undo

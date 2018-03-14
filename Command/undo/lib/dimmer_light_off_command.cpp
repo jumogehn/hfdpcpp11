@@ -1,4 +1,4 @@
-//===--- DimmerLightOnCommand.cpp - -----------------------------*- C++ -*-===//
+//===--- DimmerLightOffCommand.cpp - ----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "DimmerLightOnCommand.hpp"
+#include "dimmer_light_off_command.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -23,22 +23,22 @@
 //Your project's .h files.
 
 
-DimmerLightOnCommand::DimmerLightOnCommand( const Light* light ) :
+DimmerLightOffCommand::DimmerLightOffCommand( const Light* light ) :
   _light( light )
 {
   assert( light );
-  std::cout << "DimmerLightOnCommand::DimmerLightOnCommand" << std::endl;
+  std::cout << "DimmerLightOffCommand::DimmerLightOffCommand" << std::endl;
   _prevLevel = _light->getLevel();
 }
-void DimmerLightOnCommand::execute() const
+void DimmerLightOffCommand::execute() const
 {
-  std::cout << "DimmerLightOnCommand::execute" << std::endl;
+  std::cout << "DimmerLightOffCommand::execute" << std::endl;
   _prevLevel = _light->getLevel();
-  _light->dim( 75 );
+  _light->off();
 }
-void DimmerLightOnCommand::undo() const
+void DimmerLightOffCommand::undo() const
 {
-  std::cout << "DimmerLightOnCommand::undo" << std::endl;
+  std::cout << "DimmerLightOffCommand::undo" << std::endl;
   _light->dim( _prevLevel );
 }
 

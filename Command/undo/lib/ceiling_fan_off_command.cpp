@@ -1,4 +1,4 @@
-//===--- CeilingFanHighCommand.cpp - ----------------------------*- C++ -*-===//
+//===--- CeilingFanOffCommand.cpp - -----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "CeilingFanHighCommand.hpp"
+#include "ceiling_fan_off_command.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>
@@ -23,22 +23,22 @@
 //Your project's .h files.
 
 
-CeilingFanHighCommand::CeilingFanHighCommand( const CeilingFan* ceilingFan ) :
+CeilingFanOffCommand::CeilingFanOffCommand( const CeilingFan* ceilingFan ) :
   _ceilingFan( ceilingFan )
 {
   assert( ceilingFan );
-  std::cout << "CeilingFanHighCommand::CeilingFanHighCommand" << std::endl;
+  std::cout << "CeilingFanOffCommand::CeilingFanOffCommand" << std::endl;
   _prevSpeed = _ceilingFan->getSpeed();
 }
-void CeilingFanHighCommand::execute() const
+void CeilingFanOffCommand::execute() const
 {
-  std::cout << "CeilingFanHighCommand::execute" << std::endl;
+  std::cout << "CeilingFanOffCommand::execute" << std::endl;
   _prevSpeed = _ceilingFan->getSpeed();
-  _ceilingFan->high();
+  _ceilingFan->off();
 }
-void CeilingFanHighCommand::undo() const
+void CeilingFanOffCommand::undo() const
 {
-  std::cout << "CeilingFanHighCommand::undo" << std::endl;
+  std::cout << "CeilingFanOffCommand::undo" << std::endl;
   if( _prevSpeed == CeilingFan::HIGH ) {
     _ceilingFan->high();
   } else if( _prevSpeed == CeilingFan::MEDIUM ) {
@@ -49,3 +49,4 @@ void CeilingFanHighCommand::undo() const
     _ceilingFan->off();
   }
 }
+

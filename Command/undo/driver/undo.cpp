@@ -19,14 +19,14 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "CeilingFan.hpp"
-#include "CeilingFanHighCommand.hpp"
-#include "CeilingFanMediumCommand.hpp"
-#include "CeilingFanOffCommand.hpp"
-#include "Light.hpp"
-#include "LightOffCommand.hpp"
-#include "LightOnCommand.hpp"
-#include "RemoteControlWithUndo.hpp"
+#include "ceiling_fan.hpp"
+#include "ceiling_fan_high_command.hpp"
+#include "ceiling_fan_medium_command.hpp"
+#include "ceiling_fan_off_command.hpp"
+#include "light.hpp"
+#include "light_off_command.hpp"
+#include "light_on_command.hpp"
+#include "remote_control_with_undo.hpp"
 
 
 int main( int argc, char* argv[] ) {
