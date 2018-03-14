@@ -10,20 +10,20 @@ This project uses cmake so wide range of OSes are supported. For ubuntu, you can
 compile as shown below::
 
  mkdir build_SimpleRemote
- cd build_SimpleRemote/
- cmake ../SimpleRemote/
+ cd build_simpleremote/
+ cmake ../simpleremote/
  make
  ./driver/testsimpleremote
 
  mkdir build_Remote
- cd build_Remote/
- cmake ../Remote/
+ cd build_remote/
+ cmake ../remote/
  make
  ./driver/testremote
 
  mkdir build_Undo
- cd build_Undo/
- cmake ../Undo/
+ cd build_undo/
+ cmake ../undo/
  make
  ./driver/testundo
 
@@ -34,7 +34,7 @@ Simple Remote Control
 Class Diagram
 -------------
 
-.. image:: SimpleRemote/imgs/Overview_of_SimpleRemote.jpg
+.. image:: simpleremote/imgs/Overview_of_SimpleRemote.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -42,7 +42,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: SimpleRemote/imgs/SequenceDiagram1.jpg
+.. image:: simpleremote/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -72,7 +72,7 @@ Remote Control
 Class Diagram
 -------------
 
-.. image:: Remote/imgs/Overview_of_Remote.jpg
+.. image:: remote/imgs/Overview_of_Remote.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -80,7 +80,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: Remote/imgs/SequenceDiagram1.jpg
+.. image:: remote/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -98,7 +98,7 @@ Undo
 Class Diagram
 -------------
 
-.. image:: Undo/imgs/Overview_of_Undo.jpg
+.. image:: undo/imgs/Overview_of_Undo.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -106,7 +106,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: Undo/imgs/SequenceDiagram1.jpg
+.. image:: undo/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
