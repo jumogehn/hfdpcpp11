@@ -21,9 +21,9 @@
 //C++ system files.
 //Other libraries' .h files.
 //Your project's .h files.
-#include "DisplayElement.hpp"
-#include "Observer.hpp"
-#include "Subject.hpp"
+#include "display_element.hpp"
+#include "observer.hpp"
+#include "subject.hpp"
 
 class StatisticsDisplay : private Observer, private DisplayElement {
 

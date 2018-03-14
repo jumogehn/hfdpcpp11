@@ -1,4 +1,4 @@
-//===--- DisplayElement.hpp - -----------------------------------*- C++ -*-===//
+//===--- Observer.hpp - -----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "DisplayElement.hpp"
+#include "observer.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-DisplayElement::~DisplayElement()
+Observer::~Observer()
 {
-  std::cout << "DisplayElement::~DisplayElement" << std::endl;
+  std::cout << "Observer::~Observer" << std::endl;
 }

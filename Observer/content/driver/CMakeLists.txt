@@ -4,9 +4,9 @@
 # Make sure the compiler can find include files from our library content.
 INCLUDE_DIRECTORIES(${Content_SOURCE_DIR}/include)
 
-# Add binary called "testcontent" that is built from the source file "WeatherStation.cpp". 
+# Add binary called "testcontent" that is built from the source file "weather_station.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testcontent WeatherStation)
+ADD_EXECUTABLE(testcontent weather_station)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testcontent

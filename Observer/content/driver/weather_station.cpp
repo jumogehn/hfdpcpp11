@@ -17,12 +17,12 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "CurrentConditionsDisplay.hpp"
-#include "ForecastDisplay.hpp"
-#include "StatisticsDisplay.hpp"
-#include "WeatherData.hpp"
+#include "current_conditions_display.hpp"
+#include "forecast_display.hpp"
+#include "statistics_display.hpp"
+#include "weather_data.hpp"
 #ifdef _HEAT_INDEX_DISPLAY_
-#include "HeatIndexDisplay.hpp"
+#include "heat_index_display.hpp"
 #endif
 
 int main(int argc, char* argv[]) {

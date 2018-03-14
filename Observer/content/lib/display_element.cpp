@@ -1,4 +1,4 @@
-//===--- Subject.hpp - ------------------------------------------*- C++ -*-===//
+//===--- DisplayElement.hpp - -----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,11 +10,9 @@
 ///
 //===----------------------------------------------------------------------===//
 
-
-
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "Subject.hpp"
+#include "display_element.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -22,7 +20,7 @@
 //Your project's .h files.
 
 
-Subject::~Subject()
+DisplayElement::~DisplayElement()
 {
-  std::cout << "Subject::~Subject" << std::endl;
+  std::cout << "DisplayElement::~DisplayElement" << std::endl;
 }
