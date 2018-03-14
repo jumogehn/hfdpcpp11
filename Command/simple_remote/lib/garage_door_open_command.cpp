@@ -13,7 +13,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "GarageDoorOpenCommand.hpp"
+#include "garage_door_open_command.hpp"
 //C system files.
 //C++ system files.
 #include <cassert>

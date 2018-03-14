@@ -19,11 +19,11 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "GarageDoor.hpp"
-#include "GarageDoorOpenCommand.hpp"
-#include "Light.hpp"
-#include "LightOnCommand.hpp"
-#include "SimpleRemoteControl.hpp"
+#include "garage_door.hpp"
+#include "garage_door_open_command.hpp"
+#include "light.hpp"
+#include "light_on_command.hpp"
+#include "simple_remote_control.hpp"
 
 
 int main( int argc, char* argv[] ) {

@@ -4,9 +4,9 @@
 # Make sure the compiler can find include files from our library simpleremote.
 INCLUDE_DIRECTORIES(${SimpleRemote_SOURCE_DIR}/include)
 
-# Add binary called "testsimpleremote" that is built from the source file "SimpleRemote.cpp". 
+# Add binary called "testsimpleremote" that is built from the source file "simple_remote.cpp". 
 # The extension is automatically found.
-ADD_EXECUTABLE(testsimpleremote SimpleRemote)
+ADD_EXECUTABLE(testsimpleremote simple_remote)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testsimpleremote

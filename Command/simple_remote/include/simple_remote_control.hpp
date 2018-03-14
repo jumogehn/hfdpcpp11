@@ -1,4 +1,4 @@
-//===--- LightOnCommand.hpp - -----------------------------------*- C++ -*-===//
+//===--- SimpleRemoteControl.hpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,8 +10,8 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_LIGHT_ON_COMMAND_HPP_
-#define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_LIGHT_ON_COMMAND_HPP_
+#ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_CONTROL_HPP_
+#define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_CONTROL_HPP_
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
@@ -20,17 +20,17 @@
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Command.hpp"
-#include "Light.hpp"
+#include "command.hpp"
 
 
-class LightOnCommand : public Command {
+class SimpleRemoteControl {
 
-  const Light* _light;
+  const Command* _slot;
 
 public:
-  explicit LightOnCommand( const Light* light );
-  void execute() const;
+  SimpleRemoteControl();
+  void setCommand( const Command* command );
+  void buttonWasPressed() const;
 };
 
 

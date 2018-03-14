@@ -1,4 +1,4 @@
-//===--- GarageDoorOpenCommand.hpp - ----------------------------*- C++ -*-===//
+//===--- LightOnCommand.cpp - -----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -10,28 +10,28 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#ifndef	_HFDP_CPP_COMMAND_SIMPLE_REMOTE_GARAGE_DOOR_OPEN_COMMAND_HPP_
-#define _HFDP_CPP_COMMAND_SIMPLE_REMOTE_GARAGE_DOOR_OPEN_COMMAND_HPP_
-
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
+#include "light_on_command.hpp"
 //C system files.
 //C++ system files.
+#include <cassert>
+#include <iostream>
 #include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
-#include "Command.hpp"
-#include "GarageDoor.hpp"
 
 
-class GarageDoorOpenCommand : public Command {
 
-  const GarageDoor* _garageDoor;
+LightOnCommand::LightOnCommand( const Light* light ) :
+  _light( light )
+{
+  assert( light );
+  std::cout << "LightOnCommand::LightOnCommand" << std::endl;
+}
+void LightOnCommand::execute() const
+{
+  std::cout << "LightOnCommand::execute" << std::endl;
+  _light->on();
+}
 
-public:
-  explicit GarageDoorOpenCommand( const GarageDoor* garageDoor);
-  void execute() const;
-};
-
-
-#endif
