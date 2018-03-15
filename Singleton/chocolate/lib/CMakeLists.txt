@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # CmakeLists.txt in lib dir
-INCLUDE_DIRECTORIES(${Chocolate_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${chocolate_SOURCE_DIR}/include)
 
 # Adds a library called chocolate (libchocolate.a under Linux) from the source files under lib/
 ADD_LIBRARY( chocolate chocolate_boiler )

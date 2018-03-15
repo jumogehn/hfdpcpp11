@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library menuscustomiterator.
-INCLUDE_DIRECTORIES(${MenusCustomIterator_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${menuscustomiterator_SOURCE_DIR}/include)
 
 # Add binary called "testmenuscustomiterator" that is built from the source file "menus.cpp". 
 # The extension is automatically found.

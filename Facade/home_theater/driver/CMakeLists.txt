@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library hometheater.
-INCLUDE_DIRECTORIES(${HomeTheater_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${hometheater_SOURCE_DIR}/include)
 
 # Add binary called "testhometheater" that is built from the source file "home_theater.cpp". 
 # The extension is automatically found.

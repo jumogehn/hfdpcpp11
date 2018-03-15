@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library pizzas.
-INCLUDE_DIRECTORIES(${Pizzas_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${pizzas_SOURCE_DIR}/include)
 
 # Add binary called "testpizzas" that is built from the source file "pizzas.cpp". 
 # The extension is automatically found.

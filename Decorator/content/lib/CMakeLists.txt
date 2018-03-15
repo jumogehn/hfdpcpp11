@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # CmakeLists.txt in lib dir
-INCLUDE_DIRECTORIES(${Decorator_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${decorator_SOURCE_DIR}/include)
 
 # Adds a library called decorator (libdecorator.a under Linux) from the source files under lib/
 ADD_LIBRARY( decorator 

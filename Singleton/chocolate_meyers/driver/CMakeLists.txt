@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library chocolatemrs.
-INCLUDE_DIRECTORIES(${Chocolatemrs_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${chocolatemrs_SOURCE_DIR}/include)
 
 # Add binary called "testchocolatemrs" that is built from the source file "chocolate.cpp". 
 # The extension is automatically found.

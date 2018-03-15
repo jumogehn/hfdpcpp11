@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library undo.
-INCLUDE_DIRECTORIES(${Undo_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${undo_SOURCE_DIR}/include)
 
 # Add binary called "testundo" that is built from the source file "Undo.cpp". 
 # The extension is automatically found.

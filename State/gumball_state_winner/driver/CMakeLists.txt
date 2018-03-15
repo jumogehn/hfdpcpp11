@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library gumballstatewinner.
-INCLUDE_DIRECTORIES(${GumballStateWinner_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${gumballstatewinner_SOURCE_DIR}/include)
 
 # Add binary called "testgumballstatewinner" that is built from the source file "gumball_state_winner.cpp". 
 # The extension is automatically found.

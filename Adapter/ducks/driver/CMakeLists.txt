@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library ducks.
-INCLUDE_DIRECTORIES(${Ducks_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${ducks_SOURCE_DIR}/include)
 
 # Add binary called "testducks" that is built from the source file "main.cpp". 
 # The extension is automatically found.

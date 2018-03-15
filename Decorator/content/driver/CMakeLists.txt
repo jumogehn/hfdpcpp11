@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library decorator.
-INCLUDE_DIRECTORIES(${Decorator_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${decorator_SOURCE_DIR}/include)
 
 # Add binary called "testdecorator" that is built from the source file "starbuzz.cpp". 
 # The extension is automatically found.

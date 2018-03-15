@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library barista.
-INCLUDE_DIRECTORIES(${Barista_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${barista_SOURCE_DIR}/include)
 
 # Add binary called "testbarista" that is built from the source file "barista.cpp". 
 # The extension is automatically found.

@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # CmakeLists.txt in hometheater dir
-INCLUDE_DIRECTORIES(${HomeTheater_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${hometheater_SOURCE_DIR}/include)
 
 # Adds a library called hometheater (libhometheater.a under Linux) from the source files under lib/
 ADD_LIBRARY( hometheater amplifier cd_player dvd_player home_theater_facade popcorn_popper projector screen theater_lights tuner)

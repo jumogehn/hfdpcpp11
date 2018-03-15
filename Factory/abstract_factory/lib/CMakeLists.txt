@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # CmakeLists.txt in lib dir
-INCLUDE_DIRECTORIES(${Pizzaaf_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${pizzaaf_SOURCE_DIR}/include)
 
 # Adds a library called pizzaaf (libpizzaaf.a under Linux) from the source files under lib/
 ADD_LIBRARY( pizzaaf 

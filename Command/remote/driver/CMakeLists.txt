@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library remote.
-INCLUDE_DIRECTORIES(${Remote_SOURCE_DIR}/include)
+INCLUDE_DIRECTORIES(${remote_SOURCE_DIR}/include)
 
 # Add binary called "testremote" that is built from the source file "Remote.cpp". 
 # The extension is automatically found.
