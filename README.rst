@@ -13,27 +13,27 @@ Original Contributor : Glenn Puchtel, https://hfdpcpp.codeplex.com/
 Patterns
 --------
 
-Ch. 1 `Strategy <Strategy>`_
+Ch. 1 `Strategy <strategy>`_
 
-Ch. 2 `Observer <Observer>`_
+Ch. 2 `Observer <observer>`_
 
-Ch. 3 `Decorator <Decorator>`_
+Ch. 3 `Decorator <decorator>`_
 
-Ch. 4 `Factory <Factory>`_
+Ch. 4 `Factory <factory>`_
 
-Ch. 5 `Singleton <Singleton>`_
+Ch. 5 `Singleton <singleton>`_
 
-Ch. 6 `Command <Command>`_
+Ch. 6 `Command <command>`_
 
-Ch. 7 `Adapter <Adapter>`_
+Ch. 7 `Adapter <adapter>`_
 
-Ch. 7 `Facade <Facade>`_
+Ch. 7 `Facade <facade>`_
 
-Ch. 8 `Template Method <Template>`_
+Ch. 8 `Template Method <template>`_
 
-Ch. 9 `Composite <Composite>`_
+Ch. 9 `Composite <composite>`_
 
-Ch. 10 `State <State>`_
+Ch. 10 `State <state>`_
 
 Ch. 11 Proxy
 
