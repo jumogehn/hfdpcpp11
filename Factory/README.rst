@@ -9,15 +9,15 @@ Test
 This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
 compile as shown below::
 
- mkdir build_pizzaaf
- cd build_pizzaaf/
- cmake ../pizzaaf/
+ mkdir build_pizza_abstract_factory
+ cd build_pizza_abstract_factory/
+ cmake ../pizza_abstract_factory/
  make
  ./driver/testpizzaaf
 
- mkdir build_pizzafm
- cd build_pizzafm/
- cmake ../pizzafm/
+ mkdir build_pizza_factory_method
+ cd build_pizza_factory_method/
+ cmake ../pizza_factory_method/
  make
  ./driver/testpizzafm
 
@@ -36,7 +36,7 @@ Simple Static Factory Method
 Class Diagram
 -------------
 
-.. image:: pizzas/imgs/Overview_of_SimpleFactory.jpg
+.. image:: pizza_simple/imgs/Overview_of_SimpleFactory.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -44,7 +44,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizzas/imgs/SequenceDiagram1.jpg
+.. image:: pizza_simple/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -63,7 +63,7 @@ Factory Method
 Class Diagram
 -------------
 
-.. image:: pizzafm/imgs/Overview_of_FactoryMethod.jpg
+.. image:: pizza_factory_method/imgs/Overview_of_FactoryMethod.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -71,7 +71,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizzafm/imgs/SequenceDiagram1.jpg
+.. image:: pizza_factory_method/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -154,7 +154,7 @@ Abstract Factory
 Class Diagram
 -------------
 
-.. image:: pizzaaf/imgs/Overview_of_AbstractFactory.jpg
+.. image:: pizza_abstract_factory/imgs/Overview_of_AbstractFactory.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -166,7 +166,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizzaaf/imgs/SequenceDiagram1.jpg
+.. image:: pizza_abstract_factory/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
