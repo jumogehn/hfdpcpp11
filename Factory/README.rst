@@ -9,21 +9,21 @@ Test
 This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
 compile as shown below::
 
- mkdir build_pizza_abstract_factory
- cd build_pizza_abstract_factory/
- cmake ../pizza_abstract_factory/
+ mkdir build_abstract_factory
+ cd build_abstract_factory/
+ cmake ../abstract_factory/
  make
  ./driver/testpizzaaf
 
- mkdir build_pizza_factory_method
- cd build_pizza_factory_method/
- cmake ../pizza_factory_method/
+ mkdir build_factory_method
+ cd build_factory_method/
+ cmake ../factory_method/
  make
  ./driver/testpizzafm
 
- mkdir build_pizzaas
- cd build_pizzaas/
- cmake ../pizzaas/
+ mkdir build_simple_factory
+ cd build_simple_factory/
+ cmake ../simple_factory/
  make
  ./driver/testpizzaas
 
@@ -36,7 +36,7 @@ Simple Static Factory Method
 Class Diagram
 -------------
 
-.. image:: pizza_simple/imgs/Overview_of_SimpleFactory.jpg
+.. image:: simple_factory/imgs/Overview_of_SimpleFactory.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -44,7 +44,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizza_simple/imgs/SequenceDiagram1.jpg
+.. image:: simple_factory/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -63,7 +63,7 @@ Factory Method
 Class Diagram
 -------------
 
-.. image:: pizza_factory_method/imgs/Overview_of_FactoryMethod.jpg
+.. image:: factory_method/imgs/Overview_of_FactoryMethod.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -71,7 +71,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizza_factory_method/imgs/SequenceDiagram1.jpg
+.. image:: factory_method/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -154,7 +154,7 @@ Abstract Factory
 Class Diagram
 -------------
 
-.. image:: pizza_abstract_factory/imgs/Overview_of_AbstractFactory.jpg
+.. image:: abstract_factory/imgs/Overview_of_AbstractFactory.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -166,7 +166,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: pizza_abstract_factory/imgs/SequenceDiagram1.jpg
+.. image:: abstract_factory/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
