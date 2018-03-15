@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 #http://pageant.ghulbus.eu/?p=664
 
-project (Barista)
+project (barista)
 
 cmake_minimum_required(VERSION 2.8.6)
 

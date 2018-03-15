@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.8.6)
 
-project (HomeTheater)
+project (hometheater)
 
 # The version number.
 #set (HomeTheater_VERSION_MAJOR 1)

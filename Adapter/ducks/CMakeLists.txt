@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 2.8.6)
 
-project (Ducks)
+project (ducks)
 
 # The version number.
 #set (Ducks_VERSION_MAJOR 1)
