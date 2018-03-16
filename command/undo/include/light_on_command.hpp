@@ -26,12 +26,12 @@
 
 
 class LightOnCommand : public Command {
-  const Light* _light;
+  const Light* light_;
 
 public:
   explicit LightOnCommand( const Light* light);
-  void execute() const;
-  void undo() const;
+  void Execute() const;
+  void Undo() const;
 };
 
 

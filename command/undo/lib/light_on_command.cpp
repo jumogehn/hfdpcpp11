@@ -25,20 +25,20 @@
 
 
 LightOnCommand::LightOnCommand( const Light* light) :
-  _light(light)
+  light_(light)
 {
   assert(light);
   std::cout << "LightOnCommand::LightOnCommand" << std::endl;
 }
-void LightOnCommand::execute() const
+void LightOnCommand::Execute() const
 {
   std::cout << "LightOnCommand::execute" << std::endl;
-  _light->on();
+  light_->TurnOn();
 }
-void LightOnCommand::undo() const
+void LightOnCommand::Undo() const
 {
   std::cout << "LightOnCommand::undo" << std::endl;
-  _light->off();
+  light_->TurnOff();
 }
 
 

@@ -23,30 +23,30 @@
 //Your project's .h files.
 
 
-CeilingFanLowCommand::CeilingFanLowCommand( const CeilingFan* ceilingFan ) :
-  _ceilingFan( ceilingFan )
+CeilingFanLowCommand::CeilingFanLowCommand( const CeilingFan* ceiling_fan ) :
+  ceiling_fan_( ceiling_fan )
 {
   std::cout << "CeilingFanLowCommand::CeilingFanLowCommand" << std::endl;
-  assert( ceilingFan );
-  _prevSpeed = _ceilingFan->getSpeed();
+  assert( ceiling_fan );
+  prev_speed_ = ceiling_fan_->GetSpeed();
 }
-void CeilingFanLowCommand::execute() const
+void CeilingFanLowCommand::Execute() const
 {
   std::cout << "CeilingFanLowCommand::execute" << std::endl;
-  _prevSpeed = _ceilingFan->getSpeed();
-  _ceilingFan->low();
+  prev_speed_ = ceiling_fan_->GetSpeed();
+  ceiling_fan_->SetLow();
 }
-void CeilingFanLowCommand::undo() const
+void CeilingFanLowCommand::Undo() const
 {
   std::cout << "CeilingFanLowCommand::undo" << std::endl;
-  if( _prevSpeed == CeilingFan::HIGH ) {
-    _ceilingFan->high();
-  } else if( _prevSpeed == CeilingFan::MEDIUM ) {
-    _ceilingFan->medium();
-  } else if( _prevSpeed == CeilingFan::LOW ) {
-    _ceilingFan->low();
-  } else if( _prevSpeed == CeilingFan::OFF ) {
-    _ceilingFan->off();
+  if( prev_speed_ == CeilingFan::kHigh ) {
+    ceiling_fan_->SetHigh();
+  } else if( prev_speed_ == CeilingFan::kMedium ) {
+    ceiling_fan_->SetMedium();
+  } else if( prev_speed_ == CeilingFan::kLow ) {
+    ceiling_fan_->SetLow();
+  } else if( prev_speed_ == CeilingFan::kOff ) {
+    ceiling_fan_->TurnOff();
   }
 }
 

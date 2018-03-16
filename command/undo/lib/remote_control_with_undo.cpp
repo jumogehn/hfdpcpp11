@@ -29,57 +29,57 @@
 RemoteControlWithUndo::RemoteControlWithUndo()
 {
   std::cout << "RemoteControlWithUndo::RemoteControlWithUndo" << std::endl;
-  _noCommand = new NoCommand();
-  for( int i = 0; i < SLOTS; i++ ) {
-    _onCommands[i] = _noCommand;
-    _offCommands[i] = _noCommand;
+  no_command_ = new NoCommand();
+  for( int i = 0; i < kSlots; i++ ) {
+    on_commands_[i] = no_command_;
+    off_commands_[i] = no_command_;
   }
-  _undoCommand = _noCommand;
+  undo_command_ = no_command_;
 }
 RemoteControlWithUndo::~RemoteControlWithUndo()
 {
   std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
-  delete _noCommand;
+  delete no_command_;
 }
-void RemoteControlWithUndo::setCommand( int slot, Command* onCommand, Command* offCommand )
+void RemoteControlWithUndo::SetCommand( int slot, Command* on_command, Command* off_command )
 {
-  assert( slot <= SLOTS ); assert( onCommand ); assert( offCommand );
-  std::cout << "RemoteControlWithUndo::setCommand" << std::endl;
-  _onCommands[slot]  = onCommand;
-  _offCommands[slot] = offCommand;
+  assert( slot <= kSlots ); assert( on_command ); assert( off_command );
+  std::cout << "RemoteControlWithUndo::SetCommand" << std::endl;
+  on_commands_[slot]  = on_command;
+  off_commands_[slot] = off_command;
 }
-void RemoteControlWithUndo::onButtonWasPushed( int slot ) const
+void RemoteControlWithUndo::OnButtonWasPushed( int slot ) const
 {
-  assert( slot <= SLOTS );
-  std::cout << "RemoteControlWithUndo::onButtonWasPushed" << std::endl;
-  _onCommands[slot]->execute();
-  _undoCommand = _onCommands[slot];
+  assert( slot <= kSlots );
+  std::cout << "RemoteControlWithUndo::OnButtonWasPushed" << std::endl;
+  on_commands_[slot]->Execute();
+  undo_command_ = on_commands_[slot];
 }
-void RemoteControlWithUndo::offButtonWasPushed( int slot ) const
+void RemoteControlWithUndo::OffButtonWasPushed( int slot ) const
 {
-  assert( slot <= SLOTS );
-  std::cout << "RemoteControlWithUndo::offButtonWasPushed" << std::endl;
-  _offCommands[slot]->execute();
-  _undoCommand = _offCommands[slot];
+  assert( slot <= kSlots );
+  std::cout << "RemoteControlWithUndo::OffButtonWasPushed" << std::endl;
+  off_commands_[slot]->Execute();
+  undo_command_ = off_commands_[slot];
 }
-void RemoteControlWithUndo::undoButtonWasPushed() const
+void RemoteControlWithUndo::UndoButtonWasPushed() const
 {
-  std::cout << "RemoteControlWithUndo::undoButtonWasPushed" << std::endl;
-  _undoCommand->undo();
+  std::cout << "RemoteControlWithUndo::UndoButtonWasPushed" << std::endl;
+  undo_command_->Undo();
 }
-std::string RemoteControlWithUndo::toString() const
+std::string RemoteControlWithUndo::ToString() const
 {
   std::cout << "RemoteControlWithUndo::toString" << std::endl;
   std::stringstream value;
   value << std::endl << "------ Remote Control -------" << std::endl;
-  for( int i = 0; i < SLOTS; i++ ) {
+  for( int i = 0; i < kSlots; i++ ) {
     value << "[slot " << i << "] ";
-    value << typeid( *_onCommands[i] ).name();
+    value << typeid( *on_commands_[i] ).name();
     value << "    ";
-    value << typeid( *_offCommands[i] ).name();
+    value << typeid( *off_commands_[i] ).name();
     value << std::endl;
   }
-  value << "[undo] " << typeid( *_undoCommand ).name() << std::endl;
+  value << "[undo] " << typeid( *undo_command_ ).name() << std::endl;
 
   return value.str();
 }

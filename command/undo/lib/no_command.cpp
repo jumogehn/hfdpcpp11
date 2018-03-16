@@ -21,11 +21,11 @@
 //Your project's .h files.
 
 
-void NoCommand::execute() const
+void NoCommand::Execute() const
 {
   std::cout << "NoCommand::execute" << std::endl;
 }
-void NoCommand::undo() const
+void NoCommand::Undo() const
 {
   std::cout << "NoCommand::undo" << std::endl;
 }

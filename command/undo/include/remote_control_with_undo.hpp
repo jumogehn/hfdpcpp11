@@ -30,21 +30,21 @@
 //
 class RemoteControlWithUndo {
 
-  static const int SLOTS = 7;
+  static const int kSlots = 7;
 
-  Command* _onCommands[SLOTS];
-  Command* _offCommands[SLOTS];
-  Command* _noCommand;
-  mutable Command* _undoCommand;
+  Command* on_commands_[kSlots];
+  Command* off_commands_[kSlots];
+  Command* no_command_;
+  mutable Command* undo_command_;
 
 public:
   RemoteControlWithUndo();
   ~RemoteControlWithUndo();
-  void setCommand( int slot, Command* onCommand, Command* offCommand );
-  void onButtonWasPushed( int slot ) const;
-  void offButtonWasPushed( int slot ) const;
-  void undoButtonWasPushed() const;
-  std::string toString() const;
+  void SetCommand( int slot, Command* on_command, Command* off_command );
+  void OnButtonWasPushed( int slot ) const;
+  void OffButtonWasPushed( int slot ) const;
+  void UndoButtonWasPushed() const;
+  std::string ToString() const;
 };
 
 

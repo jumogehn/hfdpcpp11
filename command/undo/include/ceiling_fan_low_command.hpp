@@ -27,13 +27,13 @@
 
 class CeilingFanLowCommand : public Command {
 
-  const CeilingFan* _ceilingFan;
-  mutable int _prevSpeed;
+  const CeilingFan* ceiling_fan_;
+  mutable int prev_speed_;
 
 public:
-  explicit CeilingFanLowCommand( const CeilingFan* ceilingFan );
-  void execute() const;
-  void undo() const;
+  explicit CeilingFanLowCommand( const CeilingFan* ceiling_fan );
+  void Execute() const;
+  void Undo() const;
 };
 
 

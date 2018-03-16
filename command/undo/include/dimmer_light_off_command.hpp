@@ -27,13 +27,13 @@
 
 class DimmerLightOffCommand : public Command {
 
-  const Light* _light;
-  mutable int _prevLevel;
+  const Light* light_;
+  mutable int prev_level_;
 
 public:
   explicit DimmerLightOffCommand( const Light* light );
-  void execute() const;
-  void undo() const;
+  void Execute() const;
+  void Undo() const;
 };
 
 

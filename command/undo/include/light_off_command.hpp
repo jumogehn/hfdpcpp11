@@ -27,12 +27,12 @@
 
 class LightOffCommand : public Command {
 
-  const Light* _light;
+  const Light* light_;
 
 public:
   explicit LightOffCommand( const Light* light );
-  void execute() const;
-  void undo() const;
+  void Execute() const;
+  void Undo() const;
 };
 
 

@@ -26,8 +26,8 @@
 class NoCommand : public Command {
 
 public:
-  void execute() const;
-  void undo() const;
+  void Execute() const;
+  void Undo() const;
 };
 
 

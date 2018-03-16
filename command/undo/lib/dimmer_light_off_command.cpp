@@ -24,21 +24,21 @@
 
 
 DimmerLightOffCommand::DimmerLightOffCommand( const Light* light ) :
-  _light( light )
+  light_( light )
 {
   assert( light );
   std::cout << "DimmerLightOffCommand::DimmerLightOffCommand" << std::endl;
-  _prevLevel = _light->getLevel();
+  prev_level_ = light_->GetLevel();
 }
-void DimmerLightOffCommand::execute() const
+void DimmerLightOffCommand::Execute() const
 {
   std::cout << "DimmerLightOffCommand::execute" << std::endl;
-  _prevLevel = _light->getLevel();
-  _light->off();
+  prev_level_ = light_->GetLevel();
+  light_->TurnOff();
 }
-void DimmerLightOffCommand::undo() const
+void DimmerLightOffCommand::Undo() const
 {
   std::cout << "DimmerLightOffCommand::undo" << std::endl;
-  _light->dim( _prevLevel );
+  light_->Dim( prev_level_ );
 }
 

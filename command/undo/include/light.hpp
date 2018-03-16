@@ -25,15 +25,15 @@
 
 class Light {
 
-  std::string _location;
-  mutable int _level;
+  std::string location_;
+  mutable int level_;
 
 public:
   explicit Light( const std::string location );
-  void on() const;
-  void off() const;
-  void dim( int level ) const;
-  int getLevel() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void Dim( int level ) const;
+  int GetLevel() const;
 };
 
 

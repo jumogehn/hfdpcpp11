@@ -24,35 +24,35 @@
 
 
 Light::Light( const std::string location ) :
-  _location( location ), _level( 0 )
+  location_( location ), level_( 0 )
 {
   std::cout << "Light::Light" << std::endl;
 }
-void Light::on() const
+void Light::TurnOn() const
 {
   std::cout << "Light::on" << std::endl;
-  _level = 100;
-  std::cout << _location.c_str() << " light is on" << std::endl;
+  level_ = 100;
+  std::cout << location_.c_str() << " light is on" << std::endl;
 }
-void Light::off() const
+void Light::TurnOff() const
 {
   std::cout << "Light::off" << std::endl;
-  _level = 0;
-  std::cout << _location.c_str() << " light is off" << std::endl;
+  level_ = 0;
+  std::cout << location_.c_str() << " light is off" << std::endl;
 }
-void Light::dim( int level ) const
+void Light::Dim( int level ) const
 {
   std::cout << "Light::dim" << std::endl;
-  _level = level;
-  if( _level == 0 ) {
-    off();
+  level_ = level;
+  if( level_ == 0 ) {
+    TurnOff();
   } else {
-    std::cout << "Light is dimmed to " << _level << "%" << std::endl;
+    std::cout << "Light is dimmed to " << level_ << "%" << std::endl;
   }
 }
-int Light::getLevel() const
+int Light::GetLevel() const
 {
-  std::cout << "Light::getLevel" << std::endl;
-  return _level;
+  std::cout << "Light::GetLevel" << std::endl;
+  return level_;
 }
 
