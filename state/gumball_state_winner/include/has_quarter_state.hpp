@@ -1,4 +1,4 @@
-//===--- HasQuarterState.hpp - ----------------------------------*- C++ -*-===//
+//===--- has_quarter_state.hpp - --------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

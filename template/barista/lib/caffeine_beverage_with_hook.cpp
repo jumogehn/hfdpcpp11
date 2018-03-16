@@ -1,4 +1,4 @@
-//===--- CaffeineBeverageWithHook.cpp - -------------------------*- C++ -*-===//
+//===--- caffeine_beverage_with_hook.cpp - ----------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

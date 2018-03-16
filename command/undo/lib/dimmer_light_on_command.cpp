@@ -1,4 +1,4 @@
-//===--- DimmerLightOnCommand.cpp - -----------------------------*- C++ -*-===//
+//===--- dimmer_light_on_command.cpp - --------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

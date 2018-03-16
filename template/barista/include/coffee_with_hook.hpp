@@ -1,4 +1,4 @@
-//===--- CoffeeWithHook.hpp - -----------------------------------*- C++ -*-===//
+//===--- coffee_with_hook.hpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

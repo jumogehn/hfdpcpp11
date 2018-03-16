@@ -1,4 +1,4 @@
-//===--- NYStyleClamPizza.cpp - ---------------------------------*- C++ -*-===//
+//===--- ny_style_clam_pizza.cpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

@@ -1,4 +1,4 @@
-//===--- ReggianoCheese.cpp - -----------------------------------*- C++ -*-===//
+//===--- reggiano_cheese.cpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

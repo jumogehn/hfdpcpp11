@@ -1,4 +1,4 @@
-//===--- RemoteControlWithUndo.hpp - ----------------------------*- C++ -*-===//
+//===--- remote_control_with_undo.hpp - -------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

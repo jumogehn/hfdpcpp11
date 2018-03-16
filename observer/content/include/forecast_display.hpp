@@ -1,4 +1,4 @@
-//===--- ForecastDisplay.hpp - ----------------------------------*- C++ -*-===//
+//===--- forecast_display.hpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

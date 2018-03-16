@@ -1,4 +1,4 @@
-//===--- NYStyleVeggiePizza.hpp - -------------------------------*- C++ -*-===//
+//===--- ny_style_veggie_pizza.hpp - ----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

@@ -1,7 +1,4 @@
-#ifndef	_HFDP_CPP_FACADE_HOME_THEATER_CD_PLAYER_HPP_
-#define _HFDP_CPP_FACADE_HOME_THEATER_CD_PLAYER_HPP_
-
-//===--- CdPlayer.hpp - -----------------------------------------*- C++ -*-===//
+//===--- cd_player.hpp - ----------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -13,6 +10,8 @@
 ///
 //===----------------------------------------------------------------------===//
 
+#ifndef	_HFDP_CPP_FACADE_HOME_THEATER_CD_PLAYER_HPP_
+#define _HFDP_CPP_FACADE_HOME_THEATER_CD_PLAYER_HPP_
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
 //C system files.

@@ -1,5 +1,4 @@
-
-//===--- HomeTheaterFacade.hpp - --------------------------------*- C++ -*-===//
+//===--- home_theater_facade.hpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

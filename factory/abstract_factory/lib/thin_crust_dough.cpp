@@ -1,4 +1,4 @@
-//===--- ThinCrustDough.cpp - -----------------------------------*- C++ -*-===//
+//===--- thin_crust_dough.cpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

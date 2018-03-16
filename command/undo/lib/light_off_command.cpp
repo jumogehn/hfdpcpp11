@@ -1,4 +1,4 @@
-//===--- LightOffCommand.cpp - ----------------------------------*- C++ -*-===//
+//===--- light_off_command.cpp - --------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

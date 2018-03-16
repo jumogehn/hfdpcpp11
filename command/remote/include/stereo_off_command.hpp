@@ -1,4 +1,4 @@
-//===--- StereoOffCommand.hpp - -------------------------------------------*- C++ -*-===//
+//===--- stereo_off_command.hpp - -------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

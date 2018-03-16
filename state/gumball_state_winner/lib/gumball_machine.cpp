@@ -1,4 +1,4 @@
-//===--- GumballMachine.hpp - -----------------------------------*- C++ -*-===//
+//===--- gumball_machine.hpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

@@ -1,4 +1,4 @@
-//===--- UnsupportedOperationException.hpp - --------------------*- C++ -*-===//
+//===--- unsupported_operation_exception.hpp - ------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

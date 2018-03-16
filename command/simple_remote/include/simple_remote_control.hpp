@@ -1,4 +1,4 @@
-//===--- SimpleRemoteControl.hpp - ------------------------------*- C++ -*-===//
+//===--- simple_remote_control.hpp - ----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

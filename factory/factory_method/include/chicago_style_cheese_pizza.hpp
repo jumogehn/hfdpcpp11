@@ -1,4 +1,4 @@
-//===--- ChicagoStyleCheesePizza.hpp - --------------------------*- C++ -*-===//
+//===--- chicago_style_cheese_pizza.hpp - -----------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

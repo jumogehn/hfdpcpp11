@@ -1,4 +1,4 @@
-//===--- DisplayElement.hpp - -----------------------------------*- C++ -*-===//
+//===--- display_element.hpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

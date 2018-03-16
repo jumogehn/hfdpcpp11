@@ -1,4 +1,4 @@
-//===--- CondimentDecorator.hpp - -------------------------------*- C++ -*-===//
+//===--- condiment_decorator.hpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

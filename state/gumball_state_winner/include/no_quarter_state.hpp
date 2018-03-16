@@ -1,4 +1,4 @@
-//===--- NoQuarterState.hpp - -----------------------------------*- C++ -*-===//
+//===--- no_quarter_state.hpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

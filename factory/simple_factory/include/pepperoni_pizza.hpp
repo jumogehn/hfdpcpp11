@@ -1,4 +1,4 @@
-//===--- PepperoniPizza.hpp - -----------------------------------*- C++ -*-===//
+//===--- pepperoni_pizza.hpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

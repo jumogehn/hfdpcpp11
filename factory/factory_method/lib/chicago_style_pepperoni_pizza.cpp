@@ -1,4 +1,4 @@
-//===--- ChicagoStylePepperoniPizza.cpp - -----------------------*- C++ -*-===//
+//===--- chicago_style_pepperoni_pizza.cpp - --------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

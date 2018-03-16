@@ -1,4 +1,4 @@
-//===--- ceilingFanMediumCommand.hpp - --------------------------*- C++ -*-===//
+//===--- ceiling_fan_medium_command.hpp - -----------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

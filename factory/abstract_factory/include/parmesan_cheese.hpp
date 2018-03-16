@@ -1,4 +1,4 @@
-//===--- ParmesanCheese.hpp - -----------------------------------*- C++ -*-===//
+//===--- parmesan_cheese.hpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

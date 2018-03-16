@@ -1,4 +1,4 @@
-//===--- HeatIndexDisplay.hpp - ---------------------------------*- C++ -*-===//
+//===--- heat_index_display.hpp - -------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

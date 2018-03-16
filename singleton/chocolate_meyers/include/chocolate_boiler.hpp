@@ -1,4 +1,4 @@
-//===--- ChocolateBoiler.hpp - ----------------------------------*- C++ -*-===//
+//===--- chocolate_boiler.hpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

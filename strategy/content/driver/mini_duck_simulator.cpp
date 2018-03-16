@@ -1,4 +1,4 @@
-//===--- MiniDuckSimulator.cpp - --------------------------------*- C++ -*-===//
+//===--- mini_duck_simulator.cpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

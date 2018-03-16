@@ -1,4 +1,4 @@
-//===--- MozzarellaCheese.hpp - ---------------------------------*- C++ -*-===//
+//===--- mozzarella_cheese.hpp - --------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

@@ -1,4 +1,4 @@
-//===--- CurrentConditionsDisplay.hpp - -------------------------*- C++ -*-===//
+//===--- current_conditions_display.hpp - -----------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

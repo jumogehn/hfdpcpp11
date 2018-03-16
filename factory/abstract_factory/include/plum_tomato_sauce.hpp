@@ -1,4 +1,4 @@
-//===--- PlumTomatoSauce.hpp - ----------------------------------*- C++ -*-===//
+//===--- plum_tomato_sauce.hpp - --------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

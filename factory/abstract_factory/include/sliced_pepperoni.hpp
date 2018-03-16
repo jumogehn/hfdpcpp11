@@ -1,4 +1,4 @@
-//===--- SlicedPepperoni.hpp - ----------------------------------*- C++ -*-===//
+//===--- sliced_pepperoni.hpp - ---------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

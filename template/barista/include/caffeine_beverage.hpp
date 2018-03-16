@@ -1,4 +1,4 @@
-//===--- CaffeineBeverage.hpp - ---------------------------------*- C++ -*-===//
+//===--- caffeine_beverage.hpp - --------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

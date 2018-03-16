@@ -1,4 +1,4 @@
-//===--- StereoOnWithCDCommand.hpp - ----------------------------*- C++ -*-===//
+//===--- stereo_on_with_cd_command.hpp - ------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

@@ -1,4 +1,4 @@
-//===--- SimplePizzaFactory.hpp - -------------------------------*- C++ -*-===//
+//===--- simple_pizza_factory.hpp - -----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

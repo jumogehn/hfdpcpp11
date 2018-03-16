@@ -1,4 +1,4 @@
-//===--- StatisticsDisplay.hpp - --------------------------------*- C++ -*-===//
+//===--- statistics_display.hpp - -------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

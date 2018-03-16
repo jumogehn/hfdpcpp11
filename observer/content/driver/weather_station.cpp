@@ -1,4 +1,4 @@
-//===--- WeatherStation.cpp - -----------------------------------*- C++ -*-===//
+//===--- weather_station.cpp - ----------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

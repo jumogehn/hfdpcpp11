@@ -1,4 +1,4 @@
-//===--- ChicagoStyleVeggiePizza.cpp - --------------------------*- C++ -*-===//
+//===--- chicago_style_veggie_pizza.cpp - -----------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

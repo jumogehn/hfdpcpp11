@@ -1,4 +1,4 @@
-//===--- FlyRocketPowered.hpp - ---------------------------------*- C++ -*-===//
+//===--- fly_rocket_powered.hpp - -------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

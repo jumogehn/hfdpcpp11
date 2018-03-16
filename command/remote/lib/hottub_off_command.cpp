@@ -1,4 +1,4 @@
-//===--- HottubOffCommand.cpp - ---------------------------------*- C++ -*-===//
+//===--- hottub_off_command.cpp - -------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

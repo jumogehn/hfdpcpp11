@@ -1,4 +1,4 @@
-//===--- GumballStateWinner.cpp - -------------------------------*- C++ -*-===//
+//===--- gumball_state_winner.cpp - -----------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //

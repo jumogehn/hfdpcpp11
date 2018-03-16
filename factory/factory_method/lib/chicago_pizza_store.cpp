@@ -1,4 +1,4 @@
-//===--- ChicagoPizzaStore.cpp - --------------------------------*- C++ -*-===//
+//===--- chicago_pizza_store.cpp - ------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
