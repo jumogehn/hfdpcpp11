@@ -25,21 +25,21 @@
 
 
 SimpleRemoteControl::SimpleRemoteControl() :
-  _slot( nullptr )
+  slot_( nullptr )
 {
   std::cout << "SimpleRemoteControl::SimpleRemoteControl" << std::endl;
 }
-void SimpleRemoteControl::setCommand( const Command* command )
+void SimpleRemoteControl::SetCommand( const Command* command )
 {
   assert( command );
-  std::cout << "SimpleRemoteControl::setCommand" << std::endl;
-  _slot = command;
+  std::cout << "SimpleRemoteControl::SetCommand" << std::endl;
+  slot_ = command;
 }
-void SimpleRemoteControl::buttonWasPressed() const
+void SimpleRemoteControl::ButtonWasPressed() const
 {
-  assert( _slot );
+  assert( slot_ );
   std::cout << "SimpleRemoteControl::buttonWasPressed" << std::endl;
-  _slot->execute();
+  slot_->Execute();
 }
 
 

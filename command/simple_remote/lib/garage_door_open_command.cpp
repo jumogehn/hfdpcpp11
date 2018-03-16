@@ -23,15 +23,15 @@
 //Your project's .h files.
 
 
-GarageDoorOpenCommand::GarageDoorOpenCommand( const GarageDoor* garageDoor) :
-  _garageDoor( garageDoor )
+GarageDoorOpenCommand::GarageDoorOpenCommand( const GarageDoor* garage_door) :
+  garage_door_( garage_door )
 {
-  assert( garageDoor );
+  assert( garage_door );
   std::cout << "GarageDoorOpenCommand::GarageDoorOpenCommand" << std::endl;
 }
-void GarageDoorOpenCommand::execute() const
+void GarageDoorOpenCommand::Execute() const
 {
   std::cout << "GarageDoorOpenCommand::execute" << std::endl;
-  _garageDoor->up();
+  garage_door_->OpenUp();
 }
 

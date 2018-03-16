@@ -26,14 +26,14 @@ Light::Light()
 {
   std::cout << "Light::Light" << std::endl;
 }
-void Light::on() const
+void Light::On() const
 {
-  std::cout << "Light::on" << std::endl;
+  std::cout << "Light::On" << std::endl;
   std::cout << "Light is on" << std::endl;
 }
-void Light::off() const
+void Light::Off() const
 {
-  std::cout << "Light::off" << std::endl;
+  std::cout << "Light::Off" << std::endl;
   std::cout << "Light is off" << std::endl;
 }
 

@@ -24,27 +24,27 @@ GarageDoor::GarageDoor()
 {
   std::cout << "GarageDoor::GarageDoor" << std::endl;
 }
-void GarageDoor::up() const
+void GarageDoor::OpenUp() const
 {
   std::cout << "GarageDoor::up" << std::endl;
   std::cout << "Garage Door is Open" << std::endl;
 }
-void GarageDoor::down() const
+void GarageDoor::CloseDown() const
 {
   std::cout << "GarageDoor::down" << std::endl;
   std::cout << "Garage Door is Closed" << std::endl;
 }
-void GarageDoor::stop() const
+void GarageDoor::Stop() const
 {
   std::cout << "GarageDoor::stop" << std::endl;
   std::cout << "Garage Door is Stopped" << std::endl;
 }
-void GarageDoor::lightOn() const
+void GarageDoor::LightOn() const
 {
   std::cout << "GarageDoor::lightOn" << std::endl;
   std::cout << "Garage light is on" << std::endl;
 }
-void GarageDoor::lightOff() const
+void GarageDoor::LightOff() const
 {
   std::cout << "GarageDoor::lightOff" << std::endl;
   std::cout << "Garage light is off" << std::endl;

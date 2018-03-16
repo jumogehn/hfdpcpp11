@@ -30,14 +30,14 @@ int main( int argc, char* argv[] ) {
 
   std::unique_ptr<SimpleRemoteControl> remote(new SimpleRemoteControl());
   std::unique_ptr<Light> light(new Light());
-  std::unique_ptr<GarageDoor> garageDoor(new GarageDoor());
-  std::unique_ptr<LightOnCommand> lightOn(new LightOnCommand( light.get() ));
-  std::unique_ptr<GarageDoorOpenCommand> garageOpen(new GarageDoorOpenCommand( garageDoor.get() ));
+  std::unique_ptr<GarageDoor> garage_door(new GarageDoor());
+  std::unique_ptr<LightOnCommand> light_on(new LightOnCommand( light.get() ));
+  std::unique_ptr<GarageDoorOpenCommand> garage_open(new GarageDoorOpenCommand( garage_door.get() ));
 
-  remote->setCommand( lightOn.get() );
-  remote->buttonWasPressed();
-  remote->setCommand( garageOpen.get() );
-  remote->buttonWasPressed();
+  remote->SetCommand( light_on.get() );
+  remote->ButtonWasPressed();
+  remote->SetCommand( garage_open.get() );
+  remote->ButtonWasPressed();
 
   return 0;
 }

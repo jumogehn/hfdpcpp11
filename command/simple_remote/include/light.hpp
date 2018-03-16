@@ -18,8 +18,8 @@ class Light {
 
 public:
   Light();
-  void on() const;
-  void off() const;
+  void On() const;
+  void Off() const;
 };
 
 #endif

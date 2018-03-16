@@ -18,11 +18,11 @@ class GarageDoor {
 
 public:
   GarageDoor();
-  void up() const;
-  void down() const;
-  void stop() const;
-  void lightOn() const;
-  void lightOff() const;
+  void OpenUp() const;
+  void CloseDown() const;
+  void Stop() const;
+  void LightOn() const;
+  void LightOff() const;
 };
 
 

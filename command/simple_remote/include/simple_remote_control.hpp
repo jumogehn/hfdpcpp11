@@ -25,12 +25,12 @@
 
 class SimpleRemoteControl {
 
-  const Command* _slot;
+  const Command* slot_;
 
 public:
   SimpleRemoteControl();
-  void setCommand( const Command* command );
-  void buttonWasPressed() const;
+  void SetCommand( const Command* command );
+  void ButtonWasPressed() const;
 };
 
 

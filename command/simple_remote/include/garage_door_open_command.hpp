@@ -26,11 +26,11 @@
 
 class GarageDoorOpenCommand : public Command {
 
-  const GarageDoor* _garageDoor;
+  const GarageDoor* garage_door_;
 
 public:
-  explicit GarageDoorOpenCommand( const GarageDoor* garageDoor);
-  void execute() const;
+  explicit GarageDoorOpenCommand( const GarageDoor* garage_door);
+  void Execute() const;
 };
 
 
