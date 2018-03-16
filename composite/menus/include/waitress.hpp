@@ -26,14 +26,14 @@
 
 class Waitress {
 
-  const MenuComponent* _allMenus;
+  const MenuComponent* all_menus_;
 
   Waitress( const Waitress& ); // Disable copy constructor
   void operator=( const Waitress& ); // Disable assignment operator
 
 public:
-  explicit Waitress( const MenuComponent* allMenus );
-  void printMenu() const;
+  explicit Waitress( const MenuComponent* all_menus );
+  void PrintMenu() const;
 };
 
 

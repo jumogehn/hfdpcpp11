@@ -33,42 +33,42 @@ MenuComponent::~MenuComponent()
 {
   std::cout << "MenuComponent::~MenuComponent" << std::endl;
 }
-void MenuComponent::add( MenuComponent* menuComponent )
+void MenuComponent::Add( MenuComponent* menu_component )
 {
   std::cout << "MenuComponent::add" << std::endl;
   throw new UnsupportedOperationException();
 }
-void MenuComponent::remove( MenuComponent* menuComponent )
+void MenuComponent::Remove( MenuComponent* menu_component )
 {
   std::cout << "MenuComponent::remove" << std::endl;
   throw new UnsupportedOperationException();
 }
-MenuComponent* MenuComponent::getChild( int i ) const
+MenuComponent* MenuComponent::GetChild( int i ) const
 {
-  std::cout << "MenuComponent::getChild" << std::endl;
+  std::cout << "MenuComponent::GetChild" << std::endl;
   throw new UnsupportedOperationException();
 }
-std::string MenuComponent::getName() const
+std::string MenuComponent::GetName() const
 {
-  std::cout << "MenuComponent::getName" << std::endl;
+  std::cout << "MenuComponent::GetName" << std::endl;
   throw new UnsupportedOperationException();
 }
-std::string MenuComponent::getDescription() const
+std::string MenuComponent::GetDescription() const
 {
-  std::cout << "MenuComponent::getDescription" << std::endl;
+  std::cout << "MenuComponent::GetDescription" << std::endl;
   throw new UnsupportedOperationException();
 }
-double MenuComponent::getPrice() const
+double MenuComponent::GetPrice() const
 {
   std::cout << "MenuComponent::getPrice" << std::endl;
   throw new UnsupportedOperationException();
 }
-bool MenuComponent::isVegetarian() const
+bool MenuComponent::IsVegetarian() const
 {
   std::cout << "MenuComponent::isVegetarian" << std::endl;
   throw new UnsupportedOperationException();
 }
-void MenuComponent::print() const
+void MenuComponent::Print() const
 {
   std::cout << "MenuComponent::print" << std::endl;
   throw new UnsupportedOperationException();

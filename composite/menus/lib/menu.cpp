@@ -28,53 +28,53 @@
 
 
 Menu::Menu( const std::string name, const std::string description ) :
-  _name( name ), _description( description )
+  name_( name ), description_( description )
 {
   std::cout << "Menu::Menu" << std::endl;
 }
-void Menu::add( MenuComponent* menuComponent )
+void Menu::Add( MenuComponent* menu_component )
 {
-  assert( menuComponent );
+  assert( menu_component );
   std::cout << "Menu::add" << std::endl;
-  _menuComponents.push_back( menuComponent );
+  menu_components_.push_back( menu_component );
 }
-void Menu::remove( MenuComponent* menuComponent )
+void Menu::Remove( MenuComponent* menu_component )
 {
-  assert( menuComponent );
+  assert( menu_component );
   std::cout << "Menu::remove" << std::endl;
   ////////////////////////////////////////////////////////////
   // This part is remained as a to-do
-  //std::remove( _menuComponents.begin(), _menuComponents.end(),
-  //             menuComponent->getName().c_str());
+  //std::Remove( menu_components_.begin(), menu_components_.end(),
+  //             menu_component->GetName().c_str());
 }
-MenuComponent* Menu::getChild( int i ) const
+MenuComponent* Menu::GetChild( int i ) const
 {
-  std::cout << "Menu::getChild" << std::endl;
-  return _menuComponents[i];
+  std::cout << "Menu::GetChild" << std::endl;
+  return menu_components_[i];
 }
-std::string Menu::getName() const
+std::string Menu::GetName() const
 {
-  std::cout << "Menu::getName" << std::endl;
-  return _name;
+  std::cout << "Menu::GetName" << std::endl;
+  return name_;
 }
-std::string Menu::getDescription() const
+std::string Menu::GetDescription() const
 {
-  std::cout << "Menu::getDescription" << std::endl;
-  return _description;
+  std::cout << "Menu::GetDescription" << std::endl;
+  return description_;
 }
-void Menu::print() const
+void Menu::Print() const
 {
   std::cout << "Menu::print" << std::endl;
-  std::cout << std::endl << getName().c_str();
-  std::cout << ", " << getDescription().c_str() << std::endl;
+  std::cout << std::endl << GetName().c_str();
+  std::cout << ", " << GetDescription().c_str() << std::endl;
   std::cout << "---------------------" << std::endl;
 
   //std::vector< MenuComponent* >::iterator
-  //  iterator = _menuComponents.begin();
-  //while( iterator != _menuComponents.end() ) {
-  //  MenuComponent> menuComponent = *iterator++;
-  for ( MenuComponent* menuComponent : _menuComponents ) {
-    menuComponent->print();
+  //  iterator = menu_components_.begin();
+  //while( iterator != menu_components_.end() ) {
+  //  MenuComponent> menu_component = *iterator++;
+  for ( MenuComponent* menu_component : menu_components_ ) {
+    menu_component->Print();
   }
 }
 

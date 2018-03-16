@@ -23,16 +23,16 @@
 //Your project's .h files.
 
 
-Waitress::Waitress( const MenuComponent* allMenus ) :
-  _allMenus( allMenus )
+Waitress::Waitress( const MenuComponent* all_menus ) :
+  all_menus_( all_menus )
 {
-  assert( allMenus );
+  assert( all_menus );
   std::cout << "Waitress::Waitress" << std::endl;
 }
-void Waitress::printMenu() const
+void Waitress::PrintMenu() const
 {
-  std::cout << "Waitress::printMenu" << std::endl;
-  _allMenus->print();
+  std::cout << "Waitress::PrintMenu" << std::endl;
+  all_menus_->Print();
 }
 
 

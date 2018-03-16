@@ -26,13 +26,13 @@
 
 class UnsupportedOperationException : public std::exception {
 
-  std::string _message;
+  std::string message_;
 
 public:
   UnsupportedOperationException() throw();
   UnsupportedOperationException( const std::string message );
   virtual ~UnsupportedOperationException() throw();
-  std::string getMessage() const;
+  std::string GetMessage() const;
 };
 
 

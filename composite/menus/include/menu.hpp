@@ -28,18 +28,18 @@
 
 class Menu : public MenuComponent {
 
-  std::string _name;
-  std::string _description;
-  mutable std::vector< MenuComponent* > _menuComponents;
+  std::string name_;
+  std::string description_;
+  mutable std::vector< MenuComponent* > menu_components_;
 
 public:
   Menu( const std::string name, const std::string description );
-  void add( MenuComponent* menuComponent );
-  void remove( MenuComponent* menuComponent );
-  MenuComponent* getChild( int i ) const;
-  std::string getName() const;
-  std::string getDescription() const;
-  void print() const;
+  void Add( MenuComponent* menu_component );
+  void Remove( MenuComponent* menu_component );
+  MenuComponent* GetChild( int i ) const;
+  std::string GetName() const;
+  std::string GetDescription() const;
+  void Print() const;
 };
 
 
