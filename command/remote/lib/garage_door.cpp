@@ -23,39 +23,39 @@
 
 
 GarageDoor::GarageDoor( const std::string location ) :
-  _location( location )
+  location_( location )
 {
   std::cout << "GarageDoor::GarageDoor" << std::endl;
 }
 
-void GarageDoor::up() const
+void GarageDoor::OpenUp() const
 {
   std::cout << "GarageDoor::up" << std::endl;
-  std::cout << _location.c_str() << " Door is Up" << std::endl;
+  std::cout << location_.c_str() << " Door is Up" << std::endl;
 }
 
-void GarageDoor::down() const
+void GarageDoor::CloseDown() const
 {
   std::cout << "GarageDoor::down" << std::endl;
-  std::cout << _location.c_str() << " Door is Down" << std::endl;
+  std::cout << location_.c_str() << " Door is Down" << std::endl;
 }
 
-void GarageDoor::stop() const
+void GarageDoor::Stop() const
 {
   std::cout << "GarageDoor::stop" << std::endl;
-  std::cout << _location.c_str() << " Door is Stopped" << std::endl;
+  std::cout << location_.c_str() << " Door is Stopped" << std::endl;
 }
 
-void GarageDoor::lightOn() const
+void GarageDoor::LightOn() const
 {
   std::cout << "GarageDoor::lightOn" << std::endl;
-  std::cout << _location.c_str() << " light is on" << std::endl;
+  std::cout << location_.c_str() << " light is on" << std::endl;
 }
 
-void GarageDoor::lightOff() const
+void GarageDoor::LightOff() const
 {
   std::cout << "GarageDoor::lightOff" << std::endl;
-  std::cout << _location.c_str() << " light is off" << std::endl;
+  std::cout << location_.c_str() << " light is off" << std::endl;
 }
 
 

@@ -24,20 +24,20 @@
 
 class CeilingFan {
 
-  mutable int _level;
-  std::string _location;
+  mutable int level_;
+  std::string location_;
 
 public:
-  static const int HIGH = 2;
-  static const int MEDIUM = 1;
-  static const int LOW = 0;
+  static const int kHigh = 2;
+  static const int kMedium = 1;
+  static const int kLow = 0;
 
   explicit CeilingFan( const std::string location );
-  void high() const;
-  void medium() const;
-  void low() const;
-  void off() const;
-  int getSpeed() const;
+  void SetHigh() const;
+  void SetMedium() const;
+  void SetLow() const;
+  void TurnOff() const;
+  int GetSpeed() const;
 };
 
 

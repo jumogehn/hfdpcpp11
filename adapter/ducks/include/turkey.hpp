@@ -20,8 +20,8 @@ class Turkey {
 
 public:
   virtual ~Turkey();
-  virtual void gobble() const = 0;
-  virtual void fly() const = 0;
+  virtual void Gobble() const = 0;
+  virtual void Fly() const = 0;
 };
 
 

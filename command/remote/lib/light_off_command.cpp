@@ -23,16 +23,16 @@
 
 
 LightOffCommand::LightOffCommand( const Light* light  ) :
-  _light( light )
+  light_( light )
 {
   assert( light );
   std::cout << "LightOffCommand::LightOffCommand" << std::endl;
 }
 
-void LightOffCommand::execute() const
+void LightOffCommand::Execute() const
 {
   std::cout << "LightOffCommand::execute" << std::endl;
-  _light->off();
+  light_->TurnOff();
 }
 
 

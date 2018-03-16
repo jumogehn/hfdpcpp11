@@ -23,46 +23,46 @@
 
 
 CeilingFan::CeilingFan( const std::string location ) :
-  _level( LOW ), _location( location )
+  level_( kLow ), location_( location )
 {
   std::cout << "CeilingFan::CeilingFan" << std::endl;
 }
 
-void CeilingFan::high() const
+void CeilingFan::SetHigh() const
 {
   std::cout << "CeilingFan::high" << std::endl;
-  _level = HIGH;
-  std::cout << _location.c_str()
+  level_ = kHigh;
+  std::cout << location_.c_str()
     << " ceiling fan is on high" << std::endl;
 }
 
-void CeilingFan::medium() const
+void CeilingFan::SetMedium() const
 {
   std::cout << "CeilingFan::medium" << std::endl;
-  _level = MEDIUM;
-  std::cout << _location.c_str()
+  level_ = kMedium;
+  std::cout << location_.c_str()
     << " ceiling fan is on medium" << std::endl;
 }
 
-void CeilingFan::low() const
+void CeilingFan::SetLow() const
 {
   std::cout << "CeilingFan::low" << std::endl;
-  _level = LOW;
-  std::cout << _location.c_str()
+  level_ = kLow;
+  std::cout << location_.c_str()
     << " ceiling fan is on low" << std::endl;
 }
 
-void CeilingFan::off() const
+void CeilingFan::TurnOff() const
 {
   std::cout << "CeilingFan::off" << std::endl;
-  _level = 0;
-  std::cout << _location.c_str() << " ceiling fan is off" << std::endl;
+  level_ = 0;
+  std::cout << location_.c_str() << " ceiling fan is off" << std::endl;
 }
 
-int CeilingFan::getSpeed() const
+int CeilingFan::GetSpeed() const
 {
   std::cout << "CeilingFan::getSpeed" << std::endl;
-  return _level;
+  return level_;
 }
 
 

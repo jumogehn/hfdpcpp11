@@ -21,25 +21,25 @@
 
 
 TV::TV( const std::string location ) :
-  _channel( 0 ), _location( location )
+  channel_( 0 ), location_( location )
 {
   std::cout << "TV::TV" << std::endl;
 }
-void TV::on() const
+void TV::TurnOn() const
 {
   std::cout << "TV::on" << std::endl;
-  std::cout << _location.c_str() << " TV is on" << std::endl;
+  std::cout << location_.c_str() << " TV is on" << std::endl;
 }
-void TV::off() const
+void TV::TurnOff() const
 {
   std::cout << "TV::off" << std::endl;
-  std::cout << _location.c_str() << " TV is off" << std::endl;
+  std::cout << location_.c_str() << " TV is off" << std::endl;
 }
-void TV::setInputChannel()
+void TV::SetInputChannel()
 {
-  std::cout << "TV::setInputChannel" << std::endl;
-  _channel = 3;
-  std::cout << _location.c_str() << " Channel is set for VCR"
+  std::cout << "TV::SetInputChannel" << std::endl;
+  channel_ = 3;
+  std::cout << location_.c_str() << " Channel is set for VCR"
     << std::endl;
 }
 

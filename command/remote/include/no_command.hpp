@@ -25,7 +25,7 @@
 class NoCommand : public Command{
 
 public:
-  void execute() const;
+  void Execute() const;
 };
 
 

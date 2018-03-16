@@ -27,16 +27,16 @@
 
 class DuckAdapter : public Turkey {
 
-  const Duck* MyDuck;
-  int _random;
+  const Duck* my_duck_;
+  int random_num_;
 
   DuckAdapter( const DuckAdapter& ); // Disable copy constructor
   void operator=( const DuckAdapter& ); // Disable assignment operator
 
 public:
   explicit DuckAdapter( const Duck* duck );
-  void fly() const;
-  void gobble() const;
+  void Fly() const;
+  void Gobble() const;
 };
 
 #endif

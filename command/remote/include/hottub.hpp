@@ -17,20 +17,20 @@
 
 class Hottub {
 
-  mutable bool _on;
-  mutable int _temperature;
+  mutable bool on_;
+  mutable int temperature_;
 
 public:
   Hottub();
-  void on() const;
-  void off() const;
-  void bubblesOn() const;
-  void bubblesOff() const;
-  void jetsOn() const;
-  void jetsOff() const;
-  void setTemperature( int temperature );
-  void heat() const;
-  void cool() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void BubblesOn() const;
+  void BubblesOff() const;
+  void JetsOn() const;
+  void JetsOff() const;
+  void SetTemperature( int temperature );
+  void Heat() const;
+  void Cool() const;
 };
 
 

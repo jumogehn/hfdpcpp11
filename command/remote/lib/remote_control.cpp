@@ -29,51 +29,51 @@
 RemoteControl::RemoteControl()
 {
   std::cout << "RemoteControl::RemoteControl" << std::endl;
-  _noCommand = new NoCommand();
-  for( int i = 0; i < SLOTS; i++ ) {
-    _onCommands[i]  = _noCommand;
-    _offCommands[i] = _noCommand;
+  no_command_ = new NoCommand();
+  for( int i = 0; i < kSlots; i++ ) {
+    on_commands_[i]  = no_command_;
+    off_commands_[i] = no_command_;
   }
 }
 
 RemoteControl::~RemoteControl()
 {
   std::cout << "RemoteControl::~RemoteControl" << std::endl;
-  delete _noCommand;
+  delete no_command_;
 }
 
-void RemoteControl::setCommand( int slot, Command* onCommand, Command* offCommand )
+void RemoteControl::SetCommand( int slot, Command* on_command, Command* off_command )
 {
-  std::cout << "RemoteControl::setCommand" << std::endl;
-  assert( slot <= SLOTS ); assert( onCommand ); assert ( offCommand );
-  _onCommands[slot] = onCommand;
-  _offCommands[slot] = offCommand;
+  std::cout << "RemoteControl::SetCommand" << std::endl;
+  assert( slot <= kSlots ); assert( on_command ); assert ( off_command );
+  on_commands_[slot] = on_command;
+  off_commands_[slot] = off_command;
 }
 
-void RemoteControl::onButtonWasPushed( int slot ) const
+void RemoteControl::OnButtonWasPushed( int slot ) const
 {
-  std::cout << "RemoteControl::onButtonWasPushed" << std::endl;
-  assert( slot <= SLOTS );
-  _onCommands[slot]->execute();
+  std::cout << "RemoteControl::OnButtonWasPushed" << std::endl;
+  assert( slot <= kSlots );
+  on_commands_[slot]->Execute();
 }
 
-void RemoteControl::offButtonWasPushed( int slot ) const
+void RemoteControl::OffButtonWasPushed( int slot ) const
 {
-  std::cout << "RemoteControl::offButtonWasPushed" << std::endl;
-  assert( slot <= SLOTS );
-  _offCommands[slot]->execute();
+  std::cout << "RemoteControl::OffButtonWasPushed" << std::endl;
+  assert( slot <= kSlots );
+  off_commands_[slot]->Execute();
 }
 
-std::string RemoteControl::toString() const
+std::string RemoteControl::ToString() const
 {
-  std::cout << "RemoteControl::toString" << std::endl;
+  std::cout << "RemoteControl::ToString" << std::endl;
   std::stringstream value;
   value << "\n------ Remote Control -------\n" << std::endl;
-  for( int i = 0; i < SLOTS; i++ ) {
+  for( int i = 0; i < kSlots; i++ ) {
     value << "[slot " << i << "] ";
-    value << typeid( *_onCommands[i] ).name();
+    value << typeid( *on_commands_[i] ).name();
     value << "    ";
-    value << typeid( *_offCommands[i] ).name();
+    value << typeid( *off_commands_[i] ).name();
     value << std::endl;
   }
   return value.str();

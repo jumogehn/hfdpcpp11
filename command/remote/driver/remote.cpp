@@ -16,8 +16,8 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
-#include <memory>
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "ceiling_fan.hpp"
@@ -38,44 +38,43 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<RemoteControl> remoteControl(new RemoteControl());
+  std::unique_ptr<RemoteControl> remote_control(new RemoteControl());
 
-  std::unique_ptr<Light> livingRoomLight(new Light( "Living Room" ));
-  std::unique_ptr<Light> kitchenLight(new Light( "Kitchen" ));
-  std::unique_ptr<CeilingFan> ceilingFan(new CeilingFan( "Living Room" ));
-  std::unique_ptr<GarageDoor> garageDoor(new GarageDoor( "Garage" ));
+  std::unique_ptr<Light> living_room_light(new Light( "Living Room" ));
+  std::unique_ptr<Light> kitchen_light(new Light( "Kitchen" ));
+  std::unique_ptr<CeilingFan> ceiling_fan(new CeilingFan( "Living Room" ));
+  std::unique_ptr<GarageDoor> garage_door(new GarageDoor( "Garage" ));
   std::unique_ptr<Stereo> stereo(new Stereo( "Living Room" ));
 
-  std::unique_ptr<LightOnCommand> livingRoomLightOn(new LightOnCommand( livingRoomLight.get() ));
-  std::unique_ptr<LightOffCommand> livingRoomLightOff(new LightOffCommand( livingRoomLight.get() ));
-  std::unique_ptr<LightOnCommand> kitchenLightOn(new LightOnCommand( kitchenLight.get() ));
-  std::unique_ptr<LightOffCommand> kitchenLightOff(new LightOffCommand( kitchenLight.get() ));
-  std::unique_ptr<CeilingFanOnCommand> ceilingFanOn(new CeilingFanOnCommand( ceilingFan.get() ));
-  std::unique_ptr<CeilingFanOffCommand> ceilingFanOff(new CeilingFanOffCommand( ceilingFan.get() ));
-  std::unique_ptr<GarageDoorUpCommand> garageDoorUp(new GarageDoorUpCommand( garageDoor.get() ));
-  std::unique_ptr<GarageDoorDownCommand> garageDoorDown(new GarageDoorDownCommand( garageDoor.get() ));
-  std::unique_ptr<StereoOnWithCDCommand> stereoOnWithCD(new StereoOnWithCDCommand( stereo.get() ));
-  std::unique_ptr<StereoOffCommand> stereoOff(new StereoOffCommand( stereo.get() ));
-    
+  std::unique_ptr<LightOnCommand> living_room_light_on(new LightOnCommand( living_room_light.get() ));
+  std::unique_ptr<LightOffCommand> living_room_light_off(new LightOffCommand( living_room_light.get() ));
+  std::unique_ptr<LightOnCommand> kitchen_light_on(new LightOnCommand( kitchen_light.get() ));
+  std::unique_ptr<LightOffCommand> kitchen_light_off(new LightOffCommand( kitchen_light.get() ));
+  std::unique_ptr<CeilingFanOnCommand> ceiling_fan_on(new CeilingFanOnCommand( ceiling_fan.get() ));
+  std::unique_ptr<CeilingFanOffCommand> ceiling_fan_off(new CeilingFanOffCommand( ceiling_fan.get() ));
+  std::unique_ptr<GarageDoorUpCommand> garage_door_up(new GarageDoorUpCommand( garage_door.get() ));
+  std::unique_ptr<GarageDoorDownCommand> garage_door_down(new GarageDoorDownCommand( garage_door.get() ));
+  std::unique_ptr<StereoOnWithCDCommand> stereo_on_with_cd(new StereoOnWithCDCommand( stereo.get() ));
+  std::unique_ptr<StereoOffCommand> stereo_off(new StereoOffCommand( stereo.get() ));
 
-  remoteControl->setCommand( 0, livingRoomLightOn.get(), livingRoomLightOff.get() );
-  remoteControl->setCommand( 1, kitchenLightOn.get(), kitchenLightOff.get() );
-  remoteControl->setCommand( 2, ceilingFanOn.get(), ceilingFanOff.get() );
-  remoteControl->setCommand( 3, stereoOnWithCD.get(), stereoOff.get() );
-  remoteControl->setCommand( 4, garageDoorUp.get(), garageDoorDown.get() );
+  remote_control->SetCommand( 0, living_room_light_on.get(), living_room_light_off.get() );
+  remote_control->SetCommand( 1, kitchen_light_on.get(), kitchen_light_off.get() );
+  remote_control->SetCommand( 2, ceiling_fan_on.get(), ceiling_fan_off.get() );
+  remote_control->SetCommand( 3, stereo_on_with_cd.get(), stereo_off.get() );
+  remote_control->SetCommand( 4, garage_door_up.get(), garage_door_down.get() );
 
-  std::cout << remoteControl->toString() << std::endl;
+  std::cout << remote_control->ToString() << std::endl;
 
-  remoteControl->onButtonWasPushed( 0 );
-  remoteControl->offButtonWasPushed( 0 );
-  remoteControl->onButtonWasPushed( 1 );
-  remoteControl->offButtonWasPushed( 1 );
-  remoteControl->onButtonWasPushed( 2 );
-  remoteControl->offButtonWasPushed( 2 );
-  remoteControl->onButtonWasPushed( 3 );
-  remoteControl->offButtonWasPushed( 3 );
-  remoteControl->onButtonWasPushed( 4 );
-  remoteControl->offButtonWasPushed( 4 );
+  remote_control->OnButtonWasPushed( 0 );
+  remote_control->OffButtonWasPushed( 0 );
+  remote_control->OnButtonWasPushed( 1 );
+  remote_control->OffButtonWasPushed( 1 );
+  remote_control->OnButtonWasPushed( 2 );
+  remote_control->OffButtonWasPushed( 2 );
+  remote_control->OnButtonWasPushed( 3 );
+  remote_control->OffButtonWasPushed( 3 );
+  remote_control->OnButtonWasPushed( 4 );
+  remote_control->OffButtonWasPushed( 4 );
 
   return 0;
 }

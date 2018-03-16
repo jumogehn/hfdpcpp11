@@ -18,8 +18,8 @@ class Duck {
 
 public:
   virtual ~Duck();
-  virtual void fly() const = 0;
-  virtual void quack() const = 0;
+  virtual void Fly() const = 0;
+  virtual void Quack() const = 0;
 };
 
 

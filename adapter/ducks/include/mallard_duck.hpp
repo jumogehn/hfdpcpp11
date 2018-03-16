@@ -26,8 +26,8 @@
 class MallardDuck : public Duck {
 
 public:
-  void fly() const;
-  void quack() const;
+  void Fly() const;
+  void Quack() const;
 };
 
 

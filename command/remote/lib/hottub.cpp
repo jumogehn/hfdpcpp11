@@ -22,65 +22,65 @@
 
 
 Hottub::Hottub() :
-  _on( false ), _temperature( 0 )
+  on_( false ), temperature_( 0 )
 {
   std::cout << "Hottub::Hottub" << std::endl;
 }
-void Hottub::on() const
+void Hottub::TurnOn() const
 {
   std::cout << "Hottub::on" << std::endl;
-  _on = true;
+  on_ = true;
 }
-void Hottub::off() const
+void Hottub::TurnOff() const
 {
   std::cout << "Hottub::off" << std::endl;
-  _on = false;
+  on_ = false;
 }
-void Hottub::bubblesOn() const
+void Hottub::BubblesOn() const
 {
   std::cout << "Hottub::bubblesOn" << std::endl;
-  if( _on ) {
+  if( on_ ) {
     std::cout << "Hottub is bubbling!" << std::endl;
   }
 }
-void Hottub::bubblesOff() const
+void Hottub::BubblesOff() const
 {
   std::cout << "Hottub::bubblesOff" << std::endl;
-  if( _on ) {
+  if( on_ ) {
     std::cout << "Hottub is not bubbling" << std::endl;
   }
 }
-void Hottub::jetsOn() const
+void Hottub::JetsOn() const
 {
   std::cout << "Hottub::jetsOn" << std::endl;
-  if( _on ) {
+  if( on_ ) {
     std::cout << "Hottub jets are on" << std::endl;
   }
 }
-void Hottub::jetsOff() const
+void Hottub::JetsOff() const
 {
   std::cout << "Hottub::jetsOff" << std::endl;
-  if( _on ) {
+  if( on_ ) {
     std::cout << "Hottub jets are off" << std::endl;
   }
 }
-void Hottub::setTemperature( int temperature )
+void Hottub::SetTemperature( int temperature )
 {
   std::cout << "Hottub::setTemperature" << std::endl;
   assert( temperature >= 0 );
-  _temperature = temperature;
+  temperature_ = temperature;
 }
-void Hottub::heat() const
+void Hottub::Heat() const
 {
   std::cout << "Hottub::heat" << std::endl;
-  _temperature = 105;
+  temperature_ = 105;
   std::cout << "Hottub is heating to a steaming 105 degrees"
     << std::endl;
 }
-void Hottub::cool() const
+void Hottub::Cool() const
 {
   std::cout << "Hottub::cool" << std::endl;
-  _temperature = 98;
+  temperature_ = 98;
   std::cout << "Hottub is cooling to 98 degrees" << std::endl;
 }
 

@@ -30,11 +30,11 @@
 //
 class RemoteControl {
 
-  static const int SLOTS = 7;
+  static const int kSlots = 7;
 
-  Command* _onCommands[SLOTS];
-  Command* _offCommands[SLOTS];
-  Command* _noCommand;
+  Command* on_commands_[kSlots];
+  Command* off_commands_[kSlots];
+  Command* no_command_;
 
   RemoteControl( const RemoteControl& ); // Disable copy constructor
   void operator=( const RemoteControl& ); // Disable assignment operator
@@ -42,10 +42,10 @@ class RemoteControl {
 public:
   RemoteControl();
   ~RemoteControl();
-  void setCommand( int slot, Command* onCommand, Command* offCommand );
-  void onButtonWasPushed( int slot ) const;
-  void offButtonWasPushed( int slot ) const;
-  std::string toString() const;
+  void SetCommand( int slot, Command* on_command, Command* off_command );
+  void OnButtonWasPushed( int slot ) const;
+  void OffButtonWasPushed( int slot ) const;
+  std::string ToString() const;
 };
 
 

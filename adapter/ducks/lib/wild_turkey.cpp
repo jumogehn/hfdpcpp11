@@ -20,13 +20,13 @@
 //Your project's .h files.
 
 
-void WildTurkey::fly() const
+void WildTurkey::Fly() const
 {
   std::cout << "WildTurkey::fly" << std::endl;
   std::cout << "I'm flying a short distance" << std::endl;
 }
 
-void WildTurkey::gobble() const
+void WildTurkey::Gobble() const
 {
   std::cout << "WildTurkey::gobble" << std::endl;
   std::cout << "Gobble gobble" << std::endl;

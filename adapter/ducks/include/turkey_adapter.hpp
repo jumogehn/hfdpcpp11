@@ -27,15 +27,15 @@
 
 class TurkeyAdapter : public Duck {
 
-  const Turkey* MyTurkey;
+  const Turkey* my_turkey_;
 
   TurkeyAdapter( const TurkeyAdapter& ); // Disable copy constructor
   void operator=( const TurkeyAdapter& ); // Disable assignment operator
 
 public:
   explicit TurkeyAdapter( const Turkey* turkey );
-  void fly() const;
-  void quack() const;
+  void Fly() const;
+  void Quack() const;
 };
 
 

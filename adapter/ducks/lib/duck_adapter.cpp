@@ -31,7 +31,7 @@
 
 
 DuckAdapter::DuckAdapter( const Duck* duck ) :
-  MyDuck ( duck )
+  my_duck_ ( duck )
 {
   std::cout << "DuckAdapter::DuckAdapter" << std::endl;
 #ifdef WIN32
@@ -39,22 +39,22 @@ DuckAdapter::DuckAdapter( const Duck* duck ) :
 #else
   srand( getpid() );
 #endif
-  _random = rand() % 5;
-  if( _random == 0 )
-    _random = 1;
+  random_num_ = rand() % 5;
+  if( random_num_ == 0 )
+    random_num_ = 1;
 }
 
-void DuckAdapter::fly() const
+void DuckAdapter::Fly() const
 {
   std::cout << "DuckAdapter::fly" << std::endl;
-  for( int i = 0; i < _random; i++ ) {
-    MyDuck->fly();
+  for( int i = 0; i < random_num_; i++ ) {
+    my_duck_->Fly();
   }
 }
 
-void DuckAdapter::gobble() const
+void DuckAdapter::Gobble() const
 {
   std::cout << "DuckAdapter::gobble" << std::endl;
-  MyDuck->quack();
+  my_duck_->Quack();
 }
 

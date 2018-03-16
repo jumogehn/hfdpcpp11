@@ -27,11 +27,11 @@
 
 class CeilingFanOffCommand : public Command {
 
-  const CeilingFan* _ceilingFan;
+  const CeilingFan* ceiling_fan_;
 
 public:
-  explicit CeilingFanOffCommand( const CeilingFan* ceilingFan );
-  void execute() const;
+  explicit CeilingFanOffCommand( const CeilingFan* ceiling_fan );
+  void Execute() const;
 };
 
 

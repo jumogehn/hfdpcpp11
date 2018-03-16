@@ -22,22 +22,22 @@
 
 
 TurkeyAdapter::TurkeyAdapter( const Turkey* turkey ) :
-  MyTurkey( turkey )
+  my_turkey_( turkey )
 {
   std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;
 }
 
-void TurkeyAdapter::fly() const
+void TurkeyAdapter::Fly() const
 {
   std::cout << "TurkeyAdapter::fly" << std::endl;
   for( auto i = 0; i < 5; i++ ) {
-    MyTurkey->fly();
+    my_turkey_->Fly();
   }
 }
 
-void TurkeyAdapter::quack() const
+void TurkeyAdapter::Quack() const
 {
   std::cout << "TurkeyAdapter::quack" << std::endl;
-  MyTurkey->gobble();
+  my_turkey_->Gobble();
 }
 

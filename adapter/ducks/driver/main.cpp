@@ -26,37 +26,37 @@
 #include "wild_turkey.hpp"
 
 
-void testDuck( const Duck* duck )
+void TestDuck( const Duck* duck )
 {
-  std::cout << "testDuck" << std::endl;
-  duck->quack();
-  duck->fly();
+  std::cout << "TestDuck" << std::endl;
+  duck->Quack();
+  duck->Fly();
 }
 
 int main( int argc, char* argv[] )
 {
 
   std::unique_ptr<MallardDuck> duck( new MallardDuck() );
-  std::unique_ptr<Turkey> duckAdapter( new DuckAdapter( duck.get() ));
+  std::unique_ptr<Turkey> duck_adapter( new DuckAdapter( duck.get() ));
 
   for( auto i = 0; i < 10; i++ ) {
     std::cout << "The DuckAdapter says..." << std::endl;
-    duckAdapter->gobble();
-    duckAdapter->fly();
+    duck_adapter->Gobble();
+    duck_adapter->Fly();
   }
 
   std::unique_ptr<WildTurkey> turkey( new WildTurkey() );
-  std::unique_ptr<Duck> turkeyAdapter( new TurkeyAdapter(turkey.get()) );
+  std::unique_ptr<Duck> turkey_adapter( new TurkeyAdapter(turkey.get()) );
 
   std::cout << "The Turkey says..." << std::endl;
-  turkey->gobble();
-  turkey->fly();
+  turkey->Gobble();
+  turkey->Fly();
 
   std::cout << "The Duck says..." << std::endl;
-  testDuck( duck.get() );
+  TestDuck( duck.get() );
 
   std::cout << "The TurkeyAdapter says..." << std::endl;
-  testDuck( turkeyAdapter.get() );
+  TestDuck( turkey_adapter.get() );
 
   return 0;
 }

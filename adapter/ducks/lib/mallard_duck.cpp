@@ -20,13 +20,13 @@
 //Your project's .h files.
 
 
-void MallardDuck::fly() const
+void MallardDuck::Fly() const
 {
   std::cout << "MallardDuck::fly" << std::endl;
   std::cout << "I'm flying" << std::endl;
 }
 
-void MallardDuck::quack() const
+void MallardDuck::Quack() const
 {
   std::cout << "MallardDuck::quack" << std::endl;
   std::cout << "Quack" << std::endl;

@@ -21,19 +21,19 @@
 
 
 Light::Light( const std::string location) :
-  _location( location )
+  location_( location )
 {
   std::cout << "Light::Light" << std::endl;
 }
-void Light::on() const
+void Light::TurnOn() const
 {
   std::cout << "Light::on" << std::endl;
-  std::cout << _location.c_str() << " light is on" << std::endl;
+  std::cout << location_.c_str() << " light is on" << std::endl;
 }
-void Light::off() const
+void Light::TurnOff() const
 {
   std::cout << "Light::off" << std::endl;
-  std::cout << _location.c_str() << " light is off" << std::endl;
+  std::cout << location_.c_str() << " light is off" << std::endl;
 }
 
 

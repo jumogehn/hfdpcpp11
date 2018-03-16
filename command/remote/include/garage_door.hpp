@@ -26,15 +26,15 @@
 
 class GarageDoor {
 
-  std::string _location;
+  std::string location_;
 
 public:
   explicit GarageDoor( const std::string location );
-  void up() const;
-  void down() const;
-  void stop() const;
-  void lightOn() const;
-  void lightOff() const;
+  void OpenUp() const;
+  void CloseDown() const;
+  void Stop() const;
+  void LightOn() const;
+  void LightOff() const;
 };
 
 #endif

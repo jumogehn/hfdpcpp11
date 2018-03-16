@@ -23,45 +23,45 @@
 
 
 Stereo::Stereo( std::string location ) :
-  _location( location )
+  location_( location )
 {
   std::cout << "Stereo::Stereo" << std::endl;
 }
-void Stereo::on() const
+void Stereo::TurnOn() const
 {
   std::cout << "Stereo::on" << std::endl;
-  std::cout << _location.c_str() << " stereo is on" << std::endl;
+  std::cout << location_.c_str() << " stereo is on" << std::endl;
 }
-void Stereo::off() const
+void Stereo::TurnOff() const
 {
   std::cout << "Stereo::off" << std::endl;
-  std::cout << _location.c_str() << " stereo is off" << std::endl;
+  std::cout << location_.c_str() << " stereo is off" << std::endl;
 }
-void Stereo::setCD() const
+void Stereo::SetCd() const
 {
   std::cout << "Stereo::setCD" << std::endl;
-  std::cout << _location.c_str() << " stereo is set for CD input"
+  std::cout << location_.c_str() << " stereo is set for CD input"
     << std::endl;
 }
-void Stereo::setDVD() const
+void Stereo::SetDvd() const
 {
-  std::cout << "Stereo::setDVD" << std::endl;
-  std::cout << _location.c_str() << " stereo is set for DVD input"
+  std::cout << "Stereo::SetDvd" << std::endl;
+  std::cout << location_.c_str() << " stereo is set for DVD input"
     << std::endl;
 }
-void Stereo::setRadio() const
+void Stereo::SetRadio() const
 {
-  std::cout << "Stereo::setRadio" << std::endl;
-  std::cout << _location.c_str() << " stereo is set for Radio"
+  std::cout << "Stereo::SetRadio" << std::endl;
+  std::cout << location_.c_str() << " stereo is set for Radio"
     << std::endl;
 }
-void Stereo::setVolume(int volume) const
+void Stereo::SetVolume(int volume) const
 {
   assert(volume > 0 && volume < 12);
-  std::cout << "Stereo::setVolume" << std::endl;
+  std::cout << "Stereo::SetVolume" << std::endl;
   // code to set the volume
   // valid range: 1-11 (after all 11 is better than 10, right?)
-  std::cout << _location.c_str() << " Stereo volume set to "
+  std::cout << location_.c_str() << " Stereo volume set to "
     << volume << std::endl;
 }
 

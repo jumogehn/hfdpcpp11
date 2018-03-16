@@ -23,17 +23,17 @@
 
 
 HottubOffCommand::HottubOffCommand( const Hottub* hottub ) :
-  _hottub( hottub )
+  hottub_( hottub )
 {
   std::cout << "HottubOffCommand::HottubOffCommand" << std::endl;
   assert( hottub );
 }
 
-void HottubOffCommand::execute() const
+void HottubOffCommand::Execute() const
 {
   std::cout << "HottubOffCommand::execute" << std::endl;
-  _hottub->cool();
-  _hottub->off();
+  hottub_->Cool();
+  hottub_->TurnOff();
 }
 
 

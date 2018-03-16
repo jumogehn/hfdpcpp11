@@ -27,11 +27,11 @@
 
 class LivingroomLightOffCommand : public Command {
 
-  const Light* _light;
+  const Light* light_;
 
 public:
   explicit LivingroomLightOffCommand( const Light* light );
-  void execute() const;
+  void Execute() const;
 };
 
 

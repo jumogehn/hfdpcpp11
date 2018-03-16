@@ -24,12 +24,12 @@
 
 class Light {
 
-  std::string _location;
+  std::string location_;
 
 public:
   explicit Light( const std::string location);
-  void on() const;
-  void off() const;
+  void TurnOn() const;
+  void TurnOff() const;
 };
 
 

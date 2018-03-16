@@ -23,16 +23,16 @@
 #include "garage_door.hpp"
 
 
-GarageDoorUpCommand::GarageDoorUpCommand( const GarageDoor* garageDoor ) :
-  _garageDoor( garageDoor )
+GarageDoorUpCommand::GarageDoorUpCommand( const GarageDoor* garage_door ) :
+  garage_door_( garage_door )
 {
-  assert( garageDoor );
+  assert( garage_door );
   std::cout << "GarageDoorUpCommand::GarageDoorUpCommand" << std::endl;
 }
 
-void GarageDoorUpCommand::execute() const
+void GarageDoorUpCommand::Execute() const
 {
   std::cout << "GarageDoorUpCommand::execute" << std::endl;
-  _garageDoor->up();
+  garage_door_->OpenUp();
 }
 

@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-void NoCommand::execute() const
+void NoCommand::Execute() const
 {
   std::cout << "NoCommand::execute" << std::endl;
 }

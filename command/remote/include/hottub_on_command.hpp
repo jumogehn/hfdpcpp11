@@ -27,11 +27,11 @@
 
 class HottubOnCommand : public Command {
 
-  const Hottub* _hottub;
+  const Hottub* hottub_;
 
 public:
   explicit HottubOnCommand( const Hottub* hottub );
-  void execute() const;
+  void Execute() const;
 };
 
 

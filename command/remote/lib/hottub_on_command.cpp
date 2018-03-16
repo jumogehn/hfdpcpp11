@@ -24,17 +24,17 @@
 
 
 HottubOnCommand::HottubOnCommand( const Hottub* hottub ) :
-  _hottub( hottub )
+  hottub_( hottub )
 {
   std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;
   assert( hottub );
 }
 
-void HottubOnCommand::execute() const
+void HottubOnCommand::Execute() const
 {
   std::cout << "HottubOnCommand::execute" << std::endl;
-  _hottub->on();
-  _hottub->heat();
-  _hottub->bubblesOn();
+  hottub_->TurnOn();
+  hottub_->Heat();
+  hottub_->BubblesOn();
 }
 

@@ -23,17 +23,17 @@
 
 
 LivingroomLightOffCommand::LivingroomLightOffCommand( const Light* light ) :
-  _light( light )
+  light_( light )
 {
   assert( light );
   std::cout << "LivingroomLightOffCommand::"
                      "LivingroomLightOffCommand" << std::endl;
 }
 
-void LivingroomLightOffCommand::execute() const
+void LivingroomLightOffCommand::Execute() const
 {
   std::cout << "LivingroomLightOffCommand::execute" << std::endl;
-  _light->off();
+  light_->TurnOff();
 }
 
 

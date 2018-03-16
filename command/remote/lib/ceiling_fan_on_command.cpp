@@ -23,16 +23,16 @@
 #include "ceiling_fan.hpp"
 
 
-CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceilingFan ) :
-  _ceilingFan( ceilingFan )
+CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceiling_fan ) :
+  ceiling_fan_( ceiling_fan )
 {
-  assert( ceilingFan );
+  assert( ceiling_fan );
   std::cout << "CeilingFanOnCommand::CeilingFanOnCommand" << std::endl;
 }
 
-void CeilingFanOnCommand::execute() const
+void CeilingFanOnCommand::Execute() const
 {
   std::cout << "CeilingFanOnCommand::execute" << std::endl;
-  _ceilingFan->high();
+  ceiling_fan_->SetHigh();
 }
 

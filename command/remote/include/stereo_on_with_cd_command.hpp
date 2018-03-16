@@ -27,11 +27,11 @@
 
 class StereoOnWithCDCommand : public Command {
 
-  const Stereo* _stereo;
+  const Stereo* stereo_;
 
 public:
   explicit StereoOnWithCDCommand( const Stereo* stereo );
-  void execute() const;
+  void Execute() const;
 };
 
 

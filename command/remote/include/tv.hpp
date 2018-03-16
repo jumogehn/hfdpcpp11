@@ -24,14 +24,14 @@
 
 class TV {
 
-  mutable int _channel;
-  std::string _location;
+  mutable int channel_;
+  std::string location_;
 
 public:
   explicit TV( const std::string location );
-  void on() const;
-  void off() const;
-  void setInputChannel();
+  void TurnOn() const;
+  void TurnOff() const;
+  void SetInputChannel();
 };
 
 #endif

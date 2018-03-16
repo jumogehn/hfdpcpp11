@@ -23,19 +23,19 @@
 
 
 StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
-  _stereo( stereo )
+  stereo_( stereo )
 {
   assert( stereo );
   std::cout << "StereoOnWithCDCommand::StereoOnWithCDCommand" << std::endl;
 }
 
-void StereoOnWithCDCommand::execute() const
+void StereoOnWithCDCommand::Execute() const
 {
   std::cout << "StereoOnWithCDCommand::execute" << std::endl;
 
-  _stereo->on();
-  _stereo->setCD();
-  _stereo->setVolume(11);
+  stereo_->TurnOn();
+  stereo_->SetCd();
+  stereo_->SetVolume(11);
 }
 
 

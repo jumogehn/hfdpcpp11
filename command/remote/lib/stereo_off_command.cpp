@@ -23,16 +23,16 @@
 
 
 StereoOffCommand::StereoOffCommand( const Stereo* stereo ) :
-  _stereo( stereo )
+  stereo_( stereo )
 {
   std::cout << "StereoOffCommand::StereoOffCommand" << std::endl;
   assert( stereo );
 }
 
-void StereoOffCommand::execute() const
+void StereoOffCommand::Execute() const
 {
   std::cout << "StereoOffCommand::execute" << std::endl;
-  _stereo->off();
+  stereo_->TurnOff();
 }
 
 

@@ -25,16 +25,16 @@
 
 class Stereo {
 
-  std::string _location;
+  std::string location_;
 
 public:
   explicit Stereo( std::string location );
-  void on() const;
-  void off() const;
-  void setCD() const;
-  void setDVD() const;
-  void setRadio() const;
-  void setVolume(int volume) const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void SetCd() const;
+  void SetDvd() const;
+  void SetRadio() const;
+  void SetVolume(int volume) const;
 };
 
 

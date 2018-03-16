@@ -26,8 +26,8 @@
 class WildTurkey : public Turkey {
 
 public:
-  void fly() const;
-  void gobble() const;
+  void Fly() const;
+  void Gobble() const;
 };
 
 
