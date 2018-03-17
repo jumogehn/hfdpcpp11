@@ -24,7 +24,7 @@
 
 
 int main( int argc, char* argv[] ) {
-  std::unique_ptr< MenuComponent > 
+  std::unique_ptr< MenuComponent >
     pancake_house_menu (new Menu( "PANCAKE HOUSE MENU", "Breakfast" ));
   std::unique_ptr< MenuComponent >
     diner_menu (new Menu( "DINER MENU", "Lunch" ));
@@ -33,7 +33,8 @@ int main( int argc, char* argv[] ) {
   std::unique_ptr< MenuComponent >
     dessert_menu (new Menu( "DESSERT MENU", "Dessert of course!" ));
   std::unique_ptr< MenuComponent >
-    coffee_menu (new Menu( "COFFEE MENU", "Stuff to go with your afternoon coffee" ));
+    coffee_menu (new Menu( "COFFEE MENU",
+                           "Stuff to go with your afternoon coffee" ));
   std::unique_ptr< MenuComponent >
     all_menus (new Menu( "ALL MENUS", "All menus combined" ));
 
