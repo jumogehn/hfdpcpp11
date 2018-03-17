@@ -24,10 +24,10 @@
 Decaf::Decaf()
 {
   std::cout << "Decaf::Decaf" << std::endl;
-  _description = "Decaf Coffee";
+  description_ = "Decaf Coffee";
 }
 
-double Decaf::cost() const
+double Decaf::Cost() const
 {
   std::cout << "Decaf::cost" << std::endl;
   return 1.05;

@@ -27,7 +27,7 @@ class DarkRoast : public Beverage {
 
 public:
   DarkRoast();
-  double cost() const;
+  double Cost() const;
 };
 
 

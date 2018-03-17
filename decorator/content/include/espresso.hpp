@@ -27,7 +27,7 @@ class Espresso : public Beverage {
 
 public:
   Espresso();
-  double cost() const;
+  double Cost() const;
 };
 
 

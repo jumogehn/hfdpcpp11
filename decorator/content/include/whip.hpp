@@ -27,13 +27,13 @@
 
 class Whip : public CondimentDecorator {
 
-  const Beverage* _beverage;
+  const Beverage* beverage_;
 
 public:
   explicit Whip(const Beverage* beverage);
   ~Whip();
-  std::string getDescription() const;
-  double cost() const;
+  std::string GetDescription() const;
+  double Cost() const;
 };
 
 

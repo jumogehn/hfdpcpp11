@@ -23,7 +23,7 @@
 
 
 Mocha::Mocha(const Beverage* beverage) :
-  _beverage(beverage)
+  beverage_(beverage)
 {
   assert(beverage);
   std::cout << "Mocha::Mocha" << std::endl;
@@ -32,14 +32,14 @@ Mocha::~Mocha()
 {
   std::cout << "Mocha::~Mocha" << std::endl;
 }
-std::string Mocha::getDescription() const
+std::string Mocha::GetDescription() const
 {
-  std::cout << "Mocha::getDescription" << std::endl;
-  return _beverage->getDescription() + ", Mocha";
+  std::cout << "Mocha::GetDescription" << std::endl;
+  return beverage_->GetDescription() + ", Mocha";
 }
-double Mocha::cost() const
+double Mocha::Cost() const
 {
   std::cout << "Mocha::cost" << std::endl;
-  return 0.20 + _beverage->cost();
+  return 0.20 + beverage_->Cost();
 }
 

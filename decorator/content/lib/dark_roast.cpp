@@ -23,10 +23,10 @@
 DarkRoast::DarkRoast()
 {
   std::cout << "DarkRoast::DarkRoast" << std::endl;
-  _description = "Dark Roast Coffee";
+  description_ = "Dark Roast Coffee";
 }
 
-double DarkRoast::cost() const
+double DarkRoast::Cost() const
 {
   std::cout << "DarkRoast::cost" << std::endl;
   return 0.99;

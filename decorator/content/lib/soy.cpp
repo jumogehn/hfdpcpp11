@@ -24,7 +24,7 @@
 
 
 Soy::Soy(const Beverage* beverage) :
-  _beverage(beverage)
+  beverage_(beverage)
 {
   assert(beverage);
   std::cout << "Soy::Soy" << std::endl;
@@ -33,14 +33,14 @@ Soy::~Soy()
 {
   std::cout << "Soy::~Soy" << std::endl;
 }
-std::string Soy::getDescription() const
+std::string Soy::GetDescription() const
 {
-  std::cout << "Soy::getDescription" << std::endl;
-  return _beverage->getDescription() + ", Soy";
+  std::cout << "Soy::GetDescription" << std::endl;
+  return beverage_->GetDescription() + ", Soy";
 }
-double Soy::cost() const
+double Soy::Cost() const
 {
   std::cout << "Soy::cost" << std::endl;
-  return 0.15 + _beverage->cost();
+  return 0.15 + beverage_->Cost();
 }
 

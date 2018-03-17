@@ -28,13 +28,13 @@
 
 class Milk : public CondimentDecorator {
 
-  const Beverage* _beverage;
+  const Beverage* beverage_;
 
 public:
   explicit Milk(const Beverage* beverage);
   ~Milk();
-  std::string getDescription() const;
-  double cost() const;
+  std::string GetDescription() const;
+  double Cost() const;
 };
 
 

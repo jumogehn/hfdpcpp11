@@ -23,7 +23,7 @@
 
 
 Whip::Whip(const Beverage* beverage) :
-  _beverage(beverage)
+  beverage_(beverage)
 {
   assert(beverage);
   std::cout << "Whip::Whip" << std::endl;
@@ -31,14 +31,14 @@ Whip::Whip(const Beverage* beverage) :
 Whip::~Whip() {
   std::cout << "Whip::~Whip" << std::endl;
 }
-std::string Whip::getDescription() const
+std::string Whip::GetDescription() const
 {
-  std::cout << "Whip::getDescription" << std::endl;
-  return _beverage->getDescription() + ", Whip";
+  std::cout << "Whip::GetDescription" << std::endl;
+  return beverage_->GetDescription() + ", Whip";
 }
-double Whip::cost() const
+double Whip::Cost() const
 {
   std::cout << "Whip::cost" << std::endl;
-  return 0.10 + _beverage->cost();
+  return 0.10 + beverage_->Cost();
 }
 

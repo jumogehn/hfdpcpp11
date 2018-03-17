@@ -27,13 +27,13 @@
 
 class Soy : public CondimentDecorator {
 
-  const Beverage* _beverage;
+  const Beverage* beverage_;
 
 public:
   explicit Soy(const Beverage* beverage);
   ~Soy();
-  std::string getDescription() const;
-  double cost() const;
+  std::string GetDescription() const;
+  double Cost() const;
 };
 
 

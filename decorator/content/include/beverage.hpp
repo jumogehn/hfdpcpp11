@@ -27,13 +27,13 @@
 class Beverage {
 
 protected:
-  std::string _description;
+  std::string description_;
 
   Beverage();
 public:
   virtual ~Beverage();
-  virtual std::string getDescription() const;
-  virtual double cost() const = 0;
+  virtual std::string GetDescription() const;
+  virtual double Cost() const = 0;
 };
 
 

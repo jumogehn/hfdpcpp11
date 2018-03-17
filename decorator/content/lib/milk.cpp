@@ -23,7 +23,7 @@
 
 
 Milk::Milk(const Beverage* beverage) :
-  _beverage(beverage)
+  beverage_(beverage)
 {
   assert(beverage);
   std::cout << "Milk::Milk" << std::endl;
@@ -32,13 +32,13 @@ Milk::~Milk()
 {
   std::cout << "Milk::~Milk" << std::endl;
 }
-std::string Milk::getDescription() const
+std::string Milk::GetDescription() const
 {
-  std::cout << "Milk::getDescription" << std::endl;
-  return _beverage->getDescription() + ", Milk";
+  std::cout << "Milk::GetDescription" << std::endl;
+  return beverage_->GetDescription() + ", Milk";
 }
-double Milk::cost() const
+double Milk::Cost() const
 {
   std::cout << "Milk::cost" << std::endl;
-  return 0.10 + _beverage->cost();
+  return 0.10 + beverage_->Cost();
 }

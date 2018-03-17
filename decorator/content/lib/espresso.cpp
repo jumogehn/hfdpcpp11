@@ -23,10 +23,10 @@
 Espresso::Espresso()
 {
   std::cout << "Espresso::Espresso" << std::endl;
-  _description = "Espresso";
+  description_ = "Espresso";
 }
 
-double Espresso::cost() const
+double Espresso::Cost() const
 {
   std::cout << "Espresso::cost" << std::endl;
   return 1.99;

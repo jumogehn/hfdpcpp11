@@ -26,7 +26,7 @@ class Decaf : public Beverage {
 
 public:
   Decaf();
-  double cost() const;
+  double Cost() const;
 };
 
 

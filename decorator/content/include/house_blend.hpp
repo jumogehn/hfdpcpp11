@@ -27,7 +27,7 @@ class HouseBlend : public Beverage {
 
 public:
   HouseBlend();
-  double cost() const;
+  double Cost() const;
 };
 
 

@@ -25,10 +25,10 @@
 HouseBlend::HouseBlend()
 {
   std::cout << "HouseBlend::HouseBlend" << std::endl;
-  _description = "House Blend Coffee";
+  description_ = "House Blend Coffee";
 }
 
-double HouseBlend::cost() const
+double HouseBlend::Cost() const
 {
   std::cout << "HouseBlend::cost" << std::endl;
   return 0.89;

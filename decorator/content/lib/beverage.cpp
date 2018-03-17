@@ -21,7 +21,7 @@
 
 
 Beverage::Beverage() :
-  _description("Unknown Beverage")
+  description_("Unknown Beverage")
 {
   std::cout << "Beverage::Beverage" << std::endl;
 }
@@ -29,8 +29,8 @@ Beverage::~Beverage()
 {
   std::cout << "Beverage::~Beverage" << std::endl;
 }
-std::string Beverage::getDescription() const
+std::string Beverage::GetDescription() const
 {
-  std::cout << "Beverage::getDescription" << std::endl;
-  return _description;
+  std::cout << "Beverage::GetDescription" << std::endl;
+  return description_;
 }

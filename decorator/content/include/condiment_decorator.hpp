@@ -34,7 +34,7 @@ protected:
   CondimentDecorator();
 public:
   virtual ~CondimentDecorator();
-  virtual std::string getDescription() const = 0;
+  virtual std::string GetDescription() const = 0;
 };
 
 
