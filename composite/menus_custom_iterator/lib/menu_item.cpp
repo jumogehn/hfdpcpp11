@@ -23,38 +23,38 @@
 
 MenuItem::MenuItem( const std::string name, const std::string description,
                     bool vegetarian, double price ) :
-  _name( name ), _description( description ),
-  _vegetarian( vegetarian ), _price( price )
+  name_( name ), description_( description ),
+  vegetarian_( vegetarian ), price_( price )
 {
   std::cout << "MenuItem::MenuItem" << std::endl;
 }
-std::string MenuItem::getName() const
+std::string MenuItem::GetName() const
 {
-  std::cout << "MenuItem::getName" << std::endl;
-  return _name;
+  std::cout << "MenuItem::GetName" << std::endl;
+  return name_;
 }
-std::string MenuItem::getDescription() const
+std::string MenuItem::GetDescription() const
 {
-  std::cout << "MenuItem::getDescription" << std::endl;
-  return _description;
+  std::cout << "MenuItem::GetDescription" << std::endl;
+  return description_;
 }
-double MenuItem::getPrice() const
+double MenuItem::GetPrice() const
 {
-  std::cout << "MenuItem::getPrice" << std::endl;
-  return _price;
+  std::cout << "MenuItem::GetPrice" << std::endl;
+  return price_;
 }
-bool MenuItem::isVegetarian() const
+bool MenuItem::IsVegetarian() const
 {
-  std::cout << "MenuItem::isVegetarian" << std::endl;
-  return _vegetarian;
+  std::cout << "MenuItem::IsVegetarian" << std::endl;
+  return vegetarian_;
 }
-void MenuItem::print() const
+void MenuItem::Print() const
 {
   std::cout << "MenuItem::print" << std::endl;
-  std::cout << "  " << getName().c_str();
-  if( isVegetarian() ) {
+  std::cout << "  " << GetName().c_str();
+  if( IsVegetarian() ) {
     std::cout << "(v)";
   }
-  std::cout << ", " << getPrice() << std::endl;
-  std::cout << "     -- " << getDescription().c_str() << std::endl;
+  std::cout << ", " << GetPrice() << std::endl;
+  std::cout << "     -- " << GetDescription().c_str() << std::endl;
 }

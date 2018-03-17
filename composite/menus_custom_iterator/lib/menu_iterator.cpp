@@ -22,23 +22,23 @@
 
 
 MenuIterator::MenuIterator( std::vector< MenuComponent* > items ) :
-  _items( items )
+  items_( items )
 {
   std::cout << "MenuIterator::"
                      "MenuIterator" << std::endl;
-  _iterator = _items.begin();
+  iterator_ = items_.begin();
 }
- MenuComponent* MenuIterator::next() const
+ MenuComponent* MenuIterator::Next() const
 {
   std::cout << "MenuIterator::next" << std::endl;
-  MenuComponent* result = *_iterator++;
+  MenuComponent* result = *iterator_++;
   return result;
 }
-bool MenuIterator::hasNext() const
+bool MenuIterator::HasNext() const
 {
-  std::cout << "MenuIterator::hasNext" << std::endl;
+  std::cout << "MenuIterator::HasNext" << std::endl;
 
-  if( _iterator != _items.end() ) {
+  if( iterator_ != items_.end() ) {
     return true;
   }
   return false;

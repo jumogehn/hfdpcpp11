@@ -26,8 +26,8 @@
 template <class T>
 class Iterator {
 public:
-  virtual bool hasNext() const = 0;
-  virtual T* next() const = 0;
+  virtual bool HasNext() const = 0;
+  virtual T* Next() const = 0;
   virtual ~Iterator()
   {
     std::cout << "Iterator::~Iterator" << std::endl;

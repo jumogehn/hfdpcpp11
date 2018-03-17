@@ -32,14 +32,14 @@ public:
   MenuComponent();
   virtual ~MenuComponent();
 
-  virtual void add( MenuComponent* menuComponent );
-  virtual void remove( MenuComponent* menuComponent );
-  virtual MenuComponent* getChild( int i ) const;
-  virtual std::string getName() const;
-  virtual std::string getDescription() const;
-  virtual double getPrice() const;
-  virtual bool isVegetarian() const;
-  virtual void print() const;
+  virtual void Add( MenuComponent* menu_component );
+  virtual void Remove( MenuComponent* menu_component );
+  virtual MenuComponent* GetChild( int i ) const;
+  virtual std::string GetName() const;
+  virtual std::string GetDescription() const;
+  virtual double GetPrice() const;
+  virtual bool IsVegetarian() const;
+  virtual void Print() const;
 };
 
 

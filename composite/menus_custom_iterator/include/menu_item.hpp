@@ -26,19 +26,19 @@
 
 class MenuItem : public MenuComponent {
 
-  std::string _name;
-  std::string _description;
-  bool _vegetarian;
-  double _price;
+  std::string name_;
+  std::string description_;
+  bool vegetarian_;
+  double price_;
 
 public:
   MenuItem( const std::string name, const std::string description,
             bool vegetarian, double price );
-  std::string getName() const;
-  std::string getDescription() const;
-  double getPrice() const;
-  bool isVegetarian() const;
-  void print() const;
+  std::string GetName() const;
+  std::string GetDescription() const;
+  double GetPrice() const;
+  bool IsVegetarian() const;
+  void Print() const;
 };
 
 

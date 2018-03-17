@@ -27,16 +27,16 @@
 
 class MenuIterator : public Iterator<MenuComponent > {
 
-  mutable std::vector< MenuComponent* > _items;
-  mutable std::vector< MenuComponent* >::iterator _iterator;
+  mutable std::vector< MenuComponent* > items_;
+  mutable std::vector< MenuComponent* >::iterator iterator_;
 
   MenuIterator( const MenuIterator& );
   void operator=( const MenuIterator& );
 
 public:
   explicit MenuIterator( std::vector< MenuComponent* > items );
-  MenuComponent* next() const;
-  bool hasNext() const;
+  MenuComponent* Next() const;
+  bool HasNext() const;
 };
 
 
