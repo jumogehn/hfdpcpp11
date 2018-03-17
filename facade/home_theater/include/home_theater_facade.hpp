@@ -33,14 +33,14 @@
 
 class HomeTheaterFacade {
 
-  Amplifier* _amp;
-  Tuner* _tuner;
-  DvdPlayer* _dvd;
-  CdPlayer* _cd;
-  Projector* _projector;
-  TheaterLights* _lights;
-  Screen* _screen;
-  PopcornPopper* _popper;
+  Amplifier* amp_;
+  Tuner* tuner_;
+  DvdPlayer* dvd_;
+  CdPlayer* cd_;
+  Projector* projector_;
+  TheaterLights* lights_;
+  Screen* screen_;
+  PopcornPopper* popper_;
 
   HomeTheaterFacade( const HomeTheaterFacade& );
   void operator=( const HomeTheaterFacade& );
@@ -49,12 +49,12 @@ public:
   HomeTheaterFacade( Amplifier* amp, Tuner* tuner, DvdPlayer* dvd,
                      CdPlayer* cd, Projector* projector, Screen* screen,
                      TheaterLights* lights, PopcornPopper* popper );
-  void watchMovie( std::string movie );
-  void endMovie();
-  void listenToCd( std::string cdTitle );
-  void endCd();
-  void listenToRadio( double frequency );
-  void endRadio();
+  void WatchMovie( std::string movie );
+  void EndMovie();
+  void ListenToCd( std::string cd_title );
+  void EndCd();
+  void ListenToRadio( double frequency );
+  void EndRadio();
 };
 
 #endif

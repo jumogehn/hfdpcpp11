@@ -26,24 +26,24 @@ class Amplifier;
 
 class CdPlayer {
 
-  std::string _description;
-  Amplifier* _amplifier;
-  std::string _title;
-  int _currentTrack;
+  std::string description_;
+  Amplifier* amplifier_;
+  std::string title_;
+  int current_track_;
 
   CdPlayer( const CdPlayer& ); // Disable copy constructor
   void operator=( const CdPlayer& ); // Disable assignment operator
 
 public:
   CdPlayer( std::string description, Amplifier* amplifier );
-  void on() const;
-  void off() const;
-  void eject();
-  void play( std::string title);
-  void play( int track );
-  void stop();
-  void pause();
-  std::string toString() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void Eject();
+  void Play( std::string title);
+  void Play( int track );
+  void Stop();
+  void Pause();
+  std::string ToString() const;
 };
 
 

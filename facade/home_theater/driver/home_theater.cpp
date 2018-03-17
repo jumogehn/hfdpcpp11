@@ -34,20 +34,29 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "main" << std::endl;
 
-  std::unique_ptr<Amplifier> amp(new Amplifier( "Top-O-Line Amplifier" ));
-  std::unique_ptr<Tuner> tuner(new Tuner( "Top-O-Line AM/FM Tuner", amp.get() ));
-  std::unique_ptr<DvdPlayer> dvd(new DvdPlayer( "Top-O-Line DVD Player", amp.get() ));
-  std::unique_ptr<CdPlayer> cd(new CdPlayer( "Top-O-Line CD Player", amp.get() ));
-  std::unique_ptr<Projector> projector(new Projector( "Top-O-Line Projector", dvd.get() ));
-  std::unique_ptr<TheaterLights> lights(new TheaterLights( "Theater Ceiling Lights" ));
-  std::unique_ptr<Screen> screen(new Screen( "Theater Screen" ));
-  std::unique_ptr<PopcornPopper> popper(new PopcornPopper( "Popcorn Popper" ));
-  std::unique_ptr<HomeTheaterFacade> homeTheater(new HomeTheaterFacade( amp.get(), tuner.get(), dvd.get(), cd.get(),
-                                                          projector.get(), screen.get(),
-                                                          lights.get(), popper.get() ));
+  std::unique_ptr<Amplifier>
+    amp(new Amplifier( "Top-O-Line Amplifier" ));
+  std::unique_ptr<Tuner>
+    tuner(new Tuner( "Top-O-Line AM/FM Tuner", amp.get() ));
+  std::unique_ptr<DvdPlayer>
+    dvd(new DvdPlayer( "Top-O-Line DVD Player", amp.get() ));
+  std::unique_ptr<CdPlayer>
+    cd(new CdPlayer( "Top-O-Line CD Player", amp.get() ));
+  std::unique_ptr<Projector>
+    projector(new Projector( "Top-O-Line Projector", dvd.get() ));
+  std::unique_ptr<TheaterLights>
+    lights(new TheaterLights( "Theater Ceiling Lights" ));
+  std::unique_ptr<Screen>
+    screen(new Screen( "Theater Screen" ));
+  std::unique_ptr<PopcornPopper>
+    popper(new PopcornPopper( "Popcorn Popper" ));
+  std::unique_ptr<HomeTheaterFacade>
+    home_theater(new HomeTheaterFacade( amp.get(), tuner.get(), dvd.get(),
+                                        cd.get(), projector.get(), screen.get(),
+                                        lights.get(), popper.get() ));
 
-  homeTheater->watchMovie( "Raiders of the Lost Ark" );
-  homeTheater->endMovie();
+  home_theater->WatchMovie( "Raiders of the Lost Ark" );
+  home_theater->EndMovie();
 
   return 0;
 }

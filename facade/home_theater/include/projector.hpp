@@ -25,19 +25,19 @@
 
 class Projector {
 
-  std::string _description;
-  DvdPlayer*  _dvdPlayer;
+  std::string description_;
+  DvdPlayer*  dvd_player_;
 
   Projector( const Projector& ); // Disable copy constructor
   void operator=( const Projector& ); // Disable assignment operator
 
 public:
-  Projector( std::string description, DvdPlayer* dvdPlayer );
-  void on();
-  void off();
-  void wideScreenMode();
-  void tvMode();
-  std::string toString();
+  Projector( std::string description, DvdPlayer* dvd_player );
+  void TurnOn();
+  void TurnOff();
+  void WideScreenMode();
+  void TvMode();
+  std::string ToString();
 };
 
 #endif

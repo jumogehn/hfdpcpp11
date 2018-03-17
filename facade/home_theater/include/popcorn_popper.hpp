@@ -24,17 +24,17 @@
 
 class PopcornPopper {
 
-  std::string _description;
+  std::string description_;
 
   PopcornPopper( const PopcornPopper& ); // Disable copy constructor
   void operator=( const PopcornPopper& ); // Disable assignment operator
 
 public:
   PopcornPopper( std::string description);
-  void on() const;
-  void off() const;
-  void pop() const;
-  std::string toString() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void Pop() const;
+  std::string ToString() const;
 };
 
 

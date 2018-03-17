@@ -24,42 +24,42 @@
 
 
 Tuner::Tuner( std::string description, Amplifier* amplifier ) :
-  _description( description ), _amplifier( amplifier ), _frequency(0.0)
+  description_( description ), amplifier_( amplifier ), frequency_(0.0)
 {
   assert( amplifier );
   std::cout << "Tuner::Tuner" << std::endl;
 }
-void Tuner::on()
+void Tuner::TurnOn()
 {
   std::cout << "Tuner::on" << std::endl;
-  std::cout << _description.c_str() << " on" << std::endl;
+  std::cout << description_.c_str() << " on" << std::endl;
 }
-void Tuner::off()
+void Tuner::TurnOff()
 {
   std::cout << "Tuner::off" << std::endl;
-  std::cout << _description.c_str() << " off" << std::endl;
+  std::cout << description_.c_str() << " off" << std::endl;
 }
-void Tuner::setFrequency( double frequency )
+void Tuner::SetFrequency( double frequency )
 {
-  std::cout << "Tuner::setFrequency" << std::endl;
-  std::cout << _description.c_str() << " setting frequency to "
-    << _frequency << std::endl;
-  _frequency = frequency;
+  std::cout << "Tuner::SetFrequency" << std::endl;
+  std::cout << description_.c_str() << " setting frequency to "
+    << frequency_ << std::endl;
+  frequency_ = frequency;
 }
-void Tuner::setAm()
+void Tuner::SetAm()
 {
   std::cout << "Tuner::setAm" << std::endl;
-  std::cout << _description.c_str() << " setting AM mode" << std::endl;
+  std::cout << description_.c_str() << " setting AM mode" << std::endl;
 }
-void Tuner::setFm()
+void Tuner::SetFm()
 {
   std::cout << "Tuner::setFm" << std::endl;
-  std::cout << _description.c_str() << " setting FM mode" << std::endl;
+  std::cout << description_.c_str() << " setting FM mode" << std::endl;
 }
-std::string Tuner::toString() const
+std::string Tuner::ToString() const
 {
-  std::cout << "Tuner::toString" << std::endl;
-  return _description;
+  std::cout << "Tuner::ToString" << std::endl;
+  return description_;
 }
 
 

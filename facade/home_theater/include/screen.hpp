@@ -24,16 +24,16 @@
 
 class Screen {
 
-  std::string _description;
+  std::string description_;
 
   Screen( const Screen& ); // Disable copy constructor
   void operator=( const Screen& ); // Disable assignment operator
 
 public:
   Screen( std::string description );
-  void up();
-  void down();
-  std::string toString();
+  void CloseUp();
+  void Down();
+  std::string ToString();
 };
 
 

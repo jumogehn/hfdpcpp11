@@ -27,25 +27,25 @@ class CdPlayer;
 
 class Amplifier {
 
-  std::string _description;
-  Tuner* _tuner;
-  DvdPlayer* _dvd;
-  CdPlayer* _cd;
+  std::string description_;
+  Tuner* tuner_;
+  DvdPlayer* dvd_;
+  CdPlayer* cd_;
 
   Amplifier( const Amplifier& ); // Disable copy constructor
   void operator=( const Amplifier& ); // Disable assignment operator
 
 public:
   explicit Amplifier( std::string description );
-  void on() const;
-  void off() const;
-  void setStereoSound();
-  void setSurroundSound();
-  void setVolume( int level );
-  void setTuner( Tuner* tuner);
-  void setDvd( DvdPlayer* dvd );
-  void setCd( CdPlayer* cd );
-  std::string toString() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void SetStereoSound();
+  void SetSurroundSound();
+  void SetVolume( int level );
+  void SetTuner( Tuner* tuner);
+  void SetDvd( DvdPlayer* dvd );
+  void SetCd( CdPlayer* cd );
+  std::string ToString() const;
 };
 
 

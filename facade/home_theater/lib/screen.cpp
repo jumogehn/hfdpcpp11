@@ -23,24 +23,24 @@
 
 
 Screen::Screen( std::string description ) :
-  _description( description )
+  description_( description )
 {
   std::cout << "Screen::Screen" << std::endl;
 }
-void Screen::up()
+void Screen::CloseUp()
 {
   std::cout << "Screen::up" << std::endl;
-  std::cout << _description.c_str() << " going up" << std::endl;
+  std::cout << description_.c_str() << " going up" << std::endl;
 }
-void Screen::down()
+void Screen::Down()
 {
   std::cout << "Screen::down" << std::endl;
-  std::cout << _description.c_str() << " going down" << std::endl;
+  std::cout << description_.c_str() << " going down" << std::endl;
 }
-std::string Screen::toString()
+std::string Screen::ToString()
 {
-  std::cout << "Screen::toString" << std::endl;
-  return _description;
+  std::cout << "Screen::ToString" << std::endl;
+  return description_;
 }
 
 

@@ -24,17 +24,17 @@
 
 class TheaterLights {
 
-  std::string _description;
+  std::string description_;
 
   TheaterLights( const TheaterLights& ); // Disable copy constructor
   void operator=( const TheaterLights& ); // Disable assignment operator
 
 public:
   TheaterLights( std::string description );
-  void on();
-  void off();
-  void dim( int level );
-  std::string toString();
+  void TurnOn();
+  void TurnOff();
+  void Dim( int level );
+  std::string ToString();
 };
 
 #endif

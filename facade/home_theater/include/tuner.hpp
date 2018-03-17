@@ -27,21 +27,21 @@ class Amplifier;
 
 class Tuner {
 
-  std::string _description;
-  Amplifier* _amplifier;
-  double _frequency;
+  std::string description_;
+  Amplifier* amplifier_;
+  double frequency_;
 
   Tuner( const Tuner& ); // Disable copy constructor
   void operator=( const Tuner& ); // Disable assignment operator
 
 public:
   Tuner( std::string description, Amplifier* amplifier );
-  void on();
-  void off();
-  void setFrequency( double frequency );
-  void setAm();
-  void setFm();
-  std::string toString() const;
+  void TurnOn();
+  void TurnOff();
+  void SetFrequency( double frequency );
+  void SetAm();
+  void SetFm();
+  std::string ToString() const;
 };
 
 

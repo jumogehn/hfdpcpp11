@@ -26,66 +26,66 @@
 
 
 Amplifier::Amplifier( std::string description ) :
-  _description( description ), _tuner( 0 ), _dvd( 0 ), _cd( 0 )
+  description_( description ), tuner_( 0 ), dvd_( 0 ), cd_( 0 )
 {
   std::cout << "Amplifier::Amplifier" << std::endl;
 }
-void Amplifier::on() const
+void Amplifier::TurnOn() const
 {
   std::cout << "Amplifier::on" << std::endl;
-  std::cout << _description << " on" << std::endl;
+  std::cout << description_ << " on" << std::endl;
 }
-void Amplifier::off() const
+void Amplifier::TurnOff() const
 {
   std::cout << "Amplifier::off" << std::endl;
-  std::cout << _description << " off" << std::endl;
+  std::cout << description_ << " off" << std::endl;
 }
-void Amplifier::setStereoSound()
+void Amplifier::SetStereoSound()
 {
-  std::cout << "Amplifier::setStereoSound" << std::endl;
-  std::cout << _description << " stereo mode on" << std::endl;
+  std::cout << "Amplifier::SetStereoSound" << std::endl;
+  std::cout << description_ << " stereo mode on" << std::endl;
 }
-void Amplifier::setSurroundSound()
+void Amplifier::SetSurroundSound()
 {
-  std::cout << "Amplifier::setSurroundSound" << std::endl;
-  std::cout << _description
+  std::cout << "Amplifier::SetSurroundSound" << std::endl;
+  std::cout << description_
     << " surround sound on (5 speakers, 1 subwoofer)" << std::endl;
 }
-void Amplifier::setVolume( int level )
+void Amplifier::SetVolume( int level )
 {
   assert( 0 < level );
-  std::cout << "Amplifier::setVolume" << std::endl;
-  std::cout << _description
+  std::cout << "Amplifier::SetVolume" << std::endl;
+  std::cout << description_
     << " setting volume to " << level << std::endl;
 }
-void Amplifier::setTuner( Tuner* tuner)
+void Amplifier::SetTuner( Tuner* tuner)
 {
   assert( tuner );
-  std::cout << "Amplifier::setTuner" << std::endl;
-  std::cout << _description
-    << " setting tuner to " << tuner->toString() << std::endl;
-  _tuner = tuner;
+  std::cout << "Amplifier::SetTuner" << std::endl;
+  std::cout << description_
+    << " setting tuner to " << tuner->ToString() << std::endl;
+  tuner_ = tuner;
 }
-void Amplifier::setDvd( DvdPlayer* dvd )
+void Amplifier::SetDvd( DvdPlayer* dvd )
 {
   assert( dvd );
-  std::cout << "Amplifier::setDvd" << std::endl;
-  std::cout << _description
-    << " setting DVD player to " << dvd->toString()<< std::endl;
-  _dvd = dvd;
+  std::cout << "Amplifier::SetDvd" << std::endl;
+  std::cout << description_
+    << " setting DVD player to " << dvd->ToString()<< std::endl;
+  dvd_ = dvd;
 }
-void Amplifier::setCd( CdPlayer* cd )
+void Amplifier::SetCd( CdPlayer* cd )
 {
   assert( cd );
-  std::cout << "Amplifier::setCd" << std::endl;
-  std::cout << _description
-    << " setting CD player to " << cd->toString() << std::endl;
-  _cd = cd;
+  std::cout << "Amplifier::SetCd" << std::endl;
+  std::cout << description_
+    << " setting CD player to " << cd->ToString() << std::endl;
+  cd_ = cd;
 }
-std::string Amplifier::toString() const
+std::string Amplifier::ToString() const
 {
-  std::cout << "Amplifier::toString" << std::endl;
-  return _description.c_str();
+  std::cout << "Amplifier::ToString" << std::endl;
+  return description_.c_str();
 }
 
 

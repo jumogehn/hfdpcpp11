@@ -23,30 +23,30 @@
 
 
 PopcornPopper::PopcornPopper( std::string description) :
-  _description( description )
+  description_( description )
 {
   std::cout << "PopcornPopper::PopcornPopper" << std::endl;
 }
-void PopcornPopper::on() const
+void PopcornPopper::TurnOn() const
 {
   std::cout << "PopcornPopper::on" << std::endl;
-  std::cout << _description.c_str() << " on" << std::endl;
+  std::cout << description_.c_str() << " on" << std::endl;
 }
-void PopcornPopper::off() const
+void PopcornPopper::TurnOff() const
 {
   std::cout << "PopcornPopper::off" << std::endl;
-  std::cout << _description.c_str() << " off" << std::endl;
+  std::cout << description_.c_str() << " off" << std::endl;
 }
-void PopcornPopper::pop() const
+void PopcornPopper::Pop() const
 {
   std::cout << "PopcornPopper::pop" << std::endl;
-  std::cout << _description.c_str() << " popping popcorn!"
+  std::cout << description_.c_str() << " popping popcorn!"
     << std::endl;
 }
-std::string PopcornPopper::toString() const
+std::string PopcornPopper::ToString() const
 {
-  std::cout << "PopcornPopper::toString" << std::endl;
-  return _description;
+  std::cout << "PopcornPopper::ToString" << std::endl;
+  return description_;
 }
 
 

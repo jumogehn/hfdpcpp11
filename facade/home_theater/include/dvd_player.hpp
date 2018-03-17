@@ -25,26 +25,26 @@
 class Amplifier;
 
 class DvdPlayer {
-  std::string _description;
-  Amplifier* _amplifier;
-  int _currentTrack;
-  std::string _movie;
+  std::string description_;
+  Amplifier* amplifier_;
+  int current_track_;
+  std::string movie_;
 
   DvdPlayer( const DvdPlayer& ); // Disable copy constructor
   void operator=( const DvdPlayer& ); // Disable assignment operator
 
 public:
   DvdPlayer( std::string description, Amplifier* amplifier );
-  void on() const;
-  void off() const;
-  void eject();
-  void play( std::string movie );
-  void play( int track );
-  void stop();
-  void pause();
-  void setTwoChannelAudio();
-  void setSurroundAudio();
-  std::string toString() const;
+  void TurnOn() const;
+  void TurnOff() const;
+  void Eject();
+  void Play( std::string movie );
+  void Play( int track );
+  void Stop();
+  void Pause();
+  void SetTwoChannelAudio();
+  void SetSurroundAudio();
+  std::string ToString() const;
 };
 
 #endif
