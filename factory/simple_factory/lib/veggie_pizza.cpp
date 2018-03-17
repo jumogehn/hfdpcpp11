@@ -25,14 +25,14 @@ VeggiePizza::VeggiePizza()
 {
   std::cout << "VeggiePizza::VeggiePizza" << std::endl;
 
-  _name = "Veggie Pizza";
-  _dough = "Crust";
-  _sauce = "Marinara Sauce";
-  _toppings.push_back( "Fresh Mozzarella" );
-  _toppings.push_back( "Grated Parmesan" );
-  _toppings.push_back( "Diced onion" );
-  _toppings.push_back( "Sliced mushrooms" );
-  _toppings.push_back( "Sliced red pepper" );
-  _toppings.push_back( "Sliced black olives" );
+  name_ = "Veggie Pizza";
+  dough_ = "Crust";
+  sauce_ = "Marinara Sauce";
+  toppings_.push_back( "Fresh Mozzarella" );
+  toppings_.push_back( "Grated Parmesan" );
+  toppings_.push_back( "Diced onion" );
+  toppings_.push_back( "Sliced mushrooms" );
+  toppings_.push_back( "Sliced red pepper" );
+  toppings_.push_back( "Sliced black olives" );
 }
 

@@ -27,9 +27,9 @@
 #include "veggie_pizza.hpp"
 
 
-std::shared_ptr<Pizza> SimplePizzaFactory::createPizza( std::string type ) const
+std::shared_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
 {
-  std::cout << "SimplePizzaFactory::createPizza" << std::endl;
+  std::cout << "SimplePizzaFactory::CreatePizza" << std::endl;
   std::shared_ptr<Pizza> pizza;
   if( type.compare( "cheese" ) == 0 ) {
     pizza = std::make_shared<CheesePizza>();

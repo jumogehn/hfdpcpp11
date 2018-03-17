@@ -27,10 +27,10 @@
 class Pizza {
 
 protected:
-  std::string _name;
-  std::string _dough;
-  std::string _sauce;
-  mutable std::list< std::string > _toppings;
+  std::string name_;
+  std::string dough_;
+  std::string sauce_;
+  mutable std::list< std::string > toppings_;
   Pizza();
 
 private:
@@ -39,12 +39,12 @@ private:
 
 public:
   virtual ~Pizza();
-  std::string getName() const;
-  virtual void prepare() const;
-  virtual void bake() const;
-  virtual void cut() const;
-  virtual void box() const;
-  std::string toString() const;
+  std::string GetName() const;
+  virtual void Prepare() const;
+  virtual void Bake() const;
+  virtual void Cut() const;
+  virtual void Box() const;
+  std::string ToString() const;
 };
 
 

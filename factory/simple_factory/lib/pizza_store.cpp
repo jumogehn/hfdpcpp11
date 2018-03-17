@@ -26,21 +26,21 @@
 
 
 PizzaStore::PizzaStore( std::shared_ptr<SimplePizzaFactory> factory ) :
-  _factory( factory )
+  factory_( factory )
 {
   assert( factory );
   std::cout << "PizzaStore::PizzaStore" << std::endl;
 }
 
-std::shared_ptr<Pizza> PizzaStore::orderPizza( std::string type )
+std::shared_ptr<Pizza> PizzaStore::OrderPizza( std::string type )
 {
-  std::cout << "PizzaStore::orderPizza" << std::endl;
+  std::cout << "PizzaStore::OrderPizza" << std::endl;
   std::shared_ptr<Pizza> pizza;
-  pizza = _factory->createPizza( type );
-  pizza->prepare();
-  pizza->bake();
-  pizza->cut();
-  pizza->box();
+  pizza = factory_->CreatePizza( type );
+  pizza->Prepare();
+  pizza->Bake();
+  pizza->Cut();
+  pizza->Box();
   return pizza;
 }
 

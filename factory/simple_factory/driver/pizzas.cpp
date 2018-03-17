@@ -28,11 +28,11 @@ int main( int argc, char* argv[] )
   auto factory = std::make_shared<SimplePizzaFactory>();
   PizzaStore store(factory);
 
-  auto pizza = store.orderPizza( "cheese" );
-  std::cout << "We ordered a " << pizza->getName() << std::endl;
+  auto pizza = store.OrderPizza( "cheese" );
+  std::cout << "We ordered a " << pizza->GetName() << std::endl;
 
-  pizza = store.orderPizza( "veggie" );
-  std::cout << "We ordered a " << pizza->getName() << std::endl;
+  pizza = store.OrderPizza( "veggie" );
+  std::cout << "We ordered a " << pizza->GetName() << std::endl;
 
   return 0;
 }

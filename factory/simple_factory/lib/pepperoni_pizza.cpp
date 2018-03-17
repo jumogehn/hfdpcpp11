@@ -24,11 +24,11 @@
 PepperoniPizza::PepperoniPizza()
 {
   std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
-  _name = "Pepperoni Pizza";
-  _dough = "Crust";
-  _sauce = "Marinara sauce";
-  _toppings.push_back( "Sliced Pepperoni" );
-  _toppings.push_back( "Sliced Onion" );
-  _toppings.push_back( "Grated parmesan cheese" );
+  name_ = "Pepperoni Pizza";
+  dough_ = "Crust";
+  sauce_ = "Marinara sauce";
+  toppings_.push_back( "Sliced Pepperoni" );
+  toppings_.push_back( "Sliced Onion" );
+  toppings_.push_back( "Grated parmesan cheese" );
 }
 

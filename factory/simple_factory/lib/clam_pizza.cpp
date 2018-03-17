@@ -23,9 +23,9 @@
 ClamPizza::ClamPizza()
 {
   std::cout << "ClamPizza::ClamPizza" << std::endl;
-  _name = "Clam Pizza";
-  _dough = "Thin Crust";
-  _sauce = "White garlic Sauce";
-  _toppings.push_back( "Grated parmesan cheese" );
-  _toppings.push_back( "Clams" );
+  name_ = "Clam Pizza";
+  dough_ = "Thin Crust";
+  sauce_ = "White garlic Sauce";
+  toppings_.push_back( "Grated parmesan cheese" );
+  toppings_.push_back( "Clams" );
 }
