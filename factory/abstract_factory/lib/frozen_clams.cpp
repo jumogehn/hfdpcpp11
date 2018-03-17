@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string FrozenClams::toString() const
+std::string FrozenClams::ToString() const
 {
-  std::cout << "FrozenClams::toString" << std::endl;
+  std::cout << "FrozenClams::ToString" << std::endl;
   return "Frozen Clams from Chesapeake Bay";
 }

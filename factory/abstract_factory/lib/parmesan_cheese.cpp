@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string ParmesanCheese::toString() const
+std::string ParmesanCheese::ToString() const
 {
-  std::cout << "ParmesanCheese::toString" << std::endl;
+  std::cout << "ParmesanCheese::ToString" << std::endl;
   return "Shredded Parmesan";
 }

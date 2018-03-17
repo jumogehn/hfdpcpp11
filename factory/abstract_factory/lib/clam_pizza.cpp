@@ -26,19 +26,19 @@
 #include "sauce.hpp"
 
 
-ClamPizza::ClamPizza( std::shared_ptr<PizzaIngredientFactory> ingredientFactory ) :
-  _ingredientFactory( ingredientFactory )
+ClamPizza::ClamPizza( std::shared_ptr<PizzaIngredientFactory> ingredient_factory ) :
+  ingredient_factory_( ingredient_factory )
 {
-  assert( ingredientFactory );
+  assert( ingredient_factory );
   std::cout << "ClamPizza::ClamPizza" << std::endl;
 }
-void ClamPizza::prepare() const
+void ClamPizza::Prepare() const
 {
   std::cout << "ClamPizza::prepare" << std::endl;
 
-  std::cout << "Preparing " << getName().c_str() << std::endl;
-  _dough = _ingredientFactory->createDough();
-  _sauce = _ingredientFactory->createSauce();
-  _cheese = _ingredientFactory->createCheese();
-  _clam = _ingredientFactory->createClam();
+  std::cout << "Preparing " << GetName().c_str() << std::endl;
+  dough_ = ingredient_factory_->CreateDough();
+  sauce_ = ingredient_factory_->CreateSauce();
+  cheese_ = ingredient_factory_->CreateCheese();
+  clam_ = ingredient_factory_->CreateClam();
 }

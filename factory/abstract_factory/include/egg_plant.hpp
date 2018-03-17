@@ -27,7 +27,7 @@
 class Eggplant : public Veggies {
 
 public:
-  std::string toString() const;
+  std::string ToString() const;
 };
 
 

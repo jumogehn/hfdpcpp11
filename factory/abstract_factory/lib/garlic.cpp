@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string Garlic::toString() const
+std::string Garlic::ToString() const
 {
-  std::cout << "Garlic::toString" << std::endl;
+  std::cout << "Garlic::ToString" << std::endl;
   return "Garlic";
 }

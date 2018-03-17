@@ -29,26 +29,26 @@
 #include "veggie_pizza.hpp"
 
 
-std::shared_ptr< Pizza > ChicagoPizzaStore::createPizza( std::string item ) const
+std::shared_ptr< Pizza > ChicagoPizzaStore::CreatePizza( std::string item ) const
 {
-  std::cout << "ChicagoPizzaStore::createPizza" << std::endl;
+  std::cout << "ChicagoPizzaStore::CreatePizza" << std::endl;
 
   std::shared_ptr< Pizza > pizza;
-  std::shared_ptr<PizzaIngredientFactory> ingredientFactory =
+  std::shared_ptr<PizzaIngredientFactory> ingredient_factory =
     std::make_shared<NYPizzaIngredientFactory>();
 
   if( item.compare( "cheese" ) == 0 ) {
-    pizza = std::make_shared<CheesePizza>( ingredientFactory );
-    pizza->setName( "Chicago Style Cheese Pizza" );
+    pizza = std::make_shared<CheesePizza>( ingredient_factory );
+    pizza->SetName( "Chicago Style Cheese Pizza" );
   } else if( item.compare( "veggie" ) == 0 ) {
-    pizza = std::make_shared<VeggiePizza>( ingredientFactory );
-    pizza->setName( "Chicago Style Veggie Pizza" );
+    pizza = std::make_shared<VeggiePizza>( ingredient_factory );
+    pizza->SetName( "Chicago Style Veggie Pizza" );
   } else if( item.compare( "clam" ) == 0 ) {
-    pizza = std::make_shared<ClamPizza>( ingredientFactory );
-    pizza->setName( "Chicago Style Clam Pizza" );
+    pizza = std::make_shared<ClamPizza>( ingredient_factory );
+    pizza->SetName( "Chicago Style Clam Pizza" );
   } else if( item.compare( "pepperoni" ) == 0 ) {
-    pizza = std::make_shared<PepperoniPizza>( ingredientFactory );
-    pizza->setName( "Chicago Style Pepperoni Pizza" );
+    pizza = std::make_shared<PepperoniPizza>( ingredient_factory );
+    pizza->SetName( "Chicago Style Pepperoni Pizza" );
   }
   return pizza;
 }

@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string SlicedPepperoni::toString() const
+std::string SlicedPepperoni::ToString() const
 {
-  std::cout << "SlicedPepperoni::toString" << std::endl;
+  std::cout << "SlicedPepperoni::ToString" << std::endl;
   return "Sliced Pepperoni";
 }

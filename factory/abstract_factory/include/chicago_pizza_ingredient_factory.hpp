@@ -34,12 +34,12 @@
 class ChicagoPizzaIngredientFactory : public PizzaIngredientFactory {
 
 public:
-  std::shared_ptr<Dough> createDough() const;
-  std::shared_ptr<Sauce> createSauce() const;
-  std::shared_ptr<Cheese> createCheese() const;
-  std::vector< std::shared_ptr<Veggies> > createVeggies() const;
-  std::shared_ptr<Pepperoni> createPepperoni() const;
-  std::shared_ptr<Clams> createClam() const;
+  std::shared_ptr<Dough> CreateDough() const;
+  std::shared_ptr<Sauce> CreateSauce() const;
+  std::shared_ptr<Cheese> CreateCheese() const;
+  std::vector< std::shared_ptr<Veggies> > CreateVeggies() const;
+  std::shared_ptr<Pepperoni> CreatePepperoni() const;
+  std::shared_ptr<Clams> CreateClam() const;
 };
 
 

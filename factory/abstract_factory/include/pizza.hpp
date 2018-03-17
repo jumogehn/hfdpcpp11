@@ -33,31 +33,31 @@
 
 class Pizza {
 
-  std::string _name;
+  std::string name_;
 
   Pizza(const Pizza&); // Disable copy constructor
   void operator=(const Pizza&); // Disable assignment operator
 
 protected:
-  mutable std::shared_ptr< Dough > _dough;
-  mutable std::shared_ptr< Sauce > _sauce;
-  mutable std::vector< std::shared_ptr<Veggies> > _veggies;
-  mutable std::shared_ptr< Cheese > _cheese;
-  mutable std::shared_ptr< Pepperoni > _pepperoni;
-  mutable std::shared_ptr< Clams > _clam;
+  mutable std::shared_ptr< Dough > dough_;
+  mutable std::shared_ptr< Sauce > sauce_;
+  mutable std::vector< std::shared_ptr<Veggies> > veggies_;
+  mutable std::shared_ptr< Cheese > cheese_;
+  mutable std::shared_ptr< Pepperoni > pepperoni_;
+  mutable std::shared_ptr< Clams > clam_;
 
   Pizza();
 
 public:
-  virtual void prepare() const = 0;
+  virtual void Prepare() const = 0;
 
   virtual ~Pizza();
-  virtual void bake() const;
-  virtual void cut() const;
-  virtual void box() const;
-  void setName(std::string name);
-  std::string getName() const;
-  std::string toString() const;
+  virtual void Bake() const;
+  virtual void Cut() const;
+  virtual void Box() const;
+  void SetName(std::string name);
+  std::string GetName() const;
+  std::string ToString() const;
 };
 
 

@@ -27,7 +27,7 @@ class Clams {
 
 public:
   virtual ~Clams();
-  virtual std::string toString() const = 0;
+  virtual std::string ToString() const = 0;
 };
 
 

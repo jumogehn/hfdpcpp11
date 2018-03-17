@@ -26,32 +26,32 @@
 
 int main(int argc, char* argv[]) {
 
-  auto nyStore = std::make_shared<NYPizzaStore>();
-  auto chicagoStore = std::make_shared<ChicagoPizzaStore>();
+  auto ny_store = std::make_shared<NYPizzaStore>();
+  auto chicago_store = std::make_shared<ChicagoPizzaStore>();
 
-  auto pizza = nyStore->orderPizza("cheese");
-  std::cout << "Ethan ordered a " << pizza->toString() << std::endl;
+  auto pizza = ny_store->OrderPizza("cheese");
+  std::cout << "Ethan ordered a " << pizza->ToString() << std::endl;
 
-  pizza = chicagoStore->orderPizza("cheese");
-  std::cout << "Joel ordered a " << pizza->toString() << std::endl;
+  pizza = chicago_store->OrderPizza("cheese");
+  std::cout << "Joel ordered a " << pizza->ToString() << std::endl;
 
-  pizza = nyStore->orderPizza("clam");
-  std::cout << "Ethan ordered a " << pizza->toString() << std::endl;
+  pizza = ny_store->OrderPizza("clam");
+  std::cout << "Ethan ordered a " << pizza->ToString() << std::endl;
 
-  pizza = chicagoStore->orderPizza("clam");
-  std::cout << "Joel ordered a " << pizza->toString() << std::endl;
+  pizza = chicago_store->OrderPizza("clam");
+  std::cout << "Joel ordered a " << pizza->ToString() << std::endl;
 
-  pizza = nyStore->orderPizza("pepperoni");
-  std::cout << "Ethan ordered a " << pizza->toString() << std::endl;
+  pizza = ny_store->OrderPizza("pepperoni");
+  std::cout << "Ethan ordered a " << pizza->ToString() << std::endl;
 
-  pizza = chicagoStore->orderPizza("pepperoni");
-  std::cout << "Joel ordered a " << pizza->toString() << std::endl;
+  pizza = chicago_store->OrderPizza("pepperoni");
+  std::cout << "Joel ordered a " << pizza->ToString() << std::endl;
 
-  pizza = nyStore->orderPizza("veggie");
-  std::cout << "Ethan ordered a " + pizza->toString() << std::endl;
+  pizza = ny_store->OrderPizza("veggie");
+  std::cout << "Ethan ordered a " + pizza->ToString() << std::endl;
 
-  pizza = chicagoStore->orderPizza("veggie");
-  std::cout << "Joel ordered a " << pizza->toString() << std::endl;
+  pizza = chicago_store->OrderPizza("veggie");
+  std::cout << "Joel ordered a " << pizza->ToString() << std::endl;
 
   return 0;
 }

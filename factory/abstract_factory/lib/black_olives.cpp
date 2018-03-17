@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string BlackOlives::toString() const
+std::string BlackOlives::ToString() const
 {
-  std::cout << "BlackOlives::toString" << std::endl;
+  std::cout << "BlackOlives::ToString" << std::endl;
   return ( "Black Olives" );
 }

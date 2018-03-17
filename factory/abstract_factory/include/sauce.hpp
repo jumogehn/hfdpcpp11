@@ -27,7 +27,7 @@ class Sauce {
 
 public:
   virtual ~Sauce();
-  virtual std::string toString() const = 0;
+  virtual std::string ToString() const = 0;
 };
 
 

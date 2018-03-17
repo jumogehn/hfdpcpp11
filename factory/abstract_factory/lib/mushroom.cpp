@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string Mushroom::toString() const
+std::string Mushroom::ToString() const
 {
-  std::cout << "Mushroom::toString" << std::endl;
+  std::cout << "Mushroom::ToString" << std::endl;
   return "Mushrooms";
 }

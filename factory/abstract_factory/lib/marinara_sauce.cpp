@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string MarinaraSauce::toString() const
+std::string MarinaraSauce::ToString() const
 {
-  std::cout << "MarinaraSauce::toString" << std::endl;
+  std::cout << "MarinaraSauce::ToString" << std::endl;
   return "Marinara Sauce";
 }

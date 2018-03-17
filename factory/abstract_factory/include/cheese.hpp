@@ -27,7 +27,7 @@ class Cheese {
 
 public:
   virtual ~Cheese();
-  virtual std::string toString() const = 0;
+  virtual std::string ToString() const = 0;
 };
 
 

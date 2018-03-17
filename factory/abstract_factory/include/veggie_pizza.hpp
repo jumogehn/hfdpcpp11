@@ -28,12 +28,12 @@
 
 class VeggiePizza : public Pizza {
 
-  mutable std::shared_ptr<PizzaIngredientFactory> _ingredientFactory;
+  mutable std::shared_ptr<PizzaIngredientFactory> ingredient_factory_;
 
 public:
-  explicit VeggiePizza(std::shared_ptr<PizzaIngredientFactory> ingredientFactory);
+  explicit VeggiePizza(std::shared_ptr<PizzaIngredientFactory> ingredient_factory);
 public:
-  void prepare() const;
+  void Prepare() const;
 };
 
 

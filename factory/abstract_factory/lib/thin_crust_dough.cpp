@@ -22,8 +22,8 @@
 
 
 
-std::string ThinCrustDough::toString() const
+std::string ThinCrustDough::ToString() const
 {
-  std::cout << "ThinCrustDough::toString" << std::endl;
+  std::cout << "ThinCrustDough::ToString" << std::endl;
   return "Thin Crust Dough";
 }

@@ -25,19 +25,19 @@
 #include "sauce.hpp"
 
 
-VeggiePizza::VeggiePizza(std::shared_ptr<PizzaIngredientFactory> ingredientFactory) :
-  _ingredientFactory(ingredientFactory)
+VeggiePizza::VeggiePizza(std::shared_ptr<PizzaIngredientFactory> ingredient_factory) :
+  ingredient_factory_(ingredient_factory)
 {
-  assert(ingredientFactory);
+  assert(ingredient_factory);
   std::cout << "VeggiePizza::VeggiePizza" << std::endl;
 }
-void VeggiePizza::prepare() const
+void VeggiePizza::Prepare() const
 {
   std::cout << "VeggiePizza::prepare" << std::endl;
-  std::cout << "Preparing " << getName().c_str() << std::endl;
-  _dough = _ingredientFactory->createDough();
-  _sauce = _ingredientFactory->createSauce();
-  _cheese = _ingredientFactory->createCheese();
-  if (_veggies.empty())
-    _veggies = _ingredientFactory->createVeggies();
+  std::cout << "Preparing " << GetName().c_str() << std::endl;
+  dough_ = ingredient_factory_->CreateDough();
+  sauce_ = ingredient_factory_->CreateSauce();
+  cheese_ = ingredient_factory_->CreateCheese();
+  if (veggies_.empty())
+    veggies_ = ingredient_factory_->CreateVeggies();
 }

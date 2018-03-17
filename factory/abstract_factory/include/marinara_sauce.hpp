@@ -27,7 +27,7 @@
 class MarinaraSauce : public Sauce {
 
 public:
-  std::string toString() const;
+  std::string ToString() const;
 };
 
 

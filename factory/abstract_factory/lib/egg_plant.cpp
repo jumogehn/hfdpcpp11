@@ -22,8 +22,8 @@
 
 
 
-std::string Eggplant::toString() const
+std::string Eggplant::ToString() const
 {
-  std::cout << "Eggplant::toString" << std::endl;
+  std::cout << "Eggplant::ToString" << std::endl;
   return "Eggplant";
 }

@@ -27,7 +27,7 @@
 class ThickCrustDough : public Dough {
 
 public:
-  std::string toString() const;
+  std::string ToString() const;
 };
 
 

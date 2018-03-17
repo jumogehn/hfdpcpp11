@@ -22,8 +22,8 @@
 
 
 
-std::string Spinach::toString() const
+std::string Spinach::ToString() const
 {
-  std::cout << "Spinach::toString" << std::endl;
+  std::cout << "Spinach::ToString" << std::endl;
   return ("Spinach");
 }

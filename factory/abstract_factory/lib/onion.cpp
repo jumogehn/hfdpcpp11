@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string Onion::toString() const
+std::string Onion::ToString() const
 {
-  std::cout << "Onion::toString" << std::endl;
+  std::cout << "Onion::ToString" << std::endl;
   return ( "Onion" );
 }

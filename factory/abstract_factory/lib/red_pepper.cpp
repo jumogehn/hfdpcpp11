@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string RedPepper::toString() const
+std::string RedPepper::ToString() const
 {
-  std::cout << "RedPepper::toString" << std::endl;
+  std::cout << "RedPepper::ToString" << std::endl;
   return ( "Red Pepper" );
 }

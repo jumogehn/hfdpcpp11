@@ -27,7 +27,7 @@
 class MozzarellaCheese : public Cheese {
 
 public:
-  std::string toString() const;
+  std::string ToString() const;
 };
 
 

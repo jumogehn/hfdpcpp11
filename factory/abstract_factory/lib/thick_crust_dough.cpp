@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string ThickCrustDough::toString() const
+std::string ThickCrustDough::ToString() const
 {
-  std::cout << "ThickCrustDough::toString" << std::endl;
+  std::cout << "ThickCrustDough::ToString" << std::endl;
   return "Thick Crust Dough";
 }

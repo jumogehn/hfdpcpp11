@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string PlumTomatoSauce::toString() const
+std::string PlumTomatoSauce::ToString() const
 {
-  std::cout << "PlumTomatoSauce::toString" << std::endl;
+  std::cout << "PlumTomatoSauce::ToString" << std::endl;
   return "Tomato sauce with plum tomatoes";
 }

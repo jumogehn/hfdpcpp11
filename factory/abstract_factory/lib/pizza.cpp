@@ -32,63 +32,63 @@ Pizza::Pizza()
 Pizza::~Pizza()
 {
   std::cout << "Pizza::~Pizza" << std::endl;
-  _veggies.clear();
+  veggies_.clear();
 }
-void Pizza::bake() const
+void Pizza::Bake() const
 {
-  std::cout << "Pizza::bake" << std::endl;
+  std::cout << "Pizza::Bake" << std::endl;
   std::cout << "Bake for 25 minutes at 350" << std::endl;
 }
-void Pizza::cut() const
+void Pizza::Cut() const
 {
-  std::cout << "Pizza::cut" << std::endl;
+  std::cout << "Pizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into diagonal slices" << std::endl;
 }
-void Pizza::box() const
+void Pizza::Box() const
 {
-  std::cout << "Pizza::box" << std::endl;
-  std::cout << "Place pizza in official PizzaStore box" << std::endl;
+  std::cout << "Pizza::Box" << std::endl;
+  std::cout << "Place pizza in official PizzaStore Box" << std::endl;
 }
-void Pizza::setName(std::string name)
+void Pizza::SetName(std::string name)
 {
-  std::cout << "Pizza::setName" << std::endl;
-  _name = name;
+  std::cout << "Pizza::SetName" << std::endl;
+  name_ = name;
 }
-std::string Pizza::getName() const
+std::string Pizza::GetName() const
 {
-  std::cout << "Pizza::getName" << std::endl;
-  return _name;
+  std::cout << "Pizza::GetName" << std::endl;
+  return name_;
 }
-std::string Pizza::toString() const
+std::string Pizza::ToString() const
 {
-  std::cout << "Pizza::toString" << std::endl;
+  std::cout << "Pizza::ToString" << std::endl;
   std::stringstream value;
-  value << "---- " << _name.c_str() << " ----" << std::endl;
+  value << "---- " << name_.c_str() << " ----" << std::endl;
 
-  if (_dough.get() != 0) {
-    value << _dough->toString();
+  if (dough_.get() != 0) {
+    value << dough_->ToString();
     value << std::endl;
   }
-  if (_sauce.get() != 0) {
-    value << _sauce->toString();
+  if (sauce_.get() != 0) {
+    value << sauce_->ToString();
     value << std::endl;
   }
-  if (_cheese.get() != 0) {
-    value << _cheese->toString();
+  if (cheese_.get() != 0) {
+    value << cheese_->ToString();
     value << std::endl;
   }
-  if (_clam.get() != 0) {
-    value << _clam->toString();
+  if (clam_.get() != 0) {
+    value << clam_->ToString();
     value << std::endl;
   }
-  if (_pepperoni.get() != 0) {
-    value << _pepperoni->toString();
+  if (pepperoni_.get() != 0) {
+    value << pepperoni_->ToString();
     value << std::endl;
   }
-  if (_veggies.size() != 0) {
+  if (veggies_.size() != 0) {
     //http://en.cppreference.com/w/cpp/language/range-for
-    for (std::shared_ptr<Veggies> veggie : _veggies) {
-      value << veggie->toString() << ", ";
+    for (std::shared_ptr<Veggies> veggie : veggies_) {
+      value << veggie->ToString() << ", ";
     }
     value << std::endl;
   }

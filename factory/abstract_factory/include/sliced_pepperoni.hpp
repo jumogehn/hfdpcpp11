@@ -27,7 +27,7 @@
 class SlicedPepperoni : public Pepperoni {
 
 public:
-  std::string toString() const;
+  std::string ToString() const;
 };
 
 

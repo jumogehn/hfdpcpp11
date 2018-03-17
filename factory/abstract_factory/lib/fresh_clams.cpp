@@ -21,8 +21,8 @@
 //Your project's .h files.
 
 
-std::string FreshClams::toString() const
+std::string FreshClams::ToString() const
 {
-  std::cout << "FreshClams::toString" << std::endl;
+  std::cout << "FreshClams::ToString" << std::endl;
   return "Fresh Clams from Long Island Sound";
 }
