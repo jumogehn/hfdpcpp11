@@ -26,8 +26,8 @@
 
 class HeatIndexDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
-  float _heatIndex;
+  Subject* weather_data_;
+  float heat_index_;
 
   HeatIndexDisplay(const HeatIndexDisplay&); // Disable copy constructor
   void operator=(const HeatIndexDisplay&); // Disable assignment operator
@@ -37,10 +37,10 @@ class HeatIndexDisplay : private Observer, private DisplayElement {
 public:
   explicit HeatIndexDisplay();
   ~HeatIndexDisplay();
-  int setSubject(Subject* weatherData);
-  int resetSubject();
-  void update(float t, float rh, float pressure);
-  void display() const;
+  int SetSubject(Subject* weather_data);
+  int ResetSubject();
+  void Update(float t, float rh, float pressure);
+  void Display() const;
 };
 
 #endif

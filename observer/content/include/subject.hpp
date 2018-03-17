@@ -27,9 +27,9 @@ class Subject {
 protected:
   virtual ~Subject();
 public:
-  virtual void registerObserver(Observer* o) = 0;
-  virtual void removeObserver(Observer* o) = 0;
-  virtual void notifyObservers() const = 0;
+  virtual void RegisterObserver(Observer* o) = 0;
+  virtual void RemoveObserver(Observer* o) = 0;
+  virtual void NotifyObservers() const = 0;
 };
 
 #endif

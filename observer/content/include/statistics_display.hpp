@@ -27,11 +27,11 @@
 
 class StatisticsDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
-  float _maxTemp;
-  float _minTemp;
-  float _tempSum;
-  int _numReadings;
+  Subject* weather_data_;
+  float max_temp_;
+  float min_temp_;
+  float temp_sum_;
+  int num_readings_;
 
   StatisticsDisplay(const StatisticsDisplay&); // Disable copy constructor
   void operator=(const StatisticsDisplay&); // Disable assignment operator
@@ -39,10 +39,10 @@ class StatisticsDisplay : private Observer, private DisplayElement {
 public:
   explicit StatisticsDisplay();
   ~StatisticsDisplay();
-  int setSubject(Subject* weatherData);
-  int resetSubject();
-  void update(float temp, float humidity, float pressure);
-  void display() const;
+  int SetSubject(Subject* weather_data);
+  int ResetSubject();
+  void Update(float temp, float humidity, float pressure);
+  void Display() const;
 };
 
 #endif

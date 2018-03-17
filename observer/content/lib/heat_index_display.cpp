@@ -43,7 +43,7 @@ float HeatIndexDisplay::computeHeatIndex(float t, float rh) const
 }
 
 HeatIndexDisplay::HeatIndexDisplay() :
-  _heatIndex(0.0)
+  heat_index_(0.0)
 {
   std::cout << "HeatIndexDisplay::HeatIndexDisplay" << std::endl;
 }
@@ -51,34 +51,34 @@ HeatIndexDisplay::~HeatIndexDisplay()
 {
   std::cout << "HeatIndexDisplay::~HeatIndexDisplay" << std::endl;
 }
-int HeatIndexDisplay::setSubject(Subject* weatherData)
+int HeatIndexDisplay::SetSubject(Subject* weather_data)
 {
-  assert(weatherData);
-  assert(!_weatherData);
-  _weatherData = weatherData;
+  assert(weather_data);
+  assert(!weather_data_);
+  weather_data_ = weather_data;
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->registerObserver(this);
+  weather_data_->RegisterObserver(this);
 
   return 0;
 }
-int HeatIndexDisplay::resetSubject()
+int HeatIndexDisplay::ResetSubject()
 {
-  assert(_weatherData);
+  assert(weather_data_);
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->removeObserver(this);
+  weather_data_->RemoveObserver(this);
   return 0;
 }
-void HeatIndexDisplay::update(float t, float rh, float pressure)
+void HeatIndexDisplay::Update(float t, float rh, float pressure)
 {
-  std::cout << "HeatIndexDisplay::update" << std::endl;
-  _heatIndex = computeHeatIndex(t, rh);
-  display();
+  std::cout << "HeatIndexDisplay::Update" << std::endl;
+  heat_index_ = computeHeatIndex(t, rh);
+  Display();
 }
 
-void HeatIndexDisplay::display() const
+void HeatIndexDisplay::Display() const
 {
   std::cout << "HeatIndexDisplay::display" << std::endl;
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(7);
-  std::cout << "Heat index is " << _heatIndex << std::endl;
+  std::cout << "Heat index is " << heat_index_ << std::endl;
 }

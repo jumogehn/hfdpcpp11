@@ -26,9 +26,9 @@
 
 class ForecastDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
-  float _currentPressure;
-  float _lastPressure;
+  Subject* weather_data_;
+  float current_pressure_;
+  float last_pressure_;
 
   ForecastDisplay(const ForecastDisplay&); // Disable copy constructor
   void operator=(const ForecastDisplay&); // Disable assignment operator
@@ -36,10 +36,10 @@ class ForecastDisplay : private Observer, private DisplayElement {
 public:
   explicit ForecastDisplay();
   ~ForecastDisplay();
-  int setSubject(Subject* weatherData);
-  int resetSubject();
-  void update(float temp, float humidity, float pressure);
-  void display() const;
+  int SetSubject(Subject* weather_data);
+  int ResetSubject();
+  void Update(float temp, float humidity, float pressure);
+  void Display() const;
 };
 
 #endif

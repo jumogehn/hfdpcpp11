@@ -24,7 +24,7 @@
 
 class DisplayElement {
 public:
-  virtual void display() const = 0;
+  virtual void Display() const = 0;
 protected:
   virtual ~DisplayElement();
 };

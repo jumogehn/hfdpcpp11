@@ -28,27 +28,27 @@
 
 class WeatherData : public Subject {
 
-  mutable std::list< Observer* > _observers;
-  float _temperature;
-  float _humidity;
-  float _pressure;
+  mutable std::list< Observer* > observers_;
+  float temperature_;
+  float humidity_;
+  float pressure_;
 
   WeatherData(const WeatherData&); // Disable copy constructor
   void operator=(const WeatherData&); // Disable assignment operator
 
 public:
   WeatherData();
-  void registerObserver(Observer* o);
-  void removeObserver(Observer* o);
-  void notifyObservers() const;
-  void measurementsChanged();
-  void setMeasurements(float temperature, float humidity, float pressure);
+  void RegisterObserver(Observer* o);
+  void RemoveObserver(Observer* o);
+  void NotifyObservers() const;
+  void MeasurementsChanged();
+  void SetMeasurements(float temperature, float humidity, float pressure);
 
   // other WeatherData methods here
 
-  float getTemperature() const;
-  float getHumidity() const;
-  float getPressure() const;
+  float GetTemperature() const;
+  float GetHumidity() const;
+  float GetPressure() const;
 };
 
 #endif

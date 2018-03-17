@@ -26,9 +26,9 @@
 
 class CurrentConditionsDisplay : private Observer, private DisplayElement {
 
-  Subject* _weatherData;
-  float _temperature;
-  float _humidity;
+  Subject* weather_data_;
+  float temperature_;
+  float humidity_;
 
   CurrentConditionsDisplay(const CurrentConditionsDisplay&);
   void operator=(const CurrentConditionsDisplay&);
@@ -36,10 +36,10 @@ class CurrentConditionsDisplay : private Observer, private DisplayElement {
 public:
   explicit CurrentConditionsDisplay();
   ~CurrentConditionsDisplay();
-  int setSubject(Subject* weatherData);
-  int resetSubject();
-  void update(float temperature, float humidity, float pressure);
-  void display() const;
+  int SetSubject(Subject* weather_data);
+  int ResetSubject();
+  void Update(float temperature, float humidity, float pressure);
+  void Display() const;
 };
 
 #endif

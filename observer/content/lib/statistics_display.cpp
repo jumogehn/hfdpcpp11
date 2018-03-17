@@ -24,8 +24,8 @@
 
 
 StatisticsDisplay::StatisticsDisplay() :
-  _maxTemp(0.0), _minTemp(200.0F),
-  _tempSum(0.0), _numReadings(0)
+  max_temp_(0.0), min_temp_(200.0F),
+  temp_sum_(0.0), num_readings_(0)
 {
   std::cout << "StatisticsDisplay::StatisticsDisplay" << std::endl;
 }
@@ -33,44 +33,44 @@ StatisticsDisplay::~StatisticsDisplay()
 {
   std::cout << "StatisticsDisplay::~StatisticsDisplay" << std::endl;
 }
-int StatisticsDisplay::setSubject(Subject* weatherData)
+int StatisticsDisplay::SetSubject(Subject* weather_data)
 {
-  assert(weatherData);
-  assert(!_weatherData);
-  _weatherData = weatherData;
+  assert(weather_data);
+  assert(!weather_data_);
+  weather_data_ = weather_data;
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->registerObserver(this);
+  weather_data_->RegisterObserver(this);
 
   return 0;
 }
-int StatisticsDisplay::resetSubject()
+int StatisticsDisplay::ResetSubject()
 {
-  assert(_weatherData);
+  assert(weather_data_);
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->removeObserver(this);
+  weather_data_->RemoveObserver(this);
   return 0;
 }
-void StatisticsDisplay::update(float temp, float humidity, float pressure)
+void StatisticsDisplay::Update(float temp, float humidity, float pressure)
 {
-  std::cout << "StatisticsDisplay::update" << std::endl;
-  _tempSum += temp;
-  _numReadings++;
+  std::cout << "StatisticsDisplay::Update" << std::endl;
+  temp_sum_ += temp;
+  num_readings_++;
 
-  if (temp > _maxTemp) {
-    _maxTemp = temp;
+  if (temp > max_temp_) {
+    max_temp_ = temp;
   }
 
-  if (temp < _minTemp) {
-    _minTemp = temp;
+  if (temp < min_temp_) {
+    min_temp_ = temp;
   }
 
-  display();
+  Display();
 }
-void StatisticsDisplay::display() const
+void StatisticsDisplay::Display() const
 {
   std::cout << "StatisticsDisplay::display" << std::endl;
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);
-  std::cout << "Avg/Max/Min temperature = " << (_tempSum / _numReadings);
-  std::cout << "/" << _maxTemp << "/" << _minTemp << std::endl;
+  std::cout << "Avg/Max/Min temperature = " << (temp_sum_ / num_readings_);
+  std::cout << "/" << max_temp_ << "/" << min_temp_ << std::endl;
 }

@@ -24,59 +24,59 @@
 #include "observer.hpp"
 
 WeatherData::WeatherData() :
-  _temperature(0.0), _humidity(0.0), _pressure(0.0)
+  temperature_(0.0), humidity_(0.0), pressure_(0.0)
 {
   std::cout << "WeatherData::WeatherData" << std::endl;
 }
-void WeatherData::registerObserver(Observer* o)
+void WeatherData::RegisterObserver(Observer* o)
 {
   assert(o);
-  std::cout << "WeatherData::registerObserver" << std::endl;
-  _observers.push_back(o);
+  std::cout << "WeatherData::RegisterObserver" << std::endl;
+  observers_.push_back(o);
 }
-void WeatherData::removeObserver(Observer* o)
+void WeatherData::RemoveObserver(Observer* o)
 {
   assert(o);
-  std::cout << "WeatherData::removeObserver" << std::endl;
-  _observers.remove(o);
+  std::cout << "WeatherData::RemoveObserver" << std::endl;
+  observers_.remove(o);
 }
-void WeatherData::notifyObservers() const
+void WeatherData::NotifyObservers() const
 {
-  std::cout << "WeatherData::notifyObservers" << std::endl;
+  std::cout << "WeatherData::NotifyObservers" << std::endl;
   //http://en.cppreference.com/w/cpp/language/range-for
-  for (Observer* observer : _observers) {
-    observer->update(_temperature, _humidity, _pressure);
+  for (Observer* observer : observers_) {
+    observer->Update(temperature_, humidity_, pressure_);
   }
 }
-void WeatherData::measurementsChanged()
+void WeatherData::MeasurementsChanged()
 {
-  std::cout << "WeatherData::measurementsChanged" << std::endl;
-  notifyObservers();
+  std::cout << "WeatherData::MeasurementsChanged" << std::endl;
+  NotifyObservers();
 }
-void WeatherData::setMeasurements(float temperature, float humidity, float pressure)
+void WeatherData::SetMeasurements(float temperature, float humidity, float pressure)
 {
-  std::cout << "WeatherData::setMeasurements" << std::endl;
-  _temperature = temperature;
-  _humidity = humidity;
-  _pressure = pressure;
-  measurementsChanged();
+  std::cout << "WeatherData::SetMeasurements" << std::endl;
+  temperature_ = temperature;
+  humidity_ = humidity;
+  pressure_ = pressure;
+  MeasurementsChanged();
 }
 
 // other WeatherData methods here
 
-float WeatherData::getTemperature() const
+float WeatherData::GetTemperature() const
 {
-  std::cout << "WeatherData::getTemperature" << std::endl;
-  return _temperature;
+  std::cout << "WeatherData::GetTemperature" << std::endl;
+  return temperature_;
 }
-float WeatherData::getHumidity() const
+float WeatherData::GetHumidity() const
 {
-  std::cout << "WeatherData::getHumidity" << std::endl;
-  return _humidity;
+  std::cout << "WeatherData::GetHumidity" << std::endl;
+  return humidity_;
 }
-float WeatherData::getPressure() const
+float WeatherData::GetPressure() const
 {
-  std::cout << "WeatherData::getPressure" << std::endl;
-  return _pressure;
+  std::cout << "WeatherData::GetPressure" << std::endl;
+  return pressure_;
 }
 

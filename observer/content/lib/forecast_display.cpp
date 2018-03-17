@@ -23,8 +23,8 @@
 #include "subject.hpp"
 
 ForecastDisplay::ForecastDisplay() :
-  _currentPressure(29.92F),
-  _lastPressure(0)
+  current_pressure_(29.92F),
+  last_pressure_(0)
 {
   std::cout << "ForecastDisplay::ForecastDisplay" << std::endl;
 }
@@ -32,43 +32,43 @@ ForecastDisplay::~ForecastDisplay()
 {
   std::cout << "ForecastDisplay::~ForecastDisplay" << std::endl;
 }
-int ForecastDisplay::setSubject(Subject* weatherData)
+int ForecastDisplay::SetSubject(Subject* weather_data)
 {
-  assert(weatherData);
-  assert(!_weatherData);
-  _weatherData = weatherData;
+  assert(weather_data);
+  assert(!weather_data_);
+  weather_data_ = weather_data;
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->registerObserver(this);
+  weather_data_->RegisterObserver(this);
 
   return 0;
 }
-int ForecastDisplay::resetSubject()
+int ForecastDisplay::ResetSubject()
 {
-  assert(_weatherData);
+  assert(weather_data_);
   //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  _weatherData->removeObserver(this);
+  weather_data_->RemoveObserver(this);
   return 0;
 }
-void ForecastDisplay::update(float temp, float humidity, float pressure)
+void ForecastDisplay::Update(float temp, float humidity, float pressure)
 {
-  std::cout << "ForecastDisplay::update" << std::endl;
-  _lastPressure = _currentPressure;
-  _currentPressure = pressure;
-  display();
+  std::cout << "ForecastDisplay::Update" << std::endl;
+  last_pressure_ = current_pressure_;
+  current_pressure_ = pressure;
+  Display();
 }
-void ForecastDisplay::display() const
+void ForecastDisplay::Display() const
 {
   std::cout << "ForecastDisplay::display" << std::endl;
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);
   std::cout << "Forecast: ";
-  if (_currentPressure > _lastPressure) {
+  if (current_pressure_ > last_pressure_) {
     std::cout << "Improving weather on the way!";
   }
-  else if (_currentPressure == _lastPressure) {
+  else if (current_pressure_ == last_pressure_) {
     std::cout << "More of the same";
   }
-  else if (_currentPressure < _lastPressure) {
+  else if (current_pressure_ < last_pressure_) {
     std::cout << "Watch out for cooler, rainy weather";
   }
   std::cout << std::endl;

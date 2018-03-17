@@ -27,22 +27,27 @@
 
 int main(int argc, char* argv[]) {
 
-  std::unique_ptr<WeatherData> weatherData(new WeatherData());
+  std::unique_ptr<WeatherData>
+    weather_data(new WeatherData());
 
-  std::unique_ptr<CurrentConditionsDisplay> currentDisplay(new CurrentConditionsDisplay());
-  currentDisplay->setSubject(weatherData.get());
-  std::unique_ptr<StatisticsDisplay> statisticsDisplay(new StatisticsDisplay());
-  statisticsDisplay->setSubject(weatherData.get());
-  std::unique_ptr<ForecastDisplay> forecastDisplay(new ForecastDisplay());
-  forecastDisplay->setSubject(weatherData.get());
+  std::unique_ptr<CurrentConditionsDisplay>
+    current_display(new CurrentConditionsDisplay());
+  current_display->SetSubject(weather_data.get());
+  std::unique_ptr<StatisticsDisplay>
+    statistics_display(new StatisticsDisplay());
+  statistics_display->SetSubject(weather_data.get());
+  std::unique_ptr<ForecastDisplay>
+    forecast_display(new ForecastDisplay());
+  forecast_display->SetSubject(weather_data.get());
 #ifdef _HEAT_INDEX_DISPLAY_
-  std::unique_ptr<HeatIndexDisplay> heatIndexDisplay(new HeatIndexDisplay());
-  heatIndexDisplay->setSubject(weatherData.get());
+  std::unique_ptr<HeatIndexDisplay>
+    heat_index_display(new HeatIndexDisplay());
+  heat_index_display->SetSubject(weather_data.get());
 #endif
 
-  weatherData->setMeasurements(80, 65, 30.4f);
-  weatherData->setMeasurements(82, 70, 29.2f);
-  weatherData->setMeasurements(78, 90, 29.2f);
+  weather_data->SetMeasurements(80, 65, 30.4f);
+  weather_data->SetMeasurements(82, 70, 29.2f);
+  weather_data->SetMeasurements(78, 90, 29.2f);
 
   return 0;
 }

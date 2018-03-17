@@ -27,7 +27,7 @@ class Observer {
 protected:
   virtual ~Observer();
 public:
-  virtual void update(float temp, float humidity, float pressure) = 0;
+  virtual void Update(float temp, float humidity, float pressure) = 0;
 };
 
 #endif
