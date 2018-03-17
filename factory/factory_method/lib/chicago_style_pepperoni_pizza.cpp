@@ -24,18 +24,18 @@ ChicagoStylePepperoniPizza::ChicagoStylePepperoniPizza()
 {
   std::cout << "ChicagoStylePepperoniPizza"
                      "::ChicagoStylePepperoniPizza" << std::endl;
-  _name = "Chicago Style Pepperoni Pizza";
-  _dough = "Extra Thick Crust Dough";
-  _sauce = "Plum Tomato Sauce";
-  _toppings.push_back( "Shredded Mozzarella Cheese" );
-  _toppings.push_back( "Black Olives" );
-  _toppings.push_back( "Spinach" );
-  _toppings.push_back( "Eggplant" );
-  _toppings.push_back( "Sliced Pepperoni" );
+  name_ = "Chicago Style Pepperoni Pizza";
+  dough_ = "Extra Thick Crust Dough";
+  sauce_ = "Plum Tomato Sauce";
+  toppings_.push_back( "Shredded Mozzarella Cheese" );
+  toppings_.push_back( "Black Olives" );
+  toppings_.push_back( "Spinach" );
+  toppings_.push_back( "Eggplant" );
+  toppings_.push_back( "Sliced Pepperoni" );
 }
-void ChicagoStylePepperoniPizza::cut() const
+void ChicagoStylePepperoniPizza::Cut() const
 {
-  std::cout << "ChicagoStylePepperoniPizza::cut" << std::endl;
+  std::cout << "ChicagoStylePepperoniPizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into square slices" << std::endl;
 }
 

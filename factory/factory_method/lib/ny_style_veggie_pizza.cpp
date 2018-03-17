@@ -23,12 +23,12 @@
 NYStyleVeggiePizza::NYStyleVeggiePizza()
 {
   std::cout << "NYStyleVeggiePizza::NYStyleVeggiePizza" << std::endl;
-  _name = "NY Style Veggie Pizza";
-  _dough = "Thin Crust Dough";
-  _sauce = "Marinara Sauce";
-  _toppings.push_back( "Grated Reggiano Cheese" );
-  _toppings.push_back( "Garlic" );
-  _toppings.push_back( "Onion" );
-  _toppings.push_back( "Mushrooms" );
-  _toppings.push_back( "Red Pepper" );
+  name_ = "NY Style Veggie Pizza";
+  dough_ = "Thin Crust Dough";
+  sauce_ = "Marinara Sauce";
+  toppings_.push_back( "Grated Reggiano Cheese" );
+  toppings_.push_back( "Garlic" );
+  toppings_.push_back( "Onion" );
+  toppings_.push_back( "Mushrooms" );
+  toppings_.push_back( "Red Pepper" );
 }

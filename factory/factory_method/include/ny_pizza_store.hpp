@@ -29,7 +29,7 @@
 class NYPizzaStore : public PizzaStore {
 
 public:
-  std::shared_ptr<Pizza> createPizza( std::string type ) const;
+  std::shared_ptr<Pizza> CreatePizza( std::string type ) const;
 };
 
 

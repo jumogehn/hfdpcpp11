@@ -23,8 +23,8 @@
 NYStyleCheesePizza::NYStyleCheesePizza()
 {
   std::cout << "NYStyleCheesePizza::NYStyleCheesePizza" << std::endl;
-  _name = "NY Style Sauce and Cheese Pizza";
-  _dough = "Thin Crust Dough";
-  _sauce = "Marinara Sauce";
-  _toppings.push_back( "Grated Reggiano Cheese" );
+  name_ = "NY Style Sauce and Cheese Pizza";
+  dough_ = "Thin Crust Dough";
+  sauce_ = "Marinara Sauce";
+  toppings_.push_back( "Grated Reggiano Cheese" );
 }

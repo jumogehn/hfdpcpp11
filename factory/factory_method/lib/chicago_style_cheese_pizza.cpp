@@ -24,13 +24,13 @@ ChicagoStyleCheesePizza::ChicagoStyleCheesePizza()
 {
   std::cout << "ChicagoStyleCheesePizza"
                      "::ChicagoStyleCheesePizza" << std::endl;
-  _name = "Chicago Style Deep Dish Cheese Pizza";
-  _dough = "Extra Thick Crust Dough";
-  _sauce = "Plum Tomato Sauce";
-  _toppings.push_back( "Shredded Mozzarella Cheese" );
+  name_ = "Chicago Style Deep Dish Cheese Pizza";
+  dough_ = "Extra Thick Crust Dough";
+  sauce_ = "Plum Tomato Sauce";
+  toppings_.push_back( "Shredded Mozzarella Cheese" );
 }
-void ChicagoStyleCheesePizza::cut() const
+void ChicagoStyleCheesePizza::Cut() const
 {
-  std::cout << "ChicagoStyleCheesePizza::cut" << std::endl;
+  std::cout << "ChicagoStyleCheesePizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into square slices" << std::endl;
 }

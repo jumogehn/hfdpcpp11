@@ -27,7 +27,7 @@ class ChicagoStylePepperoniPizza : public Pizza {
 
 public:
   ChicagoStylePepperoniPizza();
-  void cut() const;
+  void Cut() const;
 };
 
 

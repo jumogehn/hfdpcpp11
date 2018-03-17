@@ -26,9 +26,9 @@
 #include "ny_style_veggie_pizza.hpp"
 
 
-std::shared_ptr< Pizza > NYPizzaStore::createPizza( std::string type ) const
+std::shared_ptr< Pizza > NYPizzaStore::CreatePizza( std::string type ) const
 {
-  std::cout << "NYPizzaStore::createPizza" << std::endl;
+  std::cout << "NYPizzaStore::CreatePizza" << std::endl;
   if( type.compare( "cheese" ) == 0 ) {
     return std::make_shared<NYStyleCheesePizza>();
   } else if( type.compare( "veggie" ) == 0 ) {

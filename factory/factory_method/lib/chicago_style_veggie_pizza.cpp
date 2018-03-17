@@ -24,16 +24,16 @@ ChicagoStyleVeggiePizza::ChicagoStyleVeggiePizza()
 {
   std::cout << "ChicagoStyleVeggiePizza"
                      "::ChicagoStyleVeggiePizza" << std::endl;
-  _name = "Chicago Deep Dish Veggie Pizza";
-  _dough = "Extra Thick Crust Dough";
-  _sauce = "Plum Tomato Sauce";
-  _toppings.push_back( "Shredded Mozzarella Cheese" );
-  _toppings.push_back( "Black Olives" );
-  _toppings.push_back( "Spinach" );
-  _toppings.push_back( "Eggplant" );
+  name_ = "Chicago Deep Dish Veggie Pizza";
+  dough_ = "Extra Thick Crust Dough";
+  sauce_ = "Plum Tomato Sauce";
+  toppings_.push_back( "Shredded Mozzarella Cheese" );
+  toppings_.push_back( "Black Olives" );
+  toppings_.push_back( "Spinach" );
+  toppings_.push_back( "Eggplant" );
 }
-void ChicagoStyleVeggiePizza::cut() const
+void ChicagoStyleVeggiePizza::Cut() const
 {
-  std::cout << "ChicagoStyleVeggiePizza::cut" << std::endl;
+  std::cout << "ChicagoStyleVeggiePizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into square slices" << std::endl;
 }

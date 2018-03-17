@@ -23,9 +23,9 @@
 NYStyleClamPizza::NYStyleClamPizza()
 {
   std::cout << "NYStyleClamPizza::NYStyleClamPizza" << std::endl;
-  _name = "NY Style Clam Pizza";
-  _dough = "Thin Crust Dough";
-  _sauce = "Marinara Sauce";
-  _toppings.push_back( "Grated Reggiano Cheese" );
-  _toppings.push_back( "Fresh Clams from Long Island Sound" );
+  name_ = "NY Style Clam Pizza";
+  dough_ = "Thin Crust Dough";
+  sauce_ = "Marinara Sauce";
+  toppings_.push_back( "Grated Reggiano Cheese" );
+  toppings_.push_back( "Fresh Clams from Long Island Sound" );
 }

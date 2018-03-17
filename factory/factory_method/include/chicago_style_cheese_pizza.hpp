@@ -26,7 +26,7 @@ class ChicagoStyleCheesePizza : public Pizza {
 
 public:
   ChicagoStyleCheesePizza();
-  void cut() const;
+  void Cut() const;
 };
 
 

@@ -27,9 +27,9 @@
 #include "pizza.hpp"
 
 
-std::shared_ptr< Pizza > ChicagoPizzaStore::createPizza( std::string type ) const
+std::shared_ptr< Pizza > ChicagoPizzaStore::CreatePizza( std::string type ) const
 {
-  std::cout << "ChicagoPizzaStore::createPizza" << std::endl;
+  std::cout << "ChicagoPizzaStore::CreatePizza" << std::endl;
 
   if( type.compare( "cheese" ) == 0 ) {
     return std::make_shared<ChicagoStyleCheesePizza>();

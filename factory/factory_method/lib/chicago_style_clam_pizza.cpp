@@ -23,15 +23,15 @@
 ChicagoStyleClamPizza::ChicagoStyleClamPizza()
 {
   std::cout << "ChicagoStyleClamPizza::ChicagoStyleClamPizza" << std::endl;
-  _name = "Chicago Style Clam Pizza";
-  _dough = "Extra Thick Crust Dough";
-  _sauce = "Plum Tomato Sauce";
-  _toppings.push_back( "Shredded Mozzarella Cheese" );
-  _toppings.push_back( "Frozen Clams from Chesapeake Bay" );
+  name_ = "Chicago Style Clam Pizza";
+  dough_ = "Extra Thick Crust Dough";
+  sauce_ = "Plum Tomato Sauce";
+  toppings_.push_back( "Shredded Mozzarella Cheese" );
+  toppings_.push_back( "Frozen Clams from Chesapeake Bay" );
 }
-void ChicagoStyleClamPizza::cut() const
+void ChicagoStyleClamPizza::Cut() const
 {
-  std::cout << "ChicagoStyleClamPizza::cut" << std::endl;
+  std::cout << "ChicagoStyleClamPizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into square slices" << std::endl;
 }
 

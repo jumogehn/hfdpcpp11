@@ -32,48 +32,48 @@ Pizza::~Pizza()
 {
   std::cout << "Pizza::~Pizza" << std::endl;
 }
-void Pizza::prepare() const
+void Pizza::Prepare() const
 {
-  std::cout << "Pizza::prepare" << std::endl;
-  std::cout << "Preparing " << _name.c_str() << std::endl;
+  std::cout << "Pizza::Prepare" << std::endl;
+  std::cout << "Preparing " << name_.c_str() << std::endl;
   std::cout << "Tossing dough..." << std::endl;
   std::cout << "Adding sauce..." << std::endl;
   std::cout << "Adding toppings: " << std::endl;
   //http://en.cppreference.com/w/cpp/language/range-for
-  for( const std::string &topping : _toppings ) {
+  for( const std::string &topping : toppings_ ) {
     std::cout << "   " << topping.c_str() << std::endl;
   }
 }
-void Pizza::bake() const
+void Pizza::Bake() const
 {
-  std::cout << "Pizza::bake" << std::endl;
+  std::cout << "Pizza::Bake" << std::endl;
   std::cout << "Bake for 25 minutes at 350" << std::endl;
 }
-void Pizza::cut() const
+void Pizza::Cut() const
 {
-  std::cout << "Pizza::cut" << std::endl;
+  std::cout << "Pizza::Cut" << std::endl;
   std::cout << "Cutting the pizza into diagonal slices" << std::endl;
 }
-void Pizza::box() const
+void Pizza::Box() const
 {
-  std::cout << "Pizza::box" << std::endl;
-  std::cout << "Place pizza in official PizzaStore box" << std::endl;
+  std::cout << "Pizza::Box" << std::endl;
+  std::cout << "Place pizza in official PizzaStore Box" << std::endl;
 }
-std::string Pizza::getName() const
+std::string Pizza::GetName() const
 {
-  std::cout << "Pizza::getName" << std::endl;
-  return _name;
+  std::cout << "Pizza::GetName" << std::endl;
+  return name_;
 }
-std::string Pizza::toString() const
+std::string Pizza::ToString() const
 {
-  std::cout << "Pizza::toString" << std::endl;
+  std::cout << "Pizza::ToString" << std::endl;
   // code to display pizza name and ingredients
   std::stringstream value;
-  value << "---- " << _name.c_str() << " ----" << std::endl;
-  value << _dough.c_str() << std::endl;
-  value << _sauce.c_str() << std::endl;
+  value << "---- " << name_.c_str() << " ----" << std::endl;
+  value << dough_.c_str() << std::endl;
+  value << sauce_.c_str() << std::endl;
   //http://en.cppreference.com/w/cpp/language/range-for
-  for( const std::string &topping : _toppings ) {
+  for( const std::string &topping : toppings_ ) {
     value << topping.c_str() << std::endl;
   }
   return value.str();
