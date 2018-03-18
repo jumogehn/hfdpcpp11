@@ -24,9 +24,9 @@
 
 class ChocolateBoiler {
 
-  static ChocolateBoiler* _uniqueInstance;
-  bool _empty;
-  bool _boiled;
+  static ChocolateBoiler* unique_instance_;
+  bool empty_;
+  bool boiled_;
 
   ChocolateBoiler( const ChocolateBoiler& ); // Disable copy constructor
   void operator=( const ChocolateBoiler& ); // Disable assignment operator
@@ -35,12 +35,12 @@ class ChocolateBoiler {
 
 public:
   ~ChocolateBoiler();
-  static ChocolateBoiler* getInstance();
-  void fill();
-  void drain();
-  void boil();
-  bool isEmpty() const;
-  bool isBoiled() const;
+  static ChocolateBoiler* GetInstance();
+  void Fill();
+  void Drain();
+  void Boil();
+  bool IsEmpty() const;
+  bool IsBoiled() const;
 };
 
 

@@ -23,48 +23,48 @@
 
 ChocolateBoiler::ChocolateBoiler()
 {
-  _empty = true;
-  _boiled = false;
+  empty_ = true;
+  boiled_ = false;
 }
 ChocolateBoiler::~ChocolateBoiler()
 {
-  _uniqueInstance = nullptr;
+  unique_instance_ = nullptr;
 }
 
-ChocolateBoiler* ChocolateBoiler::getInstance()
+ChocolateBoiler* ChocolateBoiler::GetInstance()
 {
-  if( _uniqueInstance == nullptr ) {
+  if( unique_instance_ == nullptr ) {
     std::cout
       << "Creating unique instance of Chocolate Boiler" << std::endl;
-    _uniqueInstance = new ChocolateBoiler();
+    unique_instance_ = new ChocolateBoiler();
   }
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
-  return _uniqueInstance;
+  return unique_instance_;
 }
-void ChocolateBoiler::fill()
+void ChocolateBoiler::Fill()
 {	// fill the boiler with a milk/chocolate mixture
-  if( isEmpty() ) {
-    _empty = false;
-    _boiled = false;
+  if( IsEmpty() ) {
+    empty_ = false;
+    boiled_ = false;
   }
 }
-void ChocolateBoiler::drain()
+void ChocolateBoiler::Drain()
 {	// drain the boiled milk and chocolate
-  if( !isEmpty() && isBoiled() ) {
-    _empty = true;
+  if( !IsEmpty() && IsBoiled() ) {
+    empty_ = true;
   }
 }
-void ChocolateBoiler::boil()
+void ChocolateBoiler::Boil()
 {	// bring the contents to a boil
-  if( !isEmpty() && !isBoiled() ) {
-    _boiled = true;
+  if( !IsEmpty() && !IsBoiled() ) {
+    boiled_ = true;
   }
 }
-bool ChocolateBoiler::isEmpty() const
+bool ChocolateBoiler::IsEmpty() const
 {
-  return _empty;
+  return empty_;
 }
-bool ChocolateBoiler::isBoiled() const
+bool ChocolateBoiler::IsBoiled() const
 {
-  return _boiled;
+  return boiled_;
 }

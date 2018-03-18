@@ -23,48 +23,50 @@
 
 ChocolateBoiler::ChocolateBoiler()
 {
-  _empty = true;
-  _boiled = false;
+  empty_ = true;
+  boiled_ = false;
 }
 ChocolateBoiler::~ChocolateBoiler()
 {
 }
 
 //http://preshing.com/20130930/double-checked-locking-is-fixed-in-cpp11/
-//https://stackoverflow.com/questions/11711920/how-to-implement-multithread-safe-singleton-in-c11-without-using-mutex
-//https://stackoverflow.com/questions/12302057/c11-safe-double-checked-locking-for-lazy-initialization-possible/12302355#12302355
+//https://stackoverflow.com/questions/11711920/how-to-implement-multithread
+//-safe-singleton-in-c11-without-using-mutex
+//https://stackoverflow.com/questions/12302057/c11-safe-double-checked-locking
+//-for-lazy-initialization-possible/12302355#12302355
 //Game Programming Patterns, Robert Nystrom
 //Compiler must support and enable the §6.7.4 of the C++11 standard
-ChocolateBoiler* ChocolateBoiler::getInstance()
+ChocolateBoiler* ChocolateBoiler::GetInstance()
 {
-  static ChocolateBoiler* _uniqueInstance = new ChocolateBoiler();
+  static ChocolateBoiler* unique_instance = new ChocolateBoiler();
   std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
-  return _uniqueInstance;
+  return unique_instance;
 }
-void ChocolateBoiler::fill()
-{	// fill the boiler with a milk/chocolate mixture
-  if( isEmpty() ) {
-    _empty = false;
-    _boiled = false;
+void ChocolateBoiler::Fill()
+{	// Fill the boiler with a milk/chocolate mixture
+  if( IsEmpty() ) {
+    empty_ = false;
+    boiled_ = false;
   }
 }
-void ChocolateBoiler::drain()
-{	// drain the boiled milk and chocolate
-  if( !isEmpty() && isBoiled() ) {
-    _empty = true;
+void ChocolateBoiler::Drain()
+{	// Drain the boiled milk and chocolate
+  if( !IsEmpty() && IsBoiled() ) {
+    empty_ = true;
   }
 }
-void ChocolateBoiler::boil()
+void ChocolateBoiler::Boil()
 {	// bring the contents to a boil
-  if( !isEmpty() && !isBoiled() ) {
-    _boiled = true;
+  if( !IsEmpty() && !IsBoiled() ) {
+    boiled_ = true;
   }
 }
-bool ChocolateBoiler::isEmpty() const
+bool ChocolateBoiler::IsEmpty() const
 {
-  return _empty;
+  return empty_;
 }
-bool ChocolateBoiler::isBoiled() const
+bool ChocolateBoiler::IsBoiled() const
 {
-  return _boiled;
+  return boiled_;
 }
