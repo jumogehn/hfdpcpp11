@@ -30,19 +30,19 @@ int main( int argc, char* argv[] ) {
   std::unique_ptr<Coffee> coffee( new Coffee() );
 
   std::cout << std::endl << "Making tea..." << std::endl;
-  tea->prepareRecipe();
+  tea->PrepareRecipe();
 
   std::cout << std::endl << "Making coffee..." << std::endl;
-  coffee->prepareRecipe();
+  coffee->PrepareRecipe();
 
-  std::unique_ptr<TeaWithHook> teaHook( new TeaWithHook() );
-  std::unique_ptr<CoffeeWithHook> coffeeHook( new CoffeeWithHook() );
+  std::unique_ptr<TeaWithHook> tea_hook( new TeaWithHook() );
+  std::unique_ptr<CoffeeWithHook> coffee_hook( new CoffeeWithHook() );
 
   std::cout << std::endl << "Making tea..."<< std::endl;
-  teaHook->prepareRecipe();
+  tea_hook->PrepareRecipe();
 
   std::cout << std::endl << "Making coffee..."<< std::endl;
-  coffeeHook->prepareRecipe();
+  coffee_hook->PrepareRecipe();
 
   return 0;
 }

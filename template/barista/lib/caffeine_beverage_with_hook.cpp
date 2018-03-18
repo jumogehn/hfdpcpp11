@@ -20,20 +20,20 @@
 //Your project's .h files.
 
 
-void CaffeineBeverageWithHook::boilWater() const
+void CaffeineBeverageWithHook::BoilWater() const
 {
-  std::cout << "CaffeineBeverageWithHook::boilWater" << std::endl;
+  std::cout << "CaffeineBeverageWithHook::BoilWater" << std::endl;
   std::cout << "Boiling water" << std::endl;
 }
-void CaffeineBeverageWithHook::pourInCup() const
+void CaffeineBeverageWithHook::PourInCup() const
 {
-  std::cout << "CaffeineBeverageWithHook::pourInCup" << std::endl;
+  std::cout << "CaffeineBeverageWithHook::PourInCup" << std::endl;
   std::cout << "Pouring into cup" << std::endl;
 }
-bool CaffeineBeverageWithHook::customerWantsCondiments()
+bool CaffeineBeverageWithHook::CustomerWantsCondiments()
 {
   std::cout << "CaffeineBeverageWithHook::"
-                     "customerWantsCondiments" << std::endl;
+                     "CustomerWantsCondiments" << std::endl;
   return true;
 }
 CaffeineBeverageWithHook::~CaffeineBeverageWithHook()
@@ -41,13 +41,13 @@ CaffeineBeverageWithHook::~CaffeineBeverageWithHook()
   std::cout << "CaffeineBeverageWithHook::"
                      "~CaffeineBeverageWithHook" << std::endl;
 }
-void CaffeineBeverageWithHook::prepareRecipe()
+void CaffeineBeverageWithHook::PrepareRecipe()
 {
-  std::cout << "CaffeineBeverageWithHook::prepareRecipe" << std::endl;
-  boilWater();
-  brew();
-  pourInCup();
-  if( customerWantsCondiments() ) {
-    addCondiments();
+  std::cout << "CaffeineBeverageWithHook::PrepareRecipe" << std::endl;
+  BoilWater();
+  Brew();
+  PourInCup();
+  if( CustomerWantsCondiments() ) {
+    AddCondiments();
   }
 }

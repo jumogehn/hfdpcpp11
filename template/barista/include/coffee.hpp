@@ -26,8 +26,8 @@
 class Coffee : public CaffeineBeverage {
 
 public:
-  void brew() const;
-  void addCondiments() const;
+  void Brew() const;
+  void AddCondiments() const;
 };
 
 

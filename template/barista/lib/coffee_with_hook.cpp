@@ -21,9 +21,9 @@
 //Your project's .h files.
 
 
-std::string CoffeeWithHook::getUserInput() const
+std::string CoffeeWithHook::GetUserInput() const
 {
-  std::cout << "CoffeeWithHook::getUserInput" << std::endl;
+  std::cout << "CoffeeWithHook::GetUserInput" << std::endl;
   std::string value;
   std::cout << "Would you like milk and sugar with your coffee (y/n)? "
     << std::endl;
@@ -31,22 +31,22 @@ std::string CoffeeWithHook::getUserInput() const
   return value;
 }
 
-void CoffeeWithHook::brew() const
+void CoffeeWithHook::Brew() const
 {
   std::cout << "CoffeeWithHook::brew" << std::endl;
   std::cout << "Dripping Coffee through filter" << std::endl;
 }
-void CoffeeWithHook::addCondiments() const
+void CoffeeWithHook::AddCondiments() const
 {
-  std::cout << "CoffeeWithHook::addCondiments" << std::endl;
+  std::cout << "CoffeeWithHook::AddCondiments" << std::endl;
   std::cout << "Adding Sugar and Milk" << std::endl;
 }
 
-bool CoffeeWithHook::customerWantsCondiments()
+bool CoffeeWithHook::CustomerWantsCondiments()
 {
-  std::cout << "CoffeeWithHook::customerWantsCondiments" << std::endl;
+  std::cout << "CoffeeWithHook::CustomerWantsCondiments" << std::endl;
   bool value = false;
-  std::string answer = getUserInput();
+  std::string answer = GetUserInput();
   if( answer.find('y') != -1 ) {
     value = true;
   }

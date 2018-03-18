@@ -20,13 +20,13 @@
 //Your project's .h files.
 
 
-void Coffee::brew() const
+void Coffee::Brew() const
 {
   std::cout << "Coffee::brew" << std::endl;
   std::cout << "Dripping Coffee through filter" << std::endl;
 }
-void Coffee::addCondiments() const
+void Coffee::AddCondiments() const
 {
-  std::cout << "Coffee::addCondiments" << std::endl;
+  std::cout << "Coffee::AddCondiments" << std::endl;
   std::cout << "Adding Sugar and Milk" << std::endl;
 }

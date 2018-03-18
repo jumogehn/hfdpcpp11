@@ -17,15 +17,15 @@
 
 
 class CaffeineBeverage {
-  void boilWater() const;
-  void pourInCup() const;
+  void BoilWater() const;
+  void PourInCup() const;
 protected:
-  virtual void brew() const = 0;
-  virtual void addCondiments() const = 0;
+  virtual void Brew() const = 0;
+  virtual void AddCondiments() const = 0;
 
 public:
   virtual ~CaffeineBeverage();
-  virtual void prepareRecipe();
+  virtual void PrepareRecipe();
 };
 
 

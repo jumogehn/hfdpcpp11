@@ -20,26 +20,26 @@
 //Your project's .h files.
 
 
-void CaffeineBeverage::boilWater() const
+void CaffeineBeverage::BoilWater() const
 {
-  std::cout << "CaffeineBeverage::boilWater" << std::endl;
+  std::cout << "CaffeineBeverage::BoilWater" << std::endl;
   std::cout << "Boiling water" << std::endl;
 }
-void CaffeineBeverage::pourInCup() const
+void CaffeineBeverage::PourInCup() const
 {
-  std::cout << "CaffeineBeverage::pourInCup" << std::endl;
+  std::cout << "CaffeineBeverage::PourInCup" << std::endl;
   std::cout << "Pouring into cup" << std::endl;
 }
 CaffeineBeverage::~CaffeineBeverage()
 {
   std::cout << "CaffeineBeverage::~CaffeineBeverage" << std::endl;
 }
-void CaffeineBeverage::prepareRecipe() {
-  std::cout << "CaffeineBeverage::prepareRecipe" << std::endl;
-  boilWater();
-  brew();
-  pourInCup();
-  addCondiments();
+void CaffeineBeverage::PrepareRecipe() {
+  std::cout << "CaffeineBeverage::PrepareRecipe" << std::endl;
+  BoilWater();
+  Brew();
+  PourInCup();
+  AddCondiments();
 }
 
 

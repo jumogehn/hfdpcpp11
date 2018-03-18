@@ -18,14 +18,14 @@
 
 class CaffeineBeverageWithHook {
 protected:
-  virtual void boilWater() const;
-  virtual void pourInCup() const;
-  virtual bool customerWantsCondiments();
+  virtual void BoilWater() const;
+  virtual void PourInCup() const;
+  virtual bool CustomerWantsCondiments();
 public:
   virtual ~CaffeineBeverageWithHook();
-  virtual void prepareRecipe();
-  virtual void brew() const = 0;
-  virtual void addCondiments() const = 0;
+  virtual void PrepareRecipe();
+  virtual void Brew() const = 0;
+  virtual void AddCondiments() const = 0;
 };
 
 

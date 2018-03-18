@@ -25,11 +25,11 @@
 
 
 class TeaWithHook : public CaffeineBeverageWithHook {
-  std::string getUserInput() const;
+  std::string GetUserInput() const;
 public:
-  void brew() const;
-  void addCondiments() const;
-  bool customerWantsCondiments();
+  void Brew() const;
+  void AddCondiments() const;
+  bool CustomerWantsCondiments();
 };
 
 
