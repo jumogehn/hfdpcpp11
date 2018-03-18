@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-void FlyWithWings::fly() const
+void FlyWithWings::Fly() const
 {
   std::cout << "FlyWithWings::fly" << std::endl;
   std::cout << "I'm flying!!" << std::endl;

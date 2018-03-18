@@ -20,16 +20,16 @@
 //Your project's .h files.
 #include "duck.hpp"
 #include "fly_with_wings.hpp"
-#include "quack.hpp"
+#include "just_quack.hpp"
 
 
-MallardDuck::MallardDuck() : Duck(new FlyWithWings(), new Quack())
+MallardDuck::MallardDuck() : Duck(new FlyWithWings(), new JustQuack())
 {
   std::cout << "MallardDuck::MallardDuck" << std::endl;
 }
-void MallardDuck::display() const
+void MallardDuck::Display() const
 {
-  std::cout << "MallardDuck::display" << std::endl;
+  std::cout << "MallardDuck::Display" << std::endl;
   std::cout << "I'm a real Mallard duck" << std::endl;
 }
 

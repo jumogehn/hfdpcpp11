@@ -26,23 +26,23 @@
 
 class Duck {
 
-   FlyBehavior* _flyBehavior;
-   QuackBehavior* _quackBehavior;
+   FlyBehavior* fly_behavior_;
+   QuackBehavior* quack_behavior_;
 
   Duck(const Duck&); // Disable copy constructor
   void operator=(const Duck&); // Disable assignment operator
 
 protected:
-  Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior);
+  Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior);
 
 public:
   virtual ~Duck();
-  void setFlyBehavior(FlyBehavior* fb);
-  void setQuackBehavior(QuackBehavior* qb);
-  void performFly() const;
-  void performQuack() const;
-  void swim() const;
-  virtual void display() const = 0;
+  void SetFlyBehavior(FlyBehavior* fb);
+  void SetQuackBehavior(QuackBehavior* qb);
+  void PerformFly() const;
+  void PerformQuack() const;
+  void Swim() const;
+  virtual void Display() const = 0;
 };
 
 

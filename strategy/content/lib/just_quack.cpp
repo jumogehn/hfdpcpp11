@@ -12,7 +12,7 @@
 
 //https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
 //dir2 / foo2.h.
-#include "quack.hpp"
+#include "just_quack.hpp"
 //C system files.
 //C++ system files.
 #include <iostream>
@@ -20,9 +20,9 @@
 //Your project's .h files.
 
 
-void Quack::quack() const
+void JustQuack::Quack() const
 {
-  std::cout << "Quack::quack" << std::endl;
+  std::cout << "JustQuack::Quack" << std::endl;
   std::cout << "Quack" << std::endl;
 }
 

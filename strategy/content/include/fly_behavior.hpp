@@ -26,7 +26,7 @@ class FlyBehavior {
 
 public:
   virtual ~FlyBehavior();
-  virtual void fly() const = 0;
+  virtual void Fly() const = 0;
 };
 
 

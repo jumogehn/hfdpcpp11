@@ -25,7 +25,7 @@
 class MuteQuack : public QuackBehavior {
 
 public:
-  void quack() const;
+  void Quack() const;
 };
 
 

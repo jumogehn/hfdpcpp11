@@ -23,10 +23,10 @@
 #include "quack_behavior.hpp"
 
 
-Duck::Duck(FlyBehavior* flyBehavior, QuackBehavior* quackBehavior) :
-  _flyBehavior(flyBehavior), _quackBehavior(quackBehavior)
+Duck::Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior) :
+  fly_behavior_(fly_behavior), quack_behavior_(quack_behavior)
 {
-  assert(flyBehavior); assert(quackBehavior);
+  assert(fly_behavior); assert(quack_behavior);
   std::cout << "Duck::Duck" << std::endl;
 }
 
@@ -34,31 +34,31 @@ Duck::~Duck()
 {
   std::cout << "Duck::~Duck" << std::endl;
 }
-void Duck::setFlyBehavior(FlyBehavior* fb)
+void Duck::SetFlyBehavior(FlyBehavior* fb)
 {
   assert(fb);
-  std::cout << "Duck::setFlyBehavior" << std::endl;
-  _flyBehavior = fb;
+  std::cout << "Duck::SetFlyBehavior" << std::endl;
+  fly_behavior_ = fb;
 }
-void Duck::setQuackBehavior(QuackBehavior* qb)
+void Duck::SetQuackBehavior(QuackBehavior* qb)
 {
   assert(qb);
-  std::cout << "Duck::setQuackBehavior" << std::endl;
-  _quackBehavior = qb;
+  std::cout << "Duck::SetQuackBehavior" << std::endl;
+  quack_behavior_ = qb;
 }
-void Duck::performFly() const
+void Duck::PerformFly() const
 {
-  std::cout << "Duck::performFly" << std::endl;
-  _flyBehavior->fly();
+  std::cout << "Duck::PerformFly" << std::endl;
+  fly_behavior_->Fly();
 }
-void Duck::performQuack() const
+void Duck::PerformQuack() const
 {
-  std::cout << "Duck::performQuack" << std::endl;
-  _quackBehavior->quack();
+  std::cout << "Duck::PerformQuack" << std::endl;
+  quack_behavior_->Quack();
 }
-void Duck::swim() const
+void Duck::Swim() const
 {
-  std::cout << "Duck::swim" << std::endl;
+  std::cout << "Duck::Swim" << std::endl;
   std::cout << "All ducks float, even decoys!" << std::endl;
 }
 

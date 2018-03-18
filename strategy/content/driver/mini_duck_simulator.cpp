@@ -27,23 +27,23 @@
 int main(int argc, char* argv[]) {
 
   std::unique_ptr<MallardDuck> mallard ( new MallardDuck() );
-  std::unique_ptr<RubberDuck> rubberDuckie ( new RubberDuck() );
+  std::unique_ptr<RubberDuck> rubber_duckie ( new RubberDuck() );
   std::unique_ptr<DecoyDuck> decoy ( new DecoyDuck() );
   std::unique_ptr<ModelDuck> model ( new ModelDuck() );
 
-  mallard->performQuack();
-  mallard->performFly();
+  mallard->PerformQuack();
+  mallard->PerformFly();
 
-  rubberDuckie->performQuack();
-  rubberDuckie->performFly();
+  rubber_duckie->PerformQuack();
+  rubber_duckie->PerformFly();
 
-  decoy->performQuack();
-  decoy->performFly();
+  decoy->PerformQuack();
+  decoy->PerformFly();
 
-  model->performQuack();
-  model->performFly();
-  model->setFlyBehavior(new FlyRocketPowered());
-  model->performFly();
+  model->PerformQuack();
+  model->PerformFly();
+  model->SetFlyBehavior(new FlyRocketPowered());
+  model->PerformFly();
 
   return 0;
 }

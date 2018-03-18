@@ -4,11 +4,12 @@
 # CmakeLists.txt in lib dir
 INCLUDE_DIRECTORIES(${strategy_SOURCE_DIR}/include)
 
-# Adds a library called content (libcontent.a under Linux) from the source files under lib/
-ADD_LIBRARY( content 
+# Adds a library called content (libcontent.a under Linux) from the source
+# files under lib/
+ADD_LIBRARY( content
   fake_quack    fly_rocket_powered  model_duck  quack_behavior  squeak
   decoy_duck   fly_behavior  fly_with_wings      mute_quack  red_head_duck
-  duck        fly_no_way     mallard_duck       quack      rubber_duck )
+  duck        fly_no_way     mallard_duck       just_quack      rubber_duck )
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET content

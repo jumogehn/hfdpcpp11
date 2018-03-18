@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-void FlyRocketPowered::fly() const
+void FlyRocketPowered::Fly() const
 {
   std::cout << "FlyRocketPowered::fly" << std::endl;
   std::cout << "I'm flying with a rocket" << std::endl;

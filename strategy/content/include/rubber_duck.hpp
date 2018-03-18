@@ -27,7 +27,7 @@ class RubberDuck : public Duck {
 
 public:
   RubberDuck();
-  void display() const;
+  void Display() const;
 };
 
 

@@ -23,10 +23,10 @@
 #include "quack_behavior.hpp"
 
 
-class Quack : public QuackBehavior {
+class JustQuack : public QuackBehavior {
 
 public:
-  void quack() const;
+  void Quack() const;
 };
 
 

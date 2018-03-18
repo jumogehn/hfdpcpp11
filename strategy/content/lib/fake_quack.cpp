@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-void FakeQuack::quack() const
+void FakeQuack::Quack() const
 {
   std::cout << "FakeQuack::quack" << std::endl;
   std::cout << "Qwak" << std::endl;

@@ -27,7 +27,7 @@ class MallardDuck : public Duck {
 
 public:
   MallardDuck();
-  void display() const;
+  void Display() const;
 };
 
 

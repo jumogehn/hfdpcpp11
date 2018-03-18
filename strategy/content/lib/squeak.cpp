@@ -19,7 +19,7 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-void Squeak::quack() const
+void Squeak::Quack() const
 {
   std::cout << "Squeak::quack" << std::endl;
   std::cout << "Squeak" << std::endl;

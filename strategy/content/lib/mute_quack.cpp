@@ -20,7 +20,7 @@
 //Your project's .h files.
 
 
-void MuteQuack::quack() const
+void MuteQuack::Quack() const
 {
   std::cout << "MuteQuack::quack" << std::endl;
   std::cout << "<< Silence >>" << std::endl;

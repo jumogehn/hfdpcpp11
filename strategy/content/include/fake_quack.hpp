@@ -25,7 +25,7 @@
 class FakeQuack : public QuackBehavior {
 
 public:
-  void quack() const;
+  void Quack() const;
 };
 
 

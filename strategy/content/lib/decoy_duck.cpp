@@ -28,7 +28,7 @@
 {
   std::cout << "DecoyDuck::DecoyDuck" << std::endl;
 }
-void DecoyDuck::display() const
+void DecoyDuck::Display() const
 {
   std::cout << "DecoyDuck::display" << std::endl;
   std::cout << "I'm a duck Decoy" << std::endl;

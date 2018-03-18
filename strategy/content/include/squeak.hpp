@@ -25,7 +25,7 @@
 class Squeak : public QuackBehavior {
 
 public:
-  void quack() const;
+  void Quack() const;
 };
 
 

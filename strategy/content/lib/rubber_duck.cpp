@@ -27,9 +27,9 @@ RubberDuck::RubberDuck() : Duck(new FlyNoWay(), new Squeak())
 {
   std::cout << "RubberDuck::RubberDuck" << std::endl;
 }
-void RubberDuck::display() const
+void RubberDuck::Display() const
 {
-  std::cout << "RubberDuck::display" << std::endl;
+  std::cout << "RubberDuck::Display" << std::endl;
   std::cout << "I'm a rubber duck" << std::endl;
 }
 

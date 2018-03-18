@@ -27,7 +27,7 @@ class QuackBehavior {
 
 public:
   virtual ~QuackBehavior();
-  virtual void quack() const = 0;
+  virtual void Quack() const = 0;
 };
 
 

@@ -26,7 +26,7 @@ class RedHead : public Duck {
 
 public:
   RedHead();
-  void display() const;
+  void Display() const;
 };
 
 
