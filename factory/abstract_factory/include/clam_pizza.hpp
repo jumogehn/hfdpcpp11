@@ -30,7 +30,8 @@ class ClamPizza : public Pizza {
   mutable std::shared_ptr< PizzaIngredientFactory > ingredient_factory_;
 
 public:
-  explicit ClamPizza(std::shared_ptr<PizzaIngredientFactory> ingredient_factory);
+  explicit ClamPizza(
+    std::shared_ptr<PizzaIngredientFactory> ingredient_factory);
   void Prepare() const;
 };
 

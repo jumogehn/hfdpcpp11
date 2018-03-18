@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library decorator.
 INCLUDE_DIRECTORIES(${decorator_SOURCE_DIR}/include)
 
-# Add binary called "testdecorator" that is built from the source file "starbuzz.cpp". 
+# Add binary called "testdecorator" that is built from the source file
+# "starbuzz.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testdecorator starbuzz)
 
@@ -16,7 +17,4 @@ endforeach()
 
 # Link the executable to the library decorator.
 TARGET_LINK_LIBRARIES(testdecorator decorator)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testdecorator duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

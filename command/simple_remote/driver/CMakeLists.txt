@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library simpleremote.
 INCLUDE_DIRECTORIES(${simpleremote_SOURCE_DIR}/include)
 
-# Add binary called "testsimpleremote" that is built from the source file "simple_remote.cpp". 
+# Add binary called "testsimpleremote" that is built from the source file
+# "simple_remote.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testsimpleremote simple_remote)
 
@@ -16,7 +17,4 @@ endforeach()
 
 # Link the executable to the library simpleremote.
 TARGET_LINK_LIBRARIES(testsimpleremote simpleremote)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testsimpleremote duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

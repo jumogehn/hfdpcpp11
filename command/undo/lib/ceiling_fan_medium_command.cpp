@@ -22,7 +22,8 @@
 //Your project's .h files.
 
 
-CeilingFanMediumCommand::CeilingFanMediumCommand( const CeilingFan* ceiling_fan ) :
+CeilingFanMediumCommand::CeilingFanMediumCommand(
+  const CeilingFan* ceiling_fan ) :
   ceiling_fan_( ceiling_fan )
 {
   assert( ceiling_fan );

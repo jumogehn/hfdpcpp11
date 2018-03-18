@@ -1,10 +1,12 @@
 
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
-# Make sure the compiler can find include files from our library menuscustomiterator.
+# Make sure the compiler can find include files from our library
+# menuscustomiterator.
 INCLUDE_DIRECTORIES(${menuscustomiterator_SOURCE_DIR}/include)
 
-# Add binary called "testmenuscustomiterator" that is built from the source file "menus.cpp". 
+# Add binary called "testmenuscustomiterator" that is built from the source
+# file "menus.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testmenuscustomiterator menus)
 
@@ -16,7 +18,4 @@ endforeach()
 
 # Link the executable to the library menuscustomiterator.
 TARGET_LINK_LIBRARIES(testmenuscustomiterator menuscustomiterator)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testmenuscustomiterator duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

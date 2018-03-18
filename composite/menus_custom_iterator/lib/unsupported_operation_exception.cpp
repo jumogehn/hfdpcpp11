@@ -29,7 +29,8 @@ UnsupportedOperationException::UnsupportedOperationException() throw():
   std::cout << "UnsupportedOperationException::"
                      "UnsupportedOperationException" << std::endl;
 }
-UnsupportedOperationException::UnsupportedOperationException( const std::string message ) :
+UnsupportedOperationException::UnsupportedOperationException(
+  const std::string message ) :
   std::exception( /*message.c_str()*/ ), message_( message )
 {
   std::cout << "UnsupportedOperationException::"

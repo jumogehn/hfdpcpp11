@@ -4,8 +4,10 @@
 # CmakeLists.txt in hometheater dir
 INCLUDE_DIRECTORIES(${hometheater_SOURCE_DIR}/include)
 
-# Adds a library called hometheater (libhometheater.a under Linux) from the source files under lib/
-ADD_LIBRARY( hometheater amplifier cd_player dvd_player home_theater_facade popcorn_popper projector screen theater_lights tuner)
+# Adds a library called hometheater (libhometheater.a under Linux) from the
+# source files under lib/
+ADD_LIBRARY( hometheater amplifier cd_player dvd_player home_theater_facade
+  popcorn_popper projector screen theater_lights tuner)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET hometheater

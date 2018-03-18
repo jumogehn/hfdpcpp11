@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library barista.
 INCLUDE_DIRECTORIES(${barista_SOURCE_DIR}/include)
 
-# Add binary called "testbarista" that is built from the source file "barista.cpp". 
+# Add binary called "testbarista" that is built from the source file
+# "barista.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testbarista barista)
 
@@ -16,7 +17,4 @@ endforeach()
 
 # Link the executable to the library barista.
 TARGET_LINK_LIBRARIES(testbarista barista)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testbarista duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

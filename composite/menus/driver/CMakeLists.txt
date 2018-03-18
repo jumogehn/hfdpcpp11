@@ -4,7 +4,7 @@
 # Make sure the compiler can find include files from our library menus.
 INCLUDE_DIRECTORIES(${menus_SOURCE_DIR}/include)
 
-# Add binary called "testmenus" that is built from the source file "menus.cpp". 
+# Add binary called "testmenus" that is built from the source file "menus.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testmenus menus)
 
@@ -16,7 +16,4 @@ endforeach()
 
 # Link the executable to the library menus.
 TARGET_LINK_LIBRARIES(testmenus menus)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testmenus duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

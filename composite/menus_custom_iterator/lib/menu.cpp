@@ -78,6 +78,7 @@ void Menu::Print() const
  Iterator<MenuComponent> * Menu::CreateIterator() const
 {
   std::cout << "PancakeHouseMenu::CreateIterator" << std::endl;
-  return dynamic_cast< Iterator<MenuComponent> * > (new MenuIterator(menu_components_) );
+  return dynamic_cast< Iterator<MenuComponent> * >
+    (new MenuIterator(menu_components_) );
 }
 

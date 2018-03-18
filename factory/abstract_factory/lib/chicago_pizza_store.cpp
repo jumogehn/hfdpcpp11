@@ -29,7 +29,8 @@
 #include "veggie_pizza.hpp"
 
 
-std::shared_ptr< Pizza > ChicagoPizzaStore::CreatePizza( std::string item ) const
+std::shared_ptr< Pizza >
+ChicagoPizzaStore::CreatePizza( std::string item ) const
 {
   std::cout << "ChicagoPizzaStore::CreatePizza" << std::endl;
 

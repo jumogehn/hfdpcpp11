@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library content.
 INCLUDE_DIRECTORIES(${strategy_SOURCE_DIR}/include)
 
-# Add binary called "teststrategy" that is built from the source file "mini_duck_simulator.cpp". 
+# Add binary called "teststrategy" that is built from the source file
+# "mini_duck_simulator.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(teststrategy mini_duck_simulator)
 

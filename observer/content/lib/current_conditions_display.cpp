@@ -51,7 +51,8 @@ int CurrentConditionsDisplay::ResetSubject()
   weather_data_->RemoveObserver(this);
   return 0;
 }
-void CurrentConditionsDisplay::Update(float temperature, float humidity, float pressure)
+void CurrentConditionsDisplay::Update(float temperature, float humidity,
+                                      float pressure)
 {
   std::cout << "CurrentConditionsDisplay::Update" << std::endl;
   temperature_ = temperature;

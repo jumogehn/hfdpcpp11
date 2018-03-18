@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library chocolatemrs.
 INCLUDE_DIRECTORIES(${chocolatemrs_SOURCE_DIR}/include)
 
-# Add binary called "testchocolatemrs" that is built from the source file "chocolate.cpp". 
+# Add binary called "testchocolatemrs" that is built from the source file
+# "chocolate.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testchocolatemrs chocolate)
 
@@ -16,7 +17,4 @@ endforeach()
 
 # Link the executable to the library chocolatemrs.
 TARGET_LINK_LIBRARIES(testchocolatemrs chocolatemrs)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testchocolatemrs duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

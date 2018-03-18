@@ -4,7 +4,8 @@
 # CmakeLists.txt in lib dir
 INCLUDE_DIRECTORIES(${chocolate_SOURCE_DIR}/include)
 
-# Adds a library called chocolate (libchocolate.a under Linux) from the source files under lib/
+# Adds a library called chocolate (libchocolate.a under Linux) from the source
+# files under lib/
 ADD_LIBRARY( chocolate chocolate_boiler )
 
 foreach(flag ${CXX11_FEATURE_LIST})

@@ -52,7 +52,8 @@ std::shared_ptr<Cheese> NYPizzaIngredientFactory::CreateCheese() const
   std::cout << "NYPizzaIngredientFactory::CreateCheese" << std::endl;
   return std::make_shared<ReggianoCheese>();
 }
-std::vector< std::shared_ptr<Veggies> > NYPizzaIngredientFactory::CreateVeggies() const
+std::vector< std::shared_ptr<Veggies> >
+NYPizzaIngredientFactory::CreateVeggies() const
 {
   std::cout << "NYPizzaIngredientFactory::CreateVeggies" << std::endl;
   std::vector< std::shared_ptr<Veggies> > veggies;

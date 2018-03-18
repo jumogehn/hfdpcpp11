@@ -144,7 +144,7 @@ int main( int argc, char* argv[] ) {
       "Three almond or hazelnut biscotti cookies",
       true,
       0.89) );
- 
+
   std::unique_ptr<Waitress> waitress(new Waitress(all_menus.get() ));
   waitress->PrintMenu();
 

@@ -22,7 +22,8 @@
 //Your project's .h files.
 
 
-PepperoniPizza::PepperoniPizza(std::shared_ptr<PizzaIngredientFactory> ingredient_factory) :
+PepperoniPizza::PepperoniPizza(
+  std::shared_ptr<PizzaIngredientFactory> ingredient_factory) :
   ingredient_factory_(ingredient_factory)
 {
   assert(ingredient_factory);

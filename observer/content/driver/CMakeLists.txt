@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library content.
 INCLUDE_DIRECTORIES(${observer_SOURCE_DIR}/include)
 
-# Add binary called "testobserver" that is built from the source file "weather_station.cpp". 
+# Add binary called "testobserver" that is built from the source file
+# "weather_station.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testobserver weather_station)
 

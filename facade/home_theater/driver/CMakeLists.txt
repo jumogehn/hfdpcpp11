@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library hometheater.
 INCLUDE_DIRECTORIES(${hometheater_SOURCE_DIR}/include)
 
-# Add binary called "testhometheater" that is built from the source file "home_theater.cpp". 
+# Add binary called "testhometheater" that is built from the source file
+# "home_theater.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testhometheater home_theater)
 

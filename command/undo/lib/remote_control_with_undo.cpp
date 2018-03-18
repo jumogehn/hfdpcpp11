@@ -41,7 +41,8 @@ RemoteControlWithUndo::~RemoteControlWithUndo()
   std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
   delete no_command_;
 }
-void RemoteControlWithUndo::SetCommand( int slot, Command* on_command, Command* off_command )
+void RemoteControlWithUndo::SetCommand( int slot, Command* on_command,
+                                        Command* off_command )
 {
   assert( slot <= kSlots ); assert( on_command ); assert( off_command );
   std::cout << "RemoteControlWithUndo::SetCommand" << std::endl;

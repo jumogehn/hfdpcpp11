@@ -53,7 +53,8 @@ void WeatherData::MeasurementsChanged()
   std::cout << "WeatherData::MeasurementsChanged" << std::endl;
   NotifyObservers();
 }
-void WeatherData::SetMeasurements(float temperature, float humidity, float pressure)
+void WeatherData::SetMeasurements(float temperature, float humidity,
+                                  float pressure)
 {
   std::cout << "WeatherData::SetMeasurements" << std::endl;
   temperature_ = temperature;

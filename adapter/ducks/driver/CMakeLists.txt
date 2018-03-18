@@ -4,7 +4,7 @@
 # Make sure the compiler can find include files from our library ducks.
 INCLUDE_DIRECTORIES(${ducks_SOURCE_DIR}/include)
 
-# Add binary called "testducks" that is built from the source file "main.cpp". 
+# Add binary called "testducks" that is built from the source file "main.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testducks main)
 
@@ -16,7 +16,4 @@ endforeach()
 
 # Link the executable to the library ducks.
 TARGET_LINK_LIBRARIES(testducks ducks)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testducks duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

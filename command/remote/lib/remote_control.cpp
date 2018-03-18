@@ -42,7 +42,8 @@ RemoteControl::~RemoteControl()
   delete no_command_;
 }
 
-void RemoteControl::SetCommand( int slot, Command* on_command, Command* off_command )
+void RemoteControl::SetCommand( int slot, Command* on_command,
+                                Command* off_command )
 {
   std::cout << "RemoteControl::SetCommand" << std::endl;
   assert( slot <= kSlots ); assert( on_command ); assert ( off_command );

@@ -4,7 +4,8 @@
 # Make sure the compiler can find include files from our library remote.
 INCLUDE_DIRECTORIES(${remote_SOURCE_DIR}/include)
 
-# Add binary called "testremote" that is built from the source file "Remote.cpp". 
+# Add binary called "testremote" that is built from the source file
+# "Remote.cpp".
 # The extension is automatically found.
 ADD_EXECUTABLE(testremote remote)
 
@@ -16,7 +17,4 @@ endforeach()
 
 # Link the executable to the library remote.
 TARGET_LINK_LIBRARIES(testremote remote)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testremote duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

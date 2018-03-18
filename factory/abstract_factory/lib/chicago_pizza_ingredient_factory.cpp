@@ -45,7 +45,8 @@ std::shared_ptr<Cheese> ChicagoPizzaIngredientFactory::CreateCheese() const
   std::cout << "ChicagoPizzaIngredientFactory::CreateCheese" << std::endl;
   return std::make_shared<MozzarellaCheese>();
 }
-std::vector< std::shared_ptr<Veggies> > ChicagoPizzaIngredientFactory::CreateVeggies() const
+std::vector< std::shared_ptr<Veggies> >
+ChicagoPizzaIngredientFactory::CreateVeggies() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateVeggies" << std::endl;
   std::vector< std::shared_ptr<Veggies> > value;
@@ -54,7 +55,8 @@ std::vector< std::shared_ptr<Veggies> > ChicagoPizzaIngredientFactory::CreateVeg
   value.push_back( std::make_shared<Eggplant>() );
   return value;
 }
-std::shared_ptr<Pepperoni> ChicagoPizzaIngredientFactory::CreatePepperoni() const
+std::shared_ptr<Pepperoni>
+ChicagoPizzaIngredientFactory::CreatePepperoni() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreatePepperoni" << std::endl;
   return std::make_shared<SlicedPepperoni>();

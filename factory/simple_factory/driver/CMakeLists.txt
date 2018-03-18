@@ -4,7 +4,7 @@
 # Make sure the compiler can find include files from our library pizzas.
 INCLUDE_DIRECTORIES(${pizzas_SOURCE_DIR}/include)
 
-# Add binary called "testpizzas" that is built from the source file "pizzas.cpp". 
+# Add binary called "testpizzas" that is built from the source file "pizzas.cpp"
 # The extension is automatically found.
 ADD_EXECUTABLE(testpizzas pizzas)
 
@@ -16,7 +16,4 @@ endforeach()
 
 # Link the executable to the library pizzas.
 TARGET_LINK_LIBRARIES(testpizzas pizzas)
-
-# Link the executable to the libraries duck duckadapter mallardduck turkey turkeyadapter wildturkey.
-#TARGET_LINK_LIBRARIES(testpizzas duck duckadapter mallardduck turkey turkeyadapter wildturkey)
 

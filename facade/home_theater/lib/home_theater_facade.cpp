@@ -34,7 +34,8 @@
 HomeTheaterFacade::HomeTheaterFacade( Amplifier* amp, Tuner* tuner,
                                       DvdPlayer* dvd, CdPlayer* cd,
                                       Projector* projector, Screen* screen,
-                                      TheaterLights* lights, PopcornPopper* popper ) :
+                                      TheaterLights* lights,
+                                      PopcornPopper* popper ) :
   amp_( amp ), tuner_( tuner ), dvd_( dvd ), cd_( cd ),
   projector_( projector ), lights_( lights ), screen_( screen ),
   popper_( popper )

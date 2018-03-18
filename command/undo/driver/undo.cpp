@@ -40,7 +40,8 @@ int main( int argc, char* argv[] ) {
   std::unique_ptr<LightOffCommand>
     living_room_light_off(new LightOffCommand( living_room_light.get() ));
 
-  remote_control->SetCommand( 0, living_room_light_on.get(),living_room_light_off.get() );
+  remote_control->SetCommand( 0, living_room_light_on.get(),
+                              living_room_light_off.get() );
 
   remote_control->OnButtonWasPushed( 0 );
   remote_control->OffButtonWasPushed( 0 );
@@ -60,8 +61,10 @@ int main( int argc, char* argv[] ) {
   std::unique_ptr<CeilingFanOffCommand>
     ceiling_fan_off(new CeilingFanOffCommand( ceiling_fan.get() ));
 
-  remote_control->SetCommand( 0, ceiling_fan_medium.get(), ceiling_fan_off.get() );
-  remote_control->SetCommand( 1, ceiling_fan_high.get(), ceiling_fan_off.get() );
+  remote_control->SetCommand( 0, ceiling_fan_medium.get(),
+                              ceiling_fan_off.get() );
+  remote_control->SetCommand( 1, ceiling_fan_high.get(),
+                              ceiling_fan_off.get() );
 
   remote_control->OnButtonWasPushed( 0 );
   remote_control->OffButtonWasPushed( 0 );

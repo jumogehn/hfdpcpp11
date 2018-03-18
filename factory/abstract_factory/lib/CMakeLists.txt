@@ -4,8 +4,9 @@
 # CmakeLists.txt in lib dir
 INCLUDE_DIRECTORIES(${pizzaaf_SOURCE_DIR}/include)
 
-# Adds a library called pizzaaf (libpizzaaf.a under Linux) from the source files under lib/
-ADD_LIBRARY( pizzaaf 
+# Adds a library called pizzaaf (libpizzaaf.a under Linux) from the source
+# files under lib/
+ADD_LIBRARY( pizzaaf
   black_olives dough ny_pizza_ingredient_factory pizza_store thin_crust_dough
   egg_plant ny_pizza_store plum_tomato_sauce
   cheese fresh_clams onion red_pepper veggie_pizza
