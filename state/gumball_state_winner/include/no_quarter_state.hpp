@@ -27,18 +27,18 @@
 
 class NoQuarterState : public State {
 
-  GumballMachine* _gumballMachine;
+  GumballMachine* gumball_machine_;
 
   NoQuarterState( const NoQuarterState& ); // Disable copy constructor
   void operator=( const NoQuarterState& ); // Disable assignment operator
 
 public:
-  explicit NoQuarterState( GumballMachine* gumballMachine );
-  void insertQuarter() const;
-  void ejectQuarter() const;
-  void turnCrank() const;
-  void dispense();
-  std::string toString() const;
+  explicit NoQuarterState( GumballMachine* gumball_machine );
+  void InsertQuarter() const;
+  void EjectQuarter() const;
+  void TurnCrank() const;
+  void Dispense();
+  std::string ToString() const;
 };
 
 

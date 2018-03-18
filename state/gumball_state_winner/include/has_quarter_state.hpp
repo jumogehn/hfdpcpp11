@@ -27,19 +27,19 @@
 
 class HasQuarterState : public State {
 
-  GumballMachine* _gumballMachine;
-  int _random;
+  GumballMachine* gumball_machine_;
+  int random_;
 
   HasQuarterState( const HasQuarterState& ); // Disable copy constructor
   void operator=( const HasQuarterState& ); // Disable assignment operator
 
 public:
-  explicit HasQuarterState( GumballMachine* gumballMachine );
-  void insertQuarter() const;
-  void ejectQuarter() const;
-  void turnCrank() const;
-  void dispense();
-  std::string toString() const;
+  explicit HasQuarterState( GumballMachine* gumball_machine );
+  void InsertQuarter() const;
+  void EjectQuarter() const;
+  void TurnCrank() const;
+  void Dispense();
+  std::string ToString() const;
 };
 
 

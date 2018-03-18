@@ -26,18 +26,18 @@
 
 
 class SoldOutState : public State {
-  GumballMachine* _gumballMachine;
+  GumballMachine* gumball_machine_;
 
   SoldOutState( const SoldOutState& ); // Disable copy constructor
   void operator=( const SoldOutState& ); // Disable assignment operator
 
 public:
-  explicit SoldOutState(GumballMachine* gumballMachine );
-  void insertQuarter() const;
-  void ejectQuarter() const;
-  void turnCrank() const;
-  void dispense();
-  std::string toString() const;
+  explicit SoldOutState(GumballMachine* gumball_machine );
+  void InsertQuarter() const;
+  void EjectQuarter() const;
+  void TurnCrank() const;
+  void Dispense();
+  std::string ToString() const;
 };
 
 

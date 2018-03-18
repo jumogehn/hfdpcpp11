@@ -29,10 +29,10 @@
 
 
 
-HasQuarterState::HasQuarterState( GumballMachine* gumballMachine ) :
-  _gumballMachine( gumballMachine ), _random( 0 )
+HasQuarterState::HasQuarterState( GumballMachine* gumball_machine ) :
+  gumball_machine_( gumball_machine ), random_( 0 )
 {
-  assert( gumballMachine );
+  assert( gumball_machine );
   std::cout << "HasQuarterState::HasQuarterState" << std::endl;
 #ifdef WIN32
   srand( _getpid() );
@@ -40,35 +40,35 @@ HasQuarterState::HasQuarterState( GumballMachine* gumballMachine ) :
   srand( getpid() );
 #endif
 }
-void HasQuarterState::insertQuarter() const
+void HasQuarterState::InsertQuarter() const
 {
-  std::cout << "HasQuarterState::insertQuarter" << std::endl;
+  std::cout << "HasQuarterState::InsertQuarter" << std::endl;
   std::cout << "You can't insert another quarter" << std::endl;
 }
-void HasQuarterState::ejectQuarter() const
+void HasQuarterState::EjectQuarter() const
 {
-  std::cout << "HasQuarterState::ejectQuarter" << std::endl;
+  std::cout << "HasQuarterState::EjectQuarter" << std::endl;
   std::cout << "Quarter returned" << std::endl;
-  _gumballMachine->setState( _gumballMachine->getNoQuarterState() );
+  gumball_machine_->SetState( gumball_machine_->GetNoQuarterState() );
 }
-void HasQuarterState::turnCrank() const
+void HasQuarterState::TurnCrank() const
 {
-  std::cout << "HasQuarterState::turnCrank" << std::endl;
+  std::cout << "HasQuarterState::TurnCrank" << std::endl;
   std::cout << "You turned..." << std::endl;
   int winner = rand() % 5;
-  if( ( winner == 0 ) && ( _gumballMachine->getCount() > 0 ) ) {
-    _gumballMachine->setState( _gumballMachine->getWinnerState() );
+  if( ( winner == 0 ) && ( gumball_machine_->GetCount() > 0 ) ) {
+    gumball_machine_->SetState( gumball_machine_->GetWinnerState() );
   } else {
-    _gumballMachine->setState( _gumballMachine->getSoldState() );
+    gumball_machine_->SetState( gumball_machine_->GetSoldState() );
   }
 }
-void HasQuarterState::dispense()
+void HasQuarterState::Dispense()
 {
-  std::cout << "HasQuarterState::dispense" << std::endl;
-  std::cout << "No gumball dispensed" << std::endl;
+  std::cout << "HasQuarterState::Dispense" << std::endl;
+  std::cout << "No gumball Dispensed" << std::endl;
 }
-std::string HasQuarterState::toString() const
+std::string HasQuarterState::ToString() const
 {
-  std::cout << "HasQuarterState::toString" << std::endl;
+  std::cout << "HasQuarterState::ToString" << std::endl;
   return "waiting for turn of crank";
 }

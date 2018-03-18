@@ -24,42 +24,42 @@
 
 
 
-SoldState::SoldState( GumballMachine* gumballMachine ) :
-  _gumballMachine( gumballMachine )
+SoldState::SoldState( GumballMachine* gumball_machine ) :
+  gumball_machine_( gumball_machine )
 {
-  assert( gumballMachine );
+  assert( gumball_machine );
   std::cout << "SoldState::SoldState" << std::endl;
 }
-void SoldState::insertQuarter() const
+void SoldState::InsertQuarter() const
 {
-  std::cout << "SoldState::insertQuarter" << std::endl;
+  std::cout << "SoldState::InsertQuarter" << std::endl;
   std::cout << "Please wait, we're already giving you a gumball"
     << std::endl;
 }
-void SoldState::ejectQuarter() const
+void SoldState::EjectQuarter() const
 {
-  std::cout << "SoldState::ejectQuarter" << std::endl;
+  std::cout << "SoldState::EjectQuarter" << std::endl;
   std::cout << "Sorry, you already turned the crank" << std::endl;
 }
-void SoldState::turnCrank() const
+void SoldState::TurnCrank() const
 {
-  std::cout << "SoldState::turnCrank" << std::endl;
+  std::cout << "SoldState::TurnCrank" << std::endl;
   std::cout << "Turning twice doesn't get you another gumball!"
     << std::endl;
 }
-void SoldState::dispense()
+void SoldState::Dispense()
 {
-  std::cout << "SoldState::dispense" << std::endl;
-  _gumballMachine->releaseBall();
-  if( _gumballMachine->getCount() > 0) {
-    _gumballMachine->setState( _gumballMachine->getNoQuarterState() );
+  std::cout << "SoldState::Dispense" << std::endl;
+  gumball_machine_->ReleaseBall();
+  if( gumball_machine_->GetCount() > 0) {
+    gumball_machine_->SetState( gumball_machine_->GetNoQuarterState() );
   } else {
     std::cout << "Oops, out of gumballs!" << std::endl;
-    _gumballMachine->setState( _gumballMachine->getSoldOutState() );
+    gumball_machine_->SetState( gumball_machine_->GetSoldOutState() );
   }
 }
-std::string SoldState::toString() const
+std::string SoldState::ToString() const
 {
-  std::cout << "SoldState::toString" << std::endl;
+  std::cout << "SoldState::ToString" << std::endl;
   return "dispensing a gumball";
 }

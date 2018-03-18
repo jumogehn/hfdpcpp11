@@ -27,18 +27,18 @@
 
 class WinnerState : public State {
 
-  GumballMachine* _gumballMachine;
+  GumballMachine* gumball_machine_;
 
   WinnerState( const WinnerState& ); // Disable copy constructor
   void operator=( const WinnerState& ); // Disable assignment operator
 
 public:
-  explicit WinnerState( GumballMachine* gumballMachine );
-  void insertQuarter() const;
-  void ejectQuarter() const;
-  void turnCrank() const;
-  void dispense();
-  std::string toString() const;
+  explicit WinnerState( GumballMachine* gumball_machine );
+  void InsertQuarter() const;
+  void EjectQuarter() const;
+  void TurnCrank() const;
+  void Dispense();
+  std::string ToString() const;
 };
 
 

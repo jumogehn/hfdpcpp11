@@ -29,23 +29,23 @@
 #include "winner_state.hpp"
 
 
-GumballMachine::GumballMachine(int numberGumballs)
+GumballMachine::GumballMachine(int number_gumballs)
 {
   std::cout << "GumballMachine::GumballMachine" << std::endl;
 
-  assert( numberGumballs >= 0 );
+  assert( number_gumballs >= 0 );
 
-  _count = numberGumballs;
+  count_ = number_gumballs;
 
-  _soldOutState = new SoldOutState( this );
-  _noQuarterState = new NoQuarterState( this );
-  _hasQuarterState = new HasQuarterState( this );
-  _soldState = new SoldState( this );
-  _winnerState = new WinnerState( this );
-  _state = _soldOutState;
+  sold_out_state_ = new SoldOutState( this );
+  no_quarter_state_ = new NoQuarterState( this );
+  has_quarter_state_ = new HasQuarterState( this );
+  sold_state_ = new SoldState( this );
+  winner_state_ = new WinnerState( this );
+  state_ = sold_out_state_;
 
-  if( _count  > 0 ) {
-    _state = _noQuarterState;
+  if( count_  > 0 ) {
+    state_ = no_quarter_state_;
   }
 }
 
@@ -53,89 +53,89 @@ GumballMachine::~GumballMachine()
 {
   std::cout << "GumballMachine::~GumballMachine" << std::endl;
 }
-void GumballMachine::insertQuarter() const
+void GumballMachine::InsertQuarter() const
 {
-  std::cout << "GumballMachine::insertQuarter" << std::endl;
-  _state->insertQuarter();
+  std::cout << "GumballMachine::InsertQuarter" << std::endl;
+  state_->InsertQuarter();
 }
-void GumballMachine::ejectQuarter() const
+void GumballMachine::EjectQuarter() const
 {
-  std::cout << "GumballMachine::ejectQuarter" << std::endl;
-  _state->ejectQuarter();
+  std::cout << "GumballMachine::EjectQuarter" << std::endl;
+  state_->EjectQuarter();
 }
-void GumballMachine::turnCrank() const
+void GumballMachine::TurnCrank() const
 {
-  std::cout << "GumballMachine::turnCrank" << std::endl;
-  _state->turnCrank();
-  _state->dispense();
+  std::cout << "GumballMachine::TurnCrank" << std::endl;
+  state_->TurnCrank();
+  state_->Dispense();
 }
-void GumballMachine::setState( State* state )
+void GumballMachine::SetState( State* state )
 {
   assert( state );
-  std::cout << "GumballMachine::setState" << std::endl;
-  _state = state;
+  std::cout << "GumballMachine::SetState" << std::endl;
+  state_ = state;
 }
-void GumballMachine::releaseBall()
+void GumballMachine::ReleaseBall()
 {
-  std::cout << "GumballMachine::releaseBall" << std::endl;
+  std::cout << "GumballMachine::ReleaseBall" << std::endl;
   std::cout << "A gumball comes rolling out the slot..." << std::endl;
-  if( _count != 0) {
-    _count--;
+  if( count_ != 0) {
+    count_--;
   }
 }
-int GumballMachine::getCount() const
+int GumballMachine::GetCount() const
 {
-  std::cout << "GumballMachine::getCount" << std::endl;
-  return _count;
+  std::cout << "GumballMachine::GetCount" << std::endl;
+  return count_;
 }
-void GumballMachine::refill( int count )
+void GumballMachine::Refill( int count )
 {
   assert( count > 0 );
-  std::cout << "GumballMachine::refill" << std::endl;
-  _count = count;
-  _state = _noQuarterState;
+  std::cout << "GumballMachine::Refill" << std::endl;
+  count_ = count;
+  state_ = no_quarter_state_;
 }
-State* GumballMachine::getState() const
+State* GumballMachine::GetState() const
 {
-  std::cout << "GumballMachine::getState" << std::endl;
-  return _state;
+  std::cout << "GumballMachine::GetState" << std::endl;
+  return state_;
 }
-State* GumballMachine::getSoldOutState() const
+State* GumballMachine::GetSoldOutState() const
 {
-  std::cout << "GumballMachine::getSoldOutState" << std::endl;
-  return _soldOutState;
+  std::cout << "GumballMachine::GetSoldOutState" << std::endl;
+  return sold_out_state_;
 }
-State* GumballMachine::getNoQuarterState() const
+State* GumballMachine::GetNoQuarterState() const
 {
-  std::cout << "GumballMachine::getNoQuarterState" << std::endl;
-  return _noQuarterState;
+  std::cout << "GumballMachine::GetNoQuarterState" << std::endl;
+  return no_quarter_state_;
 }
-State* GumballMachine::getHasQuarterState() const
+State* GumballMachine::GetHasQuarterState() const
 {
-  std::cout << "GumballMachine::getHasQuarterState" << std::endl;
-  return _hasQuarterState;
+  std::cout << "GumballMachine::GetHasQuarterState" << std::endl;
+  return has_quarter_state_;
 }
-State* GumballMachine::getSoldState() const
+State* GumballMachine::GetSoldState() const
 {
-  std::cout << "GumballMachine::getSoldState" << std::endl;
-  return _soldState;
+  std::cout << "GumballMachine::GetSoldState" << std::endl;
+  return sold_state_;
 }
-State* GumballMachine::getWinnerState() const
+State* GumballMachine::GetWinnerState() const
 {
-  std::cout << "GumballMachine::getWinnerState" << std::endl;
-  return _winnerState;
+  std::cout << "GumballMachine::GetWinnerState" << std::endl;
+  return winner_state_;
 }
-std::string GumballMachine::toString() const
+std::string GumballMachine::ToString() const
 {
-  std::cout << "GumballMachine::toString" << std::endl;
+  std::cout << "GumballMachine::ToString" << std::endl;
   std::stringstream value;
   value << std::endl << "Mighty Gumball, Inc.";
   value << std::endl << "C++-enabled Standing Gumball Model #2004";
-  value << std::endl << "Inventory: " << _count << " gumball";
-  if( _count > 1 ) {
+  value << std::endl << "Inventory: " << count_ << " gumball";
+  if( count_ > 1 ) {
     value << "s";
   }
   value << std::endl;
-  value << "Machine is " << _state->toString() << std::endl;
+  value << "Machine is " << state_->ToString() << std::endl;
   return value.str();
 }

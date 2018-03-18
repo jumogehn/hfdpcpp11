@@ -27,11 +27,11 @@ class State {
 
 public:
   virtual ~State();
-  virtual void insertQuarter() const = 0;
-  virtual void ejectQuarter() const = 0;
-  virtual void turnCrank() const = 0;
-  virtual void dispense() = 0;
-  virtual std::string toString() const = 0;
+  virtual void InsertQuarter() const = 0;
+  virtual void EjectQuarter() const = 0;
+  virtual void TurnCrank() const = 0;
+  virtual void Dispense() = 0;
+  virtual std::string ToString() const = 0;
 };
 
 

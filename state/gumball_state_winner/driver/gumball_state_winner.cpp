@@ -25,43 +25,43 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<GumballMachine> gumballMachine( new GumballMachine(10) );
-  std::cout << gumballMachine->toString() << std::endl;
+  std::unique_ptr<GumballMachine> gumball_machine( new GumballMachine(10) );
+  std::cout << gumball_machine->ToString() << std::endl;
 
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
 
-  std::cout << gumballMachine->toString() << std::endl;
+  std::cout << gumball_machine->ToString() << std::endl;
 
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
 
-  std::cout << gumballMachine->toString() << std::endl;
+  std::cout << gumball_machine->ToString() << std::endl;
 
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
 
-  std::cout << gumballMachine->toString() << std::endl;
+  std::cout << gumball_machine->ToString() << std::endl;
 
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
 
-  std::cout << gumballMachine->toString() << std::endl;
+  std::cout << gumball_machine->ToString() << std::endl;
 
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
-  gumballMachine->insertQuarter();
-  gumballMachine->turnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
+  gumball_machine->InsertQuarter();
+  gumball_machine->TurnCrank();
 
-  std::cout << gumballMachine->toString() << std::endl;
+  std::cout << gumball_machine->ToString() << std::endl;
 
   return 0;
 }

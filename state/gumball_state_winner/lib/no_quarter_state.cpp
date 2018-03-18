@@ -22,35 +22,35 @@
 #include "gumball_machine.hpp"
 
 
-NoQuarterState::NoQuarterState( GumballMachine* gumballMachine ) :
-  _gumballMachine( gumballMachine )
+NoQuarterState::NoQuarterState( GumballMachine* gumball_machine ) :
+  gumball_machine_( gumball_machine )
 {
-  assert( gumballMachine );
+  assert( gumball_machine );
   std::cout << "NoQuarterState::NoQuarterState" << std::endl;
 }
-void NoQuarterState::insertQuarter() const
+void NoQuarterState::InsertQuarter() const
 {
-  std::cout << "NoQuarterState::insertQuarter" << std::endl;
+  std::cout << "NoQuarterState::InsertQuarter" << std::endl;
   std::cout << "You inserted a quarter" << std::endl;
-  _gumballMachine->setState( _gumballMachine->getHasQuarterState() );
+  gumball_machine_->SetState( gumball_machine_->GetHasQuarterState() );
 }
-void NoQuarterState::ejectQuarter() const
+void NoQuarterState::EjectQuarter() const
 {
-  std::cout << "NoQuarterState::ejectQuarter" << std::endl;
+  std::cout << "NoQuarterState::EjectQuarter" << std::endl;
   std::cout << "You haven't inserted a quarter" << std::endl;
 }
-void NoQuarterState::turnCrank() const
+void NoQuarterState::TurnCrank() const
 {
-  std::cout << "NoQuarterState::turnCrank" << std::endl;
+  std::cout << "NoQuarterState::TurnCrank" << std::endl;
   std::cout << "You turned, but there's no quarter" << std::endl;
 }
-void NoQuarterState::dispense()
+void NoQuarterState::Dispense()
 {
-  std::cout << "NoQuarterState::dispense" << std::endl;
+  std::cout << "NoQuarterState::Dispense" << std::endl;
   std::cout << "You need to pay first" << std::endl;
 }
-std::string NoQuarterState::toString() const
+std::string NoQuarterState::ToString() const
 {
-  std::cout << "NoQuarterState::toString" << std::endl;
+  std::cout << "NoQuarterState::ToString" << std::endl;
   return "waiting for quarter";
 }
