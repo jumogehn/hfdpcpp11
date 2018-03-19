@@ -16,7 +16,6 @@
 //C system files.
 //C++ system files.
 #include <iostream>
-#include <memory>
 #include <string>
 #include <cassert>
 //Other libraries' .h files.
@@ -25,17 +24,16 @@
 #include "simple_pizza_factory.hpp"
 
 
-PizzaStore::PizzaStore( std::shared_ptr<SimplePizzaFactory> factory ) :
-  factory_( factory )
+PizzaStore::PizzaStore()
 {
-  assert( factory );
+  factory_.reset(new SimplePizzaFactory());
   std::cout << "PizzaStore::PizzaStore" << std::endl;
 }
 
-std::shared_ptr<Pizza> PizzaStore::OrderPizza( std::string type )
+std::unique_ptr<Pizza> PizzaStore::OrderPizza( std::string type )
 {
   std::cout << "PizzaStore::OrderPizza" << std::endl;
-  std::shared_ptr<Pizza> pizza;
+  std::unique_ptr<Pizza> pizza;
   pizza = factory_->CreatePizza( type );
   pizza->Prepare();
   pizza->Bake();

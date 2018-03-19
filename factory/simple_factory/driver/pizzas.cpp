@@ -20,18 +20,16 @@
 //Your project's .h files.
 #include "pizza.hpp"
 #include "pizza_store.hpp"
-#include "simple_pizza_factory.hpp"
 
 
 int main( int argc, char* argv[] )
 {
-  auto factory = std::make_shared<SimplePizzaFactory>();
-  PizzaStore store(factory);
+  std::unique_ptr<PizzaStore> store(new PizzaStore());
 
-  auto pizza = store.OrderPizza( "cheese" );
+  std::unique_ptr<Pizza> pizza = store->OrderPizza( "cheese" );
   std::cout << "We ordered a " << pizza->GetName() << std::endl;
 
-  pizza = store.OrderPizza( "veggie" );
+  pizza = store->OrderPizza( "veggie" );
   std::cout << "We ordered a " << pizza->GetName() << std::endl;
 
   return 0;

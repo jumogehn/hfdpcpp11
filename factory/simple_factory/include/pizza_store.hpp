@@ -28,12 +28,12 @@
 
 class PizzaStore {
 
-  std::shared_ptr<SimplePizzaFactory> factory_;
+  std::unique_ptr<SimplePizzaFactory> factory_;
 
 public:
-  explicit PizzaStore( std::shared_ptr<SimplePizzaFactory> factory );
+  explicit PizzaStore();
 
-  std::shared_ptr<Pizza> OrderPizza( std::string type );
+  std::unique_ptr<Pizza> OrderPizza( std::string type );
 };
 
 

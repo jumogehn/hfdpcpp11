@@ -27,18 +27,18 @@
 #include "veggie_pizza.hpp"
 
 
-std::shared_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
+std::unique_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
 {
   std::cout << "SimplePizzaFactory::CreatePizza" << std::endl;
-  std::shared_ptr<Pizza> pizza;
+  std::unique_ptr<Pizza> pizza;
   if( type.compare( "cheese" ) == 0 ) {
-    pizza = std::make_shared<CheesePizza>();
+    pizza.reset(new CheesePizza());
   } else if( type.compare( "pepperoni" ) == 0 ) {
-    pizza = std::make_shared<PepperoniPizza>();
+    pizza.reset(new PepperoniPizza());
   } else if( type.compare( "clam" ) == 0 ) {
-    pizza = std::make_shared<ClamPizza>();
+    pizza.reset(new ClamPizza());
   } else if( type.compare( "veggie" ) == 0 ) {
-    pizza = std::make_shared<VeggiePizza>();
+    pizza.reset(new VeggiePizza());
   }
   return pizza;
 }
