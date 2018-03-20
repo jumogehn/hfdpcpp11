@@ -30,8 +30,8 @@ protected:
   PizzaStore();
 public:
   virtual ~PizzaStore();
-  virtual std::shared_ptr< Pizza > CreatePizza( std::string type) const = 0;
-  std::shared_ptr< Pizza > OrderPizza( std::string type) const;
+  virtual std::unique_ptr< Pizza > CreatePizza( std::string type) const = 0;
+  std::unique_ptr< Pizza > OrderPizza( std::string type) const;
 };
 
 

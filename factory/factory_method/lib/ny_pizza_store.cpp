@@ -26,16 +26,21 @@
 #include "ny_style_veggie_pizza.hpp"
 
 
-std::shared_ptr< Pizza > NYPizzaStore::CreatePizza( std::string type ) const
+std::unique_ptr<Pizza> NYPizzaStore::CreatePizza( std::string type ) const
 {
   std::cout << "NYPizzaStore::CreatePizza" << std::endl;
+  std::unique_ptr<Pizza> pizza = nullptr;
+
   if( type.compare( "cheese" ) == 0 ) {
-    return std::make_shared<NYStyleCheesePizza>();
+    pizza.reset(new NYStyleCheesePizza());
   } else if( type.compare( "veggie" ) == 0 ) {
-    return std::make_shared<NYStyleVeggiePizza>();
+    pizza.reset(new NYStyleVeggiePizza());
   } else if( type.compare( "clam" ) == 0 ) {
-    return std::make_shared<NYStyleClamPizza>();
+    pizza.reset(new NYStyleClamPizza());
   } else if( type.compare( "pepperoni" ) == 0 ) {
-    return std::make_shared<NYStylePepperoniPizza>();
-  } else return 0;
+    pizza.reset(new NYStylePepperoniPizza());
+  }
+
+  return pizza;
 }
+
