@@ -14,7 +14,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../ducks/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../ducks/
  make
  ./driver/testducks
 

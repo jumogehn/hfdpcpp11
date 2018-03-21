@@ -11,7 +11,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../gumball_state_winner/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../gumball_state_winner/
  make
  ./driver/testgumballstatewinner
 

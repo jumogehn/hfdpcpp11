@@ -14,13 +14,13 @@ compile as shown below::
 
  mkdir build_menuscustomiterator
  cd build_menuscustomiterator/
- cmake ../menuscustomiterator/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../menuscustomiterator/
  make
  ./driver/testmenuscustomiterator
 
  mkdir build_menus
  cd build_menus/
- cmake ../menus/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../menus/
  make
  ./driver/testmenus
 

@@ -14,7 +14,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../barista/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../barista/
  make
  ./driver/testbarista
 

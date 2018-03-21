@@ -6,27 +6,26 @@ Factory Pattern
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
+This project uses cmake so wide range of OSes are supported. For ubuntu, you can
 compile as shown below::
-
- mkdir build_abstract_factory
- cd build_abstract_factory/
- cmake ../abstract_factory/
- make
- ./driver/testpizzaaf
-
- mkdir build_factory_method
- cd build_factory_method/
- cmake ../factory_method/
- make
- ./driver/testpizzafm
 
  mkdir build_simple_factory
  cd build_simple_factory/
- cmake ../simple_factory/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../simple_factory/
  make
  ./driver/testpizzaas
 
+ mkdir build_factory_method
+ cd build_factory_method/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../factory_method/
+ make
+ ./driver/testpizzafm
+
+ mkdir build_abstract_factory
+ cd build_abstract_factory/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../abstract_factory/
+ make
+ ./driver/testpizzaaf
 
 Simple Static Factory Method
 ============================

@@ -3,6 +3,19 @@
 Facade Pattern
 **************
 
+Test
+----
+
+This project uses cmake so wide range of OSes are supported. For ubuntu, you can
+compile as shown below::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../home_theater/
+ make
+ ./driver/testhometheater
+
+
 HomeTheater
 ===========
 

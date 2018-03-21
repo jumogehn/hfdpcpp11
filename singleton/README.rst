@@ -11,7 +11,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../chocolate/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../chocolate/
  make
  ./driver/testchocolate
 

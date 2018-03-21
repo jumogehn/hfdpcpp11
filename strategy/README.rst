@@ -36,7 +36,7 @@ compile as shown below::
 
  mkdir build
  cd build/
- cmake ../content/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../content/
  make
  ./driver/testcontent
 

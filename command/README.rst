@@ -11,19 +11,19 @@ compile as shown below::
 
  mkdir build_simpleremote
  cd build_simpleremote/
- cmake ../simpleremote/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../simpleremote/
  make
  ./driver/testsimpleremote
 
  mkdir build_remote
  cd build_remote/
- cmake ../remote/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../remote/
  make
  ./driver/testremote
 
  mkdir build_undo
  cd build_undo/
- cmake ../undo/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../undo/
  make
  ./driver/testundo
 
