@@ -3,13 +3,15 @@
 Composite Pattern
 *****************
 
+Go `Korean <README_ko.rst>`_
+
 MenusCustomIterator
 ===================
 
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
+This project uses cmake so wide range of OSes are supported. For ubuntu, you can
 compile as shown below::
 
  mkdir build_menuscustomiterator
