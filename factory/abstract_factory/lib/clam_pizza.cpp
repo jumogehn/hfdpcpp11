@@ -26,11 +26,10 @@
 #include "sauce.hpp"
 
 
-ClamPizza::ClamPizza(
-  std::shared_ptr<PizzaIngredientFactory> ingredient_factory ) :
-  ingredient_factory_( ingredient_factory )
+ClamPizza::ClamPizza(PizzaIngredientFactory* ingredient_factory )
 {
   assert( ingredient_factory );
+  ingredient_factory_.reset( ingredient_factory );
   std::cout << "ClamPizza::ClamPizza" << std::endl;
 }
 void ClamPizza::Prepare() const

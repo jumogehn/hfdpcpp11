@@ -27,12 +27,19 @@
 Pizza::Pizza()
 {
   std::cout << "Pizza::Pizza" << std::endl;
+  veggies_ = nullptr;
 }
 
 Pizza::~Pizza()
 {
   std::cout << "Pizza::~Pizza" << std::endl;
-  veggies_.clear();
+  if (veggies_) {
+    //http://en.cppreference.com/w/cpp/language/range-for
+    for (Veggies *veggie : *veggies_) {
+      if (veggie) delete veggie;
+    }
+    delete veggies_;
+  }
 }
 void Pizza::Bake() const
 {
@@ -85,10 +92,11 @@ std::string Pizza::ToString() const
     value << pepperoni_->ToString();
     value << std::endl;
   }
-  if (veggies_.size() != 0) {
+  if (veggies_) {
     //http://en.cppreference.com/w/cpp/language/range-for
-    for (std::shared_ptr<Veggies> veggie : veggies_) {
-      value << veggie->ToString() << ", ";
+    for (Veggies *veggies : *veggies_) {
+      if (veggies)
+        value << veggies->ToString() << ", ";
     }
     value << std::endl;
   }

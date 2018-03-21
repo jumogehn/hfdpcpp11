@@ -22,11 +22,10 @@
 //Your project's .h files.
 
 
-PepperoniPizza::PepperoniPizza(
-  std::shared_ptr<PizzaIngredientFactory> ingredient_factory) :
-  ingredient_factory_(ingredient_factory)
+PepperoniPizza::PepperoniPizza(PizzaIngredientFactory *ingredient_factory)
 {
   assert(ingredient_factory);
+  ingredient_factory_.reset(ingredient_factory);
   std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
 }
 void PepperoniPizza::Prepare() const
@@ -37,6 +36,6 @@ void PepperoniPizza::Prepare() const
   sauce_ = ingredient_factory_->CreateSauce();
   cheese_ = ingredient_factory_->CreateCheese();
   pepperoni_ = ingredient_factory_->CreatePepperoni();
-  if (veggies_.empty())
+  if (!veggies_)
     veggies_ = ingredient_factory_->CreateVeggies();
 }

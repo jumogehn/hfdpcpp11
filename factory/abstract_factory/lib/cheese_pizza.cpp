@@ -22,11 +22,10 @@
 //Your project's .h files.
 
 
-CheesePizza::CheesePizza(
-  std::shared_ptr<PizzaIngredientFactory> ingredient_factory ) :
-  ingredient_factory_( ingredient_factory )
+CheesePizza::CheesePizza(PizzaIngredientFactory* ingredient_factory)
 {
   assert( ingredient_factory );
+  ingredient_factory_.reset( ingredient_factory );
   std::cout << "CheesePizza::CheesePizza" << std::endl;
 }
 void CheesePizza::Prepare() const

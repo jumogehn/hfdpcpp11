@@ -39,12 +39,12 @@ class Pizza {
   void operator=(const Pizza&); // Disable assignment operator
 
 protected:
-  mutable std::shared_ptr< Dough > dough_;
-  mutable std::shared_ptr< Sauce > sauce_;
-  mutable std::vector< std::shared_ptr<Veggies> > veggies_;
-  mutable std::shared_ptr< Cheese > cheese_;
-  mutable std::shared_ptr< Pepperoni > pepperoni_;
-  mutable std::shared_ptr< Clams > clam_;
+  mutable std::unique_ptr< Dough > dough_;
+  mutable std::unique_ptr< Sauce > sauce_;
+  mutable std::vector< Veggies * > *veggies_;
+  mutable std::unique_ptr< Cheese > cheese_;
+  mutable std::unique_ptr< Pepperoni > pepperoni_;
+  mutable std::unique_ptr< Clams > clam_;
 
   Pizza();
 

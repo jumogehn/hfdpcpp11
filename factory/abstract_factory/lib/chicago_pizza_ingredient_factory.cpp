@@ -30,39 +30,39 @@
 
 
 
-std::shared_ptr<Dough> ChicagoPizzaIngredientFactory::CreateDough() const
+std::unique_ptr<Dough> ChicagoPizzaIngredientFactory::CreateDough() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateDough" << std::endl;
-  return std::make_shared<ThickCrustDough>();
+  return std::unique_ptr<Dough>(new ThickCrustDough());
 }
-std::shared_ptr<Sauce> ChicagoPizzaIngredientFactory::CreateSauce() const
+std::unique_ptr<Sauce> ChicagoPizzaIngredientFactory::CreateSauce() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateSauce" << std::endl;
-  return std::make_shared<PlumTomatoSauce>();
+  return std::unique_ptr<Sauce>(new PlumTomatoSauce());
 }
-std::shared_ptr<Cheese> ChicagoPizzaIngredientFactory::CreateCheese() const
+std::unique_ptr<Cheese> ChicagoPizzaIngredientFactory::CreateCheese() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateCheese" << std::endl;
-  return std::make_shared<MozzarellaCheese>();
+  return std::unique_ptr<Cheese>(new MozzarellaCheese());
 }
-std::vector< std::shared_ptr<Veggies> >
+std::vector< Veggies * > *
 ChicagoPizzaIngredientFactory::CreateVeggies() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateVeggies" << std::endl;
-  std::vector< std::shared_ptr<Veggies> > value;
-  value.push_back( std::make_shared<BlackOlives>() );
-  value.push_back( std::make_shared<Spinach>() );
-  value.push_back( std::make_shared<Eggplant>() );
+  std::vector< Veggies * > *value = new std::vector< Veggies * >;
+  value->push_back( new BlackOlives() );
+  value->push_back( new Spinach() );
+  value->push_back( new Eggplant() );
   return value;
 }
-std::shared_ptr<Pepperoni>
+std::unique_ptr<Pepperoni>
 ChicagoPizzaIngredientFactory::CreatePepperoni() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreatePepperoni" << std::endl;
-  return std::make_shared<SlicedPepperoni>();
+  return std::unique_ptr<Pepperoni>(new SlicedPepperoni());
 }
-std::shared_ptr<Clams> ChicagoPizzaIngredientFactory::CreateClam() const
+std::unique_ptr<Clams> ChicagoPizzaIngredientFactory::CreateClam() const
 {
   std::cout << "ChicagoPizzaIngredientFactory::CreateClam" << std::endl;
-  return std::make_shared<FrozenClams>();
+  return std::unique_ptr<Clams>(new FrozenClams());
 }
