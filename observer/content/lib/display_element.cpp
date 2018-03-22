@@ -19,8 +19,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-DisplayElement::~DisplayElement()
-{
-  std::cout << "DisplayElement::~DisplayElement" << std::endl;
-}
+
+  DisplayElement::~DisplayElement()
+  {
+    std::cout << "DisplayElement::~DisplayElement" << std::endl;
+  }
+} //namespace headfirst

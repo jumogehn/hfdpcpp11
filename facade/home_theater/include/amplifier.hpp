@@ -20,33 +20,36 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Tuner;
-class DvdPlayer;
-class CdPlayer;
-
-class Amplifier {
-
-  std::string description_;
-  Tuner* tuner_;
-  DvdPlayer* dvd_;
-  CdPlayer* cd_;
-
-  Amplifier( const Amplifier& ); // Disable copy constructor
-  void operator=( const Amplifier& ); // Disable assignment operator
-
-public:
-  explicit Amplifier( std::string description );
-  void TurnOn() const;
-  void TurnOff() const;
-  void SetStereoSound();
-  void SetSurroundSound();
-  void SetVolume( int level );
-  void SetTuner( Tuner* tuner);
-  void SetDvd( DvdPlayer* dvd );
-  void SetCd( CdPlayer* cd );
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class Tuner;
+  class DvdPlayer;
+  class CdPlayer;
+
+  class Amplifier {
+
+    std::string description_;
+    Tuner* tuner_;
+    DvdPlayer* dvd_;
+    CdPlayer* cd_;
+
+    Amplifier( const Amplifier& ); // Disable copy constructor
+    void operator=( const Amplifier& ); // Disable assignment operator
+
+  public:
+    explicit Amplifier( std::string description );
+    void TurnOn() const;
+    void TurnOff() const;
+    void SetStereoSound();
+    void SetSurroundSound();
+    void SetVolume( int level );
+    void SetTuner( Tuner* tuner);
+    void SetDvd( DvdPlayer* dvd );
+    void SetCd( CdPlayer* cd );
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

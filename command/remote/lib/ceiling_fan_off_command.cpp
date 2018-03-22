@@ -23,15 +23,18 @@
 #include "ceiling_fan.hpp"
 
 
-CeilingFanOffCommand::CeilingFanOffCommand( const CeilingFan* ceiling_fan ) :
-  ceiling_fan_( ceiling_fan )
-{
-  assert( ceiling_fan );
-  std::cout << "CeilingFanOffCommand::CeilingFanOffCommand" << std::endl;
-}
-void CeilingFanOffCommand::Execute() const
-{
-  std::cout << "CeilingFanOffCommand::execute" << std::endl;
-  ceiling_fan_->TurnOff();
-}
+namespace headfirst {
 
+  CeilingFanOffCommand::CeilingFanOffCommand( const CeilingFan* ceiling_fan ) :
+    ceiling_fan_( ceiling_fan )
+  {
+    assert( ceiling_fan );
+    std::cout << "CeilingFanOffCommand::CeilingFanOffCommand" << std::endl;
+  }
+  void CeilingFanOffCommand::Execute() const
+  {
+    std::cout << "CeilingFanOffCommand::execute" << std::endl;
+    ceiling_fan_->TurnOff();
+  }
+
+} //namespace headfirst

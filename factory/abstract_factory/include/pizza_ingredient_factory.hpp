@@ -29,18 +29,21 @@
 #include "sauce.hpp"
 #include "veggies.hpp"
 
+namespace headfirst {
 
 
-class PizzaIngredientFactory {
-public:
-  virtual std::unique_ptr<Dough> CreateDough() const = 0;
-  virtual std::unique_ptr<Sauce> CreateSauce() const = 0;
-  virtual std::unique_ptr<Cheese> CreateCheese() const = 0;
-  virtual std::vector<Veggies*> *CreateVeggies() const = 0;
-  virtual std::unique_ptr<Pepperoni> CreatePepperoni() const = 0;
-  virtual std::unique_ptr<Clams> CreateClam() const = 0;
-  virtual ~PizzaIngredientFactory();
-};
+
+  class PizzaIngredientFactory {
+  public:
+    virtual std::unique_ptr<Dough> CreateDough() const = 0;
+    virtual std::unique_ptr<Sauce> CreateSauce() const = 0;
+    virtual std::unique_ptr<Cheese> CreateCheese() const = 0;
+    virtual std::vector<Veggies*> *CreateVeggies() const = 0;
+    virtual std::unique_ptr<Pepperoni> CreatePepperoni() const = 0;
+    virtual std::unique_ptr<Clams> CreateClam() const = 0;
+    virtual ~PizzaIngredientFactory();
+  };
 
 
+} //namespace headfirst
 #endif

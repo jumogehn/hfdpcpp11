@@ -21,24 +21,27 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Whip::Whip(const Beverage* beverage) :
-  beverage_(beverage)
-{
-  assert(beverage);
-  std::cout << "Whip::Whip" << std::endl;
-}
-Whip::~Whip() {
-  std::cout << "Whip::~Whip" << std::endl;
-}
-std::string Whip::GetDescription() const
-{
-  std::cout << "Whip::GetDescription" << std::endl;
-  return beverage_->GetDescription() + ", Whip";
-}
-double Whip::Cost() const
-{
-  std::cout << "Whip::cost" << std::endl;
-  return 0.10 + beverage_->Cost();
-}
 
+  Whip::Whip(const Beverage* beverage) :
+    beverage_(beverage)
+  {
+    assert(beverage);
+    std::cout << "Whip::Whip" << std::endl;
+  }
+  Whip::~Whip() {
+    std::cout << "Whip::~Whip" << std::endl;
+  }
+  std::string Whip::GetDescription() const
+  {
+    std::cout << "Whip::GetDescription" << std::endl;
+    return beverage_->GetDescription() + ", Whip";
+  }
+  double Whip::Cost() const
+  {
+    std::cout << "Whip::cost" << std::endl;
+    return 0.10 + beverage_->Cost();
+  }
+
+} //namespace headfirst

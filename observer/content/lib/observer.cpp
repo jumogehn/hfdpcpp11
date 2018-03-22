@@ -19,8 +19,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Observer::~Observer()
-{
-  std::cout << "Observer::~Observer" << std::endl;
-}
+
+  Observer::~Observer()
+  {
+    std::cout << "Observer::~Observer" << std::endl;
+  }
+} //namespace headfirst

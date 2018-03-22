@@ -20,15 +20,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Decaf::Decaf()
-{
-  std::cout << "Decaf::Decaf" << std::endl;
-  description_ = "Decaf Coffee";
-}
 
-double Decaf::Cost() const
-{
-  std::cout << "Decaf::cost" << std::endl;
-  return 1.05;
-}
+  Decaf::Decaf()
+  {
+    std::cout << "Decaf::Decaf" << std::endl;
+    description_ = "Decaf Coffee";
+  }
+
+  double Decaf::Cost() const
+  {
+    std::cout << "Decaf::cost" << std::endl;
+    return 1.05;
+  }
+} //namespace headfirst

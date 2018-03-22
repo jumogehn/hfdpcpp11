@@ -25,18 +25,21 @@
 #include "turkey.hpp"
 
 
-class DuckAdapter : public Turkey {
+namespace headfirst {
 
-  const Duck* my_duck_;
-  int random_num_;
+  class DuckAdapter : public Turkey {
 
-  DuckAdapter( const DuckAdapter& ); // Disable copy constructor
-  void operator=( const DuckAdapter& ); // Disable assignment operator
+    const Duck* my_duck_;
+    int random_num_;
 
-public:
-  explicit DuckAdapter( const Duck* duck );
-  void Fly() const;
-  void Gobble() const;
-};
+    DuckAdapter( const DuckAdapter& ); // Disable copy constructor
+    void operator=( const DuckAdapter& ); // Disable assignment operator
 
+  public:
+    explicit DuckAdapter( const Duck* duck );
+    void Fly() const;
+    void Gobble() const;
+  };
+
+} //namespace headfirst
 #endif

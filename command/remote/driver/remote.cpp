@@ -38,34 +38,42 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<RemoteControl> remote_control(new RemoteControl());
+  std::unique_ptr<headfirst::RemoteControl>
+    remote_control(new headfirst::RemoteControl());
 
-  std::unique_ptr<Light> living_room_light(new Light( "Living Room" ));
-  std::unique_ptr<Light> kitchen_light(new Light( "Kitchen" ));
-  std::unique_ptr<CeilingFan> ceiling_fan(new CeilingFan( "Living Room" ));
-  std::unique_ptr<GarageDoor> garage_door(new GarageDoor( "Garage" ));
-  std::unique_ptr<Stereo> stereo(new Stereo( "Living Room" ));
+  std::unique_ptr<headfirst::Light>
+    living_room_light(new headfirst::Light( "Living Room" ));
+  std::unique_ptr<headfirst::Light>
+    kitchen_light(new headfirst::Light( "Kitchen" ));
+  std::unique_ptr<headfirst::CeilingFan>
+    ceiling_fan(new headfirst::CeilingFan( "Living Room" ));
+  std::unique_ptr<headfirst::GarageDoor>
+    garage_door(new headfirst::GarageDoor( "Garage" ));
+  std::unique_ptr<headfirst::Stereo>
+    stereo(new headfirst::Stereo( "Living Room" ));
 
-  std::unique_ptr<LightOnCommand>
-    living_room_light_on(new LightOnCommand( living_room_light.get() ));
-  std::unique_ptr<LightOffCommand>
-    living_room_light_off(new LightOffCommand( living_room_light.get() ));
-  std::unique_ptr<LightOnCommand>
-    kitchen_light_on(new LightOnCommand( kitchen_light.get() ));
-  std::unique_ptr<LightOffCommand>
-    kitchen_light_off(new LightOffCommand( kitchen_light.get() ));
-  std::unique_ptr<CeilingFanOnCommand>
-    ceiling_fan_on(new CeilingFanOnCommand( ceiling_fan.get() ));
-  std::unique_ptr<CeilingFanOffCommand>
-    ceiling_fan_off(new CeilingFanOffCommand( ceiling_fan.get() ));
-  std::unique_ptr<GarageDoorUpCommand>
-    garage_door_up(new GarageDoorUpCommand( garage_door.get() ));
-  std::unique_ptr<GarageDoorDownCommand>
-    garage_door_down(new GarageDoorDownCommand( garage_door.get() ));
-  std::unique_ptr<StereoOnWithCDCommand>
-    stereo_on_with_cd(new StereoOnWithCDCommand( stereo.get() ));
-  std::unique_ptr<StereoOffCommand>
-    stereo_off(new StereoOffCommand( stereo.get() ));
+  std::unique_ptr<headfirst::LightOnCommand>
+    living_room_light_on(
+      new headfirst::LightOnCommand( living_room_light.get() ));
+  std::unique_ptr<headfirst::LightOffCommand>
+    living_room_light_off(
+      new headfirst::LightOffCommand( living_room_light.get() ));
+  std::unique_ptr<headfirst::LightOnCommand>
+    kitchen_light_on(new headfirst::LightOnCommand( kitchen_light.get() ));
+  std::unique_ptr<headfirst::LightOffCommand>
+    kitchen_light_off(new headfirst::LightOffCommand( kitchen_light.get() ));
+  std::unique_ptr<headfirst::CeilingFanOnCommand>
+    ceiling_fan_on(new headfirst::CeilingFanOnCommand( ceiling_fan.get() ));
+  std::unique_ptr<headfirst::CeilingFanOffCommand>
+    ceiling_fan_off(new headfirst::CeilingFanOffCommand( ceiling_fan.get() ));
+  std::unique_ptr<headfirst::GarageDoorUpCommand>
+    garage_door_up(new headfirst::GarageDoorUpCommand( garage_door.get() ));
+  std::unique_ptr<headfirst::GarageDoorDownCommand>
+    garage_door_down(new headfirst::GarageDoorDownCommand( garage_door.get() ));
+  std::unique_ptr<headfirst::StereoOnWithCDCommand>
+    stereo_on_with_cd(new headfirst::StereoOnWithCDCommand( stereo.get() ));
+  std::unique_ptr<headfirst::StereoOffCommand>
+    stereo_off(new headfirst::StereoOffCommand( stereo.get() ));
 
   remote_control->SetCommand( 0, living_room_light_on.get(),
                               living_room_light_off.get() );

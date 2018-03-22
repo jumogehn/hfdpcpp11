@@ -25,22 +25,25 @@
 #include "ny_style_pepperoni_pizza.hpp"
 #include "ny_style_veggie_pizza.hpp"
 
+namespace headfirst {
 
-std::unique_ptr<Pizza> NYPizzaStore::CreatePizza( std::string type ) const
-{
-  std::cout << "NYPizzaStore::CreatePizza" << std::endl;
-  std::unique_ptr<Pizza> pizza = nullptr;
 
-  if( type.compare( "cheese" ) == 0 ) {
-    pizza.reset(new NYStyleCheesePizza());
-  } else if( type.compare( "veggie" ) == 0 ) {
-    pizza.reset(new NYStyleVeggiePizza());
-  } else if( type.compare( "clam" ) == 0 ) {
-    pizza.reset(new NYStyleClamPizza());
-  } else if( type.compare( "pepperoni" ) == 0 ) {
-    pizza.reset(new NYStylePepperoniPizza());
+  std::unique_ptr<Pizza> NYPizzaStore::CreatePizza( std::string type ) const
+  {
+    std::cout << "NYPizzaStore::CreatePizza" << std::endl;
+    std::unique_ptr<Pizza> pizza = nullptr;
+
+    if( type.compare( "cheese" ) == 0 ) {
+      pizza.reset(new NYStyleCheesePizza());
+    } else if( type.compare( "veggie" ) == 0 ) {
+      pizza.reset(new NYStyleVeggiePizza());
+    } else if( type.compare( "clam" ) == 0 ) {
+      pizza.reset(new NYStyleClamPizza());
+    } else if( type.compare( "pepperoni" ) == 0 ) {
+      pizza.reset(new NYStylePepperoniPizza());
+    }
+
+    return pizza;
   }
 
-  return pizza;
-}
-
+} //namespace headfirst

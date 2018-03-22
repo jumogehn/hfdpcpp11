@@ -22,17 +22,20 @@
 //Your project's .h files.
 #include "garage_door.hpp"
 
+namespace headfirst {
 
-GarageDoorDownCommand::GarageDoorDownCommand( const GarageDoor* garage_door ) :
-  garage_door_( garage_door )
-{
-  assert( garage_door );
-  std::cout << "GarageDoorDownCommand::GarageDoorDownCommand" << std::endl;
-}
 
-void GarageDoorDownCommand::Execute() const
-{
-  std::cout << "GarageDoorDownCommand::execute" << std::endl;
-  garage_door_->CloseDown();
-}
+  GarageDoorDownCommand::GarageDoorDownCommand( const GarageDoor* garage_door ) :
+    garage_door_( garage_door )
+  {
+    assert( garage_door );
+    std::cout << "GarageDoorDownCommand::GarageDoorDownCommand" << std::endl;
+  }
 
+  void GarageDoorDownCommand::Execute() const
+  {
+    std::cout << "GarageDoorDownCommand::execute" << std::endl;
+    garage_door_->CloseDown();
+  }
+
+} //namespace headfirst

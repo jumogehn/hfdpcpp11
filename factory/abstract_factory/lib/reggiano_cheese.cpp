@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string ReggianoCheese::ToString() const
-{
-  std::cout << "ReggianoCheese::ToString" << std::endl;
-  return "Reggiano Cheese";
-}
+
+  std::string ReggianoCheese::ToString() const
+  {
+    std::cout << "ReggianoCheese::ToString" << std::endl;
+    return "Reggiano Cheese";
+  }
+} //namespace headfirst

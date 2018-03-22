@@ -25,59 +25,62 @@
 #include "no_command.hpp"
 
 
+namespace headfirst {
 
-RemoteControl::RemoteControl()
-{
-  std::cout << "RemoteControl::RemoteControl" << std::endl;
-  no_command_ = new NoCommand();
-  for( int i = 0; i < kSlots; i++ ) {
-    on_commands_[i]  = no_command_;
-    off_commands_[i] = no_command_;
+
+  RemoteControl::RemoteControl()
+  {
+    std::cout << "RemoteControl::RemoteControl" << std::endl;
+    no_command_ = new NoCommand();
+    for( int i = 0; i < kSlots; i++ ) {
+      on_commands_[i]  = no_command_;
+      off_commands_[i] = no_command_;
+    }
   }
-}
 
-RemoteControl::~RemoteControl()
-{
-  std::cout << "RemoteControl::~RemoteControl" << std::endl;
-  delete no_command_;
-}
-
-void RemoteControl::SetCommand( int slot, Command* on_command,
-                                Command* off_command )
-{
-  std::cout << "RemoteControl::SetCommand" << std::endl;
-  assert( slot <= kSlots ); assert( on_command ); assert ( off_command );
-  on_commands_[slot] = on_command;
-  off_commands_[slot] = off_command;
-}
-
-void RemoteControl::OnButtonWasPushed( int slot ) const
-{
-  std::cout << "RemoteControl::OnButtonWasPushed" << std::endl;
-  assert( slot <= kSlots );
-  on_commands_[slot]->Execute();
-}
-
-void RemoteControl::OffButtonWasPushed( int slot ) const
-{
-  std::cout << "RemoteControl::OffButtonWasPushed" << std::endl;
-  assert( slot <= kSlots );
-  off_commands_[slot]->Execute();
-}
-
-std::string RemoteControl::ToString() const
-{
-  std::cout << "RemoteControl::ToString" << std::endl;
-  std::stringstream value;
-  value << "\n------ Remote Control -------\n" << std::endl;
-  for( int i = 0; i < kSlots; i++ ) {
-    value << "[slot " << i << "] ";
-    value << typeid( *on_commands_[i] ).name();
-    value << "    ";
-    value << typeid( *off_commands_[i] ).name();
-    value << std::endl;
+  RemoteControl::~RemoteControl()
+  {
+    std::cout << "RemoteControl::~RemoteControl" << std::endl;
+    delete no_command_;
   }
-  return value.str();
-}
+
+  void RemoteControl::SetCommand( int slot, Command* on_command,
+                                  Command* off_command )
+  {
+    std::cout << "RemoteControl::SetCommand" << std::endl;
+    assert( slot <= kSlots ); assert( on_command ); assert ( off_command );
+    on_commands_[slot] = on_command;
+    off_commands_[slot] = off_command;
+  }
+
+  void RemoteControl::OnButtonWasPushed( int slot ) const
+  {
+    std::cout << "RemoteControl::OnButtonWasPushed" << std::endl;
+    assert( slot <= kSlots );
+    on_commands_[slot]->Execute();
+  }
+
+  void RemoteControl::OffButtonWasPushed( int slot ) const
+  {
+    std::cout << "RemoteControl::OffButtonWasPushed" << std::endl;
+    assert( slot <= kSlots );
+    off_commands_[slot]->Execute();
+  }
+
+  std::string RemoteControl::ToString() const
+  {
+    std::cout << "RemoteControl::ToString" << std::endl;
+    std::stringstream value;
+    value << "\n------ Remote Control -------\n" << std::endl;
+    for( int i = 0; i < kSlots; i++ ) {
+      value << "[slot " << i << "] ";
+      value << typeid( *on_commands_[i] ).name();
+      value << "    ";
+      value << typeid( *off_commands_[i] ).name();
+      value << std::endl;
+    }
+    return value.str();
+  }
 
 
+} //namespace headfirst

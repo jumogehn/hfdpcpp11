@@ -22,14 +22,17 @@
 #include "fake_quack.hpp"
 #include "fly_no_way.hpp"
 
+namespace headfirst {
 
-ModelDuck::ModelDuck() : Duck(new FlyNoWay(), new FakeQuack())
-{
-  std::cout << "ModelDuck::ModelDuck" << std::endl;
-}
-void ModelDuck::Display() const
-{
-  std::cout << "ModelDuck::Display" << std::endl;
-  std::cout << "I'm a model duck" << std::endl;
-}
 
+  ModelDuck::ModelDuck() : Duck(new FlyNoWay(), new FakeQuack())
+  {
+    std::cout << "ModelDuck::ModelDuck" << std::endl;
+  }
+  void ModelDuck::Display() const
+  {
+    std::cout << "ModelDuck::Display" << std::endl;
+    std::cout << "I'm a model duck" << std::endl;
+  }
+
+} //namespace headfirst

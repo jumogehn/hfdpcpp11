@@ -24,17 +24,20 @@
 //Your project's .h files.
 
 
-class Beverage {
+namespace headfirst {
 
-protected:
-  std::string description_;
+  class Beverage {
 
-  Beverage();
-public:
-  virtual ~Beverage();
-  virtual std::string GetDescription() const;
-  virtual double Cost() const = 0;
-};
+  protected:
+    std::string description_;
+
+    Beverage();
+  public:
+    virtual ~Beverage();
+    virtual std::string GetDescription() const;
+    virtual double Cost() const = 0;
+  };
 
 
+} //namespace headfirst
 #endif

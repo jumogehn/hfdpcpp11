@@ -15,14 +15,16 @@
 #define _HFDP_CPP_ADAPTER_TURKEY_HPP_
 
 
+namespace headfirst {
 
-class Turkey {
+  class Turkey {
 
-public:
-  virtual ~Turkey();
-  virtual void Gobble() const = 0;
-  virtual void Fly() const = 0;
-};
+  public:
+    virtual ~Turkey();
+    virtual void Gobble() const = 0;
+    virtual void Fly() const = 0;
+  };
 
+} //namespace headfirst
 
 #endif

@@ -22,11 +22,14 @@
 //Your project's .h files.
 #include "command.hpp"
 
-class NoCommand : public Command{
+namespace headfirst {
 
-public:
-  void Execute() const;
-};
+  class NoCommand : public Command{
+
+  public:
+    void Execute() const;
+  };
 
 
+} //namespace headfirst
 #endif

@@ -23,29 +23,32 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Pizza {
-
-protected:
-  std::string name_;
-  std::string dough_;
-  std::string sauce_;
-  mutable std::list< std::string > toppings_;
-  Pizza();
-
-private:
-  Pizza( const Pizza& ); // Disable copy constructor
-  void operator=( const Pizza& ); // Disable assignment operator
-
-public:
-  virtual ~Pizza();
-  virtual void Prepare() const;
-  virtual void Bake() const;
-  virtual void Cut() const;
-  virtual void Box() const;
-  std::string GetName() const;
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class Pizza {
+
+  protected:
+    std::string name_;
+    std::string dough_;
+    std::string sauce_;
+    mutable std::list< std::string > toppings_;
+    Pizza();
+
+  private:
+    Pizza( const Pizza& ); // Disable copy constructor
+    void operator=( const Pizza& ); // Disable assignment operator
+
+  public:
+    virtual ~Pizza();
+    virtual void Prepare() const;
+    virtual void Bake() const;
+    virtual void Cut() const;
+    virtual void Box() const;
+    std::string GetName() const;
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

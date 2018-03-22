@@ -24,9 +24,9 @@
 
 int main( int argc, char* argv[] )
 {
-  std::unique_ptr<PizzaStore> store(new PizzaStore());
+  std::unique_ptr<headfirst::PizzaStore> store(new headfirst::PizzaStore());
 
-  std::unique_ptr<Pizza> pizza = store->OrderPizza( "cheese" );
+  std::unique_ptr<headfirst::Pizza> pizza = store->OrderPizza( "cheese" );
   std::cout << "We ordered a " << pizza->GetName() << std::endl;
 
   pizza = store->OrderPizza( "veggie" );

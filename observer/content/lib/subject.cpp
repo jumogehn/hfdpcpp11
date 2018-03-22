@@ -21,8 +21,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Subject::~Subject()
-{
-  std::cout << "Subject::~Subject" << std::endl;
-}
+
+  Subject::~Subject()
+  {
+    std::cout << "Subject::~Subject" << std::endl;
+  }
+} //namespace headfirst

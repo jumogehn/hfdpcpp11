@@ -21,36 +21,39 @@
 //Your project's .h files.
 #include "gumball_machine.hpp"
 
+namespace headfirst {
 
-NoQuarterState::NoQuarterState( GumballMachine* gumball_machine ) :
-  gumball_machine_( gumball_machine )
-{
-  assert( gumball_machine );
-  std::cout << "NoQuarterState::NoQuarterState" << std::endl;
-}
-void NoQuarterState::InsertQuarter() const
-{
-  std::cout << "NoQuarterState::InsertQuarter" << std::endl;
-  std::cout << "You inserted a quarter" << std::endl;
-  gumball_machine_->SetState( gumball_machine_->GetHasQuarterState() );
-}
-void NoQuarterState::EjectQuarter() const
-{
-  std::cout << "NoQuarterState::EjectQuarter" << std::endl;
-  std::cout << "You haven't inserted a quarter" << std::endl;
-}
-void NoQuarterState::TurnCrank() const
-{
-  std::cout << "NoQuarterState::TurnCrank" << std::endl;
-  std::cout << "You turned, but there's no quarter" << std::endl;
-}
-void NoQuarterState::Dispense()
-{
-  std::cout << "NoQuarterState::Dispense" << std::endl;
-  std::cout << "You need to pay first" << std::endl;
-}
-std::string NoQuarterState::ToString() const
-{
-  std::cout << "NoQuarterState::ToString" << std::endl;
-  return "waiting for quarter";
-}
+
+  NoQuarterState::NoQuarterState( GumballMachine* gumball_machine ) :
+    gumball_machine_( gumball_machine )
+  {
+    assert( gumball_machine );
+    std::cout << "NoQuarterState::NoQuarterState" << std::endl;
+  }
+  void NoQuarterState::InsertQuarter() const
+  {
+    std::cout << "NoQuarterState::InsertQuarter" << std::endl;
+    std::cout << "You inserted a quarter" << std::endl;
+    gumball_machine_->SetState( gumball_machine_->GetHasQuarterState() );
+  }
+  void NoQuarterState::EjectQuarter() const
+  {
+    std::cout << "NoQuarterState::EjectQuarter" << std::endl;
+    std::cout << "You haven't inserted a quarter" << std::endl;
+  }
+  void NoQuarterState::TurnCrank() const
+  {
+    std::cout << "NoQuarterState::TurnCrank" << std::endl;
+    std::cout << "You turned, but there's no quarter" << std::endl;
+  }
+  void NoQuarterState::Dispense()
+  {
+    std::cout << "NoQuarterState::Dispense" << std::endl;
+    std::cout << "You need to pay first" << std::endl;
+  }
+  std::string NoQuarterState::ToString() const
+  {
+    std::cout << "NoQuarterState::ToString" << std::endl;
+    return "waiting for quarter";
+  }
+} //namespace headfirst

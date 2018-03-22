@@ -19,27 +19,30 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-void CaffeineBeverage::BoilWater() const
-{
-  std::cout << "CaffeineBeverage::BoilWater" << std::endl;
-  std::cout << "Boiling water" << std::endl;
-}
-void CaffeineBeverage::PourInCup() const
-{
-  std::cout << "CaffeineBeverage::PourInCup" << std::endl;
-  std::cout << "Pouring into cup" << std::endl;
-}
-CaffeineBeverage::~CaffeineBeverage()
-{
-  std::cout << "CaffeineBeverage::~CaffeineBeverage" << std::endl;
-}
-void CaffeineBeverage::PrepareRecipe() {
-  std::cout << "CaffeineBeverage::PrepareRecipe" << std::endl;
-  BoilWater();
-  Brew();
-  PourInCup();
-  AddCondiments();
-}
+namespace headfirst {
 
 
+  void CaffeineBeverage::BoilWater() const
+  {
+    std::cout << "CaffeineBeverage::BoilWater" << std::endl;
+    std::cout << "Boiling water" << std::endl;
+  }
+  void CaffeineBeverage::PourInCup() const
+  {
+    std::cout << "CaffeineBeverage::PourInCup" << std::endl;
+    std::cout << "Pouring into cup" << std::endl;
+  }
+  CaffeineBeverage::~CaffeineBeverage()
+  {
+    std::cout << "CaffeineBeverage::~CaffeineBeverage" << std::endl;
+  }
+  void CaffeineBeverage::PrepareRecipe() {
+    std::cout << "CaffeineBeverage::PrepareRecipe" << std::endl;
+    BoilWater();
+    Brew();
+    PourInCup();
+    AddCondiments();
+  }
+
+
+} //namespace headfirst

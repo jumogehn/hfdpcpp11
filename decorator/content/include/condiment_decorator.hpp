@@ -24,18 +24,21 @@
 #include "beverage.hpp"
 
 
-
-class CondimentDecorator : public Beverage {
-
-  CondimentDecorator(const CondimentDecorator&);
-  void operator=(const CondimentDecorator&);
-
-protected:
-  CondimentDecorator();
-public:
-  virtual ~CondimentDecorator();
-  virtual std::string GetDescription() const = 0;
-};
+namespace headfirst {
 
 
+  class CondimentDecorator : public Beverage {
+
+    CondimentDecorator(const CondimentDecorator&);
+    void operator=(const CondimentDecorator&);
+
+  protected:
+    CondimentDecorator();
+  public:
+    virtual ~CondimentDecorator();
+    virtual std::string GetDescription() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

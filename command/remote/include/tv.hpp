@@ -22,16 +22,19 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-class TV {
+namespace headfirst {
 
-  mutable int channel_;
-  std::string location_;
+  class TV {
 
-public:
-  explicit TV( const std::string location );
-  void TurnOn() const;
-  void TurnOff() const;
-  void SetInputChannel();
-};
+    mutable int channel_;
+    std::string location_;
 
+  public:
+    explicit TV( const std::string location );
+    void TurnOn() const;
+    void TurnOff() const;
+    void SetInputChannel();
+  };
+
+} //namespace headfirst
 #endif

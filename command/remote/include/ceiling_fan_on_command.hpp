@@ -24,15 +24,18 @@
 #include "ceiling_fan.hpp"
 #include "command.hpp"
 
-
-class CeilingFanOnCommand : public Command {
-
-  const CeilingFan* ceiling_fan_;
-
-public:
-  explicit CeilingFanOnCommand( const CeilingFan* ceiling_fan );
-  void Execute() const;
-};
+namespace headfirst {
 
 
+  class CeilingFanOnCommand : public Command {
+
+    const CeilingFan* ceiling_fan_;
+
+  public:
+    explicit CeilingFanOnCommand( const CeilingFan* ceiling_fan );
+    void Execute() const;
+  };
+
+
+} //namespace headfirst
 #endif

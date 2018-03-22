@@ -20,15 +20,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-PepperoniPizza::PepperoniPizza()
-{
-  std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
-  name_ = "Pepperoni Pizza";
-  dough_ = "Crust";
-  sauce_ = "Marinara sauce";
-  toppings_.push_back( "Sliced Pepperoni" );
-  toppings_.push_back( "Sliced Onion" );
-  toppings_.push_back( "Grated parmesan cheese" );
-}
 
+  PepperoniPizza::PepperoniPizza()
+  {
+    std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
+    name_ = "Pepperoni Pizza";
+    dough_ = "Crust";
+    sauce_ = "Marinara sauce";
+    toppings_.push_back( "Sliced Pepperoni" );
+    toppings_.push_back( "Sliced Onion" );
+    toppings_.push_back( "Grated parmesan cheese" );
+  }
+
+} //namespace headfirst

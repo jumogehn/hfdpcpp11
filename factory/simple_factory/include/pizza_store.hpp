@@ -25,16 +25,19 @@
 #include "pizza.hpp"
 #include "simple_pizza_factory.hpp"
 
-
-class PizzaStore {
-
-  std::unique_ptr<SimplePizzaFactory> factory_;
-
-public:
-  explicit PizzaStore();
-
-  std::unique_ptr<Pizza> OrderPizza( std::string type );
-};
+namespace headfirst {
 
 
+  class PizzaStore {
+
+    std::unique_ptr<SimplePizzaFactory> factory_;
+
+  public:
+    explicit PizzaStore();
+
+    std::unique_ptr<Pizza> OrderPizza( std::string type );
+  };
+
+
+} //namespace headfirst
 #endif

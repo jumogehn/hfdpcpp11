@@ -22,24 +22,27 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-SimpleRemoteControl::SimpleRemoteControl() :
-  slot_( nullptr )
-{
-  std::cout << "SimpleRemoteControl::SimpleRemoteControl" << std::endl;
-}
-void SimpleRemoteControl::SetCommand( const Command* command )
-{
-  assert( command );
-  std::cout << "SimpleRemoteControl::SetCommand" << std::endl;
-  slot_ = command;
-}
-void SimpleRemoteControl::ButtonWasPressed() const
-{
-  assert( slot_ );
-  std::cout << "SimpleRemoteControl::buttonWasPressed" << std::endl;
-  slot_->Execute();
-}
+
+  SimpleRemoteControl::SimpleRemoteControl() :
+    slot_( nullptr )
+  {
+    std::cout << "SimpleRemoteControl::SimpleRemoteControl" << std::endl;
+  }
+  void SimpleRemoteControl::SetCommand( const Command* command )
+  {
+    assert( command );
+    std::cout << "SimpleRemoteControl::SetCommand" << std::endl;
+    slot_ = command;
+  }
+  void SimpleRemoteControl::ButtonWasPressed() const
+  {
+    assert( slot_ );
+    std::cout << "SimpleRemoteControl::buttonWasPressed" << std::endl;
+    slot_->Execute();
+  }
 
 
+} //namespace headfirst

@@ -22,54 +22,57 @@
 //Your project's .h files.
 #include "subject.hpp"
 
-ForecastDisplay::ForecastDisplay() :
-  current_pressure_(29.92F),
-  last_pressure_(0)
-{
-  std::cout << "ForecastDisplay::ForecastDisplay" << std::endl;
-}
-ForecastDisplay::~ForecastDisplay()
-{
-  std::cout << "ForecastDisplay::~ForecastDisplay" << std::endl;
-}
-int ForecastDisplay::SetSubject(Subject* weather_data)
-{
-  assert(weather_data);
-  assert(!weather_data_);
-  weather_data_ = weather_data;
-  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  weather_data_->RegisterObserver(this);
+namespace headfirst {
 
-  return 0;
-}
-int ForecastDisplay::ResetSubject()
-{
-  assert(weather_data_);
-  //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
-  weather_data_->RemoveObserver(this);
-  return 0;
-}
-void ForecastDisplay::Update(float temp, float humidity, float pressure)
-{
-  std::cout << "ForecastDisplay::Update" << std::endl;
-  last_pressure_ = current_pressure_;
-  current_pressure_ = pressure;
-  Display();
-}
-void ForecastDisplay::Display() const
-{
-  std::cout << "ForecastDisplay::display" << std::endl;
-  std::cout.setf(std::ios::showpoint);
-  std::cout.precision(3);
-  std::cout << "Forecast: ";
-  if (current_pressure_ > last_pressure_) {
-    std::cout << "Improving weather on the way!";
+  ForecastDisplay::ForecastDisplay() :
+    current_pressure_(29.92F),
+    last_pressure_(0)
+  {
+    std::cout << "ForecastDisplay::ForecastDisplay" << std::endl;
   }
-  else if (current_pressure_ == last_pressure_) {
-    std::cout << "More of the same";
+  ForecastDisplay::~ForecastDisplay()
+  {
+    std::cout << "ForecastDisplay::~ForecastDisplay" << std::endl;
   }
-  else if (current_pressure_ < last_pressure_) {
-    std::cout << "Watch out for cooler, rainy weather";
+  int ForecastDisplay::SetSubject(Subject* weather_data)
+  {
+    assert(weather_data);
+    assert(!weather_data_);
+    weather_data_ = weather_data;
+    //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
+    weather_data_->RegisterObserver(this);
+
+    return 0;
   }
-  std::cout << std::endl;
-}
+  int ForecastDisplay::ResetSubject()
+  {
+    assert(weather_data_);
+    //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
+    weather_data_->RemoveObserver(this);
+    return 0;
+  }
+  void ForecastDisplay::Update(float temp, float humidity, float pressure)
+  {
+    std::cout << "ForecastDisplay::Update" << std::endl;
+    last_pressure_ = current_pressure_;
+    current_pressure_ = pressure;
+    Display();
+  }
+  void ForecastDisplay::Display() const
+  {
+    std::cout << "ForecastDisplay::display" << std::endl;
+    std::cout.setf(std::ios::showpoint);
+    std::cout.precision(3);
+    std::cout << "Forecast: ";
+    if (current_pressure_ > last_pressure_) {
+      std::cout << "Improving weather on the way!";
+    }
+    else if (current_pressure_ == last_pressure_) {
+      std::cout << "More of the same";
+    }
+    else if (current_pressure_ < last_pressure_) {
+      std::cout << "Watch out for cooler, rainy weather";
+    }
+    std::cout << std::endl;
+  }
+} //namespace headfirst

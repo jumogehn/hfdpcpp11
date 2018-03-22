@@ -22,23 +22,26 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-DimmerLightOnCommand::DimmerLightOnCommand( const Light* light ) :
-  light_( light )
-{
-  assert( light );
-  std::cout << "DimmerLightOnCommand::DimmerLightOnCommand" << std::endl;
-  prev_level_ = light_->GetLevel();
-}
-void DimmerLightOnCommand::Execute() const
-{
-  std::cout << "DimmerLightOnCommand::execute" << std::endl;
-  prev_level_ = light_->GetLevel();
-  light_->Dim( 75 );
-}
-void DimmerLightOnCommand::Undo() const
-{
-  std::cout << "DimmerLightOnCommand::undo" << std::endl;
-  light_->Dim( prev_level_ );
-}
 
+  DimmerLightOnCommand::DimmerLightOnCommand( const Light* light ) :
+    light_( light )
+  {
+    assert( light );
+    std::cout << "DimmerLightOnCommand::DimmerLightOnCommand" << std::endl;
+    prev_level_ = light_->GetLevel();
+  }
+  void DimmerLightOnCommand::Execute() const
+  {
+    std::cout << "DimmerLightOnCommand::execute" << std::endl;
+    prev_level_ = light_->GetLevel();
+    light_->Dim( 75 );
+  }
+  void DimmerLightOnCommand::Undo() const
+  {
+    std::cout << "DimmerLightOnCommand::undo" << std::endl;
+    light_->Dim( prev_level_ );
+  }
+
+} //namespace headfirst

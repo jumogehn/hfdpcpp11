@@ -26,6 +26,8 @@
 //Your project's .h files.
 #include "menu_component.hpp"
 
+namespace headfirst {
+
 
 Menu::Menu( const std::string name, const std::string description ) :
   name_( name ), description_( description )
@@ -78,3 +80,4 @@ void Menu::Print() const
   }
 }
 
+} //namespace headfirst

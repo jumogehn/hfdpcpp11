@@ -21,27 +21,30 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class ChocolateBoiler {
-
-  static ChocolateBoiler* unique_instance_;
-  bool empty_;
-  bool boiled_;
-
-  ChocolateBoiler( const ChocolateBoiler& ); // Disable copy constructor
-  void operator=( const ChocolateBoiler& ); // Disable assignment operator
-
-  ChocolateBoiler();
-
-public:
-  ~ChocolateBoiler();
-  static ChocolateBoiler* GetInstance();
-  void Fill();
-  void Drain();
-  void Boil();
-  bool IsEmpty() const;
-  bool IsBoiled() const;
-};
+namespace headfirst {
 
 
+  class ChocolateBoiler {
+
+    static ChocolateBoiler* unique_instance_;
+    bool empty_;
+    bool boiled_;
+
+    ChocolateBoiler( const ChocolateBoiler& ); // Disable copy constructor
+    void operator=( const ChocolateBoiler& ); // Disable assignment operator
+
+    ChocolateBoiler();
+
+  public:
+    ~ChocolateBoiler();
+    static ChocolateBoiler* GetInstance();
+    void Fill();
+    void Drain();
+    void Boil();
+    bool IsEmpty() const;
+    bool IsBoiled() const;
+  };
+
+
+} //namespace headfirst
 #endif

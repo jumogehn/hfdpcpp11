@@ -22,12 +22,15 @@
 //Your project's .h files.
 #include "fly_behavior.hpp"
 
-
-class FlyRocketPowered : public FlyBehavior {
-
-public:
-  void Fly() const;
-};
+namespace headfirst {
 
 
+  class FlyRocketPowered : public FlyBehavior {
+
+  public:
+    void Fly() const;
+  };
+
+
+} //namespace headfirst
 #endif

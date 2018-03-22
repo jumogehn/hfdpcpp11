@@ -24,20 +24,23 @@
 #include "iterator.hpp"
 #include "menu_component.hpp"
 
-
-class MenuIterator : public Iterator<MenuComponent > {
-
-  mutable std::vector< MenuComponent* > items_;
-  mutable std::vector< MenuComponent* >::iterator iterator_;
-
-  MenuIterator( const MenuIterator& );
-  void operator=( const MenuIterator& );
-
-public:
-  explicit MenuIterator( std::vector< MenuComponent* > items );
-  MenuComponent* Next() const;
-  bool HasNext() const;
-};
+namespace headfirst {
 
 
+  class MenuIterator : public Iterator<MenuComponent > {
+
+    mutable std::vector< MenuComponent* > items_;
+    mutable std::vector< MenuComponent* >::iterator iterator_;
+
+    MenuIterator( const MenuIterator& );
+    void operator=( const MenuIterator& );
+
+  public:
+    explicit MenuIterator( std::vector< MenuComponent* > items );
+    MenuComponent* Next() const;
+    bool HasNext() const;
+  };
+
+
+} //namespace headfirst
 #endif

@@ -23,37 +23,40 @@
 //Your project's .h files.
 #include "state.hpp"
 
-class GumballMachine {
+namespace headfirst {
 
-  State* sold_out_state_;
-  State* no_quarter_state_;
-  State* has_quarter_state_;
-  State* sold_state_;
-  State* winner_state_;
-  State* state_;
-  int count_;
+  class GumballMachine {
 
-  GumballMachine( const GumballMachine& ); // Disable copy constructor
-  void operator=( const GumballMachine& ); // Disable assignment operator
+    State* sold_out_state_;
+    State* no_quarter_state_;
+    State* has_quarter_state_;
+    State* sold_state_;
+    State* winner_state_;
+    State* state_;
+    int count_;
 
-public:
-  explicit GumballMachine(int number_gumballs);
-  ~GumballMachine();
-  void InsertQuarter() const;
-  void EjectQuarter() const;
-  void TurnCrank() const;
-  void SetState( State* state );
-  void ReleaseBall();
-  int GetCount() const;
-  void Refill( int count );
-  State* GetState() const;
-  State* GetSoldOutState() const;
-  State* GetNoQuarterState() const;
-  State* GetHasQuarterState() const;
-  State* GetSoldState() const;
-  State* GetWinnerState() const;
-  std::string ToString() const;
-};
+    GumballMachine( const GumballMachine& ); // Disable copy constructor
+    void operator=( const GumballMachine& ); // Disable assignment operator
+
+  public:
+    explicit GumballMachine(int number_gumballs);
+    ~GumballMachine();
+    void InsertQuarter() const;
+    void EjectQuarter() const;
+    void TurnCrank() const;
+    void SetState( State* state );
+    void ReleaseBall();
+    int GetCount() const;
+    void Refill( int count );
+    State* GetState() const;
+    State* GetSoldOutState() const;
+    State* GetNoQuarterState() const;
+    State* GetHasQuarterState() const;
+    State* GetSoldState() const;
+    State* GetWinnerState() const;
+    std::string ToString() const;
+  };
 
 
+} //namespace headfirst
 #endif

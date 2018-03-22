@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-Sauce::~Sauce()
-{
-  std::cout << "Sauce::~Sauce" << std::endl;
-}
+
+  Sauce::~Sauce()
+  {
+    std::cout << "Sauce::~Sauce" << std::endl;
+  }
+} //namespace headfirst

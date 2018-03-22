@@ -22,12 +22,15 @@
 //Your project's .h files.
 #include "pizza.hpp"
 
-
-class NYStyleCheesePizza : public Pizza {
-
-public:
-  NYStyleCheesePizza();
-};
+namespace headfirst {
 
 
+  class NYStyleCheesePizza : public Pizza {
+
+  public:
+    NYStyleCheesePizza();
+  };
+
+
+} //namespace headfirst
 #endif

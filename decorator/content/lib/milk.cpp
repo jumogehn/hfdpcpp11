@@ -21,24 +21,27 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Milk::Milk(const Beverage* beverage) :
-  beverage_(beverage)
-{
-  assert(beverage);
-  std::cout << "Milk::Milk" << std::endl;
-}
-Milk::~Milk()
-{
-  std::cout << "Milk::~Milk" << std::endl;
-}
-std::string Milk::GetDescription() const
-{
-  std::cout << "Milk::GetDescription" << std::endl;
-  return beverage_->GetDescription() + ", Milk";
-}
-double Milk::Cost() const
-{
-  std::cout << "Milk::cost" << std::endl;
-  return 0.10 + beverage_->Cost();
-}
+
+  Milk::Milk(const Beverage* beverage) :
+    beverage_(beverage)
+  {
+    assert(beverage);
+    std::cout << "Milk::Milk" << std::endl;
+  }
+  Milk::~Milk()
+  {
+    std::cout << "Milk::~Milk" << std::endl;
+  }
+  std::string Milk::GetDescription() const
+  {
+    std::cout << "Milk::GetDescription" << std::endl;
+    return beverage_->GetDescription() + ", Milk";
+  }
+  double Milk::Cost() const
+  {
+    std::cout << "Milk::cost" << std::endl;
+    return 0.10 + beverage_->Cost();
+  }
+} //namespace headfirst

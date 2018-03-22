@@ -23,23 +23,26 @@
 //Your project's .h files.
 #include "menu_component.hpp"
 
-
-class MenuItem : public MenuComponent {
-
-  std::string name_;
-  std::string description_;
-  bool vegetarian_;
-  double price_;
-
-public:
-  MenuItem( const std::string name, const std::string description,
-            bool vegetarian, double price );
-  std::string GetName() const;
-  std::string GetDescription() const;
-  double GetPrice() const;
-  bool IsVegetarian() const;
-  void Print() const;
-};
+namespace headfirst {
 
 
+  class MenuItem : public MenuComponent {
+
+    std::string name_;
+    std::string description_;
+    bool vegetarian_;
+    double price_;
+
+  public:
+    MenuItem( const std::string name, const std::string description,
+              bool vegetarian, double price );
+    std::string GetName() const;
+    std::string GetDescription() const;
+    double GetPrice() const;
+    bool IsVegetarian() const;
+    void Print() const;
+  };
+
+
+} //namespace headfirst
 #endif

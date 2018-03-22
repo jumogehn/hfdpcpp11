@@ -19,19 +19,22 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-ChicagoStyleClamPizza::ChicagoStyleClamPizza()
-{
-  std::cout << "ChicagoStyleClamPizza::ChicagoStyleClamPizza" << std::endl;
-  name_ = "Chicago Style Clam Pizza";
-  dough_ = "Extra Thick Crust Dough";
-  sauce_ = "Plum Tomato Sauce";
-  toppings_.push_back( "Shredded Mozzarella Cheese" );
-  toppings_.push_back( "Frozen Clams from Chesapeake Bay" );
-}
-void ChicagoStyleClamPizza::Cut() const
-{
-  std::cout << "ChicagoStyleClamPizza::Cut" << std::endl;
-  std::cout << "Cutting the pizza into square slices" << std::endl;
-}
 
+  ChicagoStyleClamPizza::ChicagoStyleClamPizza()
+  {
+    std::cout << "ChicagoStyleClamPizza::ChicagoStyleClamPizza" << std::endl;
+    name_ = "Chicago Style Clam Pizza";
+    dough_ = "Extra Thick Crust Dough";
+    sauce_ = "Plum Tomato Sauce";
+    toppings_.push_back( "Shredded Mozzarella Cheese" );
+    toppings_.push_back( "Frozen Clams from Chesapeake Bay" );
+  }
+  void ChicagoStyleClamPizza::Cut() const
+  {
+    std::cout << "ChicagoStyleClamPizza::Cut" << std::endl;
+    std::cout << "Cutting the pizza into square slices" << std::endl;
+  }
+
+} //namespace headfirst

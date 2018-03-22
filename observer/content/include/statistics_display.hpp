@@ -25,24 +25,27 @@
 #include "observer.hpp"
 #include "subject.hpp"
 
-class StatisticsDisplay : private Observer, private DisplayElement {
+namespace headfirst {
 
-  Subject* weather_data_;
-  float max_temp_;
-  float min_temp_;
-  float temp_sum_;
-  int num_readings_;
+  class StatisticsDisplay : private Observer, private DisplayElement {
 
-  StatisticsDisplay(const StatisticsDisplay&); // Disable copy constructor
-  void operator=(const StatisticsDisplay&); // Disable assignment operator
+    Subject* weather_data_;
+    float max_temp_;
+    float min_temp_;
+    float temp_sum_;
+    int num_readings_;
 
-public:
-  explicit StatisticsDisplay();
-  ~StatisticsDisplay();
-  int SetSubject(Subject* weather_data);
-  int ResetSubject();
-  void Update(float temp, float humidity, float pressure);
-  void Display() const;
-};
+    StatisticsDisplay(const StatisticsDisplay&); // Disable copy constructor
+    void operator=(const StatisticsDisplay&); // Disable assignment operator
 
+  public:
+    explicit StatisticsDisplay();
+    ~StatisticsDisplay();
+    int SetSubject(Subject* weather_data);
+    int ResetSubject();
+    void Update(float temp, float humidity, float pressure);
+    void Display() const;
+  };
+
+} //namespace headfirst
 #endif

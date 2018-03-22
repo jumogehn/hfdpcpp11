@@ -22,15 +22,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-class Light {
+namespace headfirst {
 
-  std::string location_;
+  class Light {
 
-public:
-  explicit Light( const std::string location);
-  void TurnOn() const;
-  void TurnOff() const;
-};
+    std::string location_;
+
+  public:
+    explicit Light( const std::string location);
+    void TurnOn() const;
+    void TurnOff() const;
+  };
 
 
+} //namespace headfirst
 #endif

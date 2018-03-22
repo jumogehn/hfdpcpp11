@@ -21,12 +21,15 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-class DisplayElement {
-public:
-  virtual void Display() const = 0;
-protected:
-  virtual ~DisplayElement();
-};
 
+  class DisplayElement {
+  public:
+    virtual void Display() const = 0;
+  protected:
+    virtual ~DisplayElement();
+  };
+
+} //namespace headfirst
 #endif

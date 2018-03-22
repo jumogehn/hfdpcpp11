@@ -19,10 +19,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-void NoCommand::Execute() const
-{
-  std::cout << "NoCommand::execute" << std::endl;
-}
+namespace headfirst {
 
 
+  void NoCommand::Execute() const
+  {
+    std::cout << "NoCommand::execute" << std::endl;
+  }
+
+
+} //namespace headfirst

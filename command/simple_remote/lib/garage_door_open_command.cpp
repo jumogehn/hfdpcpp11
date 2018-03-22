@@ -22,16 +22,19 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-GarageDoorOpenCommand::GarageDoorOpenCommand( const GarageDoor* garage_door) :
-  garage_door_( garage_door )
-{
-  assert( garage_door );
-  std::cout << "GarageDoorOpenCommand::GarageDoorOpenCommand" << std::endl;
-}
-void GarageDoorOpenCommand::Execute() const
-{
-  std::cout << "GarageDoorOpenCommand::execute" << std::endl;
-  garage_door_->OpenUp();
-}
 
+  GarageDoorOpenCommand::GarageDoorOpenCommand( const GarageDoor* garage_door) :
+    garage_door_( garage_door )
+  {
+    assert( garage_door );
+    std::cout << "GarageDoorOpenCommand::GarageDoorOpenCommand" << std::endl;
+  }
+  void GarageDoorOpenCommand::Execute() const
+  {
+    std::cout << "GarageDoorOpenCommand::execute" << std::endl;
+    garage_door_->OpenUp();
+  }
+
+} //namespace headfirst

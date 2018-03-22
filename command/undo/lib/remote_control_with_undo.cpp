@@ -25,64 +25,67 @@
 //Your project's .h files.
 #include "no_command.hpp"
 
+namespace headfirst {
 
-RemoteControlWithUndo::RemoteControlWithUndo()
-{
-  std::cout << "RemoteControlWithUndo::RemoteControlWithUndo" << std::endl;
-  no_command_ = new NoCommand();
-  for( int i = 0; i < kSlots; i++ ) {
-    on_commands_[i] = no_command_;
-    off_commands_[i] = no_command_;
+
+  RemoteControlWithUndo::RemoteControlWithUndo()
+  {
+    std::cout << "RemoteControlWithUndo::RemoteControlWithUndo" << std::endl;
+    no_command_ = new NoCommand();
+    for( int i = 0; i < kSlots; i++ ) {
+      on_commands_[i] = no_command_;
+      off_commands_[i] = no_command_;
+    }
+    undo_command_ = no_command_;
   }
-  undo_command_ = no_command_;
-}
-RemoteControlWithUndo::~RemoteControlWithUndo()
-{
-  std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
-  delete no_command_;
-}
-void RemoteControlWithUndo::SetCommand( int slot, Command* on_command,
-                                        Command* off_command )
-{
-  assert( slot <= kSlots ); assert( on_command ); assert( off_command );
-  std::cout << "RemoteControlWithUndo::SetCommand" << std::endl;
-  on_commands_[slot]  = on_command;
-  off_commands_[slot] = off_command;
-}
-void RemoteControlWithUndo::OnButtonWasPushed( int slot ) const
-{
-  assert( slot <= kSlots );
-  std::cout << "RemoteControlWithUndo::OnButtonWasPushed" << std::endl;
-  on_commands_[slot]->Execute();
-  undo_command_ = on_commands_[slot];
-}
-void RemoteControlWithUndo::OffButtonWasPushed( int slot ) const
-{
-  assert( slot <= kSlots );
-  std::cout << "RemoteControlWithUndo::OffButtonWasPushed" << std::endl;
-  off_commands_[slot]->Execute();
-  undo_command_ = off_commands_[slot];
-}
-void RemoteControlWithUndo::UndoButtonWasPushed() const
-{
-  std::cout << "RemoteControlWithUndo::UndoButtonWasPushed" << std::endl;
-  undo_command_->Undo();
-}
-std::string RemoteControlWithUndo::ToString() const
-{
-  std::cout << "RemoteControlWithUndo::toString" << std::endl;
-  std::stringstream value;
-  value << std::endl << "------ Remote Control -------" << std::endl;
-  for( int i = 0; i < kSlots; i++ ) {
-    value << "[slot " << i << "] ";
-    value << typeid( *on_commands_[i] ).name();
-    value << "    ";
-    value << typeid( *off_commands_[i] ).name();
-    value << std::endl;
+  RemoteControlWithUndo::~RemoteControlWithUndo()
+  {
+    std::cout << "RemoteControlWithUndo::~RemoteControlWithUndo" << std::endl;
+    delete no_command_;
   }
-  value << "[undo] " << typeid( *undo_command_ ).name() << std::endl;
+  void RemoteControlWithUndo::SetCommand( int slot, Command* on_command,
+                                          Command* off_command )
+  {
+    assert( slot <= kSlots ); assert( on_command ); assert( off_command );
+    std::cout << "RemoteControlWithUndo::SetCommand" << std::endl;
+    on_commands_[slot]  = on_command;
+    off_commands_[slot] = off_command;
+  }
+  void RemoteControlWithUndo::OnButtonWasPushed( int slot ) const
+  {
+    assert( slot <= kSlots );
+    std::cout << "RemoteControlWithUndo::OnButtonWasPushed" << std::endl;
+    on_commands_[slot]->Execute();
+    undo_command_ = on_commands_[slot];
+  }
+  void RemoteControlWithUndo::OffButtonWasPushed( int slot ) const
+  {
+    assert( slot <= kSlots );
+    std::cout << "RemoteControlWithUndo::OffButtonWasPushed" << std::endl;
+    off_commands_[slot]->Execute();
+    undo_command_ = off_commands_[slot];
+  }
+  void RemoteControlWithUndo::UndoButtonWasPushed() const
+  {
+    std::cout << "RemoteControlWithUndo::UndoButtonWasPushed" << std::endl;
+    undo_command_->Undo();
+  }
+  std::string RemoteControlWithUndo::ToString() const
+  {
+    std::cout << "RemoteControlWithUndo::toString" << std::endl;
+    std::stringstream value;
+    value << std::endl << "------ Remote Control -------" << std::endl;
+    for( int i = 0; i < kSlots; i++ ) {
+      value << "[slot " << i << "] ";
+      value << typeid( *on_commands_[i] ).name();
+      value << "    ";
+      value << typeid( *off_commands_[i] ).name();
+      value << std::endl;
+    }
+    value << "[undo] " << typeid( *undo_command_ ).name() << std::endl;
 
-  return value.str();
-}
+    return value.str();
+  }
 
 
+} //namespace headfirst

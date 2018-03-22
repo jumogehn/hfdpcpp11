@@ -25,7 +25,8 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<GumballMachine> gumball_machine( new GumballMachine(10) );
+  std::unique_ptr<headfirst::GumballMachine>
+    gumball_machine( new headfirst::GumballMachine(10) );
   std::cout << gumball_machine->ToString() << std::endl;
 
   gumball_machine->InsertQuarter();

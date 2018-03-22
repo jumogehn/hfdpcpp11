@@ -23,12 +23,15 @@
 //Your project's .h files.
 #include "sauce.hpp"
 
-
-class MarinaraSauce : public Sauce {
-
-public:
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class MarinaraSauce : public Sauce {
+
+  public:
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

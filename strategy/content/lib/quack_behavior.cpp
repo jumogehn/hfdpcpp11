@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-QuackBehavior::~QuackBehavior()
-{
-  std::cout << "QuackBehavior::~QuackBehavior" << std::endl;
-}
 
+  QuackBehavior::~QuackBehavior()
+  {
+    std::cout << "QuackBehavior::~QuackBehavior" << std::endl;
+  }
+
+} //namespace headfirst

@@ -21,19 +21,22 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-HottubOffCommand::HottubOffCommand( const Hottub* hottub ) :
-  hottub_( hottub )
-{
-  std::cout << "HottubOffCommand::HottubOffCommand" << std::endl;
-  assert( hottub );
-}
-
-void HottubOffCommand::Execute() const
-{
-  std::cout << "HottubOffCommand::execute" << std::endl;
-  hottub_->Cool();
-  hottub_->TurnOff();
-}
+namespace headfirst {
 
 
+  HottubOffCommand::HottubOffCommand( const Hottub* hottub ) :
+    hottub_( hottub )
+  {
+    std::cout << "HottubOffCommand::HottubOffCommand" << std::endl;
+    assert( hottub );
+  }
+
+  void HottubOffCommand::Execute() const
+  {
+    std::cout << "HottubOffCommand::execute" << std::endl;
+    hottub_->Cool();
+    hottub_->TurnOff();
+  }
+
+
+} //namespace headfirst

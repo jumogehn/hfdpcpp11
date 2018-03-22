@@ -26,7 +26,7 @@
 #include "wild_turkey.hpp"
 
 
-void TestDuck( const Duck* duck )
+void TestDuck( const headfirst::Duck* duck )
 {
   std::cout << "TestDuck" << std::endl;
   duck->Quack();
@@ -36,8 +36,9 @@ void TestDuck( const Duck* duck )
 int main( int argc, char* argv[] )
 {
 
-  std::unique_ptr<MallardDuck> duck( new MallardDuck() );
-  std::unique_ptr<Turkey> duck_adapter( new DuckAdapter( duck.get() ));
+  std::unique_ptr<headfirst::MallardDuck> duck( new headfirst::MallardDuck() );
+  std::unique_ptr<headfirst::Turkey>
+    duck_adapter( new headfirst::DuckAdapter( duck.get() ));
 
   for( auto i = 0; i < 10; i++ ) {
     std::cout << "The DuckAdapter says..." << std::endl;
@@ -45,8 +46,9 @@ int main( int argc, char* argv[] )
     duck_adapter->Fly();
   }
 
-  std::unique_ptr<WildTurkey> turkey( new WildTurkey() );
-  std::unique_ptr<Duck> turkey_adapter( new TurkeyAdapter(turkey.get()) );
+  std::unique_ptr<headfirst::WildTurkey> turkey( new headfirst::WildTurkey() );
+  std::unique_ptr<headfirst::Duck> turkey_adapter(
+    new headfirst::TurkeyAdapter(turkey.get()) );
 
   std::cout << "The Turkey says..." << std::endl;
   turkey->Gobble();

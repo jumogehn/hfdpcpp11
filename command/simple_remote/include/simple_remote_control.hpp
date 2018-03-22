@@ -22,16 +22,19 @@
 //Your project's .h files.
 #include "command.hpp"
 
-
-class SimpleRemoteControl {
-
-  const Command* slot_;
-
-public:
-  SimpleRemoteControl();
-  void SetCommand( const Command* command );
-  void ButtonWasPressed() const;
-};
+namespace headfirst {
 
 
+  class SimpleRemoteControl {
+
+    const Command* slot_;
+
+  public:
+    SimpleRemoteControl();
+    void SetCommand( const Command* command );
+    void ButtonWasPressed() const;
+  };
+
+
+} //namespace headfirst
 #endif

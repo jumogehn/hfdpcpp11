@@ -22,14 +22,17 @@
 #include "fly_with_wings.hpp"
 #include "just_quack.hpp"
 
+namespace headfirst {
 
-RedHead::RedHead() : Duck(new FlyWithWings(), new JustQuack())
-{
-  std::cout << "RedHead::RedHead" << std::endl;
-}
-void RedHead::Display() const
-{
-  std::cout << "RedHead::Display" << std::endl;
-  std::cout << "I'm a real Red Headed duck" << std::endl;
-}
 
+  RedHead::RedHead() : Duck(new FlyWithWings(), new JustQuack())
+  {
+    std::cout << "RedHead::RedHead" << std::endl;
+  }
+  void RedHead::Display() const
+  {
+    std::cout << "RedHead::Display" << std::endl;
+    std::cout << "I'm a real Red Headed duck" << std::endl;
+  }
+
+} //namespace headfirst

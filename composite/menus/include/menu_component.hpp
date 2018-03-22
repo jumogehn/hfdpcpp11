@@ -24,24 +24,27 @@
 //Your project's .h files.
 #include "menu_component.hpp"
 
-
-class MenuComponent {
-
-  MenuComponent( const MenuComponent& ); // Disable copy constructor
-  void operator=( const MenuComponent& ); // Disable assignment operator
-
-public:
-  MenuComponent();
-  virtual ~MenuComponent();
-  virtual void Add( MenuComponent* menu_component );
-  virtual void Remove( MenuComponent* menu_component );
-  virtual MenuComponent* GetChild( int i ) const;
-  virtual std::string GetName() const;
-  virtual std::string GetDescription() const;
-  virtual double GetPrice() const;
-  virtual bool IsVegetarian() const;
-  virtual void Print() const;
-};
+namespace headfirst {
 
 
+  class MenuComponent {
+
+    MenuComponent( const MenuComponent& ); // Disable copy constructor
+    void operator=( const MenuComponent& ); // Disable assignment operator
+
+  public:
+    MenuComponent();
+    virtual ~MenuComponent();
+    virtual void Add( MenuComponent* menu_component );
+    virtual void Remove( MenuComponent* menu_component );
+    virtual MenuComponent* GetChild( int i ) const;
+    virtual std::string GetName() const;
+    virtual std::string GetDescription() const;
+    virtual double GetPrice() const;
+    virtual bool IsVegetarian() const;
+    virtual void Print() const;
+  };
+
+
+} //namespace headfirst
 #endif

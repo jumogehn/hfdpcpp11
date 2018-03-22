@@ -24,23 +24,26 @@
 #include "gumball_machine.hpp"
 #include "state.hpp"
 
-
-class WinnerState : public State {
-
-  GumballMachine* gumball_machine_;
-
-  WinnerState( const WinnerState& ); // Disable copy constructor
-  void operator=( const WinnerState& ); // Disable assignment operator
-
-public:
-  explicit WinnerState( GumballMachine* gumball_machine );
-  void InsertQuarter() const;
-  void EjectQuarter() const;
-  void TurnCrank() const;
-  void Dispense();
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class WinnerState : public State {
+
+    GumballMachine* gumball_machine_;
+
+    WinnerState( const WinnerState& ); // Disable copy constructor
+    void operator=( const WinnerState& ); // Disable assignment operator
+
+  public:
+    explicit WinnerState( GumballMachine* gumball_machine );
+    void InsertQuarter() const;
+    void EjectQuarter() const;
+    void TurnCrank() const;
+    void Dispense();
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif
 

@@ -26,8 +26,10 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<Tea> tea( new Tea() );
-  std::unique_ptr<Coffee> coffee( new Coffee() );
+  std::unique_ptr<headfirst::Tea>
+    tea( new headfirst::Tea() );
+  std::unique_ptr<headfirst::Coffee>
+    coffee( new headfirst::Coffee() );
 
   std::cout << std::endl << "Making tea..." << std::endl;
   tea->PrepareRecipe();
@@ -35,8 +37,10 @@ int main( int argc, char* argv[] ) {
   std::cout << std::endl << "Making coffee..." << std::endl;
   coffee->PrepareRecipe();
 
-  std::unique_ptr<TeaWithHook> tea_hook( new TeaWithHook() );
-  std::unique_ptr<CoffeeWithHook> coffee_hook( new CoffeeWithHook() );
+  std::unique_ptr<headfirst::TeaWithHook>
+    tea_hook( new headfirst::TeaWithHook() );
+  std::unique_ptr<headfirst::CoffeeWithHook>
+    coffee_hook( new headfirst::CoffeeWithHook() );
 
   std::cout << std::endl << "Making tea..."<< std::endl;
   tea_hook->PrepareRecipe();
@@ -46,3 +50,4 @@ int main( int argc, char* argv[] ) {
 
   return 0;
 }
+

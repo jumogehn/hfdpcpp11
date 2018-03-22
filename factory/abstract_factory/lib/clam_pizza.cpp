@@ -25,20 +25,23 @@
 #include "dough.hpp"
 #include "sauce.hpp"
 
+namespace headfirst {
 
-ClamPizza::ClamPizza(PizzaIngredientFactory* ingredient_factory )
-{
-  assert( ingredient_factory );
-  ingredient_factory_.reset( ingredient_factory );
-  std::cout << "ClamPizza::ClamPizza" << std::endl;
-}
-void ClamPizza::Prepare() const
-{
-  std::cout << "ClamPizza::prepare" << std::endl;
 
-  std::cout << "Preparing " << GetName().c_str() << std::endl;
-  dough_ = ingredient_factory_->CreateDough();
-  sauce_ = ingredient_factory_->CreateSauce();
-  cheese_ = ingredient_factory_->CreateCheese();
-  clam_ = ingredient_factory_->CreateClam();
-}
+  ClamPizza::ClamPizza(PizzaIngredientFactory* ingredient_factory )
+  {
+    assert( ingredient_factory );
+    ingredient_factory_.reset( ingredient_factory );
+    std::cout << "ClamPizza::ClamPizza" << std::endl;
+  }
+  void ClamPizza::Prepare() const
+  {
+    std::cout << "ClamPizza::prepare" << std::endl;
+
+    std::cout << "Preparing " << GetName().c_str() << std::endl;
+    dough_ = ingredient_factory_->CreateDough();
+    sauce_ = ingredient_factory_->CreateSauce();
+    cheese_ = ingredient_factory_->CreateCheese();
+    clam_ = ingredient_factory_->CreateClam();
+  }
+} //namespace headfirst

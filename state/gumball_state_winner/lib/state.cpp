@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-State::~State()
-{
-  std::cout << "State::~State" << std::endl;
-}
 
+  State::~State()
+  {
+    std::cout << "State::~State" << std::endl;
+  }
+
+} //namespace headfirst

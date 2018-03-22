@@ -26,10 +26,12 @@
 
 int main(int argc, char* argv[]) {
 
-  std::unique_ptr<PizzaStore> ny_store (new NYPizzaStore());
-  std::unique_ptr<PizzaStore> chicago_store(new ChicagoPizzaStore());
+  std::unique_ptr<headfirst::PizzaStore>
+    ny_store (new headfirst::NYPizzaStore());
+  std::unique_ptr<headfirst::PizzaStore>
+    chicago_store(new headfirst::ChicagoPizzaStore());
 
-  std::unique_ptr<Pizza> pizza = ny_store->OrderPizza("cheese");
+  std::unique_ptr<headfirst::Pizza> pizza = ny_store->OrderPizza("cheese");
   std::cout << "Ethan ordered a " << pizza->ToString() << std::endl;
 
   pizza = chicago_store->OrderPizza("cheese");

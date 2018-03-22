@@ -24,20 +24,23 @@
 #include "dough.hpp"
 #include "sauce.hpp"
 
+namespace headfirst {
 
-VeggiePizza::VeggiePizza(PizzaIngredientFactory *ingredient_factory)
-{
-  assert(ingredient_factory);
-  ingredient_factory_.reset(ingredient_factory);
-  std::cout << "VeggiePizza::VeggiePizza" << std::endl;
-}
-void VeggiePizza::Prepare() const
-{
-  std::cout << "VeggiePizza::prepare" << std::endl;
-  std::cout << "Preparing " << GetName().c_str() << std::endl;
-  dough_ = ingredient_factory_->CreateDough();
-  sauce_ = ingredient_factory_->CreateSauce();
-  cheese_ = ingredient_factory_->CreateCheese();
-  if (!veggies_)
-    veggies_ = ingredient_factory_->CreateVeggies();
-}
+
+  VeggiePizza::VeggiePizza(PizzaIngredientFactory *ingredient_factory)
+  {
+    assert(ingredient_factory);
+    ingredient_factory_.reset(ingredient_factory);
+    std::cout << "VeggiePizza::VeggiePizza" << std::endl;
+  }
+  void VeggiePizza::Prepare() const
+  {
+    std::cout << "VeggiePizza::prepare" << std::endl;
+    std::cout << "Preparing " << GetName().c_str() << std::endl;
+    dough_ = ingredient_factory_->CreateDough();
+    sauce_ = ingredient_factory_->CreateSauce();
+    cheese_ = ingredient_factory_->CreateCheese();
+    if (!veggies_)
+      veggies_ = ingredient_factory_->CreateVeggies();
+  }
+} //namespace headfirst

@@ -19,8 +19,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Pepperoni::~Pepperoni()
-{
-  std::cout << "Pepperoni::~Pepperoni" << std::endl;
-}
+
+  Pepperoni::~Pepperoni()
+  {
+    std::cout << "Pepperoni::~Pepperoni" << std::endl;
+  }
+} //namespace headfirst

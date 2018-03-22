@@ -21,21 +21,24 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class PopcornPopper {
-
-  std::string description_;
-
-  PopcornPopper( const PopcornPopper& ); // Disable copy constructor
-  void operator=( const PopcornPopper& ); // Disable assignment operator
-
-public:
-  PopcornPopper( std::string description);
-  void TurnOn() const;
-  void TurnOff() const;
-  void Pop() const;
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class PopcornPopper {
+
+    std::string description_;
+
+    PopcornPopper( const PopcornPopper& ); // Disable copy constructor
+    void operator=( const PopcornPopper& ); // Disable assignment operator
+
+  public:
+    PopcornPopper( std::string description);
+    void TurnOn() const;
+    void TurnOff() const;
+    void Pop() const;
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

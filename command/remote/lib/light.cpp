@@ -19,21 +19,24 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-Light::Light( const std::string location) :
-  location_( location )
-{
-  std::cout << "Light::Light" << std::endl;
-}
-void Light::TurnOn() const
-{
-  std::cout << "Light::on" << std::endl;
-  std::cout << location_.c_str() << " light is on" << std::endl;
-}
-void Light::TurnOff() const
-{
-  std::cout << "Light::off" << std::endl;
-  std::cout << location_.c_str() << " light is off" << std::endl;
-}
+namespace headfirst {
 
 
+  Light::Light( const std::string location) :
+    location_( location )
+  {
+    std::cout << "Light::Light" << std::endl;
+  }
+  void Light::TurnOn() const
+  {
+    std::cout << "Light::on" << std::endl;
+    std::cout << location_.c_str() << " light is on" << std::endl;
+  }
+  void Light::TurnOff() const
+  {
+    std::cout << "Light::off" << std::endl;
+    std::cout << location_.c_str() << " light is off" << std::endl;
+  }
+
+
+} //namespace headfirst

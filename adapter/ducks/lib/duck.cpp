@@ -20,8 +20,11 @@
 //Your project's .h files.
 
 
-Duck::~Duck()
-{
-  std::cout << "Duck::~Duck()" << std::endl;
-}
+namespace headfirst {
 
+  Duck::~Duck()
+  {
+    std::cout << "Duck::~Duck()" << std::endl;
+  }
+
+} //namespace headfirst

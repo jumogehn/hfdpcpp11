@@ -21,31 +21,34 @@
 //Your project's .h files.
 
 
-
-class Amplifier;
-
-class CdPlayer {
-
-  std::string description_;
-  Amplifier* amplifier_;
-  std::string title_;
-  int current_track_;
-
-  CdPlayer( const CdPlayer& ); // Disable copy constructor
-  void operator=( const CdPlayer& ); // Disable assignment operator
-
-public:
-  CdPlayer( std::string description, Amplifier* amplifier );
-  void TurnOn() const;
-  void TurnOff() const;
-  void Eject();
-  void Play( std::string title);
-  void Play( int track );
-  void Stop();
-  void Pause();
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class Amplifier;
+
+  class CdPlayer {
+
+    std::string description_;
+    Amplifier* amplifier_;
+    std::string title_;
+    int current_track_;
+
+    CdPlayer( const CdPlayer& ); // Disable copy constructor
+    void operator=( const CdPlayer& ); // Disable assignment operator
+
+  public:
+    CdPlayer( std::string description, Amplifier* amplifier );
+    void TurnOn() const;
+    void TurnOff() const;
+    void Eject();
+    void Play( std::string title);
+    void Play( int track );
+    void Stop();
+    void Pause();
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif
 

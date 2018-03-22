@@ -34,24 +34,25 @@ int main( int argc, char* argv[] ) {
 
   std::cout << "main" << std::endl;
 
-  std::unique_ptr<Amplifier>
-    amp(new Amplifier( "Top-O-Line Amplifier" ));
-  std::unique_ptr<Tuner>
-    tuner(new Tuner( "Top-O-Line AM/FM Tuner", amp.get() ));
-  std::unique_ptr<DvdPlayer>
-    dvd(new DvdPlayer( "Top-O-Line DVD Player", amp.get() ));
-  std::unique_ptr<CdPlayer>
-    cd(new CdPlayer( "Top-O-Line CD Player", amp.get() ));
-  std::unique_ptr<Projector>
-    projector(new Projector( "Top-O-Line Projector", dvd.get() ));
-  std::unique_ptr<TheaterLights>
-    lights(new TheaterLights( "Theater Ceiling Lights" ));
-  std::unique_ptr<Screen>
-    screen(new Screen( "Theater Screen" ));
-  std::unique_ptr<PopcornPopper>
-    popper(new PopcornPopper( "Popcorn Popper" ));
-  std::unique_ptr<HomeTheaterFacade>
-    home_theater(new HomeTheaterFacade( amp.get(), tuner.get(), dvd.get(),
+  std::unique_ptr<headfirst::Amplifier>
+    amp(new headfirst::Amplifier( "Top-O-Line Amplifier" ));
+  std::unique_ptr<headfirst::Tuner>
+    tuner(new headfirst::Tuner( "Top-O-Line AM/FM Tuner", amp.get() ));
+  std::unique_ptr<headfirst::DvdPlayer>
+    dvd(new headfirst::DvdPlayer( "Top-O-Line DVD Player", amp.get() ));
+  std::unique_ptr<headfirst::CdPlayer>
+    cd(new headfirst::CdPlayer( "Top-O-Line CD Player", amp.get() ));
+  std::unique_ptr<headfirst::Projector>
+    projector(new headfirst::Projector( "Top-O-Line Projector", dvd.get() ));
+  std::unique_ptr<headfirst::TheaterLights>
+    lights(new headfirst::TheaterLights( "Theater Ceiling Lights" ));
+  std::unique_ptr<headfirst::Screen>
+    screen(new headfirst::Screen( "Theater Screen" ));
+  std::unique_ptr<headfirst::PopcornPopper>
+    popper(new headfirst::PopcornPopper( "Popcorn Popper" ));
+  std::unique_ptr<headfirst::HomeTheaterFacade>
+    home_theater(
+      new headfirst::HomeTheaterFacade( amp.get(), tuner.get(), dvd.get(),
                                         cd.get(), projector.get(), screen.get(),
                                         lights.get(), popper.get() ));
 

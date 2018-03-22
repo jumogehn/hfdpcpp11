@@ -20,20 +20,23 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-Light::Light()
-{
-  std::cout << "Light::Light" << std::endl;
-}
-void Light::On() const
-{
-  std::cout << "Light::On" << std::endl;
-  std::cout << "Light is on" << std::endl;
-}
-void Light::Off() const
-{
-  std::cout << "Light::Off" << std::endl;
-  std::cout << "Light is off" << std::endl;
-}
 
+  Light::Light()
+  {
+    std::cout << "Light::Light" << std::endl;
+  }
+  void Light::On() const
+  {
+    std::cout << "Light::On" << std::endl;
+    std::cout << "Light is on" << std::endl;
+  }
+  void Light::Off() const
+  {
+    std::cout << "Light::Off" << std::endl;
+    std::cout << "Light is off" << std::endl;
+  }
+
+} //namespace headfirst

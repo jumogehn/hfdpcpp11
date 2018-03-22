@@ -19,21 +19,24 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-ChicagoStyleVeggiePizza::ChicagoStyleVeggiePizza()
-{
-  std::cout << "ChicagoStyleVeggiePizza"
-                     "::ChicagoStyleVeggiePizza" << std::endl;
-  name_ = "Chicago Deep Dish Veggie Pizza";
-  dough_ = "Extra Thick Crust Dough";
-  sauce_ = "Plum Tomato Sauce";
-  toppings_.push_back( "Shredded Mozzarella Cheese" );
-  toppings_.push_back( "Black Olives" );
-  toppings_.push_back( "Spinach" );
-  toppings_.push_back( "Eggplant" );
-}
-void ChicagoStyleVeggiePizza::Cut() const
-{
-  std::cout << "ChicagoStyleVeggiePizza::Cut" << std::endl;
-  std::cout << "Cutting the pizza into square slices" << std::endl;
-}
+
+  ChicagoStyleVeggiePizza::ChicagoStyleVeggiePizza()
+  {
+    std::cout << "ChicagoStyleVeggiePizza"
+      "::ChicagoStyleVeggiePizza" << std::endl;
+    name_ = "Chicago Deep Dish Veggie Pizza";
+    dough_ = "Extra Thick Crust Dough";
+    sauce_ = "Plum Tomato Sauce";
+    toppings_.push_back( "Shredded Mozzarella Cheese" );
+    toppings_.push_back( "Black Olives" );
+    toppings_.push_back( "Spinach" );
+    toppings_.push_back( "Eggplant" );
+  }
+  void ChicagoStyleVeggiePizza::Cut() const
+  {
+    std::cout << "ChicagoStyleVeggiePizza::Cut" << std::endl;
+    std::cout << "Cutting the pizza into square slices" << std::endl;
+  }
+} //namespace headfirst

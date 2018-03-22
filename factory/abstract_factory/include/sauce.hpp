@@ -22,13 +22,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Sauce {
-
-public:
-  virtual ~Sauce();
-  virtual std::string ToString() const = 0;
-};
+namespace headfirst {
 
 
+  class Sauce {
+
+  public:
+    virtual ~Sauce();
+    virtual std::string ToString() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

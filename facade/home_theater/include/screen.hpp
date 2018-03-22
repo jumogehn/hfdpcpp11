@@ -21,20 +21,23 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Screen {
-
-  std::string description_;
-
-  Screen( const Screen& ); // Disable copy constructor
-  void operator=( const Screen& ); // Disable assignment operator
-
-public:
-  Screen( std::string description );
-  void CloseUp();
-  void Down();
-  std::string ToString();
-};
+namespace headfirst {
 
 
+  class Screen {
+
+    std::string description_;
+
+    Screen( const Screen& ); // Disable copy constructor
+    void operator=( const Screen& ); // Disable assignment operator
+
+  public:
+    Screen( std::string description );
+    void CloseUp();
+    void Down();
+    std::string ToString();
+  };
+
+
+} //namespace headfirst
 #endif

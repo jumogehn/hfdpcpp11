@@ -26,10 +26,14 @@
 
 int main(int argc, char* argv[]) {
 
-  std::unique_ptr<MallardDuck> mallard ( new MallardDuck() );
-  std::unique_ptr<RubberDuck> rubber_duckie ( new RubberDuck() );
-  std::unique_ptr<DecoyDuck> decoy ( new DecoyDuck() );
-  std::unique_ptr<ModelDuck> model ( new ModelDuck() );
+  std::unique_ptr<headfirst::MallardDuck>
+    mallard ( new headfirst::MallardDuck() );
+  std::unique_ptr<headfirst::RubberDuck>
+    rubber_duckie ( new headfirst::RubberDuck() );
+  std::unique_ptr<headfirst::DecoyDuck>
+    decoy ( new headfirst::DecoyDuck() );
+  std::unique_ptr<headfirst::ModelDuck>
+    model ( new headfirst::ModelDuck() );
 
   mallard->PerformQuack();
   mallard->PerformFly();
@@ -42,7 +46,7 @@ int main(int argc, char* argv[]) {
 
   model->PerformQuack();
   model->PerformFly();
-  model->SetFlyBehavior(new FlyRocketPowered());
+  model->SetFlyBehavior(new headfirst::FlyRocketPowered());
   model->PerformFly();
 
   return 0;

@@ -22,19 +22,22 @@
 //Your project's .h files.
 #include "hottub.hpp"
 
+namespace headfirst {
 
-HottubOnCommand::HottubOnCommand( const Hottub* hottub ) :
-  hottub_( hottub )
-{
-  std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;
-  assert( hottub );
-}
 
-void HottubOnCommand::Execute() const
-{
-  std::cout << "HottubOnCommand::execute" << std::endl;
-  hottub_->TurnOn();
-  hottub_->Heat();
-  hottub_->BubblesOn();
-}
+  HottubOnCommand::HottubOnCommand( const Hottub* hottub ) :
+    hottub_( hottub )
+  {
+    std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;
+    assert( hottub );
+  }
 
+  void HottubOnCommand::Execute() const
+  {
+    std::cout << "HottubOnCommand::execute" << std::endl;
+    hottub_->TurnOn();
+    hottub_->Heat();
+    hottub_->BubblesOn();
+  }
+
+} //namespace headfirst

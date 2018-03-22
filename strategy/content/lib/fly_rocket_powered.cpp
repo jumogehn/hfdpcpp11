@@ -19,10 +19,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void FlyRocketPowered::Fly() const
-{
-  std::cout << "FlyRocketPowered::fly" << std::endl;
-  std::cout << "I'm flying with a rocket" << std::endl;
-}
 
+  void FlyRocketPowered::Fly() const
+  {
+    std::cout << "FlyRocketPowered::fly" << std::endl;
+    std::cout << "I'm flying with a rocket" << std::endl;
+  }
+
+} //namespace headfirst

@@ -20,13 +20,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void NoCommand::Execute() const
-{
-  std::cout << "NoCommand::execute" << std::endl;
-}
-void NoCommand::Undo() const
-{
-  std::cout << "NoCommand::undo" << std::endl;
-}
 
+  void NoCommand::Execute() const
+  {
+    std::cout << "NoCommand::execute" << std::endl;
+  }
+  void NoCommand::Undo() const
+  {
+    std::cout << "NoCommand::undo" << std::endl;
+  }
+
+} //namespace headfirst

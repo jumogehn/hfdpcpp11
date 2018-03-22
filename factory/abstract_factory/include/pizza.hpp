@@ -30,35 +30,38 @@
 #include "sauce.hpp"
 #include "veggies.hpp"
 
-
-class Pizza {
-
-  std::string name_;
-
-  Pizza(const Pizza&); // Disable copy constructor
-  void operator=(const Pizza&); // Disable assignment operator
-
-protected:
-  mutable std::unique_ptr< Dough > dough_;
-  mutable std::unique_ptr< Sauce > sauce_;
-  mutable std::vector< Veggies * > *veggies_;
-  mutable std::unique_ptr< Cheese > cheese_;
-  mutable std::unique_ptr< Pepperoni > pepperoni_;
-  mutable std::unique_ptr< Clams > clam_;
-
-  Pizza();
-
-public:
-  virtual void Prepare() const = 0;
-
-  virtual ~Pizza();
-  virtual void Bake() const;
-  virtual void Cut() const;
-  virtual void Box() const;
-  void SetName(std::string name);
-  std::string GetName() const;
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class Pizza {
+
+    std::string name_;
+
+    Pizza(const Pizza&); // Disable copy constructor
+    void operator=(const Pizza&); // Disable assignment operator
+
+  protected:
+    mutable std::unique_ptr< Dough > dough_;
+    mutable std::unique_ptr< Sauce > sauce_;
+    mutable std::vector< Veggies * > *veggies_;
+    mutable std::unique_ptr< Cheese > cheese_;
+    mutable std::unique_ptr< Pepperoni > pepperoni_;
+    mutable std::unique_ptr< Clams > clam_;
+
+    Pizza();
+
+  public:
+    virtual void Prepare() const = 0;
+
+    virtual ~Pizza();
+    virtual void Bake() const;
+    virtual void Cut() const;
+    virtual void Box() const;
+    void SetName(std::string name);
+    std::string GetName() const;
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

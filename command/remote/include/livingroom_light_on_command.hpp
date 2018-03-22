@@ -24,16 +24,19 @@
 #include "command.hpp"
 #include "light.hpp"
 
+namespace headfirst {
 
 
-class LivingroomLightOnCommand : public Command {
 
-  const Light* light_;
+  class LivingroomLightOnCommand : public Command {
 
-public:
-  explicit LivingroomLightOnCommand( const Light* light );
-  void Execute() const;
-};
+    const Light* light_;
+
+  public:
+    explicit LivingroomLightOnCommand( const Light* light );
+    void Execute() const;
+  };
 
 
+} //namespace headfirst
 #endif

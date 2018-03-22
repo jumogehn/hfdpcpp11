@@ -28,25 +28,28 @@
 #include "pizza.hpp"
 #include "veggie_pizza.hpp"
 
+namespace headfirst {
 
-std::unique_ptr< Pizza > NYPizzaStore::CreatePizza( std::string item ) const
-{
-  std::cout << "NYPizzaStore::CreatePizza" << std::endl;
 
-  std::unique_ptr< Pizza > pizza;
+  std::unique_ptr< Pizza > NYPizzaStore::CreatePizza( std::string item ) const
+  {
+    std::cout << "NYPizzaStore::CreatePizza" << std::endl;
 
-  if( item.compare( "cheese" ) == 0 ) {
-    pizza.reset(new CheesePizza(new NYPizzaIngredientFactory()));
-    pizza->SetName( "New York Style Cheese Pizza" );
-  } else if( item.compare( "veggie" ) == 0 ) {
-    pizza.reset(new VeggiePizza(new NYPizzaIngredientFactory()));
-    pizza->SetName( "New York Style Veggie Pizza" );
-  } else if( item.compare( "clam" ) == 0 ) {
-    pizza.reset(new ClamPizza(new NYPizzaIngredientFactory()));
-    pizza->SetName( "New York Style Clam Pizza" );
-  } else if( item.compare( "pepperoni" ) == 0 ) {
-    pizza.reset(new PepperoniPizza(new NYPizzaIngredientFactory()));
-    pizza->SetName( "New York Style Pepperoni Pizza" );
+    std::unique_ptr< Pizza > pizza;
+
+    if( item.compare( "cheese" ) == 0 ) {
+      pizza.reset(new CheesePizza(new NYPizzaIngredientFactory()));
+      pizza->SetName( "New York Style Cheese Pizza" );
+    } else if( item.compare( "veggie" ) == 0 ) {
+      pizza.reset(new VeggiePizza(new NYPizzaIngredientFactory()));
+      pizza->SetName( "New York Style Veggie Pizza" );
+    } else if( item.compare( "clam" ) == 0 ) {
+      pizza.reset(new ClamPizza(new NYPizzaIngredientFactory()));
+      pizza->SetName( "New York Style Clam Pizza" );
+    } else if( item.compare( "pepperoni" ) == 0 ) {
+      pizza.reset(new PepperoniPizza(new NYPizzaIngredientFactory()));
+      pizza->SetName( "New York Style Pepperoni Pizza" );
+    }
+    return pizza;
   }
-  return pizza;
-}
+} //namespace headfirst

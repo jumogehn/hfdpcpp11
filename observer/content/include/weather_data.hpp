@@ -25,30 +25,33 @@
 #include "observer.hpp"
 #include "subject.hpp"
 
+namespace headfirst {
 
-class WeatherData : public Subject {
 
-  mutable std::list< Observer* > observers_;
-  float temperature_;
-  float humidity_;
-  float pressure_;
+  class WeatherData : public Subject {
 
-  WeatherData(const WeatherData&); // Disable copy constructor
-  void operator=(const WeatherData&); // Disable assignment operator
+    mutable std::list< Observer* > observers_;
+    float temperature_;
+    float humidity_;
+    float pressure_;
 
-public:
-  WeatherData();
-  void RegisterObserver(Observer* o);
-  void RemoveObserver(Observer* o);
-  void NotifyObservers() const;
-  void MeasurementsChanged();
-  void SetMeasurements(float temperature, float humidity, float pressure);
+    WeatherData(const WeatherData&); // Disable copy constructor
+    void operator=(const WeatherData&); // Disable assignment operator
 
-  // other WeatherData methods here
+  public:
+    WeatherData();
+    void RegisterObserver(Observer* o);
+    void RemoveObserver(Observer* o);
+    void NotifyObservers() const;
+    void MeasurementsChanged();
+    void SetMeasurements(float temperature, float humidity, float pressure);
 
-  float GetTemperature() const;
-  float GetHumidity() const;
-  float GetPressure() const;
-};
+    // other WeatherData methods here
 
+    float GetTemperature() const;
+    float GetHumidity() const;
+    float GetPressure() const;
+  };
+
+} //namespace headfirst
 #endif

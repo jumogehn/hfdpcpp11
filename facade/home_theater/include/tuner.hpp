@@ -21,28 +21,31 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-class Amplifier;
 
-class Tuner {
+  class Amplifier;
 
-  std::string description_;
-  Amplifier* amplifier_;
-  double frequency_;
+  class Tuner {
 
-  Tuner( const Tuner& ); // Disable copy constructor
-  void operator=( const Tuner& ); // Disable assignment operator
+    std::string description_;
+    Amplifier* amplifier_;
+    double frequency_;
 
-public:
-  Tuner( std::string description, Amplifier* amplifier );
-  void TurnOn();
-  void TurnOff();
-  void SetFrequency( double frequency );
-  void SetAm();
-  void SetFm();
-  std::string ToString() const;
-};
+    Tuner( const Tuner& ); // Disable copy constructor
+    void operator=( const Tuner& ); // Disable assignment operator
+
+  public:
+    Tuner( std::string description, Amplifier* amplifier );
+    void TurnOn();
+    void TurnOff();
+    void SetFrequency( double frequency );
+    void SetAm();
+    void SetFm();
+    std::string ToString() const;
+  };
 
 
+} //namespace headfirst
 #endif

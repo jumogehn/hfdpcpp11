@@ -25,12 +25,15 @@
 #include "pizza.hpp"
 #include "pizza_store.hpp"
 
-
-class ChicagoPizzaStore : public PizzaStore {
-
-public:
-  std::unique_ptr< Pizza > CreatePizza(std::string item) const;
-};
+namespace headfirst {
 
 
+  class ChicagoPizzaStore : public PizzaStore {
+
+  public:
+    std::unique_ptr< Pizza > CreatePizza(std::string item) const;
+  };
+
+
+} //namespace headfirst
 #endif

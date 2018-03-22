@@ -22,17 +22,20 @@
 //Your project's .h files.
 #include "ceiling_fan.hpp"
 
+namespace headfirst {
 
-CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceiling_fan ) :
-  ceiling_fan_( ceiling_fan )
-{
-  assert( ceiling_fan );
-  std::cout << "CeilingFanOnCommand::CeilingFanOnCommand" << std::endl;
-}
 
-void CeilingFanOnCommand::Execute() const
-{
-  std::cout << "CeilingFanOnCommand::execute" << std::endl;
-  ceiling_fan_->SetHigh();
-}
+  CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceiling_fan ) :
+    ceiling_fan_( ceiling_fan )
+  {
+    assert( ceiling_fan );
+    std::cout << "CeilingFanOnCommand::CeilingFanOnCommand" << std::endl;
+  }
 
+  void CeilingFanOnCommand::Execute() const
+  {
+    std::cout << "CeilingFanOnCommand::execute" << std::endl;
+    ceiling_fan_->SetHigh();
+  }
+
+} //namespace headfirst

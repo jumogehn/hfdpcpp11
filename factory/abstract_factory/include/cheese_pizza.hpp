@@ -24,15 +24,18 @@
 #include "pizza.hpp"
 #include "pizza_ingredient_factory.hpp"
 
-
-class CheesePizza : public Pizza {
-
-  mutable std::unique_ptr<PizzaIngredientFactory> ingredient_factory_;
-
-public:
-  explicit CheesePizza(PizzaIngredientFactory* ingredient_factory);
-  void Prepare() const;
-};
+namespace headfirst {
 
 
+  class CheesePizza : public Pizza {
+
+    mutable std::unique_ptr<PizzaIngredientFactory> ingredient_factory_;
+
+  public:
+    explicit CheesePizza(PizzaIngredientFactory* ingredient_factory);
+    void Prepare() const;
+  };
+
+
+} //namespace headfirst
 #endif

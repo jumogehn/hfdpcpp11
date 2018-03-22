@@ -31,17 +31,20 @@
 #include "sauce.hpp"
 #include "veggies.hpp"
 
-
-class NYPizzaIngredientFactory : public PizzaIngredientFactory {
-
-public:
-  std::unique_ptr<Dough> CreateDough() const;
-  std::unique_ptr<Sauce> CreateSauce() const;
-  std::unique_ptr<Cheese> CreateCheese() const;
-  std::vector<Veggies*> *CreateVeggies() const;
-  std::unique_ptr<Pepperoni> CreatePepperoni() const;
-  std::unique_ptr<Clams> CreateClam() const;
-};
+namespace headfirst {
 
 
+  class NYPizzaIngredientFactory : public PizzaIngredientFactory {
+
+  public:
+    std::unique_ptr<Dough> CreateDough() const;
+    std::unique_ptr<Sauce> CreateSauce() const;
+    std::unique_ptr<Cheese> CreateCheese() const;
+    std::vector<Veggies*> *CreateVeggies() const;
+    std::unique_ptr<Pepperoni> CreatePepperoni() const;
+    std::unique_ptr<Clams> CreateClam() const;
+  };
+
+
+} //namespace headfirst
 #endif

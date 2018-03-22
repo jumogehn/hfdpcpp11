@@ -24,17 +24,20 @@
 #include "command.hpp"
 #include "light.hpp"
 
-
-class DimmerLightOnCommand : public Command {
-
-  const Light* light_;
-  mutable int prev_level_;
-
-public:
-  explicit DimmerLightOnCommand( const Light* light );
-  void Execute() const;
-  void Undo() const;
-};
+namespace headfirst {
 
 
+  class DimmerLightOnCommand : public Command {
+
+    const Light* light_;
+    mutable int prev_level_;
+
+  public:
+    explicit DimmerLightOnCommand( const Light* light );
+    void Execute() const;
+    void Undo() const;
+  };
+
+
+} //namespace headfirst
 #endif

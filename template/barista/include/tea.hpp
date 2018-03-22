@@ -22,13 +22,16 @@
 //Your project's .h files.
 #include "caffeine_beverage.hpp"
 
-
-class Tea : public CaffeineBeverage {
-
-public:
-  void Brew() const;
-  void AddCondiments() const;
-};
+namespace headfirst {
 
 
+  class Tea : public CaffeineBeverage {
+
+  public:
+    void Brew() const;
+    void AddCondiments() const;
+  };
+
+
+} //namespace headfirst
 #endif

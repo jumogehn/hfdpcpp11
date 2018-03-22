@@ -20,26 +20,29 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-MenuIterator::MenuIterator( std::vector< MenuComponent* > items ) :
-  items_( items )
-{
-  std::cout << "MenuIterator::"
-                     "MenuIterator" << std::endl;
-  iterator_ = items_.begin();
-}
- MenuComponent* MenuIterator::Next() const
-{
-  std::cout << "MenuIterator::next" << std::endl;
-  MenuComponent* result = *iterator_++;
-  return result;
-}
-bool MenuIterator::HasNext() const
-{
-  std::cout << "MenuIterator::HasNext" << std::endl;
 
-  if( iterator_ != items_.end() ) {
-    return true;
+  MenuIterator::MenuIterator( std::vector< MenuComponent* > items ) :
+    items_( items )
+  {
+    std::cout << "MenuIterator::"
+      "MenuIterator" << std::endl;
+    iterator_ = items_.begin();
   }
-  return false;
-}
+  MenuComponent* MenuIterator::Next() const
+  {
+    std::cout << "MenuIterator::next" << std::endl;
+    MenuComponent* result = *iterator_++;
+    return result;
+  }
+  bool MenuIterator::HasNext() const
+  {
+    std::cout << "MenuIterator::HasNext" << std::endl;
+
+    if( iterator_ != items_.end() ) {
+      return true;
+    }
+    return false;
+  }
+} //namespace headfirst

@@ -20,10 +20,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-std::string Spinach::ToString() const
-{
-  std::cout << "Spinach::ToString" << std::endl;
-  return ("Spinach");
-}
+
+  std::string Spinach::ToString() const
+  {
+    std::cout << "Spinach::ToString" << std::endl;
+    return ("Spinach");
+  }
+} //namespace headfirst

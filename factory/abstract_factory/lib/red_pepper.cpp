@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string RedPepper::ToString() const
-{
-  std::cout << "RedPepper::ToString" << std::endl;
-  return ( "Red Pepper" );
-}
+
+  std::string RedPepper::ToString() const
+  {
+    std::cout << "RedPepper::ToString" << std::endl;
+    return ( "Red Pepper" );
+  }
+} //namespace headfirst

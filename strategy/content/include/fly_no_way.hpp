@@ -22,12 +22,15 @@
 //Your project's .h files.
 #include "fly_behavior.hpp"
 
-
-class FlyNoWay : public FlyBehavior {
-
-public:
-  void Fly() const;
-};
+namespace headfirst {
 
 
+  class FlyNoWay : public FlyBehavior {
+
+  public:
+    void Fly() const;
+  };
+
+
+} //namespace headfirst
 #endif

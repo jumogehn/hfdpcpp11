@@ -23,19 +23,22 @@
 //Your project's .h files.
 #include "menu_component.hpp"
 
-
-class Waitress {
-
-  const MenuComponent* all_menus_;
-
-  Waitress( const Waitress& ); // Disable copy constructor
-  void operator=( const Waitress& ); // Disable assignment operator
-
-public:
-  explicit Waitress( const MenuComponent* all_menus );
-  void PrintMenu() const;
-};
+namespace headfirst {
 
 
+  class Waitress {
+
+    const MenuComponent* all_menus_;
+
+    Waitress( const Waitress& ); // Disable copy constructor
+    void operator=( const Waitress& ); // Disable assignment operator
+
+  public:
+    explicit Waitress( const MenuComponent* all_menus );
+    void PrintMenu() const;
+  };
+
+
+} //namespace headfirst
 #endif
 

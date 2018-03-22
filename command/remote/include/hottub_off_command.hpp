@@ -24,14 +24,17 @@
 #include "command.hpp"
 #include "hottub.hpp"
 
+namespace headfirst {
 
-class HottubOffCommand : public Command {
 
-  const Hottub* hottub_;
+  class HottubOffCommand : public Command {
 
-public:
-  explicit HottubOffCommand( const Hottub* hottub );
-  void Execute() const;
-};
+    const Hottub* hottub_;
 
+  public:
+    explicit HottubOffCommand( const Hottub* hottub );
+    void Execute() const;
+  };
+
+} //namespace headfirst
 #endif

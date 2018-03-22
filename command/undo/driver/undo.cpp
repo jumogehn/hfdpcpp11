@@ -31,14 +31,16 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<RemoteControlWithUndo>
-    remote_control(new RemoteControlWithUndo());
-  std::unique_ptr<Light>
-    living_room_light(new Light( "Living Room" ));
-  std::unique_ptr<LightOnCommand>
-    living_room_light_on(new LightOnCommand( living_room_light.get() ));
-  std::unique_ptr<LightOffCommand>
-    living_room_light_off(new LightOffCommand( living_room_light.get() ));
+  std::unique_ptr<headfirst::RemoteControlWithUndo>
+    remote_control(new headfirst::RemoteControlWithUndo());
+  std::unique_ptr<headfirst::Light>
+    living_room_light(new headfirst::Light( "Living Room" ));
+  std::unique_ptr<headfirst::LightOnCommand>
+    living_room_light_on(
+      new headfirst::LightOnCommand( living_room_light.get() ));
+  std::unique_ptr<headfirst::LightOffCommand>
+    living_room_light_off(
+      new headfirst::LightOffCommand( living_room_light.get() ));
 
   remote_control->SetCommand( 0, living_room_light_on.get(),
                               living_room_light_off.get() );
@@ -52,14 +54,15 @@ int main( int argc, char* argv[] ) {
   std::cout << remote_control->ToString() << std::endl;
   remote_control->UndoButtonWasPushed();
 
-  std::unique_ptr<CeilingFan>
-    ceiling_fan(new CeilingFan( "Living Room" ));
-  std::unique_ptr<CeilingFanMediumCommand>
-    ceiling_fan_medium(new CeilingFanMediumCommand( ceiling_fan.get() ));
-  std::unique_ptr<CeilingFanHighCommand>
-    ceiling_fan_high(new CeilingFanHighCommand( ceiling_fan.get() ));
-  std::unique_ptr<CeilingFanOffCommand>
-    ceiling_fan_off(new CeilingFanOffCommand( ceiling_fan.get() ));
+  std::unique_ptr<headfirst::CeilingFan>
+    ceiling_fan(new headfirst::CeilingFan( "Living Room" ));
+  std::unique_ptr<headfirst::CeilingFanMediumCommand>
+    ceiling_fan_medium(
+      new headfirst::CeilingFanMediumCommand( ceiling_fan.get() ));
+  std::unique_ptr<headfirst::CeilingFanHighCommand>
+    ceiling_fan_high(new headfirst::CeilingFanHighCommand( ceiling_fan.get() ));
+  std::unique_ptr<headfirst::CeilingFanOffCommand>
+    ceiling_fan_off(new headfirst::CeilingFanOffCommand( ceiling_fan.get() ));
 
   remote_control->SetCommand( 0, ceiling_fan_medium.get(),
                               ceiling_fan_off.get() );

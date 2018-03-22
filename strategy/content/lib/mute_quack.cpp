@@ -19,10 +19,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void MuteQuack::Quack() const
-{
-  std::cout << "MuteQuack::quack" << std::endl;
-  std::cout << "<< Silence >>" << std::endl;
-}
 
+  void MuteQuack::Quack() const
+  {
+    std::cout << "MuteQuack::quack" << std::endl;
+    std::cout << "<< Silence >>" << std::endl;
+  }
+
+} //namespace headfirst

@@ -22,13 +22,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Veggies {
-
-public:
-  virtual ~Veggies();
-  virtual std::string ToString() const = 0;
-};
+namespace headfirst {
 
 
+  class Veggies {
+
+  public:
+    virtual ~Veggies();
+    virtual std::string ToString() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

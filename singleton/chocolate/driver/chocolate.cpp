@@ -21,17 +21,20 @@
 #include "chocolate_boiler.hpp"
 
 
-ChocolateBoiler* ChocolateBoiler::unique_instance_ = nullptr;
+headfirst::ChocolateBoiler*
+headfirst::ChocolateBoiler::unique_instance_ = nullptr;
 
 int main( int argc, char* argv[] ) {
 
-  ChocolateBoiler* boiler = ChocolateBoiler::GetInstance();
+  headfirst::ChocolateBoiler*
+    boiler = headfirst::ChocolateBoiler::GetInstance();
   boiler->Fill();
   boiler->Boil();
   boiler->Drain();
 
   // will return the existing instance
-  ChocolateBoiler* boiler2 = ChocolateBoiler::GetInstance();
+  headfirst::ChocolateBoiler*
+    boiler2 = headfirst::ChocolateBoiler::GetInstance();
 
   if( boiler == boiler2 )
     std::cout << "Got same boiler" << std::endl;

@@ -23,27 +23,30 @@
 #include "fly_behavior.hpp"
 #include "quack_behavior.hpp"
 
-
-class Duck {
-
-   FlyBehavior* fly_behavior_;
-   QuackBehavior* quack_behavior_;
-
-  Duck(const Duck&); // Disable copy constructor
-  void operator=(const Duck&); // Disable assignment operator
-
-protected:
-  Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior);
-
-public:
-  virtual ~Duck();
-  void SetFlyBehavior(FlyBehavior* fb);
-  void SetQuackBehavior(QuackBehavior* qb);
-  void PerformFly() const;
-  void PerformQuack() const;
-  void Swim() const;
-  virtual void Display() const = 0;
-};
+namespace headfirst {
 
 
+  class Duck {
+
+    FlyBehavior* fly_behavior_;
+    QuackBehavior* quack_behavior_;
+
+    Duck(const Duck&); // Disable copy constructor
+    void operator=(const Duck&); // Disable assignment operator
+
+  protected:
+    Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior);
+
+  public:
+    virtual ~Duck();
+    void SetFlyBehavior(FlyBehavior* fb);
+    void SetQuackBehavior(QuackBehavior* qb);
+    void PerformFly() const;
+    void PerformQuack() const;
+    void Swim() const;
+    virtual void Display() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

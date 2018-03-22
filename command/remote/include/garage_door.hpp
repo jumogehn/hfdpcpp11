@@ -22,19 +22,22 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-class GarageDoor {
 
-  std::string location_;
+  class GarageDoor {
 
-public:
-  explicit GarageDoor( const std::string location );
-  void OpenUp() const;
-  void CloseDown() const;
-  void Stop() const;
-  void LightOn() const;
-  void LightOff() const;
-};
+    std::string location_;
 
+  public:
+    explicit GarageDoor( const std::string location );
+    void OpenUp() const;
+    void CloseDown() const;
+    void Stop() const;
+    void LightOn() const;
+    void LightOff() const;
+  };
+
+} //namespace headfirst
 #endif

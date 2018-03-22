@@ -21,17 +21,20 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-LightOnCommand::LightOnCommand( const Light* light ) :
-  light_( light )
-{
-  assert( light );
-  std::cout << "LightOnCommand::LightOnCommand" << std::endl;
-}
-void LightOnCommand::Execute() const
-{
-  std::cout << "LightOnCommand::execute" << std::endl;
-  light_->On();
-}
 
+  LightOnCommand::LightOnCommand( const Light* light ) :
+    light_( light )
+  {
+    assert( light );
+    std::cout << "LightOnCommand::LightOnCommand" << std::endl;
+  }
+  void LightOnCommand::Execute() const
+  {
+    std::cout << "LightOnCommand::execute" << std::endl;
+    light_->On();
+  }
+
+} //namespace headfirst

@@ -28,7 +28,7 @@
 
 int main(int argc, char* argv[]) {
 
-  Beverage* beverage = new Espresso();
+  headfirst::Beverage* beverage = new headfirst::Espresso();
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);
   std::cout << beverage->GetDescription()
@@ -36,19 +36,19 @@ int main(int argc, char* argv[]) {
     << beverage->Cost()
     << std::endl;
 
-  Beverage* beverage2 = new DarkRoast();
-  beverage2 = new Mocha(beverage2);
-  beverage2 = new Mocha(beverage2);
-  beverage2 = new Whip(beverage2);
+  headfirst::Beverage* beverage2 = new headfirst::DarkRoast();
+  beverage2 = new headfirst::Mocha(beverage2);
+  beverage2 = new headfirst::Mocha(beverage2);
+  beverage2 = new headfirst::Whip(beverage2);
   std::cout << beverage2->GetDescription()
     << " $"
     << beverage2->Cost()
     << std::endl;
 
-  Beverage* beverage3 = new HouseBlend();
-  beverage3 = new Soy(beverage3);
-  beverage3 = new Mocha(beverage3);
-  beverage3 = new Whip(beverage3);
+  headfirst::Beverage* beverage3 = new headfirst::HouseBlend();
+  beverage3 = new headfirst::Soy(beverage3);
+  beverage3 = new headfirst::Mocha(beverage3);
+  beverage3 = new headfirst::Whip(beverage3);
   std::cout << beverage3->GetDescription()
     << " $"
     << beverage3->Cost()

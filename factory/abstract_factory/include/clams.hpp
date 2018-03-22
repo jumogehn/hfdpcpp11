@@ -22,13 +22,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Clams {
-
-public:
-  virtual ~Clams();
-  virtual std::string ToString() const = 0;
-};
+namespace headfirst {
 
 
+  class Clams {
+
+  public:
+    virtual ~Clams();
+    virtual std::string ToString() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

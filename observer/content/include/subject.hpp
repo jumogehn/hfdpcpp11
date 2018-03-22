@@ -22,14 +22,17 @@
 //Your project's .h files.
 #include "observer.hpp"
 
-class Subject {
+namespace headfirst {
 
-protected:
-  virtual ~Subject();
-public:
-  virtual void RegisterObserver(Observer* o) = 0;
-  virtual void RemoveObserver(Observer* o) = 0;
-  virtual void NotifyObservers() const = 0;
-};
+  class Subject {
 
+  protected:
+    virtual ~Subject();
+  public:
+    virtual void RegisterObserver(Observer* o) = 0;
+    virtual void RemoveObserver(Observer* o) = 0;
+    virtual void NotifyObservers() const = 0;
+  };
+
+} //namespace headfirst
 #endif

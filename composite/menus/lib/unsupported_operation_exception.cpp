@@ -22,31 +22,34 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-UnsupportedOperationException::UnsupportedOperationException() throw():
-  std::exception()
-{
-  std::cout << "UnsupportedOperationException::"
-                     "UnsupportedOperationException" << std::endl;
-}
-UnsupportedOperationException::UnsupportedOperationException(
-  const std::string message ) :
-  std::exception( /*message.c_str()*/ ), message_( message )
-{
-  std::cout << "UnsupportedOperationException::"
-                     "UnsupportedOperationException" << std::endl;
-}
-
-UnsupportedOperationException::~UnsupportedOperationException() throw()
-{
-  std::cout << "UnsupportedOperationException::"
-                     "~UnsupportedOperationException" << std::endl;
-}
-
-std::string UnsupportedOperationException::GetMessage() const
-{
-  std::cout << "UnsupportedOperationException::getMessage" << std::endl;
-  return message_;
-}
+namespace headfirst {
 
 
+  UnsupportedOperationException::UnsupportedOperationException() throw():
+    std::exception()
+  {
+    std::cout << "UnsupportedOperationException::"
+      "UnsupportedOperationException" << std::endl;
+  }
+  UnsupportedOperationException::UnsupportedOperationException(
+    const std::string message ) :
+    std::exception( /*message.c_str()*/ ), message_( message )
+  {
+    std::cout << "UnsupportedOperationException::"
+      "UnsupportedOperationException" << std::endl;
+  }
+
+  UnsupportedOperationException::~UnsupportedOperationException() throw()
+  {
+    std::cout << "UnsupportedOperationException::"
+      "~UnsupportedOperationException" << std::endl;
+  }
+
+  std::string UnsupportedOperationException::GetMessage() const
+  {
+    std::cout << "UnsupportedOperationException::getMessage" << std::endl;
+    return message_;
+  }
+
+
+} //namespace headfirst

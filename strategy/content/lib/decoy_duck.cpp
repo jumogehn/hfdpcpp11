@@ -22,14 +22,17 @@
 #include "fly_no_way.hpp"
 #include "mute_quack.hpp"
 
+namespace headfirst {
+
 
   DecoyDuck::DecoyDuck()
-: Duck(new FlyNoWay(), new MuteQuack())
-{
-  std::cout << "DecoyDuck::DecoyDuck" << std::endl;
-}
-void DecoyDuck::Display() const
-{
-  std::cout << "DecoyDuck::display" << std::endl;
-  std::cout << "I'm a duck Decoy" << std::endl;
-}
+    : Duck(new FlyNoWay(), new MuteQuack())
+  {
+    std::cout << "DecoyDuck::DecoyDuck" << std::endl;
+  }
+  void DecoyDuck::Display() const
+  {
+    std::cout << "DecoyDuck::display" << std::endl;
+    std::cout << "I'm a duck Decoy" << std::endl;
+  }
+} //namespace headfirst

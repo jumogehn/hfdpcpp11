@@ -23,12 +23,15 @@
 #include "caffeine_beverage.hpp"
 
 
-class Coffee : public CaffeineBeverage {
+namespace headfirst {
 
-public:
-  void Brew() const;
-  void AddCondiments() const;
-};
+  class Coffee : public CaffeineBeverage {
+
+  public:
+    void Brew() const;
+    void AddCondiments() const;
+  };
 
 
+} //namespace headfirst
 #endif

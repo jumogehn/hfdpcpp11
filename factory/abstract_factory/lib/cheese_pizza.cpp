@@ -21,18 +21,21 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-CheesePizza::CheesePizza(PizzaIngredientFactory* ingredient_factory)
-{
-  assert( ingredient_factory );
-  ingredient_factory_.reset( ingredient_factory );
-  std::cout << "CheesePizza::CheesePizza" << std::endl;
-}
-void CheesePizza::Prepare() const
-{
-  std::cout << "CheesePizza::prepare" << std::endl;
-  std::cout << "Preparing " << GetName().c_str() << std::endl;
-  dough_ = ingredient_factory_->CreateDough();
-  sauce_ = ingredient_factory_->CreateSauce();
-  cheese_ = ingredient_factory_->CreateCheese();
-}
+
+  CheesePizza::CheesePizza(PizzaIngredientFactory* ingredient_factory)
+  {
+    assert( ingredient_factory );
+    ingredient_factory_.reset( ingredient_factory );
+    std::cout << "CheesePizza::CheesePizza" << std::endl;
+  }
+  void CheesePizza::Prepare() const
+  {
+    std::cout << "CheesePizza::prepare" << std::endl;
+    std::cout << "Preparing " << GetName().c_str() << std::endl;
+    dough_ = ingredient_factory_->CreateDough();
+    sauce_ = ingredient_factory_->CreateSauce();
+    cheese_ = ingredient_factory_->CreateCheese();
+  }
+} //namespace headfirst

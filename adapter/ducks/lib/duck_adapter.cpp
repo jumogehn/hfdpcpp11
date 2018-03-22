@@ -30,31 +30,34 @@
 //Your project's .h files.
 
 
-DuckAdapter::DuckAdapter( const Duck* duck ) :
-  my_duck_ ( duck )
-{
-  std::cout << "DuckAdapter::DuckAdapter" << std::endl;
+namespace headfirst {
+
+  DuckAdapter::DuckAdapter( const Duck* duck ) :
+    my_duck_ ( duck )
+  {
+    std::cout << "DuckAdapter::DuckAdapter" << std::endl;
 #ifdef WIN32
-  srand( _getpid() );
+    srand( _getpid() );
 #else
-  srand( getpid() );
+    srand( getpid() );
 #endif
-  random_num_ = rand() % 5;
-  if( random_num_ == 0 )
-    random_num_ = 1;
-}
-
-void DuckAdapter::Fly() const
-{
-  std::cout << "DuckAdapter::fly" << std::endl;
-  for( int i = 0; i < random_num_; i++ ) {
-    my_duck_->Fly();
+    random_num_ = rand() % 5;
+    if( random_num_ == 0 )
+      random_num_ = 1;
   }
-}
 
-void DuckAdapter::Gobble() const
-{
-  std::cout << "DuckAdapter::gobble" << std::endl;
-  my_duck_->Quack();
-}
+  void DuckAdapter::Fly() const
+  {
+    std::cout << "DuckAdapter::fly" << std::endl;
+    for( int i = 0; i < random_num_; i++ ) {
+      my_duck_->Fly();
+    }
+  }
 
+  void DuckAdapter::Gobble() const
+  {
+    std::cout << "DuckAdapter::gobble" << std::endl;
+    my_duck_->Quack();
+  }
+
+} //namespace headfirst

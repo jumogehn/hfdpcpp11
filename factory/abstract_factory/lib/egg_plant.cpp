@@ -20,10 +20,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-std::string Eggplant::ToString() const
-{
-  std::cout << "Eggplant::ToString" << std::endl;
-  return "Eggplant";
-}
+
+  std::string Eggplant::ToString() const
+  {
+    std::cout << "Eggplant::ToString" << std::endl;
+    return "Eggplant";
+  }
+} //namespace headfirst

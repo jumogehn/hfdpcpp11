@@ -23,24 +23,27 @@
 //Your project's .h files.
 
 
-class CeilingFan {
+namespace headfirst {
 
-  mutable int speed_;
-  std::string location_;
+  class CeilingFan {
 
-public:
-  static const int kHigh = 3;
-  static const int kMedium = 2;
-  static const int kLow = 1;
-  static const int kOff = 0;
+    mutable int speed_;
+    std::string location_;
 
-  explicit CeilingFan( std::string location );
-  void SetHigh() const;
-  void SetMedium() const;
-  void SetLow() const;
-  void TurnOff() const;
-  int GetSpeed() const;
-};
+  public:
+    static const int kHigh = 3;
+    static const int kMedium = 2;
+    static const int kLow = 1;
+    static const int kOff = 0;
+
+    explicit CeilingFan( std::string location );
+    void SetHigh() const;
+    void SetMedium() const;
+    void SetLow() const;
+    void TurnOff() const;
+    int GetSpeed() const;
+  };
 
 
+} //namespace headfirst
 #endif

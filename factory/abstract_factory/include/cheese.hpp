@@ -22,13 +22,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class Cheese {
-
-public:
-  virtual ~Cheese();
-  virtual std::string ToString() const = 0;
-};
+namespace headfirst {
 
 
+  class Cheese {
+
+  public:
+    virtual ~Cheese();
+    virtual std::string ToString() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

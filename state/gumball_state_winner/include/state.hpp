@@ -22,17 +22,20 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class State {
-
-public:
-  virtual ~State();
-  virtual void InsertQuarter() const = 0;
-  virtual void EjectQuarter() const = 0;
-  virtual void TurnCrank() const = 0;
-  virtual void Dispense() = 0;
-  virtual std::string ToString() const = 0;
-};
+namespace headfirst {
 
 
+  class State {
+
+  public:
+    virtual ~State();
+    virtual void InsertQuarter() const = 0;
+    virtual void EjectQuarter() const = 0;
+    virtual void TurnCrank() const = 0;
+    virtual void Dispense() = 0;
+    virtual std::string ToString() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

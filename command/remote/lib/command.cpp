@@ -19,14 +19,17 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Command::Command()
-{
-  std::cout << "Command::Command" << std::endl;
-}
 
-Command::~Command()
-{
-  std::cout << "Command::~Command" << std::endl;
-}
+  Command::Command()
+  {
+    std::cout << "Command::Command" << std::endl;
+  }
 
+  Command::~Command()
+  {
+    std::cout << "Command::~Command" << std::endl;
+  }
+
+} //namespace headfirst

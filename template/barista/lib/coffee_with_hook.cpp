@@ -20,35 +20,38 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string CoffeeWithHook::GetUserInput() const
-{
-  std::cout << "CoffeeWithHook::GetUserInput" << std::endl;
-  std::string value;
-  std::cout << "Would you like milk and sugar with your coffee (y/n)? "
-    << std::endl;
-  std::cin >> value;
-  return value;
-}
 
-void CoffeeWithHook::Brew() const
-{
-  std::cout << "CoffeeWithHook::brew" << std::endl;
-  std::cout << "Dripping Coffee through filter" << std::endl;
-}
-void CoffeeWithHook::AddCondiments() const
-{
-  std::cout << "CoffeeWithHook::AddCondiments" << std::endl;
-  std::cout << "Adding Sugar and Milk" << std::endl;
-}
-
-bool CoffeeWithHook::CustomerWantsCondiments()
-{
-  std::cout << "CoffeeWithHook::CustomerWantsCondiments" << std::endl;
-  bool value = false;
-  std::string answer = GetUserInput();
-  if( answer.find('y') != -1 ) {
-    value = true;
+  std::string CoffeeWithHook::GetUserInput() const
+  {
+    std::cout << "CoffeeWithHook::GetUserInput" << std::endl;
+    std::string value;
+    std::cout << "Would you like milk and sugar with your coffee (y/n)? "
+      << std::endl;
+    std::cin >> value;
+    return value;
   }
-  return value;
-}
+
+  void CoffeeWithHook::Brew() const
+  {
+    std::cout << "CoffeeWithHook::brew" << std::endl;
+    std::cout << "Dripping Coffee through filter" << std::endl;
+  }
+  void CoffeeWithHook::AddCondiments() const
+  {
+    std::cout << "CoffeeWithHook::AddCondiments" << std::endl;
+    std::cout << "Adding Sugar and Milk" << std::endl;
+  }
+
+  bool CoffeeWithHook::CustomerWantsCondiments()
+  {
+    std::cout << "CoffeeWithHook::CustomerWantsCondiments" << std::endl;
+    bool value = false;
+    std::string answer = GetUserInput();
+    if( answer.find('y') != -1 ) {
+      value = true;
+    }
+    return value;
+  }
+} //namespace headfirst

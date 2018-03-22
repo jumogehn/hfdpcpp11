@@ -24,17 +24,20 @@
 #include "ceiling_fan.hpp"
 #include "command.hpp"
 
-
-class CeilingFanOffCommand :public Command {
-
-  const CeilingFan* ceiling_fan_;
-  mutable int prev_speed_;
-
-public:
-  explicit CeilingFanOffCommand( const CeilingFan* ceiling_fan );
-  void Execute() const;
-  void Undo() const;
-};
+namespace headfirst {
 
 
+  class CeilingFanOffCommand :public Command {
+
+    const CeilingFan* ceiling_fan_;
+    mutable int prev_speed_;
+
+  public:
+    explicit CeilingFanOffCommand( const CeilingFan* ceiling_fan );
+    void Execute() const;
+    void Undo() const;
+  };
+
+
+} //namespace headfirst
 #endif

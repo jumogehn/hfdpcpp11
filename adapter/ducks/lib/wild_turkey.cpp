@@ -19,16 +19,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void WildTurkey::Fly() const
-{
-  std::cout << "WildTurkey::fly" << std::endl;
-  std::cout << "I'm flying a short distance" << std::endl;
-}
+  void WildTurkey::Fly() const
+  {
+    std::cout << "WildTurkey::fly" << std::endl;
+    std::cout << "I'm flying a short distance" << std::endl;
+  }
 
-void WildTurkey::Gobble() const
-{
-  std::cout << "WildTurkey::gobble" << std::endl;
-  std::cout << "Gobble gobble" << std::endl;
-}
+  void WildTurkey::Gobble() const
+  {
+    std::cout << "WildTurkey::gobble" << std::endl;
+    std::cout << "Gobble gobble" << std::endl;
+  }
 
+} //namespace headfirst

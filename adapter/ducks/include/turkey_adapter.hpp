@@ -24,19 +24,21 @@
 #include "duck.hpp"
 #include "turkey.hpp"
 
+namespace headfirst {
 
-class TurkeyAdapter : public Duck {
+  class TurkeyAdapter : public Duck {
 
-  const Turkey* my_turkey_;
+    const Turkey* my_turkey_;
 
-  TurkeyAdapter( const TurkeyAdapter& ); // Disable copy constructor
-  void operator=( const TurkeyAdapter& ); // Disable assignment operator
+    TurkeyAdapter( const TurkeyAdapter& ); // Disable copy constructor
+    void operator=( const TurkeyAdapter& ); // Disable assignment operator
 
-public:
-  explicit TurkeyAdapter( const Turkey* turkey );
-  void Fly() const;
-  void Quack() const;
-};
+  public:
+    explicit TurkeyAdapter( const Turkey* turkey );
+    void Fly() const;
+    void Quack() const;
+  };
 
 
+} //namespace headfirst
 #endif

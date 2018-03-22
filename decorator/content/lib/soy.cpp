@@ -22,25 +22,28 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Soy::Soy(const Beverage* beverage) :
-  beverage_(beverage)
-{
-  assert(beverage);
-  std::cout << "Soy::Soy" << std::endl;
-}
-Soy::~Soy()
-{
-  std::cout << "Soy::~Soy" << std::endl;
-}
-std::string Soy::GetDescription() const
-{
-  std::cout << "Soy::GetDescription" << std::endl;
-  return beverage_->GetDescription() + ", Soy";
-}
-double Soy::Cost() const
-{
-  std::cout << "Soy::cost" << std::endl;
-  return 0.15 + beverage_->Cost();
-}
 
+  Soy::Soy(const Beverage* beverage) :
+    beverage_(beverage)
+  {
+    assert(beverage);
+    std::cout << "Soy::Soy" << std::endl;
+  }
+  Soy::~Soy()
+  {
+    std::cout << "Soy::~Soy" << std::endl;
+  }
+  std::string Soy::GetDescription() const
+  {
+    std::cout << "Soy::GetDescription" << std::endl;
+    return beverage_->GetDescription() + ", Soy";
+  }
+  double Soy::Cost() const
+  {
+    std::cout << "Soy::cost" << std::endl;
+    return 0.15 + beverage_->Cost();
+  }
+
+} //namespace headfirst

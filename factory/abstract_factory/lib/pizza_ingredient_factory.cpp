@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-PizzaIngredientFactory::~PizzaIngredientFactory()
-{
-  std::cout << "PizzaIngredientFactory"
-                     "::~PizzaIngredientFactory" << std::endl;
-}
+
+  PizzaIngredientFactory::~PizzaIngredientFactory()
+  {
+    std::cout << "PizzaIngredientFactory"
+      "::~PizzaIngredientFactory" << std::endl;
+  }
+} //namespace headfirst

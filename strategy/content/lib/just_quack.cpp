@@ -19,10 +19,13 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void JustQuack::Quack() const
-{
-  std::cout << "JustQuack::Quack" << std::endl;
-  std::cout << "Quack" << std::endl;
-}
 
+  void JustQuack::Quack() const
+  {
+    std::cout << "JustQuack::Quack" << std::endl;
+    std::cout << "Quack" << std::endl;
+  }
+
+} //namespace headfirst

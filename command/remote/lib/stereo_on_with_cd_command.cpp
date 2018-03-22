@@ -21,21 +21,24 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
-  stereo_( stereo )
-{
-  assert( stereo );
-  std::cout << "StereoOnWithCDCommand::StereoOnWithCDCommand" << std::endl;
-}
-
-void StereoOnWithCDCommand::Execute() const
-{
-  std::cout << "StereoOnWithCDCommand::execute" << std::endl;
-
-  stereo_->TurnOn();
-  stereo_->SetCd();
-  stereo_->SetVolume(11);
-}
+namespace headfirst {
 
 
+  StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
+    stereo_( stereo )
+  {
+    assert( stereo );
+    std::cout << "StereoOnWithCDCommand::StereoOnWithCDCommand" << std::endl;
+  }
+
+  void StereoOnWithCDCommand::Execute() const
+  {
+    std::cout << "StereoOnWithCDCommand::execute" << std::endl;
+
+    stereo_->TurnOn();
+    stereo_->SetCd();
+    stereo_->SetVolume(11);
+  }
+
+
+} //namespace headfirst

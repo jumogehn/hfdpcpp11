@@ -24,15 +24,18 @@
 #include "command.hpp"
 #include "stereo.hpp"
 
-
-class StereoOnWithCDCommand : public Command {
-
-  const Stereo* stereo_;
-
-public:
-  explicit StereoOnWithCDCommand( const Stereo* stereo );
-  void Execute() const;
-};
+namespace headfirst {
 
 
+  class StereoOnWithCDCommand : public Command {
+
+    const Stereo* stereo_;
+
+  public:
+    explicit StereoOnWithCDCommand( const Stereo* stereo );
+    void Execute() const;
+  };
+
+
+} //namespace headfirst
 #endif

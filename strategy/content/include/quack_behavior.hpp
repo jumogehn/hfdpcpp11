@@ -21,14 +21,17 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-class QuackBehavior {
 
-public:
-  virtual ~QuackBehavior();
-  virtual void Quack() const = 0;
-};
+  class QuackBehavior {
+
+  public:
+    virtual ~QuackBehavior();
+    virtual void Quack() const = 0;
+  };
 
 
+} //namespace headfirst
 #endif

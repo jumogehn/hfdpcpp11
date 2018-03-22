@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string BlackOlives::ToString() const
-{
-  std::cout << "BlackOlives::ToString" << std::endl;
-  return ( "Black Olives" );
-}
+
+  std::string BlackOlives::ToString() const
+  {
+    std::cout << "BlackOlives::ToString" << std::endl;
+    return ( "Black Olives" );
+  }
+} //namespace headfirst

@@ -19,16 +19,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void MallardDuck::Fly() const
-{
-  std::cout << "MallardDuck::fly" << std::endl;
-  std::cout << "I'm flying" << std::endl;
-}
+  void MallardDuck::Fly() const
+  {
+    std::cout << "MallardDuck::fly" << std::endl;
+    std::cout << "I'm flying" << std::endl;
+  }
 
-void MallardDuck::Quack() const
-{
-  std::cout << "MallardDuck::quack" << std::endl;
-  std::cout << "Quack" << std::endl;
-}
+  void MallardDuck::Quack() const
+  {
+    std::cout << "MallardDuck::quack" << std::endl;
+    std::cout << "Quack" << std::endl;
+  }
 
+} //namespace headfirst

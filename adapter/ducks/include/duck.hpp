@@ -13,14 +13,16 @@
 #ifndef	_HFDP_CPP_ADAPTER_DUCK_HPP_
 #define _HFDP_CPP_ADAPTER_DUCK_HPP_
 
+namespace headfirst {
 
-class Duck {
+  class Duck {
 
-public:
-  virtual ~Duck();
-  virtual void Fly() const = 0;
-  virtual void Quack() const = 0;
-};
+  public:
+    virtual ~Duck();
+    virtual void Fly() const = 0;
+    virtual void Quack() const = 0;
+  };
 
 
+} //namespace headfirst
 #endif

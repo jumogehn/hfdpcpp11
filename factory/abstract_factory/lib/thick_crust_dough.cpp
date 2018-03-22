@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string ThickCrustDough::ToString() const
-{
-  std::cout << "ThickCrustDough::ToString" << std::endl;
-  return "Thick Crust Dough";
-}
+
+  std::string ThickCrustDough::ToString() const
+  {
+    std::cout << "ThickCrustDough::ToString" << std::endl;
+    return "Thick Crust Dough";
+  }
+} //namespace headfirst

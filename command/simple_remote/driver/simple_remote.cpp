@@ -28,12 +28,16 @@
 
 int main( int argc, char* argv[] ) {
 
-  std::unique_ptr<SimpleRemoteControl> remote(new SimpleRemoteControl());
-  std::unique_ptr<Light> light(new Light());
-  std::unique_ptr<GarageDoor> garage_door(new GarageDoor());
-  std::unique_ptr<LightOnCommand> light_on(new LightOnCommand( light.get() ));
-  std::unique_ptr<GarageDoorOpenCommand>
-    garage_open(new GarageDoorOpenCommand( garage_door.get() ));
+  std::unique_ptr<headfirst::SimpleRemoteControl>
+    remote(new headfirst::SimpleRemoteControl());
+  std::unique_ptr<headfirst::Light>
+    light(new headfirst::Light());
+  std::unique_ptr<headfirst::GarageDoor>
+    garage_door(new headfirst::GarageDoor());
+  std::unique_ptr<headfirst::LightOnCommand>
+    light_on(new headfirst::LightOnCommand( light.get() ));
+  std::unique_ptr<headfirst::GarageDoorOpenCommand>
+    garage_open(new headfirst::GarageDoorOpenCommand( garage_door.get() ));
 
   remote->SetCommand( light_on.get() );
   remote->ButtonWasPressed();

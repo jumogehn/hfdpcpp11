@@ -24,17 +24,20 @@
 #include "beverage.hpp"
 #include "condiment_decorator.hpp"
 
-
-class Mocha : public CondimentDecorator {
-
-  const Beverage* beverage_;
-
-public:
-  explicit Mocha(const Beverage* beverage);
-  ~Mocha();
-  std::string GetDescription() const;
-  double Cost() const;
-};
+namespace headfirst {
 
 
+  class Mocha : public CondimentDecorator {
+
+    const Beverage* beverage_;
+
+  public:
+    explicit Mocha(const Beverage* beverage);
+    ~Mocha();
+    std::string GetDescription() const;
+    double Cost() const;
+  };
+
+
+} //namespace headfirst
 #endif

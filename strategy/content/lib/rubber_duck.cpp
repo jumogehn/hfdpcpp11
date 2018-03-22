@@ -22,14 +22,17 @@
 #include "fly_no_way.hpp"
 #include "squeak.hpp"
 
+namespace headfirst {
 
-RubberDuck::RubberDuck() : Duck(new FlyNoWay(), new Squeak())
-{
-  std::cout << "RubberDuck::RubberDuck" << std::endl;
-}
-void RubberDuck::Display() const
-{
-  std::cout << "RubberDuck::Display" << std::endl;
-  std::cout << "I'm a rubber duck" << std::endl;
-}
 
+  RubberDuck::RubberDuck() : Duck(new FlyNoWay(), new Squeak())
+  {
+    std::cout << "RubberDuck::RubberDuck" << std::endl;
+  }
+  void RubberDuck::Display() const
+  {
+    std::cout << "RubberDuck::Display" << std::endl;
+    std::cout << "I'm a rubber duck" << std::endl;
+  }
+
+} //namespace headfirst

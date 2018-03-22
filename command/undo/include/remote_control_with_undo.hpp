@@ -24,28 +24,31 @@
 //Your project's .h files.
 #include "command.hpp"
 
-
-//
-// This is the invoker
-//
-class RemoteControlWithUndo {
-
-  static const int kSlots = 7;
-
-  Command* on_commands_[kSlots];
-  Command* off_commands_[kSlots];
-  Command* no_command_;
-  mutable Command* undo_command_;
-
-public:
-  RemoteControlWithUndo();
-  ~RemoteControlWithUndo();
-  void SetCommand( int slot, Command* on_command, Command* off_command );
-  void OnButtonWasPushed( int slot ) const;
-  void OffButtonWasPushed( int slot ) const;
-  void UndoButtonWasPushed() const;
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  //
+  // This is the invoker
+  //
+  class RemoteControlWithUndo {
+
+    static const int kSlots = 7;
+
+    Command* on_commands_[kSlots];
+    Command* off_commands_[kSlots];
+    Command* no_command_;
+    mutable Command* undo_command_;
+
+  public:
+    RemoteControlWithUndo();
+    ~RemoteControlWithUndo();
+    void SetCommand( int slot, Command* on_command, Command* off_command );
+    void OnButtonWasPushed( int slot ) const;
+    void OffButtonWasPushed( int slot ) const;
+    void UndoButtonWasPushed() const;
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

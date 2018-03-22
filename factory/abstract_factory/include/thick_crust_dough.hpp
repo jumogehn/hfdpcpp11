@@ -23,12 +23,15 @@
 //Your project's .h files.
 #include "dough.hpp"
 
-
-class ThickCrustDough : public Dough {
-
-public:
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class ThickCrustDough : public Dough {
+
+  public:
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

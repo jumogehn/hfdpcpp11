@@ -23,12 +23,15 @@
 //Your project's .h files.
 #include "veggies.hpp"
 
-
-class Eggplant : public Veggies {
-
-public:
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class Eggplant : public Veggies {
+
+  public:
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

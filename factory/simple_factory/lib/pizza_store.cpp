@@ -23,22 +23,25 @@
 #include "pizza.hpp"
 #include "simple_pizza_factory.hpp"
 
+namespace headfirst {
 
-PizzaStore::PizzaStore()
-{
-  factory_.reset(new SimplePizzaFactory());
-  std::cout << "PizzaStore::PizzaStore" << std::endl;
-}
 
-std::unique_ptr<Pizza> PizzaStore::OrderPizza( std::string type )
-{
-  std::cout << "PizzaStore::OrderPizza" << std::endl;
-  std::unique_ptr<Pizza> pizza;
-  pizza = factory_->CreatePizza( type );
-  pizza->Prepare();
-  pizza->Bake();
-  pizza->Cut();
-  pizza->Box();
-  return pizza;
-}
+  PizzaStore::PizzaStore()
+  {
+    factory_.reset(new SimplePizzaFactory());
+    std::cout << "PizzaStore::PizzaStore" << std::endl;
+  }
 
+  std::unique_ptr<Pizza> PizzaStore::OrderPizza( std::string type )
+  {
+    std::cout << "PizzaStore::OrderPizza" << std::endl;
+    std::unique_ptr<Pizza> pizza;
+    pizza = factory_->CreatePizza( type );
+    pizza->Prepare();
+    pizza->Bake();
+    pizza->Cut();
+    pizza->Box();
+    return pizza;
+  }
+
+} //namespace headfirst

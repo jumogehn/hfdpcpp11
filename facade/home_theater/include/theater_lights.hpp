@@ -21,20 +21,23 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-class TheaterLights {
 
-  std::string description_;
+  class TheaterLights {
 
-  TheaterLights( const TheaterLights& ); // Disable copy constructor
-  void operator=( const TheaterLights& ); // Disable assignment operator
+    std::string description_;
 
-public:
-  TheaterLights( std::string description );
-  void TurnOn();
-  void TurnOff();
-  void Dim( int level );
-  std::string ToString();
-};
+    TheaterLights( const TheaterLights& ); // Disable copy constructor
+    void operator=( const TheaterLights& ); // Disable assignment operator
 
+  public:
+    TheaterLights( std::string description );
+    void TurnOn();
+    void TurnOff();
+    void Dim( int level );
+    std::string ToString();
+  };
+
+} //namespace headfirst
 #endif

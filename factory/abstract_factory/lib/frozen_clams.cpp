@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string FrozenClams::ToString() const
-{
-  std::cout << "FrozenClams::ToString" << std::endl;
-  return "Frozen Clams from Chesapeake Bay";
-}
+
+  std::string FrozenClams::ToString() const
+  {
+    std::cout << "FrozenClams::ToString" << std::endl;
+    return "Frozen Clams from Chesapeake Bay";
+  }
+} //namespace headfirst

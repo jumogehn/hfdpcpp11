@@ -23,12 +23,15 @@
 #include "turkey.hpp"
 
 
-class WildTurkey : public Turkey {
+namespace headfirst {
 
-public:
-  void Fly() const;
-  void Gobble() const;
-};
+  class WildTurkey : public Turkey {
+
+  public:
+    void Fly() const;
+    void Gobble() const;
+  };
 
 
+} //namespace headfirst
 #endif

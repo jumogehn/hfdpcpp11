@@ -22,11 +22,14 @@
 //Your project's .h files.
 #include "quack_behavior.hpp"
 
-class MuteQuack : public QuackBehavior {
+namespace headfirst {
 
-public:
-  void Quack() const;
-};
+  class MuteQuack : public QuackBehavior {
+
+  public:
+    void Quack() const;
+  };
 
 
+} //namespace headfirst
 #endif

@@ -30,32 +30,35 @@
 #include "tuner.hpp"
 
 
+namespace headfirst {
 
-class HomeTheaterFacade {
 
-  Amplifier* amp_;
-  Tuner* tuner_;
-  DvdPlayer* dvd_;
-  CdPlayer* cd_;
-  Projector* projector_;
-  TheaterLights* lights_;
-  Screen* screen_;
-  PopcornPopper* popper_;
+  class HomeTheaterFacade {
 
-  HomeTheaterFacade( const HomeTheaterFacade& );
-  void operator=( const HomeTheaterFacade& );
+    Amplifier* amp_;
+    Tuner* tuner_;
+    DvdPlayer* dvd_;
+    CdPlayer* cd_;
+    Projector* projector_;
+    TheaterLights* lights_;
+    Screen* screen_;
+    PopcornPopper* popper_;
 
-public:
-  HomeTheaterFacade( Amplifier* amp, Tuner* tuner, DvdPlayer* dvd,
-                     CdPlayer* cd, Projector* projector, Screen* screen,
-                     TheaterLights* lights, PopcornPopper* popper );
-  void WatchMovie( std::string movie );
-  void EndMovie();
-  void ListenToCd( std::string cd_title );
-  void EndCd();
-  void ListenToRadio( double frequency );
-  void EndRadio();
-};
+    HomeTheaterFacade( const HomeTheaterFacade& );
+    void operator=( const HomeTheaterFacade& );
 
+  public:
+    HomeTheaterFacade( Amplifier* amp, Tuner* tuner, DvdPlayer* dvd,
+                       CdPlayer* cd, Projector* projector, Screen* screen,
+                       TheaterLights* lights, PopcornPopper* popper );
+    void WatchMovie( std::string movie );
+    void EndMovie();
+    void ListenToCd( std::string cd_title );
+    void EndCd();
+    void ListenToRadio( double frequency );
+    void EndRadio();
+  };
+
+} //namespace headfirst
 #endif
 

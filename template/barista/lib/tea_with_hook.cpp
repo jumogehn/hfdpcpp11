@@ -20,32 +20,35 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string TeaWithHook::GetUserInput() const
-{
-  std::cout << "TeaWithHook::GetUserInput" << std::endl;
-  std::string value;
-  std::cout << "Would you like lemon with your tea (y/n)? " << std::endl;
-  std::cin >> value;
-  return value;
-}
-void TeaWithHook::Brew() const
-{
-  std::cout << "TeaWithHook::brew" << std::endl;
-  std::cout << "Steeping the tea" << std::endl;
-}
-void TeaWithHook::AddCondiments() const
-{
-  std::cout << "TeaWithHook::AddCondiments" << std::endl;
-  std::cout << "Adding Lemon" << std::endl;
-}
-bool TeaWithHook::CustomerWantsCondiments()
-{
-  std::cout << "TeaWithHook::CustomerWantsCondiments" << std::endl;
-  bool value = false;
-  std::string answer = GetUserInput();
-  if( answer.find('y') != -1 ) {
-    value = true;
+
+  std::string TeaWithHook::GetUserInput() const
+  {
+    std::cout << "TeaWithHook::GetUserInput" << std::endl;
+    std::string value;
+    std::cout << "Would you like lemon with your tea (y/n)? " << std::endl;
+    std::cin >> value;
+    return value;
   }
-  return value;
-}
+  void TeaWithHook::Brew() const
+  {
+    std::cout << "TeaWithHook::brew" << std::endl;
+    std::cout << "Steeping the tea" << std::endl;
+  }
+  void TeaWithHook::AddCondiments() const
+  {
+    std::cout << "TeaWithHook::AddCondiments" << std::endl;
+    std::cout << "Adding Lemon" << std::endl;
+  }
+  bool TeaWithHook::CustomerWantsCondiments()
+  {
+    std::cout << "TeaWithHook::CustomerWantsCondiments" << std::endl;
+    bool value = false;
+    std::string answer = GetUserInput();
+    if( answer.find('y') != -1 ) {
+      value = true;
+    }
+    return value;
+  }
+} //namespace headfirst

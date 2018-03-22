@@ -21,13 +21,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class FlyBehavior {
-
-public:
-  virtual ~FlyBehavior();
-  virtual void Fly() const = 0;
-};
+namespace headfirst {
 
 
+  class FlyBehavior {
+
+  public:
+    virtual ~FlyBehavior();
+    virtual void Fly() const = 0;
+  };
+
+
+} //namespace headfirst
 #endif

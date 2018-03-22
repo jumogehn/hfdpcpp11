@@ -24,22 +24,25 @@
 #include "observer.hpp"
 #include "subject.hpp"
 
-class CurrentConditionsDisplay : private Observer, private DisplayElement {
+namespace headfirst {
 
-  Subject* weather_data_;
-  float temperature_;
-  float humidity_;
+  class CurrentConditionsDisplay : private Observer, private DisplayElement {
 
-  CurrentConditionsDisplay(const CurrentConditionsDisplay&);
-  void operator=(const CurrentConditionsDisplay&);
+    Subject* weather_data_;
+    float temperature_;
+    float humidity_;
 
-public:
-  explicit CurrentConditionsDisplay();
-  ~CurrentConditionsDisplay();
-  int SetSubject(Subject* weather_data);
-  int ResetSubject();
-  void Update(float temperature, float humidity, float pressure);
-  void Display() const;
-};
+    CurrentConditionsDisplay(const CurrentConditionsDisplay&);
+    void operator=(const CurrentConditionsDisplay&);
 
+  public:
+    explicit CurrentConditionsDisplay();
+    ~CurrentConditionsDisplay();
+    int SetSubject(Subject* weather_data);
+    int ResetSubject();
+    void Update(float temperature, float humidity, float pressure);
+    void Display() const;
+  };
+
+} //namespace headfirst
 #endif

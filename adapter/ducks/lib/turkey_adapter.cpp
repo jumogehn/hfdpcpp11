@@ -20,24 +20,26 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-TurkeyAdapter::TurkeyAdapter( const Turkey* turkey ) :
-  my_turkey_( turkey )
-{
-  std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;
-}
-
-void TurkeyAdapter::Fly() const
-{
-  std::cout << "TurkeyAdapter::fly" << std::endl;
-  for( auto i = 0; i < 5; i++ ) {
-    my_turkey_->Fly();
+  TurkeyAdapter::TurkeyAdapter( const Turkey* turkey ) :
+    my_turkey_( turkey )
+  {
+    std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;
   }
-}
 
-void TurkeyAdapter::Quack() const
-{
-  std::cout << "TurkeyAdapter::quack" << std::endl;
-  my_turkey_->Gobble();
-}
+  void TurkeyAdapter::Fly() const
+  {
+    std::cout << "TurkeyAdapter::fly" << std::endl;
+    for( auto i = 0; i < 5; i++ ) {
+      my_turkey_->Fly();
+    }
+  }
 
+  void TurkeyAdapter::Quack() const
+  {
+    std::cout << "TurkeyAdapter::quack" << std::endl;
+    my_turkey_->Gobble();
+  }
+
+} //namespace headfirst

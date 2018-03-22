@@ -26,20 +26,23 @@
 #include "pizza.hpp"
 #include "veggie_pizza.hpp"
 
+namespace headfirst {
 
-std::unique_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
-{
-  std::cout << "SimplePizzaFactory::CreatePizza" << std::endl;
-  std::unique_ptr<Pizza> pizza;
-  if( type.compare( "cheese" ) == 0 ) {
-    pizza.reset(new CheesePizza());
-  } else if( type.compare( "pepperoni" ) == 0 ) {
-    pizza.reset(new PepperoniPizza());
-  } else if( type.compare( "clam" ) == 0 ) {
-    pizza.reset(new ClamPizza());
-  } else if( type.compare( "veggie" ) == 0 ) {
-    pizza.reset(new VeggiePizza());
+
+  std::unique_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
+  {
+    std::cout << "SimplePizzaFactory::CreatePizza" << std::endl;
+    std::unique_ptr<Pizza> pizza;
+    if( type.compare( "cheese" ) == 0 ) {
+      pizza.reset(new CheesePizza());
+    } else if( type.compare( "pepperoni" ) == 0 ) {
+      pizza.reset(new PepperoniPizza());
+    } else if( type.compare( "clam" ) == 0 ) {
+      pizza.reset(new ClamPizza());
+    } else if( type.compare( "veggie" ) == 0 ) {
+      pizza.reset(new VeggiePizza());
+    }
+    return pizza;
   }
-  return pizza;
-}
 
+} //namespace headfirst

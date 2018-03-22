@@ -21,16 +21,19 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Waitress::Waitress( const MenuComponent* all_menus ) :
-  all_menus_( all_menus )
-{
-  assert( all_menus );
-  std::cout << "Waitress::Waitress" << std::endl;
-}
 
-void Waitress::PrintMenu() const
-{
-  std::cout << "Waitress::PrintMenu" << std::endl;
-  all_menus_->Print();
-}
+  Waitress::Waitress( const MenuComponent* all_menus ) :
+    all_menus_( all_menus )
+  {
+    assert( all_menus );
+    std::cout << "Waitress::Waitress" << std::endl;
+  }
+
+  void Waitress::PrintMenu() const
+  {
+    std::cout << "Waitress::PrintMenu" << std::endl;
+    all_menus_->Print();
+  }
+} //namespace headfirst

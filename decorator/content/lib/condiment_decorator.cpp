@@ -19,12 +19,15 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-CondimentDecorator::CondimentDecorator()
-{
-  std::cout << "CondimentDecorator::CondimentDecorator" << std::endl;
-}
-CondimentDecorator::~CondimentDecorator()
-{
-  std::cout << "CondimentDecorator::~CondimentDecorator" << std::endl;
-}
+
+  CondimentDecorator::CondimentDecorator()
+  {
+    std::cout << "CondimentDecorator::CondimentDecorator" << std::endl;
+  }
+  CondimentDecorator::~CondimentDecorator()
+  {
+    std::cout << "CondimentDecorator::~CondimentDecorator" << std::endl;
+  }
+} //namespace headfirst

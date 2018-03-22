@@ -24,17 +24,20 @@
 #include "beverage.hpp"
 #include "condiment_decorator.hpp"
 
-
-class Soy : public CondimentDecorator {
-
-  const Beverage* beverage_;
-
-public:
-  explicit Soy(const Beverage* beverage);
-  ~Soy();
-  std::string GetDescription() const;
-  double Cost() const;
-};
+namespace headfirst {
 
 
+  class Soy : public CondimentDecorator {
+
+    const Beverage* beverage_;
+
+  public:
+    explicit Soy(const Beverage* beverage);
+    ~Soy();
+    std::string GetDescription() const;
+    double Cost() const;
+  };
+
+
+} //namespace headfirst
 #endif

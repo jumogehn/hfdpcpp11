@@ -24,15 +24,18 @@
 #include "command.hpp"
 #include "garage_door.hpp"
 
-
-class GarageDoorUpCommand : public Command {
-
-  const GarageDoor* garage_door_;
-
-public:
-  explicit GarageDoorUpCommand( const GarageDoor* garage_door );
-  void Execute() const;
-};
+namespace headfirst {
 
 
+  class GarageDoorUpCommand : public Command {
+
+    const GarageDoor* garage_door_;
+
+  public:
+    explicit GarageDoorUpCommand( const GarageDoor* garage_door );
+    void Execute() const;
+  };
+
+
+} //namespace headfirst
 #endif

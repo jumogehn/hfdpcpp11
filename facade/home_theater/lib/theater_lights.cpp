@@ -20,35 +20,38 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-TheaterLights::TheaterLights( std::string description ) :
-  description_( description )
-{
-  std::cout << "TheaterLights::TheaterLights" << std::endl;
-}
-void TheaterLights::TurnOn()
-{
-  std::cout << "TheaterLights::on" << std::endl;
-  std::cout << description_.c_str() << " on" << std::endl;
-}
-
-void TheaterLights::TurnOff()
-{
-  std::cout << "TheaterLights::off" << std::endl;
-  std::cout << description_.c_str() << " off" << std::endl;
-}
-
-void TheaterLights::Dim( int level )
-{
-  std::cout << "TheaterLights::dim" << std::endl;
-  std::cout << description_.c_str() << " dimming to " << level
-    << "%" << std::endl;
-}
-
-std::string TheaterLights::ToString()
-{
-  std::cout << "TheaterLights::ToString" << std::endl;
-  return description_;
-}
+namespace headfirst {
 
 
+  TheaterLights::TheaterLights( std::string description ) :
+    description_( description )
+  {
+    std::cout << "TheaterLights::TheaterLights" << std::endl;
+  }
+  void TheaterLights::TurnOn()
+  {
+    std::cout << "TheaterLights::on" << std::endl;
+    std::cout << description_.c_str() << " on" << std::endl;
+  }
+
+  void TheaterLights::TurnOff()
+  {
+    std::cout << "TheaterLights::off" << std::endl;
+    std::cout << description_.c_str() << " off" << std::endl;
+  }
+
+  void TheaterLights::Dim( int level )
+  {
+    std::cout << "TheaterLights::dim" << std::endl;
+    std::cout << description_.c_str() << " dimming to " << level
+      << "%" << std::endl;
+  }
+
+  std::string TheaterLights::ToString()
+  {
+    std::cout << "TheaterLights::ToString" << std::endl;
+    return description_;
+  }
+
+
+} //namespace headfirst

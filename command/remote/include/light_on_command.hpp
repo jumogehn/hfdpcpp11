@@ -24,15 +24,18 @@
 #include "command.hpp"
 #include "light.hpp"
 
-
-class LightOnCommand : public Command {
-
-  const Light* light_;
-
-public:
-  explicit LightOnCommand( const Light* light );
-  void Execute() const;
-};
+namespace headfirst {
 
 
+  class LightOnCommand : public Command {
+
+    const Light* light_;
+
+  public:
+    explicit LightOnCommand( const Light* light );
+    void Execute() const;
+  };
+
+
+} //namespace headfirst
 #endif

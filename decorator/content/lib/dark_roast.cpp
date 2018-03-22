@@ -19,15 +19,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-DarkRoast::DarkRoast()
-{
-  std::cout << "DarkRoast::DarkRoast" << std::endl;
-  description_ = "Dark Roast Coffee";
-}
 
-double DarkRoast::Cost() const
-{
-  std::cout << "DarkRoast::cost" << std::endl;
-  return 0.99;
-}
+  DarkRoast::DarkRoast()
+  {
+    std::cout << "DarkRoast::DarkRoast" << std::endl;
+    description_ = "Dark Roast Coffee";
+  }
+
+  double DarkRoast::Cost() const
+  {
+    std::cout << "DarkRoast::cost" << std::endl;
+    return 0.99;
+  }
+} //namespace headfirst

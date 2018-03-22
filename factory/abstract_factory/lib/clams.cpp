@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-Clams::~Clams()
-{
-  std::cout << "Clams::~Clams" << std::endl;
-}
+
+  Clams::~Clams()
+  {
+    std::cout << "Clams::~Clams" << std::endl;
+  }
+} //namespace headfirst

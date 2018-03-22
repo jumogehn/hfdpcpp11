@@ -22,23 +22,26 @@
 //Your project's .h files.
 #include "dvd_player.hpp"
 
+namespace headfirst {
 
-class Projector {
 
-  std::string description_;
-  DvdPlayer*  dvd_player_;
+  class Projector {
 
-  Projector( const Projector& ); // Disable copy constructor
-  void operator=( const Projector& ); // Disable assignment operator
+    std::string description_;
+    DvdPlayer*  dvd_player_;
 
-public:
-  Projector( std::string description, DvdPlayer* dvd_player );
-  void TurnOn();
-  void TurnOff();
-  void WideScreenMode();
-  void TvMode();
-  std::string ToString();
-};
+    Projector( const Projector& ); // Disable copy constructor
+    void operator=( const Projector& ); // Disable assignment operator
 
+  public:
+    Projector( std::string description, DvdPlayer* dvd_player );
+    void TurnOn();
+    void TurnOff();
+    void WideScreenMode();
+    void TvMode();
+    std::string ToString();
+  };
+
+} //namespace headfirst
 #endif
 

@@ -19,12 +19,15 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-NYStyleCheesePizza::NYStyleCheesePizza()
-{
-  std::cout << "NYStyleCheesePizza::NYStyleCheesePizza" << std::endl;
-  name_ = "NY Style Sauce and Cheese Pizza";
-  dough_ = "Thin Crust Dough";
-  sauce_ = "Marinara Sauce";
-  toppings_.push_back( "Grated Reggiano Cheese" );
-}
+
+  NYStyleCheesePizza::NYStyleCheesePizza()
+  {
+    std::cout << "NYStyleCheesePizza::NYStyleCheesePizza" << std::endl;
+    name_ = "NY Style Sauce and Cheese Pizza";
+    dough_ = "Thin Crust Dough";
+    sauce_ = "Marinara Sauce";
+    toppings_.push_back( "Grated Reggiano Cheese" );
+  }
+} //namespace headfirst

@@ -21,18 +21,21 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-StereoOffCommand::StereoOffCommand( const Stereo* stereo ) :
-  stereo_( stereo )
-{
-  std::cout << "StereoOffCommand::StereoOffCommand" << std::endl;
-  assert( stereo );
-}
-
-void StereoOffCommand::Execute() const
-{
-  std::cout << "StereoOffCommand::execute" << std::endl;
-  stereo_->TurnOff();
-}
+namespace headfirst {
 
 
+  StereoOffCommand::StereoOffCommand( const Stereo* stereo ) :
+    stereo_( stereo )
+  {
+    std::cout << "StereoOffCommand::StereoOffCommand" << std::endl;
+    assert( stereo );
+  }
+
+  void StereoOffCommand::Execute() const
+  {
+    std::cout << "StereoOffCommand::execute" << std::endl;
+    stereo_->TurnOff();
+  }
+
+
+} //namespace headfirst

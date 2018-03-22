@@ -23,12 +23,15 @@
 //Your project's .h files.
 #include "pepperoni.hpp"
 
-
-class SlicedPepperoni : public Pepperoni {
-
-public:
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class SlicedPepperoni : public Pepperoni {
+
+  public:
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

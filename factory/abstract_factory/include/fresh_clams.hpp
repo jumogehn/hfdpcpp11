@@ -23,12 +23,15 @@
 //Your project's .h files.
 #include "clams.hpp"
 
-
-class FreshClams : public Clams {
-
-public:
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  class FreshClams : public Clams {
+
+  public:
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

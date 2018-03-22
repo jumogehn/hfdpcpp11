@@ -21,13 +21,16 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-class Observer {
 
-protected:
-  virtual ~Observer();
-public:
-  virtual void Update(float temp, float humidity, float pressure) = 0;
-};
+  class Observer {
 
+  protected:
+    virtual ~Observer();
+  public:
+    virtual void Update(float temp, float humidity, float pressure) = 0;
+  };
+
+} //namespace headfirst
 #endif

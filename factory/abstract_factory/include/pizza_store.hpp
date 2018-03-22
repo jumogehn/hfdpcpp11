@@ -24,16 +24,19 @@
 //Your project's .h files.
 #include "pizza.hpp"
 
+namespace headfirst {
 
 
-class PizzaStore {
 
-protected:
-  PizzaStore();
-public:
-  virtual ~PizzaStore();
-  std::unique_ptr< Pizza > OrderPizza(std::string type) const;
-  virtual std::unique_ptr< Pizza > CreatePizza(std::string type) const = 0;
-};
+  class PizzaStore {
 
+  protected:
+    PizzaStore();
+  public:
+    virtual ~PizzaStore();
+    std::unique_ptr< Pizza > OrderPizza(std::string type) const;
+    virtual std::unique_ptr< Pizza > CreatePizza(std::string type) const = 0;
+  };
+
+} //namespace headfirst
 #endif

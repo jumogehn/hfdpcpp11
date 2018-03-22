@@ -20,42 +20,45 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-GarageDoor::GarageDoor( const std::string location ) :
-  location_( location )
-{
-  std::cout << "GarageDoor::GarageDoor" << std::endl;
-}
 
-void GarageDoor::OpenUp() const
-{
-  std::cout << "GarageDoor::up" << std::endl;
-  std::cout << location_.c_str() << " Door is Up" << std::endl;
-}
+  GarageDoor::GarageDoor( const std::string location ) :
+    location_( location )
+  {
+    std::cout << "GarageDoor::GarageDoor" << std::endl;
+  }
 
-void GarageDoor::CloseDown() const
-{
-  std::cout << "GarageDoor::down" << std::endl;
-  std::cout << location_.c_str() << " Door is Down" << std::endl;
-}
+  void GarageDoor::OpenUp() const
+  {
+    std::cout << "GarageDoor::up" << std::endl;
+    std::cout << location_.c_str() << " Door is Up" << std::endl;
+  }
 
-void GarageDoor::Stop() const
-{
-  std::cout << "GarageDoor::stop" << std::endl;
-  std::cout << location_.c_str() << " Door is Stopped" << std::endl;
-}
+  void GarageDoor::CloseDown() const
+  {
+    std::cout << "GarageDoor::down" << std::endl;
+    std::cout << location_.c_str() << " Door is Down" << std::endl;
+  }
 
-void GarageDoor::LightOn() const
-{
-  std::cout << "GarageDoor::lightOn" << std::endl;
-  std::cout << location_.c_str() << " light is on" << std::endl;
-}
+  void GarageDoor::Stop() const
+  {
+    std::cout << "GarageDoor::stop" << std::endl;
+    std::cout << location_.c_str() << " Door is Stopped" << std::endl;
+  }
 
-void GarageDoor::LightOff() const
-{
-  std::cout << "GarageDoor::lightOff" << std::endl;
-  std::cout << location_.c_str() << " light is off" << std::endl;
-}
+  void GarageDoor::LightOn() const
+  {
+    std::cout << "GarageDoor::lightOn" << std::endl;
+    std::cout << location_.c_str() << " light is on" << std::endl;
+  }
+
+  void GarageDoor::LightOff() const
+  {
+    std::cout << "GarageDoor::lightOff" << std::endl;
+    std::cout << location_.c_str() << " light is off" << std::endl;
+  }
 
 
+} //namespace headfirst

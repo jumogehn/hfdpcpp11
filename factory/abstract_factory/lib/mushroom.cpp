@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string Mushroom::ToString() const
-{
-  std::cout << "Mushroom::ToString" << std::endl;
-  return "Mushrooms";
-}
+
+  std::string Mushroom::ToString() const
+  {
+    std::cout << "Mushroom::ToString" << std::endl;
+    return "Mushrooms";
+  }
+} //namespace headfirst

@@ -19,14 +19,17 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-void Tea::Brew() const
-{
-  std::cout << "Tea::brew" << std::endl;
-  std::cout << "Steeping the tea" << std::endl;
-}
-void Tea::AddCondiments() const
-{
-  std::cout << "Tea::AddCondiments" << std::endl;
-  std::cout << "Adding Lemon" << std::endl;
-}
+
+  void Tea::Brew() const
+  {
+    std::cout << "Tea::brew" << std::endl;
+    std::cout << "Steeping the tea" << std::endl;
+  }
+  void Tea::AddCondiments() const
+  {
+    std::cout << "Tea::AddCondiments" << std::endl;
+    std::cout << "Adding Lemon" << std::endl;
+  }
+} //namespace headfirst

@@ -21,21 +21,24 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-PepperoniPizza::PepperoniPizza(PizzaIngredientFactory *ingredient_factory)
-{
-  assert(ingredient_factory);
-  ingredient_factory_.reset(ingredient_factory);
-  std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
-}
-void PepperoniPizza::Prepare() const
-{
-  std::cout << "PepperoniPizza::prepare" << std::endl;
-  std::cout << "Preparing " << GetName().c_str() << std::endl;
-  dough_ = ingredient_factory_->CreateDough();
-  sauce_ = ingredient_factory_->CreateSauce();
-  cheese_ = ingredient_factory_->CreateCheese();
-  pepperoni_ = ingredient_factory_->CreatePepperoni();
-  if (!veggies_)
-    veggies_ = ingredient_factory_->CreateVeggies();
-}
+
+  PepperoniPizza::PepperoniPizza(PizzaIngredientFactory *ingredient_factory)
+  {
+    assert(ingredient_factory);
+    ingredient_factory_.reset(ingredient_factory);
+    std::cout << "PepperoniPizza::PepperoniPizza" << std::endl;
+  }
+  void PepperoniPizza::Prepare() const
+  {
+    std::cout << "PepperoniPizza::prepare" << std::endl;
+    std::cout << "Preparing " << GetName().c_str() << std::endl;
+    dough_ = ingredient_factory_->CreateDough();
+    sauce_ = ingredient_factory_->CreateSauce();
+    cheese_ = ingredient_factory_->CreateCheese();
+    pepperoni_ = ingredient_factory_->CreatePepperoni();
+    if (!veggies_)
+      veggies_ = ingredient_factory_->CreateVeggies();
+  }
+} //namespace headfirst

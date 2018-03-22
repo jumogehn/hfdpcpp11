@@ -22,13 +22,15 @@
 //Your project's .h files.
 #include "duck.hpp"
 
+namespace headfirst {
 
-class MallardDuck : public Duck {
+  class MallardDuck : public Duck {
 
-public:
-  void Fly() const;
-  void Quack() const;
-};
+  public:
+    void Fly() const;
+    void Quack() const;
+  };
 
+} //namespace headfirst
 
 #endif

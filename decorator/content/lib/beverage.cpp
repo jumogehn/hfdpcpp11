@@ -19,18 +19,21 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Beverage::Beverage() :
-  description_("Unknown Beverage")
-{
-  std::cout << "Beverage::Beverage" << std::endl;
-}
-Beverage::~Beverage()
-{
-  std::cout << "Beverage::~Beverage" << std::endl;
-}
-std::string Beverage::GetDescription() const
-{
-  std::cout << "Beverage::GetDescription" << std::endl;
-  return description_;
-}
+
+  Beverage::Beverage() :
+    description_("Unknown Beverage")
+  {
+    std::cout << "Beverage::Beverage" << std::endl;
+  }
+  Beverage::~Beverage()
+  {
+    std::cout << "Beverage::~Beverage" << std::endl;
+  }
+  std::string Beverage::GetDescription() const
+  {
+    std::cout << "Beverage::GetDescription" << std::endl;
+    return description_;
+  }
+} //namespace headfirst

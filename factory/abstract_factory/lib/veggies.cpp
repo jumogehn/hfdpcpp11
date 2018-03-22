@@ -19,8 +19,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Veggies::~Veggies()
-{
-  std::cout << "Veggies::~Veggies" << std::endl;
-}
+
+  Veggies::~Veggies()
+  {
+    std::cout << "Veggies::~Veggies" << std::endl;
+  }
+} //namespace headfirst

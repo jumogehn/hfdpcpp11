@@ -24,29 +24,32 @@
 //Your project's .h files.
 #include "command.hpp"
 
-
-//
-// This is the invoker
-//
-class RemoteControl {
-
-  static const int kSlots = 7;
-
-  Command* on_commands_[kSlots];
-  Command* off_commands_[kSlots];
-  Command* no_command_;
-
-  RemoteControl( const RemoteControl& ); // Disable copy constructor
-  void operator=( const RemoteControl& ); // Disable assignment operator
-
-public:
-  RemoteControl();
-  ~RemoteControl();
-  void SetCommand( int slot, Command* on_command, Command* off_command );
-  void OnButtonWasPushed( int slot ) const;
-  void OffButtonWasPushed( int slot ) const;
-  std::string ToString() const;
-};
+namespace headfirst {
 
 
+  //
+  // This is the invoker
+  //
+  class RemoteControl {
+
+    static const int kSlots = 7;
+
+    Command* on_commands_[kSlots];
+    Command* off_commands_[kSlots];
+    Command* no_command_;
+
+    RemoteControl( const RemoteControl& ); // Disable copy constructor
+    void operator=( const RemoteControl& ); // Disable assignment operator
+
+  public:
+    RemoteControl();
+    ~RemoteControl();
+    void SetCommand( int slot, Command* on_command, Command* off_command );
+    void OnButtonWasPushed( int slot ) const;
+    void OffButtonWasPushed( int slot ) const;
+    std::string ToString() const;
+  };
+
+
+} //namespace headfirst
 #endif

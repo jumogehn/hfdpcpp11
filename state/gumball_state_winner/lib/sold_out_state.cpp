@@ -21,38 +21,41 @@
 //Your project's .h files.
 #include "gumball_machine.hpp"
 
+namespace headfirst {
 
 
-SoldOutState::SoldOutState(GumballMachine* gumball_machine ) :
-  gumball_machine_( gumball_machine )
-{
-  assert(gumball_machine );
-  std::cout << "SoldOutState::SoldOutState" << std::endl;
-}
-void SoldOutState::InsertQuarter() const
-{
-  std::cout << "SoldOutState::InsertQuarter" << std::endl;
-  std::cout << "You can't insert a quarter, the machine is sold out"
-    << std::endl;
-}
-void SoldOutState::EjectQuarter() const
-{
-  std::cout << "SoldOutState::EjectQuarter" << std::endl;
-  std::cout << "You can't eject, you haven't inserted a quarter yet"
-    << std::endl;
-}
-void SoldOutState::TurnCrank() const
-{
-  std::cout << "SoldOutState::TurnCrank" << std::endl;
-  std::cout << "You turned, but there are no gumballs" << std::endl;
-}
-void SoldOutState::Dispense()
-{
-  std::cout << "SoldOutState::Dispense" << std::endl;
-  std::cout << "No gumball Dispensed" << std::endl;
-}
-std::string SoldOutState::ToString() const
-{
-  std::cout << "SoldOutState::ToString" << std::endl;
-  return "sold out";
-}
+
+  SoldOutState::SoldOutState(GumballMachine* gumball_machine ) :
+    gumball_machine_( gumball_machine )
+  {
+    assert(gumball_machine );
+    std::cout << "SoldOutState::SoldOutState" << std::endl;
+  }
+  void SoldOutState::InsertQuarter() const
+  {
+    std::cout << "SoldOutState::InsertQuarter" << std::endl;
+    std::cout << "You can't insert a quarter, the machine is sold out"
+      << std::endl;
+  }
+  void SoldOutState::EjectQuarter() const
+  {
+    std::cout << "SoldOutState::EjectQuarter" << std::endl;
+    std::cout << "You can't eject, you haven't inserted a quarter yet"
+      << std::endl;
+  }
+  void SoldOutState::TurnCrank() const
+  {
+    std::cout << "SoldOutState::TurnCrank" << std::endl;
+    std::cout << "You turned, but there are no gumballs" << std::endl;
+  }
+  void SoldOutState::Dispense()
+  {
+    std::cout << "SoldOutState::Dispense" << std::endl;
+    std::cout << "No gumball Dispensed" << std::endl;
+  }
+  std::string SoldOutState::ToString() const
+  {
+    std::cout << "SoldOutState::ToString" << std::endl;
+    return "sold out";
+  }
+} //namespace headfirst

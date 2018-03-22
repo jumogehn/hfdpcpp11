@@ -23,14 +23,17 @@
 //Your project's .h files.
 #include "caffeine_beverage_with_hook.hpp"
 
-
-class TeaWithHook : public CaffeineBeverageWithHook {
-  std::string GetUserInput() const;
-public:
-  void Brew() const;
-  void AddCondiments() const;
-  bool CustomerWantsCondiments();
-};
+namespace headfirst {
 
 
+  class TeaWithHook : public CaffeineBeverageWithHook {
+    std::string GetUserInput() const;
+  public:
+    void Brew() const;
+    void AddCondiments() const;
+    bool CustomerWantsCondiments();
+  };
+
+
+} //namespace headfirst
 #endif

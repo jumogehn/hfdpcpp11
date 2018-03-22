@@ -20,9 +20,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Turkey::~Turkey()
-{
-  std::cout << "Turkey::~Turkey" << std::endl;
-}
+  Turkey::~Turkey()
+  {
+    std::cout << "Turkey::~Turkey" << std::endl;
+  }
 
+} //namespace headfirst

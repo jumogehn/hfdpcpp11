@@ -20,9 +20,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-std::string Onion::ToString() const
-{
-  std::cout << "Onion::ToString" << std::endl;
-  return ( "Onion" );
-}
+
+  std::string Onion::ToString() const
+  {
+    std::cout << "Onion::ToString" << std::endl;
+    return ( "Onion" );
+  }
+} //namespace headfirst

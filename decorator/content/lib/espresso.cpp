@@ -19,15 +19,18 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Espresso::Espresso()
-{
-  std::cout << "Espresso::Espresso" << std::endl;
-  description_ = "Espresso";
-}
 
-double Espresso::Cost() const
-{
-  std::cout << "Espresso::cost" << std::endl;
-  return 1.99;
-}
+  Espresso::Espresso()
+  {
+    std::cout << "Espresso::Espresso" << std::endl;
+    description_ = "Espresso";
+  }
+
+  double Espresso::Cost() const
+  {
+    std::cout << "Espresso::cost" << std::endl;
+    return 1.99;
+  }
+} //namespace headfirst

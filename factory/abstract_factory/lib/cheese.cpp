@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Cheese::~Cheese()
-{
-  std::cout << "Cheese::~Cheese" << std::endl;
-}
 
+  Cheese::~Cheese()
+  {
+    std::cout << "Cheese::~Cheese" << std::endl;
+  }
+
+} //namespace headfirst

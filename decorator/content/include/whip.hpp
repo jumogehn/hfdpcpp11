@@ -24,17 +24,20 @@
 #include "beverage.hpp"
 #include "condiment_decorator.hpp"
 
-
-class Whip : public CondimentDecorator {
-
-  const Beverage* beverage_;
-
-public:
-  explicit Whip(const Beverage* beverage);
-  ~Whip();
-  std::string GetDescription() const;
-  double Cost() const;
-};
+namespace headfirst {
 
 
+  class Whip : public CondimentDecorator {
+
+    const Beverage* beverage_;
+
+  public:
+    explicit Whip(const Beverage* beverage);
+    ~Whip();
+    std::string GetDescription() const;
+    double Cost() const;
+  };
+
+
+} //namespace headfirst
 #endif

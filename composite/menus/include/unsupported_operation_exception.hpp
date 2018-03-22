@@ -23,17 +23,20 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
-
-class UnsupportedOperationException : public std::exception {
-
-  std::string message_;
-
-public:
-  UnsupportedOperationException() throw();
-  UnsupportedOperationException( const std::string message );
-  virtual ~UnsupportedOperationException() throw();
-  std::string GetMessage() const;
-};
+namespace headfirst {
 
 
+  class UnsupportedOperationException : public std::exception {
+
+    std::string message_;
+
+  public:
+    UnsupportedOperationException() throw();
+    UnsupportedOperationException( const std::string message );
+    virtual ~UnsupportedOperationException() throw();
+    std::string GetMessage() const;
+  };
+
+
+} //namespace headfirst
 #endif

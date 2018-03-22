@@ -19,9 +19,12 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-FlyBehavior::~FlyBehavior()
-{
-  std::cout << "FlyBehavior::~FlyBehavior" << std::endl;
-}
 
+  FlyBehavior::~FlyBehavior()
+  {
+    std::cout << "FlyBehavior::~FlyBehavior" << std::endl;
+  }
+
+} //namespace headfirst

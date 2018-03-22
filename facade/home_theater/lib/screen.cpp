@@ -20,27 +20,30 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
 
-Screen::Screen( std::string description ) :
-  description_( description )
-{
-  std::cout << "Screen::Screen" << std::endl;
-}
-void Screen::CloseUp()
-{
-  std::cout << "Screen::up" << std::endl;
-  std::cout << description_.c_str() << " going up" << std::endl;
-}
-void Screen::Down()
-{
-  std::cout << "Screen::down" << std::endl;
-  std::cout << description_.c_str() << " going down" << std::endl;
-}
-std::string Screen::ToString()
-{
-  std::cout << "Screen::ToString" << std::endl;
-  return description_;
-}
+
+  Screen::Screen( std::string description ) :
+    description_( description )
+  {
+    std::cout << "Screen::Screen" << std::endl;
+  }
+  void Screen::CloseUp()
+  {
+    std::cout << "Screen::up" << std::endl;
+    std::cout << description_.c_str() << " going up" << std::endl;
+  }
+  void Screen::Down()
+  {
+    std::cout << "Screen::down" << std::endl;
+    std::cout << description_.c_str() << " going down" << std::endl;
+  }
+  std::string Screen::ToString()
+  {
+    std::cout << "Screen::ToString" << std::endl;
+    return description_;
+  }
 
 
+} //namespace headfirst

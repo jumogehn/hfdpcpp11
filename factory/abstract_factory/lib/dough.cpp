@@ -19,8 +19,11 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Dough::~Dough()
-{
-  std::cout << "Dough::~Dough" << std::endl;
-}
+
+  Dough::~Dough()
+  {
+    std::cout << "Dough::~Dough" << std::endl;
+  }
+} //namespace headfirst

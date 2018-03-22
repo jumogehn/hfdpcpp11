@@ -23,83 +23,86 @@
 //Other libraries' .h files.
 //Your project's .h files.
 
+namespace headfirst {
 
-Pizza::Pizza()
-{
-  std::cout << "Pizza::Pizza" << std::endl;
-  veggies_ = nullptr;
-}
 
-Pizza::~Pizza()
-{
-  std::cout << "Pizza::~Pizza" << std::endl;
-  if (veggies_) {
-    //http://en.cppreference.com/w/cpp/language/range-for
-    for (Veggies *veggie : *veggies_) {
-      if (veggie) delete veggie;
+  Pizza::Pizza()
+  {
+    std::cout << "Pizza::Pizza" << std::endl;
+    veggies_ = nullptr;
+  }
+
+  Pizza::~Pizza()
+  {
+    std::cout << "Pizza::~Pizza" << std::endl;
+    if (veggies_) {
+      //http://en.cppreference.com/w/cpp/language/range-for
+      for (Veggies *veggie : *veggies_) {
+        if (veggie) delete veggie;
+      }
+      delete veggies_;
     }
-    delete veggies_;
   }
-}
-void Pizza::Bake() const
-{
-  std::cout << "Pizza::Bake" << std::endl;
-  std::cout << "Bake for 25 minutes at 350" << std::endl;
-}
-void Pizza::Cut() const
-{
-  std::cout << "Pizza::Cut" << std::endl;
-  std::cout << "Cutting the pizza into diagonal slices" << std::endl;
-}
-void Pizza::Box() const
-{
-  std::cout << "Pizza::Box" << std::endl;
-  std::cout << "Place pizza in official PizzaStore Box" << std::endl;
-}
-void Pizza::SetName(std::string name)
-{
-  std::cout << "Pizza::SetName" << std::endl;
-  name_ = name;
-}
-std::string Pizza::GetName() const
-{
-  std::cout << "Pizza::GetName" << std::endl;
-  return name_;
-}
-std::string Pizza::ToString() const
-{
-  std::cout << "Pizza::ToString" << std::endl;
-  std::stringstream value;
-  value << "---- " << name_.c_str() << " ----" << std::endl;
+  void Pizza::Bake() const
+  {
+    std::cout << "Pizza::Bake" << std::endl;
+    std::cout << "Bake for 25 minutes at 350" << std::endl;
+  }
+  void Pizza::Cut() const
+  {
+    std::cout << "Pizza::Cut" << std::endl;
+    std::cout << "Cutting the pizza into diagonal slices" << std::endl;
+  }
+  void Pizza::Box() const
+  {
+    std::cout << "Pizza::Box" << std::endl;
+    std::cout << "Place pizza in official PizzaStore Box" << std::endl;
+  }
+  void Pizza::SetName(std::string name)
+  {
+    std::cout << "Pizza::SetName" << std::endl;
+    name_ = name;
+  }
+  std::string Pizza::GetName() const
+  {
+    std::cout << "Pizza::GetName" << std::endl;
+    return name_;
+  }
+  std::string Pizza::ToString() const
+  {
+    std::cout << "Pizza::ToString" << std::endl;
+    std::stringstream value;
+    value << "---- " << name_.c_str() << " ----" << std::endl;
 
-  if (dough_.get() != 0) {
-    value << dough_->ToString();
-    value << std::endl;
-  }
-  if (sauce_.get() != 0) {
-    value << sauce_->ToString();
-    value << std::endl;
-  }
-  if (cheese_.get() != 0) {
-    value << cheese_->ToString();
-    value << std::endl;
-  }
-  if (clam_.get() != 0) {
-    value << clam_->ToString();
-    value << std::endl;
-  }
-  if (pepperoni_.get() != 0) {
-    value << pepperoni_->ToString();
-    value << std::endl;
-  }
-  if (veggies_) {
-    //http://en.cppreference.com/w/cpp/language/range-for
-    for (Veggies *veggies : *veggies_) {
-      if (veggies)
-        value << veggies->ToString() << ", ";
+    if (dough_.get() != 0) {
+      value << dough_->ToString();
+      value << std::endl;
     }
-    value << std::endl;
-  }
+    if (sauce_.get() != 0) {
+      value << sauce_->ToString();
+      value << std::endl;
+    }
+    if (cheese_.get() != 0) {
+      value << cheese_->ToString();
+      value << std::endl;
+    }
+    if (clam_.get() != 0) {
+      value << clam_->ToString();
+      value << std::endl;
+    }
+    if (pepperoni_.get() != 0) {
+      value << pepperoni_->ToString();
+      value << std::endl;
+    }
+    if (veggies_) {
+      //http://en.cppreference.com/w/cpp/language/range-for
+      for (Veggies *veggies : *veggies_) {
+        if (veggies)
+          value << veggies->ToString() << ", ";
+      }
+      value << std::endl;
+    }
 
-  return value.str();
-}
+    return value.str();
+  }
+} //namespace headfirst
