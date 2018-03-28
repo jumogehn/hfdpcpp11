@@ -41,6 +41,9 @@ namespace headfirst {
     double GetPrice() const;
     bool IsVegetarian() const;
     void Print() const;
+    //void Add( MenuComponent* menu_component );    //API for Menu
+    //void Remove( MenuComponent* menu_component ); //API for Menu
+    //MenuComponent* GetChild( int i ) const;       //API for Menu
   };
 
 

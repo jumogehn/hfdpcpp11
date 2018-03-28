@@ -24,24 +24,19 @@
 
 
 int main( int argc, char* argv[] ) {
+
   std::unique_ptr< headfirst::MenuComponent >
     pancake_house_menu (
       new headfirst::Menu( "PANCAKE HOUSE MENU", "Breakfast" ));
   std::unique_ptr< headfirst::MenuComponent >
     diner_menu (new headfirst::Menu( "DINER MENU", "Lunch" ));
   std::unique_ptr< headfirst::MenuComponent >
-    cafe_menu (new headfirst::Menu( "CAFE MENU", "Dinner" ));
-  std::unique_ptr< headfirst::MenuComponent >
     dessert_menu (new headfirst::Menu( "DESSERT MENU", "Dessert of course!" ));
+  std::unique_ptr< headfirst::MenuComponent >
+    cafe_menu (new headfirst::Menu( "CAFE MENU", "Dinner" ));
   std::unique_ptr< headfirst::MenuComponent >
     coffee_menu (new headfirst::Menu( "COFFEE MENU",
                            "Stuff to go with your afternoon coffee" ));
-  std::unique_ptr< headfirst::MenuComponent >
-    all_menus (new headfirst::Menu( "ALL MENUS", "All menus combined" ));
-
-  all_menus->Add( pancake_house_menu.get() );
-  all_menus->Add( diner_menu.get() );
-  all_menus->Add( cafe_menu.get() );
 
   pancake_house_menu->Add( new headfirst::MenuItem(
       "K&B's Pancake Breakfast",
@@ -144,6 +139,13 @@ int main( int argc, char* argv[] ) {
       "Three almond or hazelnut biscotti cookies",
       true,
       0.89) );
+
+  std::unique_ptr< headfirst::MenuComponent >
+    all_menus (new headfirst::Menu( "ALL MENUS", "All menus combined" ));
+
+  all_menus->Add( pancake_house_menu.get() );
+  all_menus->Add( diner_menu.get() );
+  all_menus->Add( cafe_menu.get() );
 
   std::unique_ptr<headfirst::Waitress>
     waitress (new headfirst::Waitress(all_menus.get() ));

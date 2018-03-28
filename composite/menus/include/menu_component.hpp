@@ -28,21 +28,21 @@ namespace headfirst {
 
 
   class MenuComponent {
-
-    MenuComponent( const MenuComponent& ); // Disable copy constructor
-    void operator=( const MenuComponent& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    MenuComponent( const MenuComponent& ) = delete;
+    void operator=( const MenuComponent& ) = delete;
 
   public:
     MenuComponent();
     virtual ~MenuComponent();
-    virtual void Add( MenuComponent* menu_component );
-    virtual void Remove( MenuComponent* menu_component );
-    virtual MenuComponent* GetChild( int i ) const;
-    virtual std::string GetName() const;
-    virtual std::string GetDescription() const;
-    virtual double GetPrice() const;
-    virtual bool IsVegetarian() const;
-    virtual void Print() const;
+    virtual void Add( MenuComponent* menu_component );   //Menu only
+    virtual void Remove( MenuComponent* menu_component );//Menu only
+    virtual MenuComponent* GetChild( int i ) const;      //Menu only
+    virtual std::string GetName() const = 0;
+    virtual std::string GetDescription() const = 0;
+    virtual double GetPrice() const;                     //MenuItem only
+    virtual bool IsVegetarian() const;                   //MenuItem only
+    virtual void Print() const = 0;
   };
 
 

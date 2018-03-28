@@ -16,16 +16,15 @@
 #include "menu_component.hpp"
 //C system files.
 //C++ system files.
+#include <cassert>
 #include <iostream>
 #include <memory>
+#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "menu.hpp"
-#include "unsupported_operation_exception.hpp"
 
 namespace headfirst {
-
-
 
   MenuComponent::MenuComponent()
   {
@@ -35,46 +34,37 @@ namespace headfirst {
   {
     std::cout << "MenuComponent::~MenuComponent" << std::endl;
   }
+
+  //Menu only
   void MenuComponent::Add( MenuComponent* menu_component )
   {
-    std::cout << "MenuComponent::add" << std::endl;
-    throw new UnsupportedOperationException();
+    assert(false);
   }
+  //Menu only
   void MenuComponent::Remove( MenuComponent* menu_component )
   {
-    std::cout << "MenuComponent::remove" << std::endl;
-    throw new UnsupportedOperationException();
+    assert(false);
   }
+  //Menu only
   MenuComponent* MenuComponent::GetChild( int i ) const
   {
-    std::cout << "MenuComponent::GetChild" << std::endl;
-    throw new UnsupportedOperationException();
+    assert(false);
+    return nullptr;
   }
-  std::string MenuComponent::GetName() const
-  {
-    std::cout << "MenuComponent::GetName" << std::endl;
-    throw new UnsupportedOperationException();
-  }
-  std::string MenuComponent::GetDescription() const
-  {
-    std::cout << "MenuComponent::GetDescription" << std::endl;
-    throw new UnsupportedOperationException();
-  }
+  //std::string MenuComponent::GetName() const
+  //std::string MenuComponent::GetDescription() const
+  //MenuItem only
   double MenuComponent::GetPrice() const
   {
-    std::cout << "MenuComponent::getPrice" << std::endl;
-    throw new UnsupportedOperationException();
+    assert(false);
+    return 0;
   }
+  //MenuItem only
   bool MenuComponent::IsVegetarian() const
   {
-    std::cout << "MenuComponent::isVegetarian" << std::endl;
-    throw new UnsupportedOperationException();
+    assert(false);
+    return false;
   }
-  void MenuComponent::Print() const
-  {
-    std::cout << "MenuComponent::print" << std::endl;
-    throw new UnsupportedOperationException();
-  }
-
+  //void MenuComponent::Print() const
 
 } //namespace headfirst

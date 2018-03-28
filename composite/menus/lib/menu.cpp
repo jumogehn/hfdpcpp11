@@ -16,6 +16,7 @@
 #include "menu.hpp"
 //C system files.
 //C++ system files.
+#include <algorithm>
 #include <cassert>
 #include <cstdio>
 #include <iostream>
@@ -34,6 +35,11 @@ namespace headfirst {
   {
     std::cout << "Menu::Menu" << std::endl;
   }
+
+  Menu::~Menu()
+  {
+  }
+
   void Menu::Add( MenuComponent* menu_component )
   {
     assert( menu_component );
@@ -44,10 +50,12 @@ namespace headfirst {
   {
     assert( menu_component );
     std::cout << "Menu::remove" << std::endl;
-    ////////////////////////////////////////////////////////////
-    // This part is remained as a to-do
-    //std::Remove( menu_components_.begin(), menu_components_.end(),
-    //             menu_component->GetName().c_str());
+    std::vector< MenuComponent* >::iterator pos;
+    pos = find(menu_components_.begin(), menu_components_.end(),
+               menu_component);
+    if (pos != menu_components_.end()) {
+      menu_components_.erase(pos);
+    }
   }
   MenuComponent* Menu::GetChild( int i ) const
   {

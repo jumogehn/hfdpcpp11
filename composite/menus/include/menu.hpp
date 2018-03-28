@@ -36,12 +36,15 @@ namespace headfirst {
 
   public:
     Menu( const std::string name, const std::string description );
+    ~Menu();
     void Add( MenuComponent* menu_component );
     void Remove( MenuComponent* menu_component );
     MenuComponent* GetChild( int i ) const;
     std::string GetName() const;
     std::string GetDescription() const;
     void Print() const;
+    //double GetPrice() const;   //API for MenuItem
+    //bool IsVegetarian() const; //API for MenuItem
   };
 
 
