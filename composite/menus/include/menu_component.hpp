@@ -35,7 +35,8 @@ namespace headfirst {
   public:
     MenuComponent();
     virtual ~MenuComponent();
-    virtual void Add( MenuComponent* menu_component );   //Menu only
+    //Menu only
+    virtual void Add( std::unique_ptr<MenuComponent> menu_component );
     virtual void Remove( MenuComponent* menu_component );//Menu only
     virtual MenuComponent* GetChild( int i ) const;      //Menu only
     virtual std::string GetName() const = 0;

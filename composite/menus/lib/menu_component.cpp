@@ -36,7 +36,7 @@ namespace headfirst {
   }
 
   //Menu only
-  void MenuComponent::Add( MenuComponent* menu_component )
+  void MenuComponent::Add( std::unique_ptr<MenuComponent> menu_component )
   {
     assert(false);
   }

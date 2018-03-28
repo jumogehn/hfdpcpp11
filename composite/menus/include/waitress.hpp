@@ -28,13 +28,13 @@ namespace headfirst {
 
   class Waitress {
 
-    const MenuComponent* all_menus_;
+    std::unique_ptr<MenuComponent> all_menus_;
 
     Waitress( const Waitress& ); // Disable copy constructor
     void operator=( const Waitress& ); // Disable assignment operator
 
   public:
-    explicit Waitress( const MenuComponent* all_menus );
+    explicit Waitress( std::unique_ptr<MenuComponent> all_menus );
     void PrintMenu() const;
   };
 

@@ -22,6 +22,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 #include <vector>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -40,27 +41,27 @@ namespace headfirst {
   {
   }
 
-  void Menu::Add( MenuComponent* menu_component )
+  void Menu::Add( std::unique_ptr<MenuComponent> menu_component )
   {
     assert( menu_component );
     std::cout << "Menu::add" << std::endl;
-    menu_components_.push_back( menu_component );
+    menu_components_.push_back( std::move(menu_component) );
   }
   void Menu::Remove( MenuComponent* menu_component )
   {
     assert( menu_component );
-    std::cout << "Menu::remove" << std::endl;
-    std::vector< MenuComponent* >::iterator pos;
-    pos = find(menu_components_.begin(), menu_components_.end(),
-               menu_component);
-    if (pos != menu_components_.end()) {
-      menu_components_.erase(pos);
-    }
+    //std::cout << "Menu::remove" << std::endl;
+    //std::vector< MenuComponent* >::iterator pos;
+    //pos = find(menu_components_.begin(), menu_components_.end(),
+    //           menu_component);
+    //if (pos != menu_components_.end()) {
+    //  menu_components_.erase(pos);
+    //}
   }
   MenuComponent* Menu::GetChild( int i ) const
   {
     std::cout << "Menu::GetChild" << std::endl;
-    return menu_components_[i];
+    return 0;//menu_components_[i];
   }
   std::string Menu::GetName() const
   {
@@ -79,7 +80,7 @@ namespace headfirst {
     std::cout << ", " << GetDescription().c_str() << std::endl;
     std::cout << "---------------------" << std::endl;
 
-    for ( MenuComponent* menu_component : menu_components_ ) {
+    for ( std::unique_ptr<MenuComponent>& menu_component : menu_components_ ) {
       menu_component->Print();
     }
   }
