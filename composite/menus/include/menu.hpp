@@ -32,14 +32,15 @@ namespace headfirst {
 
     std::string name_;
     std::string description_;
-    mutable std::vector< std::unique_ptr<MenuComponent> > menu_components_;
+    std::vector< std::unique_ptr<MenuComponent> > menu_components_;
 
   public:
     Menu( const std::string name, const std::string description );
     ~Menu();
     void Add( std::unique_ptr<MenuComponent> menu_component );
-    void Remove( MenuComponent* menu_component );
-    MenuComponent* GetChild( int i ) const;
+    //These two APIs are ignored : trivial and worthless
+    //void Remove( MenuComponent* menu_component );
+    //MenuComponent* GetChild( int i ) const;
     std::string GetName() const;
     std::string GetDescription() const;
     void Print() const;

@@ -25,9 +25,9 @@
 namespace headfirst {
 
 
-  Waitress::Waitress( std::unique_ptr<MenuComponent> all_menus )
+  Waitress::Waitress( std::unique_ptr<MenuComponent> all_menus ) :
+    all_menus_ (std::move(all_menus))
   {
-    all_menus_ = std::move(all_menus);
     std::cout << "Waitress::Waitress" << std::endl;
   }
   void Waitress::PrintMenu() const

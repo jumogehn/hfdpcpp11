@@ -37,8 +37,9 @@ namespace headfirst {
     virtual ~MenuComponent();
     //Menu only
     virtual void Add( std::unique_ptr<MenuComponent> menu_component );
-    virtual void Remove( MenuComponent* menu_component );//Menu only
-    virtual MenuComponent* GetChild( int i ) const;      //Menu only
+    //These two APIs are ignored : trivial and worthless
+    //virtual void Remove( MenuComponent* menu_component );//Menu only
+    //virtual MenuComponent* GetChild( int i ) const;      //Menu only
     virtual std::string GetName() const = 0;
     virtual std::string GetDescription() const = 0;
     virtual double GetPrice() const;                     //MenuItem only

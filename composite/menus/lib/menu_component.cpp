@@ -41,6 +41,8 @@ namespace headfirst {
     assert(false);
   }
   //Menu only
+  //These two APIs are ignored : trivial and worthless
+#if 0
   void MenuComponent::Remove( MenuComponent* menu_component )
   {
     assert(false);
@@ -51,6 +53,7 @@ namespace headfirst {
     assert(false);
     return nullptr;
   }
+#endif
   //std::string MenuComponent::GetName() const
   //std::string MenuComponent::GetDescription() const
   //MenuItem only
