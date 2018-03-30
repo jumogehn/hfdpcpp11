@@ -4,7 +4,7 @@
 
 project (simpleremote)
 
-cmake_minimum_required(VERSION 2.8.6)
+cmake_minimum_required(VERSION 3.6)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
 include(../../check11features/CheckCXX11Features.cmake)
@@ -19,6 +19,7 @@ if(MSVC)
   # Warning Level 4 for Debug builds
   list(APPEND CMAKE_CXX_FLAGS_DEBUG " /W4")
   list(REMOVE_DUPLICATES CMAKE_CXX_FLAGS_DEBUG)
+  set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT testsimpleremote)
 endif()
 
 ADD_SUBDIRECTORY(driver)

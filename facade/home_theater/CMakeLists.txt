@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 #http://pageant.ghulbus.eu/?p=664
 
-cmake_minimum_required(VERSION 2.8.6)
+cmake_minimum_required(VERSION 3.6)
 
 project (hometheater)
 
@@ -34,6 +34,7 @@ if(MSVC)
   # Warning Level 4 for Debug builds
   list(APPEND CMAKE_CXX_FLAGS_DEBUG " /W4")
   list(REMOVE_DUPLICATES CMAKE_CXX_FLAGS_DEBUG)
+  set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT testhometheater)
 endif()
 
 ADD_SUBDIRECTORY(driver)
