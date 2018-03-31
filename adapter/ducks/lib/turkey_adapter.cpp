@@ -22,7 +22,7 @@
 
 namespace headfirst {
 
-  TurkeyAdapter::TurkeyAdapter( const Turkey* turkey ) :
+  TurkeyAdapter::TurkeyAdapter(const std::shared_ptr<Turkey> turkey) :
     my_turkey_( turkey )
   {
     std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;

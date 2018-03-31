@@ -26,7 +26,7 @@
 #include "wild_turkey.hpp"
 
 
-void TestDuck( const headfirst::Duck* duck )
+void TestDuck( const std::shared_ptr<headfirst::Duck> duck )
 {
   std::cout << "TestDuck" << std::endl;
   duck->Quack();
@@ -36,9 +36,10 @@ void TestDuck( const headfirst::Duck* duck )
 int main( int argc, char* argv[] )
 {
 
-  std::unique_ptr<headfirst::MallardDuck> duck( new headfirst::MallardDuck() );
+  std::shared_ptr<headfirst::MallardDuck> duck
+    = std::make_shared<headfirst::MallardDuck>();
   std::unique_ptr<headfirst::Turkey>
-    duck_adapter( new headfirst::DuckAdapter( duck.get() ));
+    duck_adapter( new headfirst::DuckAdapter(duck));
 
   for( auto i = 0; i < 10; i++ ) {
     std::cout << "The DuckAdapter says..." << std::endl;
@@ -46,19 +47,20 @@ int main( int argc, char* argv[] )
     duck_adapter->Fly();
   }
 
-  std::unique_ptr<headfirst::WildTurkey> turkey( new headfirst::WildTurkey() );
-  std::unique_ptr<headfirst::Duck> turkey_adapter(
-    new headfirst::TurkeyAdapter(turkey.get()) );
+  std::shared_ptr<headfirst::WildTurkey> turkey
+    = std::make_shared<headfirst::WildTurkey>();
+  std::shared_ptr<headfirst::TurkeyAdapter> turkey_adapter
+    = std::make_shared<headfirst::TurkeyAdapter>(turkey);
 
   std::cout << "The Turkey says..." << std::endl;
   turkey->Gobble();
   turkey->Fly();
 
   std::cout << "The Duck says..." << std::endl;
-  TestDuck( duck.get() );
+  TestDuck(duck);
 
   std::cout << "The TurkeyAdapter says..." << std::endl;
-  TestDuck( turkey_adapter.get() );
+  TestDuck(turkey_adapter);
 
   return 0;
 }

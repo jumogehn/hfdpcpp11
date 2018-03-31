@@ -29,7 +29,7 @@ namespace headfirst {
 
   class DuckAdapter : public Turkey {
 
-    const Duck* my_duck_;
+    const std::shared_ptr<Duck> my_duck_;
     int random_num_;
 
     // Disable copy constructor and assignment operator
@@ -37,7 +37,7 @@ namespace headfirst {
     void operator=( const DuckAdapter& ) = delete;
 
   public:
-    explicit DuckAdapter( const Duck* duck );
+    explicit DuckAdapter(const std::shared_ptr<Duck> duck);
     void Fly() const;
     void Gobble() const;
   };

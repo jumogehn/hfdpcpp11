@@ -32,7 +32,7 @@
 
 namespace headfirst {
 
-  DuckAdapter::DuckAdapter( const Duck* duck ) :
+  DuckAdapter::DuckAdapter( const std::shared_ptr<Duck> duck ) :
     my_duck_ ( duck )
   {
     std::cout << "DuckAdapter::DuckAdapter" << std::endl;
