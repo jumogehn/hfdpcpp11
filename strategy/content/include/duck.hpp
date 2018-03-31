@@ -31,8 +31,9 @@ namespace headfirst {
     FlyBehavior* fly_behavior_;
     QuackBehavior* quack_behavior_;
 
-    Duck(const Duck&); // Disable copy constructor
-    void operator=(const Duck&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Duck(const Duck&) = delete;
+    void operator=(const Duck&) = delete;
 
   protected:
     Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior);

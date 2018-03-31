@@ -38,8 +38,9 @@ namespace headfirst {
     Command* off_commands_[kSlots];
     Command* no_command_;
 
-    RemoteControl( const RemoteControl& ); // Disable copy constructor
-    void operator=( const RemoteControl& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    RemoteControl( const RemoteControl& ) = delete;
+    void operator=( const RemoteControl& ) = delete;
 
   public:
     RemoteControl();

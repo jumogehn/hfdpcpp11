@@ -28,8 +28,9 @@ namespace headfirst {
 
     std::string description_;
 
-    PopcornPopper( const PopcornPopper& ); // Disable copy constructor
-    void operator=( const PopcornPopper& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    PopcornPopper( const PopcornPopper& ) = delete;
+    void operator=( const PopcornPopper& ) = delete;
 
   public:
     PopcornPopper( std::string description);

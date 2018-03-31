@@ -32,8 +32,9 @@ namespace headfirst {
     const Duck* my_duck_;
     int random_num_;
 
-    DuckAdapter( const DuckAdapter& ); // Disable copy constructor
-    void operator=( const DuckAdapter& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    DuckAdapter( const DuckAdapter& ) = delete;
+    void operator=( const DuckAdapter& ) = delete;
 
   public:
     explicit DuckAdapter( const Duck* duck );

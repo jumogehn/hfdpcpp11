@@ -34,8 +34,9 @@ namespace headfirst {
     DvdPlayer* dvd_;
     CdPlayer* cd_;
 
-    Amplifier( const Amplifier& ); // Disable copy constructor
-    void operator=( const Amplifier& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Amplifier( const Amplifier& ) = delete;
+    void operator=( const Amplifier& ) = delete;
 
   public:
     explicit Amplifier( std::string description );

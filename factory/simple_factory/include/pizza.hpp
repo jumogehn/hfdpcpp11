@@ -36,8 +36,9 @@ namespace headfirst {
     Pizza();
 
   private:
-    Pizza( const Pizza& ); // Disable copy constructor
-    void operator=( const Pizza& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Pizza( const Pizza& ) = delete;
+    void operator=( const Pizza& ) = delete;
 
   public:
     virtual ~Pizza();

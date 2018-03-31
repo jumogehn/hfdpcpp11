@@ -28,8 +28,9 @@ namespace headfirst {
 
     std::string description_;
 
-    Screen( const Screen& ); // Disable copy constructor
-    void operator=( const Screen& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Screen( const Screen& ) = delete;
+    void operator=( const Screen& ) = delete;
 
   public:
     Screen( std::string description );

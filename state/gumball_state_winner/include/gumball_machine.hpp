@@ -35,8 +35,9 @@ namespace headfirst {
     State* state_;
     int count_;
 
-    GumballMachine( const GumballMachine& ); // Disable copy constructor
-    void operator=( const GumballMachine& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    GumballMachine( const GumballMachine& ) = delete;
+    void operator=( const GumballMachine& ) = delete;
 
   public:
     explicit GumballMachine(int number_gumballs);

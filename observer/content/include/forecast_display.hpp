@@ -32,8 +32,9 @@ namespace headfirst {
     float current_pressure_;
     float last_pressure_;
 
-    ForecastDisplay(const ForecastDisplay&); // Disable copy constructor
-    void operator=(const ForecastDisplay&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    ForecastDisplay(const ForecastDisplay&) = delete;
+    void operator=(const ForecastDisplay&) = delete;
 
   public:
     explicit ForecastDisplay();

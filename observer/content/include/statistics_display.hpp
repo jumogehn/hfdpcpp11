@@ -35,8 +35,9 @@ namespace headfirst {
     float temp_sum_;
     int num_readings_;
 
-    StatisticsDisplay(const StatisticsDisplay&); // Disable copy constructor
-    void operator=(const StatisticsDisplay&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    StatisticsDisplay(const StatisticsDisplay&) = delete;
+    void operator=(const StatisticsDisplay&) = delete;
 
   public:
     explicit StatisticsDisplay();

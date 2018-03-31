@@ -33,8 +33,9 @@ namespace headfirst {
     std::string title_;
     int current_track_;
 
-    CdPlayer( const CdPlayer& ); // Disable copy constructor
-    void operator=( const CdPlayer& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    CdPlayer( const CdPlayer& ) = delete;
+    void operator=( const CdPlayer& ) = delete;
 
   public:
     CdPlayer( std::string description, Amplifier* amplifier );

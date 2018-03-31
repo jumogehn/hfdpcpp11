@@ -33,8 +33,9 @@ namespace headfirst {
     Amplifier* amplifier_;
     double frequency_;
 
-    Tuner( const Tuner& ); // Disable copy constructor
-    void operator=( const Tuner& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Tuner( const Tuner& ) = delete;
+    void operator=( const Tuner& ) = delete;
 
   public:
     Tuner( std::string description, Amplifier* amplifier );

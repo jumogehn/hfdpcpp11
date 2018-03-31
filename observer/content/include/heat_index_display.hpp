@@ -31,8 +31,9 @@ namespace headfirst {
     Subject* weather_data_;
     float heat_index_;
 
-    HeatIndexDisplay(const HeatIndexDisplay&); // Disable copy constructor
-    void operator=(const HeatIndexDisplay&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    HeatIndexDisplay(const HeatIndexDisplay&) = delete;
+    void operator=(const HeatIndexDisplay&) = delete;
 
     float computeHeatIndex(float t, float rh) const;
 

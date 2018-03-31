@@ -31,8 +31,9 @@ namespace headfirst {
 
     GumballMachine* gumball_machine_;
 
-    WinnerState( const WinnerState& ); // Disable copy constructor
-    void operator=( const WinnerState& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    WinnerState( const WinnerState& ) = delete;
+    void operator=( const WinnerState& ) = delete;
 
   public:
     explicit WinnerState( GumballMachine* gumball_machine );

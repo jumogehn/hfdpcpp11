@@ -37,8 +37,9 @@ namespace headfirst {
 
     std::string name_;
 
-    Pizza(const Pizza&); // Disable copy constructor
-    void operator=(const Pizza&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Pizza(const Pizza&) = delete;
+    void operator=(const Pizza&) = delete;
 
   protected:
     mutable std::unique_ptr< Dough > dough_;

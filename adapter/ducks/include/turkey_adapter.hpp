@@ -30,8 +30,9 @@ namespace headfirst {
 
     const Turkey* my_turkey_;
 
-    TurkeyAdapter( const TurkeyAdapter& ); // Disable copy constructor
-    void operator=( const TurkeyAdapter& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    TurkeyAdapter( const TurkeyAdapter& ) = delete;
+    void operator=( const TurkeyAdapter& ) = delete;
 
   public:
     explicit TurkeyAdapter( const Turkey* turkey );

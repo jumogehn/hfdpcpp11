@@ -19,8 +19,9 @@ namespace headfirst {
 
   class Command {
 
-    Command( const Command& ); // Disable copy constructor
-    void operator=( const Command& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Command( const Command& ) = delete;
+    void operator=( const Command& ) = delete;
 
   protected:
     Command();

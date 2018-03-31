@@ -32,8 +32,9 @@ namespace headfirst {
     int current_track_;
     std::string movie_;
 
-    DvdPlayer( const DvdPlayer& ); // Disable copy constructor
-    void operator=( const DvdPlayer& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    DvdPlayer( const DvdPlayer& ) = delete;
+    void operator=( const DvdPlayer& ) = delete;
 
   public:
     DvdPlayer( std::string description, Amplifier* amplifier );

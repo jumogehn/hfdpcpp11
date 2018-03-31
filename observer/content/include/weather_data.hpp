@@ -35,8 +35,9 @@ namespace headfirst {
     float humidity_;
     float pressure_;
 
-    WeatherData(const WeatherData&); // Disable copy constructor
-    void operator=(const WeatherData&); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    WeatherData(const WeatherData&) = delete;
+    void operator=(const WeatherData&) = delete;
 
   public:
     WeatherData();

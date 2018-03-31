@@ -30,8 +30,9 @@ namespace headfirst {
     std::string description_;
     DvdPlayer*  dvd_player_;
 
-    Projector( const Projector& ); // Disable copy constructor
-    void operator=( const Projector& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    Projector( const Projector& ) = delete;
+    void operator=( const Projector& ) = delete;
 
   public:
     Projector( std::string description, DvdPlayer* dvd_player );

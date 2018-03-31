@@ -44,8 +44,9 @@ namespace headfirst {
     Screen* screen_;
     PopcornPopper* popper_;
 
-    HomeTheaterFacade( const HomeTheaterFacade& );
-    void operator=( const HomeTheaterFacade& );
+    // Disable copy constructor and assignment operator
+    HomeTheaterFacade( const HomeTheaterFacade& ) = delete;
+    void operator=( const HomeTheaterFacade& ) = delete;
 
   public:
     HomeTheaterFacade( Amplifier* amp, Tuner* tuner, DvdPlayer* dvd,

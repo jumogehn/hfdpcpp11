@@ -30,8 +30,9 @@ namespace headfirst {
     bool empty_;
     bool boiled_;
 
-    ChocolateBoiler( const ChocolateBoiler& ); // Disable copy constructor
-    void operator=( const ChocolateBoiler& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    ChocolateBoiler( const ChocolateBoiler& ) = delete;
+    void operator=( const ChocolateBoiler& ) = delete;
 
     ChocolateBoiler();
 

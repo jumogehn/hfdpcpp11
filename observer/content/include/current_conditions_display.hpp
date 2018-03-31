@@ -32,8 +32,9 @@ namespace headfirst {
     float temperature_;
     float humidity_;
 
-    CurrentConditionsDisplay(const CurrentConditionsDisplay&);
-    void operator=(const CurrentConditionsDisplay&);
+    // Disable copy constructor and assignment operator
+    CurrentConditionsDisplay(const CurrentConditionsDisplay&) = delete;
+    void operator=(const CurrentConditionsDisplay&) = delete;
 
   public:
     explicit CurrentConditionsDisplay();

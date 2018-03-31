@@ -30,8 +30,9 @@ namespace headfirst {
   class SoldOutState : public State {
     GumballMachine* gumball_machine_;
 
-    SoldOutState( const SoldOutState& ); // Disable copy constructor
-    void operator=( const SoldOutState& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    SoldOutState( const SoldOutState& ) = delete;
+    void operator=( const SoldOutState& ) = delete;
 
   public:
     explicit SoldOutState(GumballMachine* gumball_machine );

@@ -29,8 +29,9 @@ namespace headfirst {
 
   class CondimentDecorator : public Beverage {
 
-    CondimentDecorator(const CondimentDecorator&);
-    void operator=(const CondimentDecorator&);
+    // Disable copy constructor and assignment operator
+    CondimentDecorator(const CondimentDecorator&) = delete;
+    void operator=(const CondimentDecorator&) = delete;
 
   protected:
     CondimentDecorator();

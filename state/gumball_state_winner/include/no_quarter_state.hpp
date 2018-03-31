@@ -31,8 +31,9 @@ namespace headfirst {
 
     GumballMachine* gumball_machine_;
 
-    NoQuarterState( const NoQuarterState& ); // Disable copy constructor
-    void operator=( const NoQuarterState& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    NoQuarterState( const NoQuarterState& ) = delete;
+    void operator=( const NoQuarterState& ) = delete;
 
   public:
     explicit NoQuarterState( GumballMachine* gumball_machine );

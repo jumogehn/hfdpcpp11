@@ -28,8 +28,9 @@ namespace headfirst {
 
     std::string description_;
 
-    TheaterLights( const TheaterLights& ); // Disable copy constructor
-    void operator=( const TheaterLights& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    TheaterLights( const TheaterLights& ) = delete;
+    void operator=( const TheaterLights& ) = delete;
 
   public:
     TheaterLights( std::string description );

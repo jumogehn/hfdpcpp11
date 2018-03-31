@@ -32,8 +32,9 @@ namespace headfirst {
     GumballMachine* gumball_machine_;
     int random_;
 
-    HasQuarterState( const HasQuarterState& ); // Disable copy constructor
-    void operator=( const HasQuarterState& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    HasQuarterState( const HasQuarterState& ) = delete;
+    void operator=( const HasQuarterState& ) = delete;
 
   public:
     explicit HasQuarterState( GumballMachine* gumball_machine );
