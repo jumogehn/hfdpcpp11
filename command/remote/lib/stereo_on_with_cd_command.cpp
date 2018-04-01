@@ -27,12 +27,13 @@ namespace headfirst {
   StereoOnWithCDCommand::StereoOnWithCDCommand( const Stereo* stereo ) :
     stereo_( stereo )
   {
-    assert( stereo );
+    assert( stereo_ );
     std::cout << "StereoOnWithCDCommand::StereoOnWithCDCommand" << std::endl;
   }
 
   void StereoOnWithCDCommand::Execute() const
   {
+    assert( stereo_ );
     std::cout << "StereoOnWithCDCommand::execute" << std::endl;
 
     stereo_->TurnOn();

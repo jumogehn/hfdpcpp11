@@ -28,12 +28,13 @@ namespace headfirst {
   CeilingFanOnCommand::CeilingFanOnCommand( const CeilingFan* ceiling_fan ) :
     ceiling_fan_( ceiling_fan )
   {
-    assert( ceiling_fan );
+    assert( ceiling_fan_ );
     std::cout << "CeilingFanOnCommand::CeilingFanOnCommand" << std::endl;
   }
 
   void CeilingFanOnCommand::Execute() const
   {
+    assert( ceiling_fan_ );
     std::cout << "CeilingFanOnCommand::execute" << std::endl;
     ceiling_fan_->SetHigh();
   }

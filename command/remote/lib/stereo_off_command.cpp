@@ -27,12 +27,13 @@ namespace headfirst {
   StereoOffCommand::StereoOffCommand( const Stereo* stereo ) :
     stereo_( stereo )
   {
+    assert(stereo_);
     std::cout << "StereoOffCommand::StereoOffCommand" << std::endl;
-    assert( stereo );
   }
 
   void StereoOffCommand::Execute() const
   {
+    assert(stereo_);
     std::cout << "StereoOffCommand::execute" << std::endl;
     stereo_->TurnOff();
   }

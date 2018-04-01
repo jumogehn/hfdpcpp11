@@ -28,12 +28,13 @@ namespace headfirst {
   GarageDoorDownCommand::GarageDoorDownCommand( const GarageDoor* garage_door ) :
     garage_door_( garage_door )
   {
-    assert( garage_door );
+    assert( garage_door_ );
     std::cout << "GarageDoorDownCommand::GarageDoorDownCommand" << std::endl;
   }
 
   void GarageDoorDownCommand::Execute() const
   {
+    assert( garage_door_ );
     std::cout << "GarageDoorDownCommand::execute" << std::endl;
     garage_door_->CloseDown();
   }

@@ -28,12 +28,14 @@ namespace headfirst {
   HottubOnCommand::HottubOnCommand( const Hottub* hottub ) :
     hottub_( hottub )
   {
+    assert( hottub_ );
     std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;
-    assert( hottub );
   }
 
   void HottubOnCommand::Execute() const
   {
+    assert( hottub_ );
+    std::cout << "HottubOnCommand::HottubOnCommand" << std::endl;
     std::cout << "HottubOnCommand::execute" << std::endl;
     hottub_->TurnOn();
     hottub_->Heat();

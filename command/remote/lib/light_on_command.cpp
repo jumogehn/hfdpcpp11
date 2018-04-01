@@ -27,12 +27,13 @@ namespace headfirst {
   LightOnCommand::LightOnCommand( const Light* light ) :
     light_( light )
   {
-    assert( light );
+    assert( light_ );
     std::cout << "LightOnCommand::LightOnCommand" << std::endl;
   }
 
   void LightOnCommand::Execute() const
   {
+    assert( light_ );
     std::cout << "LightOnCommand::execute" << std::endl;
     light_->TurnOn();
   }

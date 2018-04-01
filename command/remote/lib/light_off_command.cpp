@@ -27,12 +27,13 @@ namespace headfirst {
   LightOffCommand::LightOffCommand( const Light* light  ) :
     light_( light )
   {
-    assert( light );
+    assert( light_ );
     std::cout << "LightOffCommand::LightOffCommand" << std::endl;
   }
 
   void LightOffCommand::Execute() const
   {
+    assert( light_ );
     std::cout << "LightOffCommand::execute" << std::endl;
     light_->TurnOff();
   }
