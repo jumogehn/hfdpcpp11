@@ -29,19 +29,11 @@ namespace headfirst {
   Pizza::Pizza()
   {
     std::cout << "Pizza::Pizza" << std::endl;
-    veggies_ = nullptr;
   }
 
   Pizza::~Pizza()
   {
     std::cout << "Pizza::~Pizza" << std::endl;
-    if (veggies_) {
-      //http://en.cppreference.com/w/cpp/language/range-for
-      for (Veggies *veggie : *veggies_) {
-        if (veggie) delete veggie;
-      }
-      delete veggies_;
-    }
   }
   void Pizza::Bake() const
   {
@@ -96,7 +88,7 @@ namespace headfirst {
     }
     if (veggies_) {
       //http://en.cppreference.com/w/cpp/language/range-for
-      for (Veggies *veggies : *veggies_) {
+      for (const std::unique_ptr<Veggies> &veggies : *veggies_) {
         if (veggies)
           value << veggies->ToString() << ", ";
       }

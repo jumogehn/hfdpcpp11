@@ -42,7 +42,6 @@ namespace headfirst {
     dough_ = ingredient_factory_->CreateDough();
     sauce_ = ingredient_factory_->CreateSauce();
     cheese_ = ingredient_factory_->CreateCheese();
-    if (!veggies_)
-      veggies_ = ingredient_factory_->CreateVeggies();
+    veggies_ = ingredient_factory_->CreateVeggies();
   }
 } //namespace headfirst

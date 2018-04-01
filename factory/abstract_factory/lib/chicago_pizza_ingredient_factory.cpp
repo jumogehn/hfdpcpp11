@@ -47,14 +47,15 @@ namespace headfirst {
     std::cout << "ChicagoPizzaIngredientFactory::CreateCheese" << std::endl;
     return std::unique_ptr<Cheese>(new MozzarellaCheese());
   }
-  std::vector< Veggies * > *
+  std::unique_ptr< std::vector<std::unique_ptr<Veggies>> >
     ChicagoPizzaIngredientFactory::CreateVeggies() const
     {
       std::cout << "ChicagoPizzaIngredientFactory::CreateVeggies" << std::endl;
-      std::vector< Veggies * > *value = new std::vector< Veggies * >;
-      value->push_back( new BlackOlives() );
-      value->push_back( new Spinach() );
-      value->push_back( new Eggplant() );
+      std::unique_ptr<std::vector<std::unique_ptr<Veggies>>>
+        value (new std::vector<std::unique_ptr<Veggies>>);
+      value->push_back(std::unique_ptr<Veggies>(new BlackOlives()));
+      value->push_back(std::unique_ptr<Veggies>(new Spinach()));
+      value->push_back(std::unique_ptr<Veggies>(new Eggplant()));
       return value;
     }
   std::unique_ptr<Pepperoni>

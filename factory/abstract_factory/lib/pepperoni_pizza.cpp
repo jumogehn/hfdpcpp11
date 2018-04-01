@@ -40,7 +40,6 @@ namespace headfirst {
     sauce_ = ingredient_factory_->CreateSauce();
     cheese_ = ingredient_factory_->CreateCheese();
     pepperoni_ = ingredient_factory_->CreatePepperoni();
-    if (!veggies_)
-      veggies_ = ingredient_factory_->CreateVeggies();
+    veggies_ = ingredient_factory_->CreateVeggies();
   }
 } //namespace headfirst

@@ -44,7 +44,7 @@ namespace headfirst {
   protected:
     mutable std::unique_ptr< Dough > dough_;
     mutable std::unique_ptr< Sauce > sauce_;
-    mutable std::vector< Veggies * > *veggies_;
+    mutable std::unique_ptr< std::vector<std::unique_ptr<Veggies>> > veggies_;
     mutable std::unique_ptr< Cheese > cheese_;
     mutable std::unique_ptr< Pepperoni > pepperoni_;
     mutable std::unique_ptr< Clams > clam_;

@@ -38,7 +38,8 @@ namespace headfirst {
     virtual std::unique_ptr<Dough> CreateDough() const = 0;
     virtual std::unique_ptr<Sauce> CreateSauce() const = 0;
     virtual std::unique_ptr<Cheese> CreateCheese() const = 0;
-    virtual std::vector<Veggies*> *CreateVeggies() const = 0;
+    virtual std::unique_ptr< std::vector<std::unique_ptr<Veggies>> >
+      CreateVeggies() const = 0;
     virtual std::unique_ptr<Pepperoni> CreatePepperoni() const = 0;
     virtual std::unique_ptr<Clams> CreateClam() const = 0;
     virtual ~PizzaIngredientFactory();
