@@ -17,17 +17,19 @@
 //C++ system files.
 #include <cassert>
 #include <iostream>
+#include <memory>
 #include <string>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 
 namespace headfirst {
 
 
-  Milk::Milk(const Beverage* beverage) :
-    beverage_(beverage)
+  Milk::Milk(std::unique_ptr<Beverage> beverage) :
+    beverage_(std::move(beverage))
   {
-    assert(beverage);
+    assert(beverage_);
     std::cout << "Milk::Milk" << std::endl;
   }
   Milk::~Milk()
@@ -36,11 +38,13 @@ namespace headfirst {
   }
   std::string Milk::GetDescription() const
   {
+    assert(beverage_);
     std::cout << "Milk::GetDescription" << std::endl;
     return beverage_->GetDescription() + ", Milk";
   }
   double Milk::Cost() const
   {
+    assert(beverage_);
     std::cout << "Milk::cost" << std::endl;
     return 0.10 + beverage_->Cost();
   }

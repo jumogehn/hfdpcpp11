@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -29,10 +30,10 @@ namespace headfirst {
 
   class Whip : public CondimentDecorator {
 
-    const Beverage* beverage_;
+    const std::unique_ptr<Beverage> beverage_;
 
   public:
-    explicit Whip(const Beverage* beverage);
+    explicit Whip(std::unique_ptr<Beverage> beverage);
     ~Whip();
     std::string GetDescription() const;
     double Cost() const;

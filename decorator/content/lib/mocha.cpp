@@ -18,16 +18,17 @@
 #include <cassert>
 #include <iostream>
 #include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 
 namespace headfirst {
 
 
-  Mocha::Mocha(const Beverage* beverage) :
-    beverage_(beverage)
+  Mocha::Mocha(std::unique_ptr<Beverage> beverage) :
+    beverage_ (std::move(beverage))
   {
-    assert(beverage);
+    assert(beverage_);
     std::cout << "Mocha::Mocha" << std::endl;
   }
   Mocha::~Mocha()
@@ -36,11 +37,13 @@ namespace headfirst {
   }
   std::string Mocha::GetDescription() const
   {
+    assert(beverage_);
     std::cout << "Mocha::GetDescription" << std::endl;
     return beverage_->GetDescription() + ", Mocha";
   }
   double Mocha::Cost() const
   {
+    assert(beverage_);
     std::cout << "Mocha::cost" << std::endl;
     return 0.20 + beverage_->Cost();
   }

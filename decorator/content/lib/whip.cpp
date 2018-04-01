@@ -18,16 +18,17 @@
 #include <cassert>
 #include <iostream>
 #include <string>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 
 namespace headfirst {
 
 
-  Whip::Whip(const Beverage* beverage) :
-    beverage_(beverage)
+  Whip::Whip(std::unique_ptr<Beverage> beverage) :
+    beverage_(std::move(beverage))
   {
-    assert(beverage);
+    assert(beverage_);
     std::cout << "Whip::Whip" << std::endl;
   }
   Whip::~Whip() {
@@ -35,11 +36,13 @@ namespace headfirst {
   }
   std::string Whip::GetDescription() const
   {
+    assert(beverage_);
     std::cout << "Whip::GetDescription" << std::endl;
     return beverage_->GetDescription() + ", Whip";
   }
   double Whip::Cost() const
   {
+    assert(beverage_);
     std::cout << "Whip::cost" << std::endl;
     return 0.10 + beverage_->Cost();
   }

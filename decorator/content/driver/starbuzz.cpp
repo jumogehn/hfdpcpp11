@@ -15,6 +15,8 @@
 //C system files.
 //C++ system files.
 #include <iostream>
+#include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "beverage.hpp"
@@ -28,7 +30,7 @@
 
 int main(int argc, char* argv[]) {
 
-  headfirst::Beverage* beverage = new headfirst::Espresso();
+  std::unique_ptr<headfirst::Beverage> beverage (new headfirst::Espresso());
   std::cout.setf(std::ios::showpoint);
   std::cout.precision(3);
   std::cout << beverage->GetDescription()
@@ -36,27 +38,23 @@ int main(int argc, char* argv[]) {
     << beverage->Cost()
     << std::endl;
 
-  headfirst::Beverage* beverage2 = new headfirst::DarkRoast();
-  beverage2 = new headfirst::Mocha(beverage2);
-  beverage2 = new headfirst::Mocha(beverage2);
-  beverage2 = new headfirst::Whip(beverage2);
+  std::unique_ptr<headfirst::Beverage> beverage2 (new headfirst::DarkRoast());
+  beverage2.reset(new headfirst::Mocha(std::move(beverage2)));
+  beverage2.reset(new headfirst::Mocha(std::move(beverage2)));
+  beverage2.reset(new headfirst::Whip(std::move(beverage2)));
   std::cout << beverage2->GetDescription()
     << " $"
     << beverage2->Cost()
     << std::endl;
 
-  headfirst::Beverage* beverage3 = new headfirst::HouseBlend();
-  beverage3 = new headfirst::Soy(beverage3);
-  beverage3 = new headfirst::Mocha(beverage3);
-  beverage3 = new headfirst::Whip(beverage3);
+  std::unique_ptr<headfirst::Beverage> beverage3 (new headfirst::HouseBlend());
+  beverage3.reset(new headfirst::Soy(std::move(beverage3)));
+  beverage3.reset(new headfirst::Mocha(std::move(beverage3)));
+  beverage3.reset(new headfirst::Whip(std::move(beverage3)));
   std::cout << beverage3->GetDescription()
     << " $"
     << beverage3->Cost()
     << std::endl;
-
-  delete beverage3;
-  delete beverage2;
-  delete beverage;
 
   return 0;
 }

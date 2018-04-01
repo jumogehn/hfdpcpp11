@@ -30,10 +30,10 @@ namespace headfirst {
 
   class Milk : public CondimentDecorator {
 
-    const Beverage* beverage_;
+    const std::unique_ptr<Beverage> beverage_;
 
   public:
-    explicit Milk(const Beverage* beverage);
+    explicit Milk(std::unique_ptr<Beverage> beverage);
     ~Milk();
     std::string GetDescription() const;
     double Cost() const;
