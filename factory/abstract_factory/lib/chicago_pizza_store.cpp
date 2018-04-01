@@ -36,19 +36,21 @@ namespace headfirst {
     {
       std::cout << "ChicagoPizzaStore::CreatePizza" << std::endl;
 
-      std::unique_ptr< Pizza > pizza;
+      std::unique_ptr< Pizza > pizza = nullptr;
+      std::unique_ptr<ChicagoPizzaIngredientFactory>
+        ingredient_factory(new ChicagoPizzaIngredientFactory());
 
       if( item.compare( "cheese" ) == 0 ) {
-        pizza.reset( new CheesePizza( new ChicagoPizzaIngredientFactory() ) );
+        pizza.reset( new CheesePizza( std::move(ingredient_factory) ) );
         pizza->SetName( "Chicago Style Cheese Pizza" );
       } else if( item.compare( "veggie" ) == 0 ) {
-        pizza.reset( new VeggiePizza( new ChicagoPizzaIngredientFactory() ) );
+        pizza.reset( new VeggiePizza( std::move(ingredient_factory) ) );
         pizza->SetName( "Chicago Style Veggie Pizza" );
       } else if( item.compare( "clam" ) == 0 ) {
-        pizza.reset( new ClamPizza( new ChicagoPizzaIngredientFactory() ) );
+        pizza.reset( new ClamPizza( std::move(ingredient_factory) ) );
         pizza->SetName( "Chicago Style Clam Pizza" );
       } else if( item.compare( "pepperoni" ) == 0 ) {
-        pizza.reset( new PepperoniPizza( new ChicagoPizzaIngredientFactory() ) );
+        pizza.reset( new PepperoniPizza( std::move(ingredient_factory) ) );
         pizza->SetName( "Chicago Style Pepperoni Pizza" );
       }
       return pizza;

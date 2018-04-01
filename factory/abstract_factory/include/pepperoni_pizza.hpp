@@ -31,7 +31,8 @@ namespace headfirst {
     mutable std::unique_ptr< PizzaIngredientFactory > ingredient_factory_;
 
   public:
-    explicit PepperoniPizza(PizzaIngredientFactory* ingredient_factory);
+    explicit PepperoniPizza(
+      std::unique_ptr<PizzaIngredientFactory> ingredient_factory);
     void Prepare() const;
   };
 

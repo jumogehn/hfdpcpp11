@@ -18,16 +18,18 @@
 #include <cassert>
 #include <iostream>
 #include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 
 namespace headfirst {
 
 
-  CheesePizza::CheesePizza(PizzaIngredientFactory* ingredient_factory)
+  CheesePizza::CheesePizza(
+    std::unique_ptr<PizzaIngredientFactory> ingredient_factory) :
+    ingredient_factory_(std::move(ingredient_factory))
   {
-    assert( ingredient_factory );
-    ingredient_factory_.reset( ingredient_factory );
+    assert(ingredient_factory_);
     std::cout << "CheesePizza::CheesePizza" << std::endl;
   }
   void CheesePizza::Prepare() const

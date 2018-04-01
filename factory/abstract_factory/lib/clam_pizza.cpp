@@ -15,9 +15,10 @@
 #include "clam_pizza.hpp"
 //C system files.
 //C++ system files.
+#include <cassert>
 #include <iostream>
 #include <memory>
-#include <cassert>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "cheese.hpp"
@@ -28,10 +29,11 @@
 namespace headfirst {
 
 
-  ClamPizza::ClamPizza(PizzaIngredientFactory* ingredient_factory )
+  ClamPizza::ClamPizza(
+    std::unique_ptr<PizzaIngredientFactory> ingredient_factory ) :
+    ingredient_factory_(std::move(ingredient_factory))
   {
-    assert( ingredient_factory );
-    ingredient_factory_.reset( ingredient_factory );
+    assert(ingredient_factory_);
     std::cout << "ClamPizza::ClamPizza" << std::endl;
   }
   void ClamPizza::Prepare() const

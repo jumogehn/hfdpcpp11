@@ -19,6 +19,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "cheese_pizza.hpp"
@@ -35,19 +36,21 @@ namespace headfirst {
   {
     std::cout << "NYPizzaStore::CreatePizza" << std::endl;
 
-    std::unique_ptr< Pizza > pizza;
+    std::unique_ptr< Pizza > pizza = nullptr;
+    std::unique_ptr<NYPizzaIngredientFactory>
+      ingredient_factory(new NYPizzaIngredientFactory());
 
     if( item.compare( "cheese" ) == 0 ) {
-      pizza.reset(new CheesePizza(new NYPizzaIngredientFactory()));
+      pizza.reset(new CheesePizza(std::move(ingredient_factory)));
       pizza->SetName( "New York Style Cheese Pizza" );
     } else if( item.compare( "veggie" ) == 0 ) {
-      pizza.reset(new VeggiePizza(new NYPizzaIngredientFactory()));
+      pizza.reset(new VeggiePizza(std::move(ingredient_factory)));
       pizza->SetName( "New York Style Veggie Pizza" );
     } else if( item.compare( "clam" ) == 0 ) {
-      pizza.reset(new ClamPizza(new NYPizzaIngredientFactory()));
+      pizza.reset(new ClamPizza(std::move(ingredient_factory)));
       pizza->SetName( "New York Style Clam Pizza" );
     } else if( item.compare( "pepperoni" ) == 0 ) {
-      pizza.reset(new PepperoniPizza(new NYPizzaIngredientFactory()));
+      pizza.reset(new PepperoniPizza(std::move(ingredient_factory)));
       pizza->SetName( "New York Style Pepperoni Pizza" );
     }
     return pizza;

@@ -15,9 +15,10 @@
 #include "veggie_pizza.hpp"
 //C system files.
 //C++ system files.
-#include <memory>
-#include <iostream>
 #include <cassert>
+#include <iostream>
+#include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "cheese.hpp"
@@ -27,10 +28,11 @@
 namespace headfirst {
 
 
-  VeggiePizza::VeggiePizza(PizzaIngredientFactory *ingredient_factory)
+  VeggiePizza::VeggiePizza(
+    std::unique_ptr<PizzaIngredientFactory> ingredient_factory) :
+    ingredient_factory_(std::move(ingredient_factory))
   {
-    assert(ingredient_factory);
-    ingredient_factory_.reset(ingredient_factory);
+    assert(ingredient_factory_);
     std::cout << "VeggiePizza::VeggiePizza" << std::endl;
   }
   void VeggiePizza::Prepare() const
