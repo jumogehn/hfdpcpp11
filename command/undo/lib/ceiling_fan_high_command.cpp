@@ -25,21 +25,23 @@
 namespace headfirst {
 
 
-  CeilingFanHighCommand::CeilingFanHighCommand( const CeilingFan* ceiling_fan ) :
+  CeilingFanHighCommand::CeilingFanHighCommand( const CeilingFan* ceiling_fan ):
     ceiling_fan_( ceiling_fan )
   {
-    assert( ceiling_fan );
+    assert( ceiling_fan_ );
     std::cout << "CeilingFanHighCommand::CeilingFanHighCommand" << std::endl;
     prev_speed_ = ceiling_fan_->GetSpeed();
   }
   void CeilingFanHighCommand::Execute() const
   {
+    assert( ceiling_fan_ );
     std::cout << "CeilingFanHighCommand::execute" << std::endl;
     prev_speed_ = ceiling_fan_->GetSpeed();
     ceiling_fan_->SetHigh();
   }
   void CeilingFanHighCommand::Undo() const
   {
+    assert( ceiling_fan_ );
     std::cout << "CeilingFanHighCommand::undo" << std::endl;
     if( prev_speed_ == CeilingFan::kHigh ) {
       ceiling_fan_->SetHigh();

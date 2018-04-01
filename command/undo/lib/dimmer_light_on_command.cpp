@@ -28,18 +28,20 @@ namespace headfirst {
   DimmerLightOnCommand::DimmerLightOnCommand( const Light* light ) :
     light_( light )
   {
-    assert( light );
+    assert( light_ );
     std::cout << "DimmerLightOnCommand::DimmerLightOnCommand" << std::endl;
     prev_level_ = light_->GetLevel();
   }
   void DimmerLightOnCommand::Execute() const
   {
+    assert( light_ );
     std::cout << "DimmerLightOnCommand::execute" << std::endl;
     prev_level_ = light_->GetLevel();
     light_->Dim( 75 );
   }
   void DimmerLightOnCommand::Undo() const
   {
+    assert( light_ );
     std::cout << "DimmerLightOnCommand::undo" << std::endl;
     light_->Dim( prev_level_ );
   }
