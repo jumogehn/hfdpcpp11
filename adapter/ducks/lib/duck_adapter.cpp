@@ -32,9 +32,10 @@
 
 namespace headfirst {
 
-  DuckAdapter::DuckAdapter( const std::shared_ptr<Duck> duck ) :
+  DuckAdapter::DuckAdapter( const Duck* duck ) :
     my_duck_ ( duck )
   {
+    assert(my_duck_);
     std::cout << "DuckAdapter::DuckAdapter" << std::endl;
 #ifdef WIN32
     srand( _getpid() );
@@ -48,6 +49,7 @@ namespace headfirst {
 
   void DuckAdapter::Fly() const
   {
+    assert(my_duck_);
     std::cout << "DuckAdapter::fly" << std::endl;
     for( int i = 0; i < random_num_; i++ ) {
       my_duck_->Fly();
@@ -56,6 +58,7 @@ namespace headfirst {
 
   void DuckAdapter::Gobble() const
   {
+    assert(my_duck_);
     std::cout << "DuckAdapter::gobble" << std::endl;
     my_duck_->Quack();
   }

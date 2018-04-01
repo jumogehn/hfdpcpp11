@@ -28,14 +28,14 @@ namespace headfirst {
 
   class TurkeyAdapter : public Duck {
 
-    const std::shared_ptr<Turkey> my_turkey_;
+    const Turkey* my_turkey_;
 
     // Disable copy constructor and assignment operator
     TurkeyAdapter( const TurkeyAdapter& ) = delete;
     void operator=( const TurkeyAdapter& ) = delete;
 
   public:
-    explicit TurkeyAdapter( const std::shared_ptr<Turkey> turkey );
+    explicit TurkeyAdapter( const Turkey* turkey );
     void Fly() const;
     void Quack() const;
   };

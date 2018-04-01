@@ -15,6 +15,7 @@
 #include "turkey_adapter.hpp"
 //C system files.
 //C++ system files.
+#include <cassert>
 #include <iostream>
 #include <memory>
 //Other libraries' .h files.
@@ -22,14 +23,16 @@
 
 namespace headfirst {
 
-  TurkeyAdapter::TurkeyAdapter(const std::shared_ptr<Turkey> turkey) :
+  TurkeyAdapter::TurkeyAdapter(const Turkey* turkey) :
     my_turkey_( turkey )
   {
+    assert(my_turkey_);
     std::cout << "TurkeyAdapter::TurkeyAdapter" << std::endl;
   }
 
   void TurkeyAdapter::Fly() const
   {
+    assert(my_turkey_);
     std::cout << "TurkeyAdapter::fly" << std::endl;
     for( auto i = 0; i < 5; i++ ) {
       my_turkey_->Fly();
@@ -38,6 +41,7 @@ namespace headfirst {
 
   void TurkeyAdapter::Quack() const
   {
+    assert(my_turkey_);
     std::cout << "TurkeyAdapter::quack" << std::endl;
     my_turkey_->Gobble();
   }
