@@ -42,18 +42,26 @@ namespace headfirst {
     projector_( projector ), lights_( lights ), screen_( screen ),
     popper_( popper )
   {
-    assert(amp);
-    assert(tuner);
-    assert(dvd);
-    assert(cd);
-    assert(projector);
-    assert(screen);
-    assert(lights);
-    assert(popper);
+    assert(amp_);
+    assert(tuner_);
+    assert(dvd_);
+    assert(cd_);
+    assert(projector_);
+    assert(screen_);
+    assert(lights_);
+    assert(popper_);
     std::cout << "HomeTheaterFacade::~HomeTheaterFacade" << std::endl;
   }
   void HomeTheaterFacade::WatchMovie( std::string movie )
   {
+    assert(amp_);
+    //assert(tuner_);
+    assert(dvd_);
+    //assert(cd_);
+    assert(projector_);
+    assert(screen_);
+    assert(lights_);
+    assert(popper_);
     std::cout << "HomeTheaterFacade::WatchMovie" << std::endl;
     std::cout << "Get ready to watch a movie..." << std::endl;
     popper_->TurnOn();
@@ -71,6 +79,14 @@ namespace headfirst {
   }
   void HomeTheaterFacade::EndMovie()
   {
+    assert(amp_);
+    //assert(tuner_);
+    assert(dvd_);
+    //assert(cd_);
+    assert(projector_);
+    assert(screen_);
+    assert(lights_);
+    assert(popper_);
     std::cout << "HomeTheaterFacade::EndMovie" << std::endl;
     std::cout << "Shutting movie theater down..." << std::endl;
     popper_->TurnOff();
@@ -84,6 +100,9 @@ namespace headfirst {
   }
   void HomeTheaterFacade::ListenToCd( std::string cd_title )
   {
+    assert(amp_);
+    assert(cd_);
+    assert(lights_);
     std::cout << "HomeTheaterFacade::ListenToCd" << std::endl;
     std::cout << "Get ready for an audiopile experence..." << std::endl;
     lights_->TurnOn();
@@ -96,6 +115,8 @@ namespace headfirst {
   }
   void HomeTheaterFacade::EndCd()
   {
+    assert(amp_);
+    assert(cd_);
     std::cout << "HomeTheaterFacade::EndCd" << std::endl;
     std::cout << "Shutting down CD..." << std::endl;
     amp_->TurnOff();
@@ -105,6 +126,8 @@ namespace headfirst {
   }
   void HomeTheaterFacade::ListenToRadio( double frequency )
   {
+    assert(amp_);
+    assert(tuner_);
     std::cout << "HomeTheaterFacade::ListenToRadio" << std::endl;
     std::cout << "Tuning in the airwaves..." << std::endl;
     tuner_->TurnOn();
@@ -115,6 +138,8 @@ namespace headfirst {
   }
   void HomeTheaterFacade::EndRadio()
   {
+    assert(amp_);
+    assert(tuner_);
     std::cout << "HomeTheaterFacade::EndRadio" << std::endl;
     std::cout << "Shutting down the tuner..." << std::endl;
     tuner_->TurnOff();
