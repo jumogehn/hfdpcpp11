@@ -29,7 +29,8 @@
 namespace headfirst {
 
 
-  std::unique_ptr<Pizza> SimplePizzaFactory::CreatePizza( std::string type ) const
+  std::unique_ptr<Pizza>
+    SimplePizzaFactory::CreatePizza( std::string type ) const
   {
     std::cout << "SimplePizzaFactory::CreatePizza" << std::endl;
     std::unique_ptr<Pizza> pizza;

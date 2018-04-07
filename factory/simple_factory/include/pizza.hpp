@@ -19,7 +19,7 @@
 //C system files.
 //C++ system files.
 #include <string>
-#include <list>
+#include <vector>
 //Other libraries' .h files.
 //Your project's .h files.
 
@@ -32,7 +32,7 @@ namespace headfirst {
     std::string name_;
     std::string dough_;
     std::string sauce_;
-    mutable std::list< std::string > toppings_;
+    mutable std::vector< std::string > toppings_;
     Pizza();
 
   private:

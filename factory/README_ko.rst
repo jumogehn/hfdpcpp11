@@ -163,6 +163,11 @@ Class Diagram
 * **PizzaStore** : ``Creator`` in Factory Method Pattern
 * **각 구상 Pizza 클래스들** : ``Client`` in Abstract Factory Pattern
 
+std::unique_ptr을 적용하면서 각 피자객체가 자신의 원재료 팩토리를 독점적으로
+소유하도록 되어버렸다. 하지만 이런 소유관계는 추상팩토리 패턴의 정의와는 무관한
+것이다. 이와 같은 소유 관계가 아니되도록 팩토리를 싱글턴으로 구현하거나 정적 객체
+형태로 구현하는 방법도 가능하겠다..
+
 
 Sequence Diagram
 ----------------
