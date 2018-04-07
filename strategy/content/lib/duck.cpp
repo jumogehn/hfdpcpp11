@@ -15,8 +15,10 @@
 #include "duck.hpp"
 //C system files.
 //C++ system files.
-#include <iostream>
 #include <cassert>
+#include <iostream>
+#include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "fly_behavior.hpp"
@@ -25,10 +27,13 @@
 namespace headfirst {
 
 
-  Duck::Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior) :
-    fly_behavior_(fly_behavior), quack_behavior_(quack_behavior)
+  Duck::Duck(std::unique_ptr<FlyBehavior> fly_behavior,
+             std::unique_ptr<QuackBehavior> quack_behavior) :
+    fly_behavior_(std::move(fly_behavior))
+    , quack_behavior_(std::move(quack_behavior))
   {
-    assert(fly_behavior); assert(quack_behavior);
+    assert(fly_behavior_);
+    assert(quack_behavior_);
     std::cout << "Duck::Duck" << std::endl;
   }
 
@@ -36,25 +41,27 @@ namespace headfirst {
   {
     std::cout << "Duck::~Duck" << std::endl;
   }
-  void Duck::SetFlyBehavior(FlyBehavior* fb)
+  void Duck::SetFlyBehavior(std::unique_ptr<FlyBehavior> fb)
   {
     assert(fb);
     std::cout << "Duck::SetFlyBehavior" << std::endl;
-    fly_behavior_ = fb;
+    fly_behavior_ = std::move(fb);
   }
-  void Duck::SetQuackBehavior(QuackBehavior* qb)
+  void Duck::SetQuackBehavior(std::unique_ptr<QuackBehavior> qb)
   {
     assert(qb);
     std::cout << "Duck::SetQuackBehavior" << std::endl;
-    quack_behavior_ = qb;
+    quack_behavior_ = std::move(qb);
   }
   void Duck::PerformFly() const
   {
+    assert(fly_behavior_);
     std::cout << "Duck::PerformFly" << std::endl;
     fly_behavior_->Fly();
   }
   void Duck::PerformQuack() const
   {
+    assert(quack_behavior_);
     std::cout << "Duck::PerformQuack" << std::endl;
     quack_behavior_->Quack();
   }

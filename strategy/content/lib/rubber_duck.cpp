@@ -25,7 +25,9 @@
 namespace headfirst {
 
 
-  RubberDuck::RubberDuck() : Duck(new FlyNoWay(), new Squeak())
+  RubberDuck::RubberDuck()
+    : Duck(std::unique_ptr<FlyBehavior> (new FlyNoWay())
+           , std::unique_ptr<QuackBehavior> (new Squeak()))
   {
     std::cout << "RubberDuck::RubberDuck" << std::endl;
   }

@@ -15,6 +15,7 @@
 //C system files.
 //C++ system files.
 #include <memory>
+#include <utility>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "decoy_duck.hpp"
@@ -46,7 +47,8 @@ int main(int argc, char* argv[]) {
 
   model->PerformQuack();
   model->PerformFly();
-  model->SetFlyBehavior(new headfirst::FlyRocketPowered());
+  model->SetFlyBehavior(std::unique_ptr<headfirst::FlyBehavior>
+    (new headfirst::FlyRocketPowered()));
   model->PerformFly();
 
   return 0;

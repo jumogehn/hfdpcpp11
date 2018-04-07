@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "fly_behavior.hpp"
@@ -28,20 +29,21 @@ namespace headfirst {
 
   class Duck {
 
-    FlyBehavior* fly_behavior_;
-    QuackBehavior* quack_behavior_;
+    std::unique_ptr<FlyBehavior> fly_behavior_;
+    std::unique_ptr<QuackBehavior> quack_behavior_;
 
     // Disable copy constructor and assignment operator
     Duck(const Duck&) = delete;
     void operator=(const Duck&) = delete;
 
   protected:
-    Duck(FlyBehavior* fly_behavior, QuackBehavior* quack_behavior);
+    Duck(std::unique_ptr<FlyBehavior> fly_behavior
+         , std::unique_ptr<QuackBehavior> quack_behavior);
 
   public:
     virtual ~Duck();
-    void SetFlyBehavior(FlyBehavior* fb);
-    void SetQuackBehavior(QuackBehavior* qb);
+    void SetFlyBehavior(std::unique_ptr<FlyBehavior> fb);
+    void SetQuackBehavior(std::unique_ptr<QuackBehavior> qb);
     void PerformFly() const;
     void PerformQuack() const;
     void Swim() const;

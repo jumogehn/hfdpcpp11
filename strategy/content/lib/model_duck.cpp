@@ -25,7 +25,9 @@
 namespace headfirst {
 
 
-  ModelDuck::ModelDuck() : Duck(new FlyNoWay(), new FakeQuack())
+  ModelDuck::ModelDuck()
+    : Duck(std::unique_ptr<FlyBehavior> (new FlyNoWay())
+           , std::unique_ptr<QuackBehavior> (new FakeQuack()))
   {
     std::cout << "ModelDuck::ModelDuck" << std::endl;
   }

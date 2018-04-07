@@ -16,6 +16,7 @@
 //C system files.
 //C++ system files.
 #include <iostream>
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "duck.hpp"
@@ -26,7 +27,8 @@ namespace headfirst {
 
 
   DecoyDuck::DecoyDuck()
-    : Duck(new FlyNoWay(), new MuteQuack())
+    : Duck(std::unique_ptr<FlyBehavior> (new FlyNoWay())
+           , std::unique_ptr<QuackBehavior> (new MuteQuack()))
   {
     std::cout << "DecoyDuck::DecoyDuck" << std::endl;
   }

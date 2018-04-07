@@ -25,7 +25,9 @@
 namespace headfirst {
 
 
-  MallardDuck::MallardDuck() : Duck(new FlyWithWings(), new JustQuack())
+  MallardDuck::MallardDuck()
+    : Duck(std::unique_ptr<FlyBehavior> (new FlyWithWings())
+           , std::unique_ptr<QuackBehavior> (new JustQuack()))
   {
     std::cout << "MallardDuck::MallardDuck" << std::endl;
   }

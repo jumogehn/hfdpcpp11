@@ -25,7 +25,9 @@
 namespace headfirst {
 
 
-  RedHead::RedHead() : Duck(new FlyWithWings(), new JustQuack())
+  RedHead::RedHead()
+    : Duck(std::unique_ptr<FlyBehavior> (new FlyWithWings())
+           , std::unique_ptr<QuackBehavior> (new JustQuack()))
   {
     std::cout << "RedHead::RedHead" << std::endl;
   }
