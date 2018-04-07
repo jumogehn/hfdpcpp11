@@ -23,17 +23,19 @@
 
 int main( int argc, char* argv[] ) {
 
-  headfirst::ChocolateBoiler*
+  std::cout << "Program started!" << std::endl;
+
+  headfirst::ChocolateBoiler &
     boiler = headfirst::ChocolateBoiler::GetInstance();
-  boiler->Fill();
-  boiler->Boil();
-  boiler->Drain();
+  boiler.Fill();
+  boiler.Boil();
+  boiler.Drain();
 
   // will return the existing instance
-  headfirst::ChocolateBoiler*
+  headfirst::ChocolateBoiler &
     boiler2 = headfirst::ChocolateBoiler::GetInstance();
 
-  if( boiler == boiler2 )
+  if( &boiler == &boiler2 )
     std::cout << "Got same boiler" << std::endl;
   else
     std::cout << "Oh oh! got a different boiler" << std::endl;

@@ -27,9 +27,11 @@ namespace headfirst {
   {
     empty_ = true;
     boiled_ = false;
+    std::cout << "Chocolate Boiler Constructed!"<< std::endl;
   }
   ChocolateBoiler::~ChocolateBoiler()
   {
+    std::cout << "Chocolate Boiler Destructed!"<< std::endl;
   }
 
   //http://preshing.com/20130930/double-checked-locking-is-fixed-in-cpp11/
@@ -39,9 +41,11 @@ namespace headfirst {
   //-for-lazy-initialization-possible/12302355#12302355
   //Game Programming Patterns, Robert Nystrom
   //Compiler must support and enable the §6.7.4 of the C++11 standard
-  ChocolateBoiler* ChocolateBoiler::GetInstance()
+  //https://stackoverflow.com/questions/30602861/singleton-is-there-a-memory
+  //-leak
+  ChocolateBoiler &ChocolateBoiler::GetInstance()
   {
-    static ChocolateBoiler* unique_instance = new ChocolateBoiler();
+    static ChocolateBoiler unique_instance;
     std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
     return unique_instance;
   }

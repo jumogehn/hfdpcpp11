@@ -37,7 +37,7 @@ namespace headfirst {
 
   public:
     ~ChocolateBoiler();
-    static ChocolateBoiler* GetInstance();
+    static ChocolateBoiler &GetInstance();
     void Fill();
     void Drain();
     void Boil();
