@@ -56,9 +56,7 @@ namespace headfirst {
   int HeatIndexDisplay::SetSubject(Subject* weather_data)
   {
     assert(weather_data);
-    assert(!weather_data_);
     weather_data_ = weather_data;
-    //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
     weather_data_->RegisterObserver(this);
 
     return 0;
@@ -66,7 +64,6 @@ namespace headfirst {
   int HeatIndexDisplay::ResetSubject()
   {
     assert(weather_data_);
-    //C++ Standard Library 2nd edition 5.2.3, util/enable_shared1.cpp
     weather_data_->RemoveObserver(this);
     return 0;
   }
