@@ -29,7 +29,7 @@ namespace headfirst {
   SoldState::SoldState( GumballMachine* gumball_machine ) :
     gumball_machine_( gumball_machine )
   {
-    assert( gumball_machine );
+    assert( gumball_machine_ );
     std::cout << "SoldState::SoldState" << std::endl;
   }
   void SoldState::InsertQuarter() const
@@ -51,6 +51,7 @@ namespace headfirst {
   }
   void SoldState::Dispense()
   {
+    assert( gumball_machine_ );
     std::cout << "SoldState::Dispense" << std::endl;
     gumball_machine_->ReleaseBall();
     if( gumball_machine_->GetCount() > 0) {

@@ -28,7 +28,7 @@ namespace headfirst {
   SoldOutState::SoldOutState(GumballMachine* gumball_machine ) :
     gumball_machine_( gumball_machine )
   {
-    assert(gumball_machine );
+    assert(gumball_machine_ );
     std::cout << "SoldOutState::SoldOutState" << std::endl;
   }
   void SoldOutState::InsertQuarter() const

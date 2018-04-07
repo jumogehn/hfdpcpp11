@@ -34,7 +34,7 @@ namespace headfirst {
   HasQuarterState::HasQuarterState( GumballMachine* gumball_machine ) :
     gumball_machine_( gumball_machine ), random_( 0 )
   {
-    assert( gumball_machine );
+    assert( gumball_machine_ );
     std::cout << "HasQuarterState::HasQuarterState" << std::endl;
 #ifdef WIN32
     srand( _getpid() );
@@ -49,12 +49,14 @@ namespace headfirst {
   }
   void HasQuarterState::EjectQuarter() const
   {
+    assert( gumball_machine_ );
     std::cout << "HasQuarterState::EjectQuarter" << std::endl;
     std::cout << "Quarter returned" << std::endl;
     gumball_machine_->SetState( gumball_machine_->GetNoQuarterState() );
   }
   void HasQuarterState::TurnCrank() const
   {
+    assert( gumball_machine_ );
     std::cout << "HasQuarterState::TurnCrank" << std::endl;
     std::cout << "You turned..." << std::endl;
     int winner = rand() % 5;

@@ -27,11 +27,12 @@ namespace headfirst {
   NoQuarterState::NoQuarterState( GumballMachine* gumball_machine ) :
     gumball_machine_( gumball_machine )
   {
-    assert( gumball_machine );
+    assert( gumball_machine_ );
     std::cout << "NoQuarterState::NoQuarterState" << std::endl;
   }
   void NoQuarterState::InsertQuarter() const
   {
+    assert( gumball_machine_ );
     std::cout << "NoQuarterState::InsertQuarter" << std::endl;
     std::cout << "You inserted a quarter" << std::endl;
     gumball_machine_->SetState( gumball_machine_->GetHasQuarterState() );

@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 #include <string>
 //Other libraries' .h files.
 //Your project's .h files.
@@ -27,11 +28,11 @@ namespace headfirst {
 
   class GumballMachine {
 
-    State* sold_out_state_;
-    State* no_quarter_state_;
-    State* has_quarter_state_;
-    State* sold_state_;
-    State* winner_state_;
+    std::unique_ptr<State> sold_out_state_;
+    std::unique_ptr<State> no_quarter_state_;
+    std::unique_ptr<State> has_quarter_state_;
+    std::unique_ptr<State> sold_state_;
+    std::unique_ptr<State> winner_state_;
     State* state_;
     int count_;
 

@@ -29,7 +29,7 @@ namespace headfirst {
   WinnerState::WinnerState( GumballMachine* gumball_machine ) :
     gumball_machine_( gumball_machine )
   {
-    assert( gumball_machine );
+    assert( gumball_machine_ );
     std::cout << "WinnerState::WinnerState" << std::endl;
   }
   void WinnerState::InsertQuarter() const
@@ -52,6 +52,7 @@ namespace headfirst {
   }
   void WinnerState::Dispense()
   {
+    assert( gumball_machine_ );
     std::cout << "WinnerState::Dispense" << std::endl;
     std::cout << "YOU'RE A WINNER! You get two gumballs for your quarter"
       << std::endl;
