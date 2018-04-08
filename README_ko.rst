@@ -4,6 +4,8 @@ hfdpcpp11
 
 `영어 <README.rst>`_ 로
 
+`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ 개시!
+
 헤드퍼스트 디자인패턴의 C++11 예제소스
 
 라이센스는 종전과 같습니다. `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_

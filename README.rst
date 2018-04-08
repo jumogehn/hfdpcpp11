@@ -4,6 +4,8 @@ hfdpcpp11
 
 Go `Korean <README_ko.rst>`_
 
+`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ is now open!
+
 C++11 examples for Headfirst Design Patterns
 
 License will still remain same `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
