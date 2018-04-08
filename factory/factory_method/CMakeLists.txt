@@ -6,8 +6,8 @@ project (pizzafm)
 
 cmake_minimum_required(VERSION 3.6)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
-include(../../check11features/CheckCXX11Features.cmake)
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
+#include(../../check11features/CheckCXX11Features.cmake)
 
 # GCC specifics
 if(CMAKE_COMPILER_IS_GNUCXX)
