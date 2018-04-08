@@ -38,7 +38,7 @@ namespace headfirst {
     if( unique_instance_ == nullptr ) {
       std::cout
         << "Creating unique instance of Chocolate Boiler" << std::endl;
-      unique_instance_ = new ChocolateBoiler();
+      unique_instance_ = new ChocolateBoiler(); //This memory never gets freed!!
     }
     std::cout << "Returning instance of Chocolate Boiler"<< std::endl;
     return unique_instance_;

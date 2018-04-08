@@ -36,17 +36,16 @@ Class Diagram
    :scale: 50 %
    :alt: Class Diagram
 
+두가지 코드가 제시되었다. chocolate 는 책의 자바 코드를 그대로 가져온 방식이라면
+chocolate_meyers 는 책에서 소개하지 않은 Meyers 라는 사람이 제시한 C++ 의 싱글턴
+이 적용되어있다. C++ 에서는 chocolate 과 같은 방식으로 싱글턴을 구현하면 안된다!
+chocolate 에는 멀티쓰레드상에서의 동기화 문제도 발생할 수 있으며 보통은 무시하는
+정도이지만 메모리 유출도 방치되어있다. chocolate_meyers 에는 이러한 멀티쓰레드 하
+에서의 동기화 문제가 C++11 이 규정한 언어수준의 규약에 따라 이 문제가 해결되었
+다. 또한 메모리 유출 현상도 발생하지 않는다.
 
-싱글턴을 쓸 때는 동기화 문제를 해결해야만 한다. 위 C++ 예제에서는 동기화 코드가
-들어가 있지 않기 때문에 별도로 동기화 문제를 해결해야만 한다. 언어별로 제공되는
-각종 동기화 기법을 사용하거나 아예 static 객체로 생성시키거나 안전한 시점에 객체
-생성을 시키도록 하는 등의 방법을 쓸 수 있다.
 
-한편 C++11 에서는 위의 객체 생성 시점의 동시성 문제가 표준에 의해 해결이 되었다!
-종전의 Meyers 의 싱글턴이 C++11 에서는 완벽하게 동작하는 것이다!
-Meyers 의 싱글턴으로 구현한 코드가 chocolate_meyers 에 있다.
-
-그런데 Meyers 의 싱글턴이 아닌 코드에는 싱글턴 객체가 프로그램 종료시점까지도 사
-라지지 않게 되어 메모리 유출이 되는 상태가 된다. Meyers 의 싱글턴에서도 이 문제는
-동일하지만 chocolate_meyers 에는 이를 해결한 방법이 적용되어있다.
+.. image:: chocolate/imgs/singlton_memory_leak.png
+   :scale: 50 %
+   :alt: Memory Leak Test using Visual Leak Detector
 
