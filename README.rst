@@ -2,15 +2,13 @@
 hfdpcpp11
 ==========
 
-Go `Korean <README_ko.rst>`_
+Headfirst Design Patterns' sample source code for C++ 11 (C++ 0x)
 
-`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ is now open!
-
-C++11 examples for Headfirst Design Patterns
-
-License will still remain same `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
+License : `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
 Original Contributor : Glenn Puchtel, https://hfdpcpp.codeplex.com/
+
+`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ is now open!
 
 Patterns
 --------
