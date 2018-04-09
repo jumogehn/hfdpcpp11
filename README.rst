@@ -8,7 +8,7 @@ License : `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
 Original Contributor : Glenn Puchtel, https://hfdpcpp.codeplex.com/
 
-`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ is now open!
+`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ exists.
 
 Patterns
 --------
