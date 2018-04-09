@@ -24,9 +24,7 @@ Test
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../barista/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testbarista.exe
 

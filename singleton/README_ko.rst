@@ -27,18 +27,14 @@ Test
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../chocolate/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testchocolate.exe
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../chocolate_meyers/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testchocolatemrs.exe
 

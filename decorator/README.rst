@@ -24,9 +24,7 @@ Test
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../content/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testdecorator.exe
 
@@ -34,7 +32,6 @@ Open generated solution file with Visual Studio and build. And then test::
 .. image:: Decorator.jpg
    :scale: 50 %
    :alt: GoF's Decorator Pattern
-
 
 
 Class Diagram

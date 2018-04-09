@@ -33,27 +33,21 @@ Test
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../simpleremote/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testsimpleremote.exe
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../remote/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testremote.exe
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../undo/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testundo.exe
 

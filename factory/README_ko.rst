@@ -34,27 +34,21 @@ Test
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../simple_factory/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testpizzas.exe
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../factory_method/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testpizzafm.exe
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../abstract_factory/
-
-Open generated solution file with Visual Studio and build. And then test::
-
+ (Open generated solution file with Visual Studio and build. And then test.)
  cd driver/Debug/
  ./testpizzaaf.exe
 
