@@ -2,13 +2,15 @@
 hfdpcpp11
 ==========
 
-C++ 11 (C++ 0x) sample source code for Headfirst Design Patterns
+.. image:: thebookcover.jpg
+   :scale: 50 %
+   :alt: Cover of the book Headfirst Design Patterns
 
 License : `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
 Original Contributor : `Glenn Puchtel <https://hfdpcpp.codeplex.com/>`_
 
-`Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_ exists.
+For more info, check `Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_.
 
 Patterns
 --------
