@@ -2,7 +2,7 @@
 hfdpcpp11
 ==========
 
-Headfirst Design Patterns' sample source code for C++ 11 (C++ 0x)
+C++ 11 (C++ 0x) sample source code for Headfirst Design Patterns
 
 License : `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
