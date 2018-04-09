@@ -11,14 +11,24 @@ Ducks
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can
-compile as shown below::
+**Linux**
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../ducks/
  make
  ./driver/testducks
+
+**Windows**
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../ducks/
+
+Open generated solution file with Visual Studio and build.
+
+ cd driver/Debug/
+ ./testducks.exe
 
 
 Class Diagram
