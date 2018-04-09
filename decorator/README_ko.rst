@@ -11,14 +11,24 @@ Starbuzz
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
-compile as shown below::
+**Linux**::
 
  mkdir build
- cd build
+ cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../content/
  make
  ./driver/testdecorator
+
+**Windows**::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../content/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testdecorator.exe
 
 
 +------------------------------------------------------------------------------+

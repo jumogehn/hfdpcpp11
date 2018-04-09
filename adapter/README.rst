@@ -25,7 +25,7 @@ Test
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../ducks/
 
-Open generated solution file with Visual Studio and build.::
+Open generated solution file with Visual Studio and build. And then test::
 
  cd driver/Debug/
  ./testducks.exe

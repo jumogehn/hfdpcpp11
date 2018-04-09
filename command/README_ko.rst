@@ -8,26 +8,54 @@ Command Pattern
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
-compile as shown below::
+**Linux**::
 
- mkdir build_simpleremote
- cd build_simpleremote/
+ mkdir build
+ cd build
  cmake -DCMAKE_BUILD_TYPE=Debug ../simpleremote/
  make
  ./driver/testsimpleremote
 
- mkdir build_remote
- cd build_remote/
+ mkdir build
+ cd build
  cmake -DCMAKE_BUILD_TYPE=Debug ../remote/
  make
  ./driver/testremote
 
- mkdir build_undo
- cd build_undo/
+ mkdir build
+ cd build
  cmake -DCMAKE_BUILD_TYPE=Debug ../undo/
  make
  ./driver/testundo
+
+**Windows**::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../simpleremote/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testsimpleremote.exe
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../remote/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testremote.exe
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../undo/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testundo.exe
 
 
 Simple Remote Control

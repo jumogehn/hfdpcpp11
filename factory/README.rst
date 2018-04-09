@@ -8,26 +8,56 @@ Go `Korean <README_ko.rst>`_
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can
-compile as shown below::
+**Linux**::
 
- mkdir build_simple_factory
- cd build_simple_factory/
+ mkdir build
+ cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../simple_factory/
  make
- ./driver/testpizzaas
+ ./driver/testpizzas
 
- mkdir build_factory_method
- cd build_factory_method/
+ mkdir build
+ cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../factory_method/
  make
  ./driver/testpizzafm
 
- mkdir build_abstract_factory
- cd build_abstract_factory/
+
+ mkdir build
+ cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../abstract_factory/
  make
  ./driver/testpizzaaf
+
+**Windows**::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../simple_factory/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testpizzas.exe
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../factory_method/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testpizzafm.exe
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../abstract_factory/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testpizzaaf.exe
+
 
 Simple Static Factory Method
 ============================

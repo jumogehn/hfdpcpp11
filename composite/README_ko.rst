@@ -5,26 +5,30 @@ Composite Pattern
 
 `영어 <README.rst>`_ 로
 
-MenusCustomIterator
-===================
+Menus
+=====
 
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can 
-compile as shown below::
+**Linux**::
 
- mkdir build_menuscustomiterator
- cd build_menuscustomiterator/
- cmake -DCMAKE_BUILD_TYPE=Debug ../menuscustomiterator/
- make
- ./driver/testmenuscustomiterator
-
- mkdir build_menus
- cd build_menus/
+ mkdir build
+ cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../menus/
  make
  ./driver/testmenus
+
+**Windows**::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../menus/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testmenus.exe
 
 
 +------------------------------------------------------------------------------+
@@ -44,7 +48,7 @@ compile as shown below::
 Class Diagram
 -------------
 
-.. image:: menus_custom_iterator/imgs/Overview_of_Menus_Custom_Iterator.jpg
+.. image:: menus/imgs/Overview_of_Menus.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -52,7 +56,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: menus_custom_iterator/imgs/SequenceDiagram1.jpg
+.. image:: menus/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 
@@ -82,11 +86,10 @@ print 메소드에서 사용된 반복자는 구성 요소의 각 항목에 대�
 구성요소가 Menu 인 경우에는 재귀적으로 print 를 호출해서 작업을 처리한다. 즉
 MenuComponent (의 함수 print(), 정확하게는 Menu::print()) 내부에서 반복작업을
 알아서 처리했다. (``내부 반복자``) 여기에 ``외부 반복자`` 를 사용하는 방식을
-추가로 구현해 본 것이 책에 소개되어 있다. (C++ 샘플 코드는 구현치 않았다. 기존
-샘플에 버그가 많기 때문이다. (메모리 유출이 많아 보인다)) 외부 반복자를 쓸 때는
-반복중 현재 위치를 관리 해야한다. 그래야 클라이언트에서 hasNext, next 를 호출해서
-원하는 반복작업을 할 수 있기 때문이다. 이 경우에는 **스택** 을 써서 재귀적인
-구조에서의 복합객체에서의 현재 위치를 관리할 수 있다.
+추가로 구현해 본 것이 책에 소개되어 있다. (C++ 샘플 코드는 구현치 않았다.) 외부
+반복자를 쓸 때는 반복중 현재 위치를 관리 해야한다. 그래야 클라이언트에서
+hasNext, next 를 호출해서 원하는 반복작업을 할 수 있기 때문이다. 이 경우에는
+**스택** 을 써서 재귀적인 구조에서의 복합객체에서의 현재 위치를 관리할 수 있다.
 
 
 Composite Pattern which has external Iterator
@@ -98,18 +101,11 @@ Composite Pattern which has external Iterator
 
 ``외부 반복자`` 이므로 Client 에서 Iterator 로 가는 연관관계를 그려넣었다.
 
-
-널반복자는 ``널객체 디자인 패턴`` 이 적용된 사례가 된다. 그리고
-printBegetarianMenu 메소드에서 try/catch 구조를 사용한 것은 Menu 와 MenuItem을
-똑같이 다룸으로써 투명성을 높이기 위함이다. 그런데 이는 try/catch 의 원래 용도에
-맞는 사용법은 아니다. C++ 에서는 RTTI 를 쓸 수 있다. 또는 RTTI 의 사용을 피하기
-위해 LLVM 스타일의 RTTI 를 도입할 수도 있다.
+널반복자는 ``널객체 디자인 패턴`` 이 적용된 사례가 된다.
 
 컴포지트 패턴의 가장 큰 장점은 클라이언트를 단순화 시킬 수 있다는 것이다.
 클라이언트는 복합객체를 사용하고 있는지 잎 객체를 사용하고 있는지에 대해서 전혀
 신경쓰지 않아도 된다. 올바른 객체에 대해 올바른 연산을 적용하고 있는지 확인하기
 위해 if 문을 지저분하게 여기저기 사용하지 않아도 된다. 그리고 하나의 메소드를
 호출하면 전체 구조에 대해서 반복해서 작업을 처리할 수도 있다.
-
-Continue to `Iterator Pattern <../Iterator>`_
 

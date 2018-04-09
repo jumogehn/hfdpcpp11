@@ -11,14 +11,24 @@ Barista
 Test
 ----
 
-This project uses cmake so wide range of OSes are supported. For ubuntu, you can
-compile as shown below::
+**Linux**::
 
  mkdir build
  cd build/
  cmake -DCMAKE_BUILD_TYPE=Debug ../barista/
  make
  ./driver/testbarista
+
+**Windows**::
+
+ mkdir build
+ cd build/
+ cmake -DCMAKE_BUILD_TYPE=Debug ../barista/
+
+Open generated solution file with Visual Studio and build. And then test::
+
+ cd driver/Debug/
+ ./testbarista.exe
 
 
 Class Diagram
