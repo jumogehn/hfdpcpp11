@@ -2,15 +2,11 @@
 hfdpcpp11
 ==========
 
-.. image:: thebookcover.jpg
-   :scale: 50 %
-   :alt: Cover of the book Headfirst Design Patterns
-
 License : `AFL 3.0 <https://opensource.org/licenses/afl-3.0.php>`_
 
 Original Contributor : `Glenn Puchtel <https://hfdpcpp.codeplex.com/>`_
 
-For more info, check `Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_.
+For more info, you can check `Wiki <https://github.com/Jeonghum/hfdpcpp11/wiki>`_.
 
 Patterns
 --------
@@ -40,3 +36,8 @@ Ch. 10 `State <state>`_
 Ch. 11 Proxy
 
 Ch. 12 Compound
+
+.. image:: thebookcover.jpg
+   :scale: 30 %
+   :alt: Cover of the book Headfirst Design Patterns
+
