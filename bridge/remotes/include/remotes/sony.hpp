@@ -17,22 +17,18 @@
 #include "tv.hpp"
 #include <string>
 
-namespace HFDP {
-  namespace Bridge {
-    namespace Remotes {
+namespace headfirst {
 
-      class Sony : public TV {
+  class Sony : public TV {
 
-        std::string _location;
+    std::string _location;
 
-      public:
-        explicit Sony( const std::string& location );
-        void on();
-        void off();
-        void tuneChannel( unsigned int channel );
-      };
-    } // namespace Remotes
-  } // namespace Bridge
-} // namespace HFDP
+  public:
+    explicit Sony( const std::string& location );
+    void on();
+    void off();
+    void tuneChannel( unsigned int channel );
+  };
+} //namespace headfirst
 
 #endif

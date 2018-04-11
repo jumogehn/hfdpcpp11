@@ -15,29 +15,31 @@
 #include "rca.hpp"
 #include "rca_control.hpp"
 
-using namespace HFDP::Bridge::Remotes;
 
-RCAControl::RCAControl( const std::string& location ) :
-  _currentStation( 0 )
-{
-  _implementor = new RCA( location );
-}
+namespace headfirst {
 
-void RCAControl::setStation( unsigned int channel )
-{
-  _currentStation = channel;
-  setChannel( _currentStation );
-}
+  RCAControl::RCAControl( const std::string& location ) :
+    _currentStation( 0 )
+  {
+    _implementor = new RCA( location );
+  }
 
-void RCAControl::nextChannel()
-{
-  _currentStation++;
-  setChannel( _currentStation );
-}
+  void RCAControl::setStation( unsigned int channel )
+  {
+    _currentStation = channel;
+    setChannel( _currentStation );
+  }
 
-void RCAControl::previousChannel()
-{
-  _currentStation--;
-  setChannel( _currentStation );
-}
+  void RCAControl::nextChannel()
+  {
+    _currentStation++;
+    setChannel( _currentStation );
+  }
 
+  void RCAControl::previousChannel()
+  {
+    _currentStation--;
+    setChannel( _currentStation );
+  }
+
+} //namespace headfirst

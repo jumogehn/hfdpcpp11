@@ -16,28 +16,24 @@
 
 #include "tv.hpp"
 
-namespace HFDP {
-  namespace Bridge {
-    namespace Remotes {
+namespace headfirst {
 
-      class RemoteControl {
+  class RemoteControl {
 
-        RemoteControl( const RemoteControl& ); // Disable copy constructor
-        void operator=( const RemoteControl& ); // Disable assignment operator
+    RemoteControl( const RemoteControl& ); // Disable copy constructor
+    void operator=( const RemoteControl& ); // Disable assignment operator
 
-      protected:
-        TV* _implementor;
-        RemoteControl();
-        virtual void setChannel( unsigned int channel );
+  protected:
+    TV* _implementor;
+    RemoteControl();
+    virtual void setChannel( unsigned int channel );
 
-      public:
-        virtual ~RemoteControl();
-        virtual void on();
-        virtual void off();
-      };
+  public:
+    virtual ~RemoteControl();
+    virtual void on();
+    virtual void off();
+  };
 
-    } // namespace Remotes
-  } // namespace Bridge
-} // namespace HFDP
+} //namespace headfirst
 
 #endif

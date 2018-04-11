@@ -16,30 +16,31 @@
 #include "sony_control.hpp"
 #include <string>
 
-using namespace HFDP::Bridge::Remotes;
+namespace headfirst {
 
-SonyControl::SonyControl( const std::string& location ) :
-  _currentStation( 0 )
-{
-  _implementor = new Sony( location );
-}
+  SonyControl::SonyControl( const std::string& location ) :
+    _currentStation( 0 )
+  {
+    _implementor = new Sony( location );
+  }
 
-void SonyControl::setStation( unsigned int channel )
-{
-  _currentStation = channel;
-  setChannel( _currentStation );
-}
+  void SonyControl::setStation( unsigned int channel )
+  {
+    _currentStation = channel;
+    setChannel( _currentStation );
+  }
 
-void SonyControl::nextChannel()
-{
-  _currentStation++;
-  setChannel( _currentStation );
-}
+  void SonyControl::nextChannel()
+  {
+    _currentStation++;
+    setChannel( _currentStation );
+  }
 
-void SonyControl::previousChannel()
-{
-  _currentStation--;
-  setChannel( _currentStation );
-}
+  void SonyControl::previousChannel()
+  {
+    _currentStation--;
+    setChannel( _currentStation );
+  }
 
 
+} //namespace headfirst

@@ -18,23 +18,19 @@
 #include <string>
 
 
-namespace HFDP {
-  namespace Bridge {
-    namespace Remotes {
+namespace headfirst {
 
-      class SonyControl : public RemoteControl {
+  class SonyControl : public RemoteControl {
 
-        unsigned int _currentStation;
+    unsigned int _currentStation;
 
-      public:
-        explicit SonyControl( const std::string& location );
-        void setStation( unsigned int channel );
-        void nextChannel();
-        void previousChannel();
-      };
+  public:
+    explicit SonyControl( const std::string& location );
+    void setStation( unsigned int channel );
+    void nextChannel();
+    void previousChannel();
+  };
 
-    } // namespace Remotes
-  } // namespace Bridge
-} // namespace HFDP
+} //namespace headfirst
 
 #endif

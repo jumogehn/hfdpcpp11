@@ -19,43 +19,44 @@
 #include <iostream>
 #endif
 
-using namespace HFDP::Bridge::Remotes;
+namespace headfirst {
 
-Sony::Sony( const std::string& location ) :
-  _location( location )
-{}
+  Sony::Sony( const std::string& location ) :
+    _location( location )
+  {}
 
-void Sony::on()
-{
+  void Sony::on()
+  {
 #ifdef USE_UTILS
-  PrintMessage("Sony ", false);
-  PrintMessage(_location.c_str(), false);
-  PrintMessage(" TV is on");
+    PrintMessage("Sony ", false);
+    PrintMessage(_location.c_str(), false);
+    PrintMessage(" TV is on");
 #else
-  std::cout << "Sony " << _location.c_str() << " TV is on" << std::endl;
+    std::cout << "Sony " << _location.c_str() << " TV is on" << std::endl;
 #endif
-}
+  }
 
-void Sony::off()
-{
+  void Sony::off()
+  {
 #ifdef USE_UTILS
-  PrintMessage("Sony ", false);
-  PrintMessage(_location.c_str(), false);
-  PrintMessage(" TV is off");
+    PrintMessage("Sony ", false);
+    PrintMessage(_location.c_str(), false);
+    PrintMessage(" TV is off");
 #else
-  std::cout << "Sony " << _location.c_str() << " TV is off" << std::endl;
+    std::cout << "Sony " << _location.c_str() << " TV is off" << std::endl;
 #endif
-}
+  }
 
-void Sony::tuneChannel( unsigned int channel )
-{
+  void Sony::tuneChannel( unsigned int channel )
+  {
 #ifdef USE_UTILS
-  PrintMessage("Sony ", false);
-  PrintMessage(_location.c_str(), false);
-  PrintMessage(" tuned to channel ", false);
-  PrintNumber(channel);
+    PrintMessage("Sony ", false);
+    PrintMessage(_location.c_str(), false);
+    PrintMessage(" tuned to channel ", false);
+    PrintNumber(channel);
 #else
-  std::cout << "Sony " << _location.c_str() << " tuned to channel " << channel << std::endl;
+    std::cout << "Sony " << _location.c_str() << " tuned to channel " << channel << std::endl;
 #endif
-}
+  }
 
+} //namespace headfirst

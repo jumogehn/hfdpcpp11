@@ -15,14 +15,16 @@
 #ifndef __UTILITIES_H__
 #define __UTILITIES_H__
 
+namespace headfirst {
 #ifdef WIN32
-  #define CALL __stdcall
+#define CALL __stdcall
 #else
-  #define CALL
+#define CALL
 #endif
 
-extern "C" void CALL PrintMessage(const char * pMessage, bool newline = true);
-extern "C" void CALL PrintNumber(unsigned int num, bool newline = true);
+  extern "C" void CALL PrintMessage(const char * pMessage, bool newline = true);
+  extern "C" void CALL PrintNumber(unsigned int num, bool newline = true);
 
+} //namespace headfirst
 #endif
 

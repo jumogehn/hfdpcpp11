@@ -15,32 +15,34 @@
 #include "remote_control.hpp"
 #include <cassert>
 
-using namespace HFDP::Bridge::Remotes;
 
-RemoteControl::RemoteControl() :
-  _implementor( 0 )
-{}
+namespace headfirst {
 
-void RemoteControl::setChannel( unsigned int channel )
-{
-  assert( _implementor );
-  _implementor->tuneChannel( channel );
-}
+  RemoteControl::RemoteControl() :
+    _implementor( 0 )
+  {}
 
-RemoteControl::~RemoteControl()
-{
-  delete _implementor;
-}
+  void RemoteControl::setChannel( unsigned int channel )
+  {
+    assert( _implementor );
+    _implementor->tuneChannel( channel );
+  }
 
-void RemoteControl::on()
-{
-  assert( _implementor );
-  _implementor->on();
-}
+  RemoteControl::~RemoteControl()
+  {
+    delete _implementor;
+  }
 
-void RemoteControl::off()
-{
-  assert( _implementor );
-  _implementor->off();
-}
+  void RemoteControl::on()
+  {
+    assert( _implementor );
+    _implementor->on();
+  }
 
+  void RemoteControl::off()
+  {
+    assert( _implementor );
+    _implementor->off();
+  }
+
+} //namespace headfirst
