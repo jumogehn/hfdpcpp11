@@ -14,7 +14,7 @@
 #ifndef	_HFDP_CPP_BRIDGE_REMOTE_CONTROL_HPP_
 #define _HFDP_CPP_BRIDGE_REMOTE_CONTROL_HPP_
 
-#include "TV.hpp"
+#include "tv.hpp"
 
 namespace HFDP {
   namespace Bridge {

@@ -10,10 +10,10 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "RemotesConfig.h"
-#include "RemoteControl.hpp"
-#include "SonyControl.hpp"
-#include "RCAControl.hpp"
+#include "remotes_config.h"
+#include "remote_control.hpp"
+#include "sony_control.hpp"
+#include "rca_control.hpp"
 #include <vector>
 #include <memory>
 #include <iostream>

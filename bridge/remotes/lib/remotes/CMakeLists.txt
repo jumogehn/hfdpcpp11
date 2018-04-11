@@ -8,7 +8,7 @@ if (USE_UTILS)
 endif (USE_UTILS)
 
 # Adds a library called remotes (libremotes.a under Linux) from the source files under lib/
-add_library( remotes RCA RCAControl RemoteControl Sony SonyControl)
+add_library( remotes rca rca_control remote_control sony sony_control)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET remotes

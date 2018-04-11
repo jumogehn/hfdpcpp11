@@ -16,8 +16,8 @@ compile as shown below
 ::
  mkdir build
  cd build/
- cmake ../Remotes/
- (cmake ../Remotes/ -DCMAKE_INSTALL_PREFIX=/usr/local)
+ cmake ../remotes/
+ (cmake ../remotes/ -DCMAKE_INSTALL_PREFIX=/usr/local)
  make
 
 
@@ -51,7 +51,7 @@ compile as shown below
 Class Diagram
 -------------
 
-.. image:: Remotes/imgs/Overview_of_Remotes.jpg
+.. image:: remotes/imgs/Overview_of_Remotes.jpg
    :scale: 50 %
    :alt: Class Diagram
 
@@ -59,7 +59,7 @@ Class Diagram
 Sequence Diagram
 ----------------
 
-.. image:: Remotes/imgs/SequenceDiagram1.jpg
+.. image:: remotes/imgs/SequenceDiagram1.jpg
    :scale: 50 %
    :alt: Sequence Diagram
 

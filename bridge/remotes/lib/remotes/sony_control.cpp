@@ -1,4 +1,4 @@
-//===--- RCAControl.cpp - ---------------------------------------*- C++ -*-===//
+//===--- SonyControl.cpp - --------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,33 +11,35 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "RemotesConfig.h"
-#include "RCA.hpp"
-#include "RCAControl.hpp"
+#include "remotes_config.h"
+#include "sony.hpp"
+#include "sony_control.hpp"
+#include <string>
 
 using namespace HFDP::Bridge::Remotes;
 
-RCAControl::RCAControl( const std::string& location ) :
+SonyControl::SonyControl( const std::string& location ) :
   _currentStation( 0 )
 {
-  _implementor = new RCA( location );
+  _implementor = new Sony( location );
 }
 
-void RCAControl::setStation( unsigned int channel )
+void SonyControl::setStation( unsigned int channel )
 {
   _currentStation = channel;
   setChannel( _currentStation );
 }
 
-void RCAControl::nextChannel()
+void SonyControl::nextChannel()
 {
   _currentStation++;
   setChannel( _currentStation );
 }
 
-void RCAControl::previousChannel()
+void SonyControl::previousChannel()
 {
   _currentStation--;
   setChannel( _currentStation );
 }
+
 

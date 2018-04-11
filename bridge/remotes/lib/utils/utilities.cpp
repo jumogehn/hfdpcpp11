@@ -12,7 +12,7 @@
 
 //http://chadaustin.me/cppinterface.html
 
-#include "Utilities.hpp"
+#include "utilities.hpp"
 #include <iostream>
 #include <cassert>
 

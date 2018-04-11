@@ -15,8 +15,8 @@ set (Remotes_VERSION_MINOR 0)
 # configure a header file to pass some of the CMake settings
 # to the source code
 configure_file (
-  "${PROJECT_SOURCE_DIR}/RemotesConfig.h.in"
-  "${PROJECT_BINARY_DIR}/RemotesConfig.h"
+  "${PROJECT_SOURCE_DIR}/remotes_config.h.in"
+  "${PROJECT_BINARY_DIR}/remotes_config.h"
 )
 
 # add the binary tree to the search path for include files

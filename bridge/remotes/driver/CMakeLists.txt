@@ -7,9 +7,9 @@ if (USE_UTILS)
   include_directories(${Remotes_SOURCE_DIR}/include/utils)
 endif (USE_UTILS)
 
-# Add binary called "testremotes" that is built from the source file "Remotes.cpp". 
+# Add binary called "testremotes" that is built from the source file "remotes.cpp". 
 # The extension is automatically found.
-add_executable(testremotes Remotes)
+add_executable(testremotes remotes)
 
 foreach(flag ${CXX11_FEATURE_LIST})
   set_property(TARGET testremotes
@@ -25,5 +25,5 @@ endif (USE_UTILS)
 
 # add the install targets
 install (TARGETS testremotes DESTINATION bin)
-install (FILES "${PROJECT_BINARY_DIR}/RemotesConfig.h" DESTINATION include)
+install (FILES "${PROJECT_BINARY_DIR}/remotes_config.h" DESTINATION include)
 

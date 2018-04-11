@@ -1,4 +1,4 @@
-//===--- RCAControl.hpp - ---------------------------------------*- C++ -*-===//
+//===--- SonyControl.hpp - --------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,11 +11,10 @@
 //===----------------------------------------------------------------------===//
 
 
+#ifndef	_HFDP_CPP_BRIDGE_SONY_CONTROL_HPP_
+#define _HFDP_CPP_BRIDGE_SONY_CONTROL_HPP_
 
-#ifndef	_HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
-#define _HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
-
-#include "RemoteControl.hpp"
+#include "remote_control.hpp"
 #include <string>
 
 
@@ -23,12 +22,12 @@ namespace HFDP {
   namespace Bridge {
     namespace Remotes {
 
-      class RCAControl : public RemoteControl {
+      class SonyControl : public RemoteControl {
 
         unsigned int _currentStation;
 
       public:
-        explicit RCAControl( const std::string& location );
+        explicit SonyControl( const std::string& location );
         void setStation( unsigned int channel );
         void nextChannel();
         void previousChannel();

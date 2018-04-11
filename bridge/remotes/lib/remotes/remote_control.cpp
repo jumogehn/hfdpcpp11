@@ -11,8 +11,8 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "RemotesConfig.h"
-#include "RemoteControl.hpp"
+#include "remotes_config.h"
+#include "remote_control.hpp"
 #include <cassert>
 
 using namespace HFDP::Bridge::Remotes;

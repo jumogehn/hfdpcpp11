@@ -1,4 +1,4 @@
-//===--- RCA.cpp - ----------------------------------------------*- C++ -*-===//
+//===--- Sony.cpp - ---------------------------------------------*- C++ -*-===//
 //
 //                     Head First Design Patterns
 //
@@ -11,51 +11,51 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "RemotesConfig.h"
-#include "RCA.hpp"
+#include "remotes_config.h"
+#include "sony.hpp"
 #ifdef USE_UTILS
-#include "Utilities.hpp"
+#include <utilities.hpp>
 #else
 #include <iostream>
 #endif
 
 using namespace HFDP::Bridge::Remotes;
 
-RCA::RCA( const std::string& location ) :
+Sony::Sony( const std::string& location ) :
   _location( location )
 {}
 
-void RCA::on()
+void Sony::on()
 {
 #ifdef USE_UTILS
-  PrintMessage("RCA ", false);
+  PrintMessage("Sony ", false);
   PrintMessage(_location.c_str(), false);
   PrintMessage(" TV is on");
 #else
-  std::cout << "RCA " << _location.c_str() << " TV is on" << std::endl;
+  std::cout << "Sony " << _location.c_str() << " TV is on" << std::endl;
 #endif
 }
 
-void RCA::off()
+void Sony::off()
 {
 #ifdef USE_UTILS
-  PrintMessage("RCA ", false);
+  PrintMessage("Sony ", false);
   PrintMessage(_location.c_str(), false);
   PrintMessage(" TV is off");
 #else
-  std::cout << "RCA " << _location.c_str() << " TV is off" << std::endl;
+  std::cout << "Sony " << _location.c_str() << " TV is off" << std::endl;
 #endif
 }
 
-void RCA::tuneChannel(unsigned int channel)
+void Sony::tuneChannel( unsigned int channel )
 {
 #ifdef USE_UTILS
-  PrintMessage("RCA ", false);
+  PrintMessage("Sony ", false);
   PrintMessage(_location.c_str(), false);
   PrintMessage(" tuned to channel ", false);
   PrintNumber(channel);
 #else
-  std::cout << "RCA " << _location.c_str() << " tuned to channel " << channel << std::endl;
+  std::cout << "Sony " << _location.c_str() << " tuned to channel " << channel << std::endl;
 #endif
 }
 
