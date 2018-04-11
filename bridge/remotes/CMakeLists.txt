@@ -4,13 +4,13 @@
 #http://cmake.org/Wiki/CMake/Testing_With_CTest#Simple_Testing
 #http://stackoverflow.com/questions/733475/cmake-ctest-make-test-doesnt-build-tests
 
-cmake_minimum_required(VERSION 2.8.6)
+cmake_minimum_required(VERSION 3.6)
 
-project (Remotes)
+project (remotes)
 
 # The version number.
-set (Remotes_VERSION_MAJOR 1)
-set (Remotes_VERSION_MINOR 0)
+set (remotes_VERSION_MAJOR 1)
+set (remotes_VERSION_MINOR 0)
 
 # configure a header file to pass some of the CMake settings
 # to the source code
@@ -20,11 +20,11 @@ configure_file (
 )
 
 # add the binary tree to the search path for include files
-# so that we will find RemotesConfig.h
+# so that we will find remotes_config.h
 include_directories("${PROJECT_BINARY_DIR}")
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
-include(../../check11features/CheckCXX11Features.cmake)
+#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}")
+#include(../../check11features/CheckCXX11Features.cmake)
 
 # GCC specifics
 if(CMAKE_COMPILER_IS_GNUCXX)
@@ -36,6 +36,7 @@ if(MSVC)
   # Warning Level 4 for Debug builds
   list(APPEND CMAKE_CXX_FLAGS_DEBUG " /W4")
   list(REMOVE_DUPLICATES CMAKE_CXX_FLAGS_DEBUG)
+  set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT testremotes)
 endif()
 
 # should we use our own utils functions?
@@ -55,7 +56,7 @@ add_test (RmotesRuns driver/testremotes)
 include (InstallRequiredSystemLibraries)
 set (CPACK_RESOURCE_FILE_LICENSE  
      "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
-set (CPACK_PACKAGE_VERSION_MAJOR "${Remotes_VERSION_MAJOR}")
-set (CPACK_PACKAGE_VERSION_MINOR "${Remotes_VERSION_MINOR}")
+set (CPACK_PACKAGE_VERSION_MAJOR "${remotes_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${remotes_VERSION_MINOR}")
 include (CPack)
 

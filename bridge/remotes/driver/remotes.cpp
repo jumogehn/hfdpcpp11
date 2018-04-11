@@ -22,8 +22,8 @@ using namespace HFDP::Bridge::Remotes;
 
 int main( int argc, char* argv[] ) {
 
-  std::cout << argv[0] << " Version " << Remotes_VERSION_MAJOR << "."
-  << Remotes_VERSION_MINOR << std::endl << std::endl;
+  std::cout << argv[0] << " Version " << remotes_VERSION_MAJOR << "."
+  << remotes_VERSION_MINOR << std::endl << std::endl;
 
   std::vector< RemoteControl* > remotes;
 

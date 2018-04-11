@@ -2,9 +2,9 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # Make sure the compiler can find include files from our library remotes.
-include_directories(${Remotes_SOURCE_DIR}/include/remotes)
+include_directories(${remotes_SOURCE_DIR}/include/remotes)
 if (USE_UTILS)
-  include_directories(${Remotes_SOURCE_DIR}/include/utils)
+  include_directories(${remotes_SOURCE_DIR}/include/utils)
 endif (USE_UTILS)
 
 # Add binary called "testremotes" that is built from the source file "remotes.cpp". 

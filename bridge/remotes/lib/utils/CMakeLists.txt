@@ -2,7 +2,7 @@
 #http://www-flc.desy.de/ldcoptimization/documents/talks/CMake_Tutorial.pdf
 
 # CmakeLists.txt in lib dir
-include_directories(${Remotes_SOURCE_DIR}/include/utils)
+include_directories(${remotes_SOURCE_DIR}/include/utils)
 
 # Adds a library called utils (libutils.a under Linux) from the source files under lib/
 add_library( utils utilities )
@@ -14,5 +14,5 @@ foreach(flag ${CXX11_FEATURE_LIST})
 endforeach()
 
 install (TARGETS utils DESTINATION bin)
-install (FILES ${Remotes_SOURCE_DIR}/include/utils/utilities.hpp DESTINATION include)
+install (FILES ${remotes_SOURCE_DIR}/include/utils/utilities.hpp DESTINATION include)
 
