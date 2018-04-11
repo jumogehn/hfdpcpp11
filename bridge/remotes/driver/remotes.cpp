@@ -28,7 +28,7 @@
 int main( int argc, char* argv[] ) {
 
   std::cout << argv[0] << " Version " << remotes_VERSION_MAJOR << "."
-  << remotes_VERSION_MINOR << std::endl << std::endl;
+    << remotes_VERSION_MINOR << std::endl << std::endl;
 
   std::vector< headfirst::RemoteControl* > remotes;
 
@@ -41,17 +41,16 @@ int main( int argc, char* argv[] ) {
   remotes.push_back( rcaControl.get() );
 
   // turn on all tv's
-  std::vector< headfirst::RemoteControl* >::iterator iterator;
-  for( iterator = remotes.begin(); iterator != remotes.end(); iterator++ ) {
-    ( *iterator )->on();
+  for ( headfirst::RemoteControl*& element : remotes) {
+    element->on();
   }
 
   sonyControl->nextChannel();
   rcaControl->setStation( 35 );
 
   // turn off all tv's
-  for( iterator = remotes.begin(); iterator != remotes.end(); iterator++ ) {
-    ( *iterator )->off();
+  for ( headfirst::RemoteControl*& element : remotes) {
+    element->off();
   }
 
   return 0;
