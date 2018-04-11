@@ -42,15 +42,15 @@ int main( int argc, char* argv[] ) {
 
   // turn on all tv's
   for ( headfirst::RemoteControl*& element : remotes) {
-    element->on();
+    element->On();
   }
 
-  sonyControl->nextChannel();
-  rcaControl->setStation( 35 );
+  sonyControl->NextChannel();
+  rcaControl->SetStation( 35 );
 
   // turn off all tv's
   for ( headfirst::RemoteControl*& element : remotes) {
-    element->off();
+    element->Off();
   }
 
   return 0;

@@ -30,14 +30,14 @@ namespace headfirst {
     void operator=( const RemoteControl& ); // Disable assignment operator
 
   protected:
-    TV* _implementor;
+    TV* implementor_;
     RemoteControl();
-    virtual void setChannel( unsigned int channel );
+    virtual void SetChannel( unsigned int channel );
 
   public:
     virtual ~RemoteControl();
-    virtual void on();
-    virtual void off();
+    virtual void On();
+    virtual void Off();
   };
 
 } //namespace headfirst

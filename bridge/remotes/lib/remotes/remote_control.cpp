@@ -25,30 +25,30 @@
 namespace headfirst {
 
   RemoteControl::RemoteControl() :
-    _implementor( 0 )
+    implementor_( 0 )
   {}
 
-  void RemoteControl::setChannel( unsigned int channel )
+  void RemoteControl::SetChannel( unsigned int channel )
   {
-    assert( _implementor );
-    _implementor->tuneChannel( channel );
+    assert( implementor_ );
+    implementor_->TuneChannel( channel );
   }
 
   RemoteControl::~RemoteControl()
   {
-    delete _implementor;
+    delete implementor_;
   }
 
-  void RemoteControl::on()
+  void RemoteControl::On()
   {
-    assert( _implementor );
-    _implementor->on();
+    assert( implementor_ );
+    implementor_->On();
   }
 
-  void RemoteControl::off()
+  void RemoteControl::Off()
   {
-    assert( _implementor );
-    _implementor->off();
+    assert( implementor_ );
+    implementor_->Off();
   }
 
 } //namespace headfirst

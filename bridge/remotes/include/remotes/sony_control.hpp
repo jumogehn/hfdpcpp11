@@ -28,13 +28,13 @@ namespace headfirst {
 
   class SonyControl : public RemoteControl {
 
-    unsigned int _currentStation;
+    unsigned int current_station_;
 
   public:
     explicit SonyControl( const std::string& location );
-    void setStation( unsigned int channel );
-    void nextChannel();
-    void previousChannel();
+    void SetStation( unsigned int channel );
+    void NextChannel();
+    void PreviousChannel();
   };
 
 } //namespace headfirst

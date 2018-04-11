@@ -29,13 +29,13 @@ namespace headfirst {
 
   class RCAControl : public RemoteControl {
 
-    unsigned int _currentStation;
+    unsigned int current_station_;
 
   public:
     explicit RCAControl( const std::string& location );
-    void setStation( unsigned int channel );
-    void nextChannel();
-    void previousChannel();
+    void SetStation( unsigned int channel );
+    void NextChannel();
+    void PreviousChannel();
   };
 
 } //namespace headfirst

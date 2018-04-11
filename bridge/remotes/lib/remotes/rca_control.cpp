@@ -25,27 +25,27 @@
 namespace headfirst {
 
   RCAControl::RCAControl( const std::string& location ) :
-    _currentStation( 0 )
+    current_station_( 0 )
   {
-    _implementor = new RCA( location );
+    implementor_ = new RCA( location );
   }
 
-  void RCAControl::setStation( unsigned int channel )
+  void RCAControl::SetStation( unsigned int channel )
   {
-    _currentStation = channel;
-    setChannel( _currentStation );
+    current_station_ = channel;
+    SetChannel( current_station_ );
   }
 
-  void RCAControl::nextChannel()
+  void RCAControl::NextChannel()
   {
-    _currentStation++;
-    setChannel( _currentStation );
+    current_station_++;
+    SetChannel( current_station_ );
   }
 
-  void RCAControl::previousChannel()
+  void RCAControl::PreviousChannel()
   {
-    _currentStation--;
-    setChannel( _currentStation );
+    current_station_--;
+    SetChannel( current_station_ );
   }
 
 } //namespace headfirst

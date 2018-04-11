@@ -28,9 +28,9 @@ namespace headfirst {
     TV() {};
   public:
     virtual ~TV() {};
-    virtual void on() = 0;
-    virtual void off() = 0;
-    virtual void tuneChannel( unsigned int channel ) = 0;
+    virtual void On() = 0;
+    virtual void Off() = 0;
+    virtual void TuneChannel( unsigned int channel ) = 0;
   };
 
 } //namespace headfirst

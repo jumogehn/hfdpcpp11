@@ -28,40 +28,40 @@
 namespace headfirst {
 
   RCA::RCA( const std::string& location ) :
-    _location( location )
+    location_( location )
   {}
 
-  void RCA::on()
+  void RCA::On()
   {
 #ifdef USE_UTILS
     PrintMessage("RCA ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" TV is on");
 #else
-    std::cout << "RCA " << _location.c_str() << " TV is on" << std::endl;
+    std::cout << "RCA " << location_.c_str() << " TV is on" << std::endl;
 #endif
   }
 
-  void RCA::off()
+  void RCA::Off()
   {
 #ifdef USE_UTILS
     PrintMessage("RCA ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" TV is off");
 #else
-    std::cout << "RCA " << _location.c_str() << " TV is off" << std::endl;
+    std::cout << "RCA " << location_.c_str() << " TV is off" << std::endl;
 #endif
   }
 
-  void RCA::tuneChannel(unsigned int channel)
+  void RCA::TuneChannel(unsigned int channel)
   {
 #ifdef USE_UTILS
     PrintMessage("RCA ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" tuned to channel ", false);
     PrintNumber(channel);
 #else
-    std::cout << "RCA " << _location.c_str() << " tuned to channel " << channel << std::endl;
+    std::cout << "RCA " << location_.c_str() << " tuned to channel " << channel << std::endl;
 #endif
   }
 

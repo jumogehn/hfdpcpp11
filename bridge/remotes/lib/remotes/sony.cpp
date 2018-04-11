@@ -28,40 +28,40 @@
 namespace headfirst {
 
   Sony::Sony( const std::string& location ) :
-    _location( location )
+    location_( location )
   {}
 
-  void Sony::on()
+  void Sony::On()
   {
 #ifdef USE_UTILS
     PrintMessage("Sony ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" TV is on");
 #else
-    std::cout << "Sony " << _location.c_str() << " TV is on" << std::endl;
+    std::cout << "Sony " << location_.c_str() << " TV is on" << std::endl;
 #endif
   }
 
-  void Sony::off()
+  void Sony::Off()
   {
 #ifdef USE_UTILS
     PrintMessage("Sony ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" TV is off");
 #else
-    std::cout << "Sony " << _location.c_str() << " TV is off" << std::endl;
+    std::cout << "Sony " << location_.c_str() << " TV is off" << std::endl;
 #endif
   }
 
-  void Sony::tuneChannel( unsigned int channel )
+  void Sony::TuneChannel( unsigned int channel )
   {
 #ifdef USE_UTILS
     PrintMessage("Sony ", false);
-    PrintMessage(_location.c_str(), false);
+    PrintMessage(location_.c_str(), false);
     PrintMessage(" tuned to channel ", false);
     PrintNumber(channel);
 #else
-    std::cout << "Sony " << _location.c_str() << " tuned to channel " << channel << std::endl;
+    std::cout << "Sony " << location_.c_str() << " tuned to channel " << channel << std::endl;
 #endif
   }
 

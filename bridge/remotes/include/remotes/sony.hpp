@@ -27,13 +27,13 @@ namespace headfirst {
 
   class Sony : public TV {
 
-    std::string _location;
+    std::string location_;
 
   public:
     explicit Sony( const std::string& location );
-    void on();
-    void off();
-    void tuneChannel( unsigned int channel );
+    void On();
+    void Off();
+    void TuneChannel( unsigned int channel );
   };
 } //namespace headfirst
 
