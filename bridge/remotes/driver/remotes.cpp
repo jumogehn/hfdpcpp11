@@ -10,13 +10,19 @@
 ///
 //===----------------------------------------------------------------------===//
 
-#include "remotes_config.h"
-#include "remote_control.hpp"
-#include "sony_control.hpp"
-#include "rca_control.hpp"
-#include <vector>
-#include <memory>
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <iostream>
+#include <memory>
+#include <vector>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "rca_control.hpp"
+#include "remote_control.hpp"
+#include "remotes_config.h"
+#include "sony_control.hpp"
 
 
 int main( int argc, char* argv[] ) {

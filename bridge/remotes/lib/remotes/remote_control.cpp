@@ -11,9 +11,15 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "remotes_config.h"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
 #include "remote_control.hpp"
+//C system files.
+//C++ system files.
 #include <cassert>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "remotes_config.h"
 
 
 namespace headfirst {

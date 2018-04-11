@@ -15,8 +15,14 @@
 #ifndef	_HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
 #define _HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
 
-#include "remote_control.hpp"
+//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
+//dir2 / foo2.h.
+//C system files.
+//C++ system files.
 #include <string>
+//Other libraries' .h files.
+//Your project's .h files.
+#include "remote_control.hpp"
 
 
 namespace headfirst {
