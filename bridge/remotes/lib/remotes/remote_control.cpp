@@ -25,7 +25,7 @@
 namespace headfirst {
 
   RemoteControl::RemoteControl() :
-    implementor_( 0 )
+    implementor_( nullptr )
   {}
 
   void RemoteControl::SetChannel( unsigned int channel )
@@ -36,7 +36,6 @@ namespace headfirst {
 
   RemoteControl::~RemoteControl()
   {
-    delete implementor_;
   }
 
   void RemoteControl::On()

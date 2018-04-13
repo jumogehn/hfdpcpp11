@@ -23,7 +23,7 @@
 //https://github.com/KindDragon/vld
 //https://kinddragon.github.io/vld/
 //http://zzoyu.tistory.com/52
-//No memory leaks detected. 2018.4.12
+//No memory leaks detected. 2018.4.13
 //Your project's .h files.
 #include "rca_control.hpp"
 #include "remote_control.hpp"

@@ -18,6 +18,7 @@
 //dir2 / foo2.h.
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "tv.hpp"
@@ -30,7 +31,7 @@ namespace headfirst {
     void operator=( const RemoteControl& ); // Disable assignment operator
 
   protected:
-    TV* implementor_;
+    std::unique_ptr<TV> implementor_;
     RemoteControl();
     virtual void SetChannel( unsigned int channel );
 

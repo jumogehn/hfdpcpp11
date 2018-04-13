@@ -16,18 +16,20 @@
 #include "sony_control.hpp"
 //C system files.
 //C++ system files.
+#include <memory>
+#include <string>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "remotes_config.h"
 #include "sony.hpp"
-#include <string>
+#include "tv.hpp"
 
 namespace headfirst {
 
   SonyControl::SonyControl( const std::string& location ) :
     current_station_( 0 )
   {
-    implementor_ = new Sony( location );
+    implementor_ = std::unique_ptr<TV>(new Sony( location ));
   }
 
   void SonyControl::SetStation( unsigned int channel )

@@ -16,10 +16,12 @@
 #include "rca_control.hpp"
 //C system files.
 //C++ system files.
+#include <memory>
 //Other libraries' .h files.
 //Your project's .h files.
 #include "rca.hpp"
 #include "remotes_config.h"
+#include "tv.hpp"
 
 
 namespace headfirst {
@@ -27,7 +29,7 @@ namespace headfirst {
   RCAControl::RCAControl( const std::string& location ) :
     current_station_( 0 )
   {
-    implementor_ = new RCA( location );
+    implementor_ = std::unique_ptr<TV>(new RCA( location ));
   }
 
   void RCAControl::SetStation( unsigned int channel )
