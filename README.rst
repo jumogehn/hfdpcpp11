@@ -29,6 +29,8 @@ Ch. 7 `Facade <facade>`_
 
 Ch. 8 `Template Method <template>`_
 
+Ch. 9 Iterator
+
 Ch. 9 `Composite <composite>`_
 
 Ch. 10 `State <state>`_
@@ -36,6 +38,24 @@ Ch. 10 `State <state>`_
 Ch. 11 Proxy
 
 Ch. 12 Compound
+
+Ch. 14 `Bridge <bridge>`_
+
+Ch. 14 Builder
+
+Ch. 14 Chain of responsibility
+
+Ch. 14 Flyweight
+
+Ch. 14 Interpreter
+
+Ch. 14 Mediater
+
+Ch. 14 Memento
+
+Ch. 14 Prototype
+
+Ch. 14 Visitor
 
 .. image:: thebookcover.jpg
    :scale: 30 %
