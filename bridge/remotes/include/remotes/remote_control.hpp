@@ -27,8 +27,9 @@ namespace headfirst {
 
   class RemoteControl {
 
-    RemoteControl( const RemoteControl& ); // Disable copy constructor
-    void operator=( const RemoteControl& ); // Disable assignment operator
+    // Disable copy constructor and assignment operator
+    RemoteControl( const RemoteControl& ) = delete;
+    void operator=( const RemoteControl& ) = delete;
 
   protected:
     std::unique_ptr<TV> implementor_;
