@@ -11,32 +11,25 @@
 //===----------------------------------------------------------------------===//
 
 
-#ifndef	_HFDP_CPP_BRIDGE_SONY_CONTROL_HPP_
+#ifndef _HFDP_CPP_BRIDGE_SONY_CONTROL_HPP_
 #define _HFDP_CPP_BRIDGE_SONY_CONTROL_HPP_
 
-//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
-//dir2 / foo2.h.
-//C system files.
-//C++ system files.
-#include <string>
-//Other libraries' .h files.
-//Your project's .h files.
 #include "remote_control.hpp"
-
+// string 헤더 필요 없음 (Location 정보는 TV가 가져갔으므로)
 
 namespace headfirst {
 
-  class SonyControl : public RemoteControl {
+	class SonyControl : public RemoteControl {
+		unsigned int current_station_;
 
-    unsigned int current_station_;
+	public:
+		// [DI] 구체적인 TV 대신, 추상적인 TV 포인터를 주입받음
+		explicit SonyControl(std::unique_ptr<TV> tv);
 
-  public:
-    explicit SonyControl( const std::string& location );
-    void SetStation( unsigned int channel );
-    void NextChannel();
-    void PreviousChannel();
-  };
+		void SetStation(unsigned int channel);
+		void NextChannel();
+		void PreviousChannel();
+	};
 
-} //namespace headfirst
-
+}
 #endif

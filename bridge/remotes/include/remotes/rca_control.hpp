@@ -11,33 +11,25 @@
 //===----------------------------------------------------------------------===//
 
 
-
-#ifndef	_HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
+#ifndef _HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
 #define _HFDP_CPP_BRIDGE_RCA_CONTROL_HPP_
 
-//https://google.github.io/styleguide/cppguide.html#Names_and_Order_of_Includes
-//dir2 / foo2.h.
-//C system files.
-//C++ system files.
-#include <string>
-//Other libraries' .h files.
-//Your project's .h files.
 #include "remote_control.hpp"
-
+// <string> 헤더 불필요 (TV가 위치 정보를 가짐)
 
 namespace headfirst {
 
-  class RCAControl : public RemoteControl {
+	class RCAControl : public RemoteControl {
+		unsigned int current_station_;
 
-    unsigned int current_station_;
+	public:
+		// [수정] string 대신 TV 객체를 주입받도록 변경
+		explicit RCAControl(std::unique_ptr<TV> tv);
 
-  public:
-    explicit RCAControl( const std::string& location );
-    void SetStation( unsigned int channel );
-    void NextChannel();
-    void PreviousChannel();
-  };
+		void SetStation(unsigned int channel);
+		void NextChannel();
+		void PreviousChannel();
+	};
 
-} //namespace headfirst
-
+}
 #endif
